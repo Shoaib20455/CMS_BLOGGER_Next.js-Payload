@@ -8,13 +8,13 @@ type Faq = {
 };
 
 const faqTopClassByValue: Record<number, string> = {
-  8095: "top-[505.9375rem]",
-  8188: "top-[511.75rem]",
-  8281: "top-[517.5625rem]",
-  8295: "top-[518.4375rem]",
-  8374: "top-[523.375rem]",
-  8388: "top-[524.25rem]",
-  8481: "top-[530.0625rem]"
+  8095: "bb-dynamic-012",
+  8188: "bb-dynamic-013",
+  8281: "bb-dynamic-014",
+  8295: "bb-dynamic-015",
+  8374: "bb-dynamic-016",
+  8388: "bb-dynamic-017",
+  8481: "bb-dynamic-018"
 };
 
 function FaqCard({
@@ -23,40 +23,40 @@ function FaqCard({
   leftClass,
   topClass,
   onClick
-}: {
-  faq: Faq;
-  isOpen: boolean;
-  leftClass: string;
-  topClass: string;
-  onClick: () => void;
-}) {
+
+
+
+
+
+
+}: {faq: Faq;isOpen: boolean;leftClass: string;topClass: string;onClick: () => void;}) {
   return (
     <div
       onClick={onClick}
-      className={`absolute ${leftClass} ${topClass} w-[46.875rem] cursor-pointer overflow-hidden rounded-[0.625rem] bg-white transition-all duration-500 ${
-        isOpen
-          ? "h-[11.25rem] border-[0.125rem] border-solid border-[#FE8F02] shadow-[0_0.25rem_1.25rem_rgba(0,0,0,0.05)]"
-          : "h-[4.5625rem] border border-solid border-[rgba(17,24,39,0.15)]"
-      }`}
-    >
-      <div className="absolute left-[1.25rem] top-[1.25rem] w-[37.5rem] font-['DM_Sans'] text-[1.125rem] font-medium leading-[2.0625rem] text-[#012F42]">
+      className={`bb-faq-001 ${leftClass} ${topClass} bb-faq-002 ${
+      isOpen ?
+      "bb-faq-003" :
+      "bb-faq-004"}`
+      }>
+      
+      <div className="bb-faq-005">
         {faq.q}
       </div>
-      {isOpen && (
-        <div className="absolute left-[1.25rem] top-[4.25rem] w-[44.375rem] font-['DM_Sans'] text-[1rem] font-normal leading-[1.5rem] text-[rgba(17,24,39,0.70)]">
+      {isOpen &&
+      <div className="bb-faq-006">
           {faq.a}
         </div>
-      )}
-      <div className="absolute right-[1.5625rem] top-[1.75rem] flex h-[1rem] w-[1rem] items-center justify-center">
-        <div className="absolute h-[0.125rem] w-[1rem] rounded-[0.0625rem] bg-[#012F42]" />
+      }
+      <div className="bb-faq-007">
+        <div className="bb-faq-008" />
         <div
-          className={`absolute h-[0.125rem] w-[1rem] rounded-[0.0625rem] bg-[#012F42] transition-transform duration-300 ${
-            isOpen ? "rotate-0" : "-rotate-90"
-          }`}
-        />
+          className={`bb-faq-009 ${
+          isOpen ? "bb-faq-010" : "bb-faq-011"}`
+          } />
+        
       </div>
-    </div>
-  );
+    </div>);
+
 }
 
 export default function FaqSection() {
@@ -73,7 +73,7 @@ export default function FaqSection() {
 
   const allFaqs = [...leftFaqs, ...rightFaqs];
   const activeMobileFaq =
-    activeLeftFaq !== null ? activeLeftFaq : activeRightFaq !== null ? activeRightFaq + leftFaqs.length : null;
+  activeLeftFaq !== null ? activeLeftFaq : activeRightFaq !== null ? activeRightFaq + leftFaqs.length : null;
 
   const toggleMobileFaq = (idx: number) => {
     if (idx < leftFaqs.length) {
@@ -89,52 +89,52 @@ export default function FaqSection() {
 
   return (
     <>
-    <div className="hidden lg:block">
-      <div className="absolute left-[35.5625rem] top-[498.4375rem] w-[48.8125rem] text-center font-['Outfit'] text-[3rem] font-bold text-[#012F42]">
+    <div className="bb-blog-001">
+      <div className="bb-faq-012">
         Frequently Asked Questions
       </div>
 
       {leftFaqs.map((faq, idx) => {
-        const isOpen = activeLeftFaq === idx;
+          const isOpen = activeLeftFaq === idx;
 
-        return (
-          <FaqCard
-            key={faq.q}
-            faq={faq}
-            isOpen={isOpen}
-            leftClass="left-[12.5rem]"
-            topClass={faqTopClassByValue[leftFaqTops[idx]]}
-            onClick={() => setActiveLeftFaq(isOpen ? null : idx)}
-          />
-        );
-      })}
+          return (
+            <FaqCard
+              key={faq.q}
+              faq={faq}
+              isOpen={isOpen}
+              leftClass="bb-dynamic-019"
+              topClass={faqTopClassByValue[leftFaqTops[idx]]}
+              onClick={() => setActiveLeftFaq(isOpen ? null : idx)} />);
+
+
+        })}
 
       {rightFaqs.map((faq, idx) => {
-        const isOpen = activeRightFaq === idx;
+          const isOpen = activeRightFaq === idx;
 
-        return (
-          <FaqCard
-            key={faq.q}
-            faq={faq}
-            isOpen={isOpen}
-            leftClass="left-[60.625rem]"
-            topClass={faqTopClassByValue[rightFaqTops[idx]]}
-            onClick={() => setActiveRightFaq(isOpen ? null : idx)}
-          />
-        );
-      })}
+          return (
+            <FaqCard
+              key={faq.q}
+              faq={faq}
+              isOpen={isOpen}
+              leftClass="bb-dynamic-020"
+              topClass={faqTopClassByValue[rightFaqTops[idx]]}
+              onClick={() => setActiveRightFaq(isOpen ? null : idx)} />);
+
+
+        })}
     </div>
 
       <section
         data-responsive-section="faq"
-        className="relative z-[28] w-full overflow-hidden bg-[#F8FAFC] px-5 py-10 sm:px-8 sm:py-12 lg:hidden"
-      >
-        <div className="mx-auto max-w-[58rem]">
-          <h2 className="text-center font-['Outfit'] text-[2rem] font-bold leading-[2.45rem] text-[#012F42] sm:text-[2.25rem] sm:leading-[2.75rem]">
+        className="bb-faq-013">
+        
+        <div className="bb-blog-021">
+          <h2 className="bb-faq-014">
             Frequently Asked Questions
           </h2>
 
-          <div className="mt-7 grid gap-3 min-[860px]:grid-cols-2">
+          <div className="bb-faq-015">
             {allFaqs.map((faq, idx) => {
               const isOpen = activeMobileFaq === idx;
 
@@ -144,32 +144,32 @@ export default function FaqSection() {
                   type="button"
                   aria-expanded={isOpen}
                   onClick={() => toggleMobileFaq(idx)}
-                  className={`w-full cursor-pointer overflow-hidden rounded-[0.625rem] bg-white text-left transition-all duration-300 ${
-                    isOpen
-                      ? "border-[0.125rem] border-solid border-[#FE8F02] shadow-[0_0.25rem_1.25rem_rgba(0,0,0,0.05)]"
-                      : "border border-solid border-[rgba(17,24,39,0.15)]"
-                  }`}
-                >
-                  <div className="flex min-h-[4rem] items-center justify-between gap-4 px-4 py-3">
-                    <span className="min-w-0 font-['DM_Sans'] text-[1rem] font-medium leading-[1.45rem] text-[#012F42] sm:text-[1.0625rem]">
+                  className={`bb-faq-016 ${
+                  isOpen ?
+                  "bb-faq-017" :
+                  "bb-faq-018"}`
+                  }>
+                  
+                  <div className="bb-faq-019">
+                    <span className="bb-faq-020">
                       {faq.q}
                     </span>
-                    <span className="relative h-4 w-4 shrink-0">
-                      <span className="absolute left-0 top-1/2 h-[0.125rem] w-4 -translate-y-1/2 rounded-[0.0625rem] bg-[#012F42]" />
-                      <span className={`absolute left-0 top-1/2 h-[0.125rem] w-4 -translate-y-1/2 rounded-[0.0625rem] bg-[#012F42] transition-transform duration-300 ${isOpen ? "rotate-0" : "-rotate-90"}`} />
+                    <span className="bb-faq-021">
+                      <span className="bb-faq-022" />
+                      <span className={`bb-faq-023 ${isOpen ? "bb-faq-010" : "bb-faq-011"}`} />
                     </span>
                   </div>
-                  {isOpen && (
-                    <p className="px-4 pb-4 font-['DM_Sans'] text-[0.95rem] leading-[1.55rem] text-[rgba(17,24,39,0.70)]">
+                  {isOpen &&
+                  <p className="bb-faq-024">
                       {faq.a}
                     </p>
-                  )}
-                </button>
-              );
+                  }
+                </button>);
+
             })}
           </div>
         </div>
       </section>
-    </>
-  );
+    </>);
+
 }

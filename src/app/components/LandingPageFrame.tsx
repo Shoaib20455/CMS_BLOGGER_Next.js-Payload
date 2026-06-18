@@ -9,8 +9,8 @@ import {
   type CSSProperties,
   type Dispatch,
   type ReactNode,
-  type SetStateAction
-} from "react";
+  type SetStateAction } from
+"react";
 
 type Faq = {
   q: string;
@@ -31,42 +31,42 @@ type LandingPageLayoutContextValue = {
 };
 
 const leftFaqs: Faq[] = [
-  {
-    q: "What types of box trucks do you dispatch?",
-    a: "We work with straight box trucks that are 26 feet or more in length, equipped with a lift gate, and operating non-locally (interstate/regional)."
-  },
-  {
-    q: "What are your requirements to start?",
-    a: "You need an active MC/DOT authority, a certificate of insurance (at least $1,000,000 auto liability and $100,000 cargo), and a signed W-9 form."
-  },
-  {
-    q: "Do you offer factoring setup assistance?",
-    a: "Yes! We work with top factoring companies to help you set up and get quick payments (within 24-48 hours) instead of waiting 30-90 days."
-  },
-  {
-    q: "Is there a long-term contract required?",
-    a: "No. We offer dispatch services on a load-by-load basis with no long-term commitment. You are free to stop using our service at any time."
-  }
-];
+{
+  q: "What types of box trucks do you dispatch?",
+  a: "We work with straight box trucks that are 26 feet or more in length, equipped with a lift gate, and operating non-locally (interstate/regional)."
+},
+{
+  q: "What are your requirements to start?",
+  a: "You need an active MC/DOT authority, a certificate of insurance (at least $1,000,000 auto liability and $100,000 cargo), and a signed W-9 form."
+},
+{
+  q: "Do you offer factoring setup assistance?",
+  a: "Yes! We work with top factoring companies to help you set up and get quick payments (within 24-48 hours) instead of waiting 30-90 days."
+},
+{
+  q: "Is there a long-term contract required?",
+  a: "No. We offer dispatch services on a load-by-load basis with no long-term commitment. You are free to stop using our service at any time."
+}];
+
 
 const rightFaqs: Faq[] = [
-  {
-    q: "How do you find loads for my truck?",
-    a: "We use premium load boards, direct broker relationships, and private shipper contracts to find the highest-paying box truck freight."
-  },
-  {
-    q: "Do you force drivers to take loads?",
-    a: "Absolutely not. We have a 'no forced dispatch' policy. We present you with the best load options, and you make the final decision."
-  },
-  {
-    q: "What areas of the country do you cover?",
-    a: "We cover all 48 continental states. Whether you prefer running regionally or coast-to-coast, we can keep your truck loaded."
-  },
-  {
-    q: "How do you handle detention and TONU?",
-    a: "We aggressively pursue detention pay and Truck Order Not Used (TONU) fees from brokers whenever shippers delay you or cancel loads."
-  }
-];
+{
+  q: "How do you find loads for my truck?",
+  a: "We use premium load boards, direct broker relationships, and private shipper contracts to find the highest-paying box truck freight."
+},
+{
+  q: "Do you force drivers to take loads?",
+  a: "Absolutely not. We have a 'no forced dispatch' policy. We present you with the best load options, and you make the final decision."
+},
+{
+  q: "What areas of the country do you cover?",
+  a: "We cover all 48 continental states. Whether you prefer running regionally or coast-to-coast, we can keep your truck loaded."
+},
+{
+  q: "How do you handle detention and TONU?",
+  a: "We aggressively pursue detention pay and Truck Order Not Used (TONU) fees from brokers whenever shippers delay you or cancel loads."
+}];
+
 
 const LandingPageLayoutContext = createContext<LandingPageLayoutContextValue | null>(null);
 
@@ -80,7 +80,7 @@ export function useLandingPageLayout() {
   return context;
 }
 
-export default function LandingPageFrame({ children }: { children: ReactNode }) {
+export default function LandingPageFrame({ children }: {children: ReactNode;}) {
   const [scale, setScale] = useState(1);
   const [measuredHeight, setMeasuredHeight] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -125,8 +125,8 @@ export default function LandingPageFrame({ children }: { children: ReactNode }) 
     };
   }, [children, scale]);
 
-  const leftFaqHeights = leftFaqs.map((_, i) => (activeLeftFaq === i ? 180 : 73));
-  const rightFaqHeights = rightFaqs.map((_, i) => (activeRightFaq === i ? 180 : 73));
+  const leftFaqHeights = leftFaqs.map((_, i) => activeLeftFaq === i ? 180 : 73);
+  const rightFaqHeights = rightFaqs.map((_, i) => activeRightFaq === i ? 180 : 73);
 
   const leftFaqTops: number[] = [];
   let currentLeftFaqTop = 8095;
@@ -167,19 +167,19 @@ export default function LandingPageFrame({ children }: { children: ReactNode }) 
         rightFaqTops,
         ctaTop,
         footerTop
-      }}
-    >
+      }}>
+      
       <main
-        className="relative flex min-h-screen w-full justify-center overflow-x-hidden bg-[#F8FAFC] lg:h-[var(--page-height)]"
-        style={layoutVars}
-      >
+        className="bb-landing-page-001"
+        style={layoutVars}>
+        
         <div
           ref={containerRef}
-          className="relative w-full overflow-visible bg-[#F8FAFC] lg:absolute lg:left-1/2 lg:top-0 lg:h-[var(--canvas-height)] lg:w-[120rem] lg:origin-top lg:-translate-x-1/2 lg:scale-[var(--canvas-scale)] lg:overflow-hidden"
-        >
+          className="bb-landing-page-002">
+          
           {children}
         </div>
       </main>
-    </LandingPageLayoutContext.Provider>
-  );
+    </LandingPageLayoutContext.Provider>);
+
 }

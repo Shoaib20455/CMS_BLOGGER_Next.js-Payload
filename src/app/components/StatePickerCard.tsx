@@ -27,91 +27,91 @@ export default function StatePickerCard() {
     <>
       <form onSubmit={handleFormSubmit}>
         {/* Desktop State Picker Card */}
-        <div className="absolute left-[25rem] top-[44rem] z-[12] hidden h-[9.375rem] w-[70rem] rounded-[0.625rem] bg-white shadow-[0_0.625rem_1.875rem_rgba(0,0,0,0.1)] lg:block" />
+        <div className="bb-state-picker-001" />
 
-        <div className="absolute left-[28.1875rem] top-[45.5625rem] z-[13] hidden font-['Outfit'] text-[1.875rem] font-semibold leading-[1.875rem] text-[#012F42] lg:block">
+        <div className="bb-state-picker-002">
           Pick Your State
         </div>
 
         {/* Dropdown Select State */}
-        <div className="absolute left-[28.1875rem] top-[48.6875rem] z-[13] hidden h-[3.125rem] w-[17.5rem] lg:block">
+        <div className="bb-state-picker-003">
           <select
             value={formData.state}
-            onChange={e => setFormData({ ...formData, state: e.target.value })}
+            onChange={(e) => setFormData({ ...formData, state: e.target.value })}
             required
-            className="w-full h-full border border-gray-300 rounded-[0.3125rem] pl-5 pr-10 text-[1.125rem] font-['DM_Sans'] text-gray-800 outline-none cursor-pointer hover:border-gray-500 transition-colors appearance-none bg-white"
-          >
+            className="bb-state-picker-004">
+            
             <option value="" disabled hidden>View Your State</option>
-            {["Alabama", "California", "Florida", "Georgia", "Illinois", "North Carolina", "South Carolina", "Texas", "Tennessee", "Virginia"].map((st) => (
-              <option key={st} value={st}>{st}</option>
-            ))}
+            {["Alabama", "California", "Florida", "Georgia", "Illinois", "North Carolina", "South Carolina", "Texas", "Tennessee", "Virginia"].map((st) =>
+            <option key={st} value={st}>{st}</option>
+            )}
           </select>
 
-          <div className="absolute right-[1.25rem] top-[1.3125rem] pointer-events-none">
-            <Image className="w-[0.6875rem] h-[0.5625rem]" src="/Icons/Polygon 16.svg" alt="Dropdown Arrow" width={11} height={9} unoptimized />
+          <div className="bb-state-picker-005">
+            <Image className="bb-state-picker-006" src="/Icons/Polygon 16.svg" alt="Dropdown Arrow" width={11} height={9} unoptimized />
           </div>
         </div>
 
         {/* Name Input */}
-        <div className="absolute left-[46.9375rem] top-[48.6875rem] z-[13] hidden h-[3.125rem] w-[17.5rem] lg:block">
+        <div className="bb-state-picker-007">
           <input
             type="text"
             placeholder="Name"
             value={formData.name}
-            onChange={e => setFormData({ ...formData, name: e.target.value })}
+            onChange={(e) => setFormData({ ...formData, name: e.target.value })}
             required
-            className="w-full h-full border border-gray-300 rounded-[0.3125rem] pl-5 text-[1.125rem] font-['DM_Sans'] text-gray-800 outline-none hover:border-gray-500 transition-colors"
-          />
+            className="bb-state-picker-008" />
+          
         </div>
 
         {/* Email Input */}
-        <div className="absolute left-[65.6875rem] top-[48.6875rem] z-[13] hidden h-[3.125rem] w-[17.5rem] lg:block">
+        <div className="bb-state-picker-009">
           <input
             type="email"
             placeholder="Youremail@gmail.com"
             value={formData.email}
-            onChange={e => setFormData({ ...formData, email: e.target.value })}
+            onChange={(e) => setFormData({ ...formData, email: e.target.value })}
             required
-            className="w-full h-full border border-gray-300 rounded-[0.3125rem] pl-5 text-[1.125rem] font-['DM_Sans'] text-gray-800 outline-none hover:border-gray-500 transition-colors"
-          />
+            className="bb-state-picker-008" />
+          
         </div>
 
         {/* Submit Button */}
         <button
           type="submit"
-          className="absolute left-[84.4375rem] top-[48.6875rem] z-[13] hidden h-[3.125rem] w-[7.3125rem] cursor-pointer items-center justify-center rounded-[0.3125rem] border-none bg-[#FE8F02] font-['Outfit'] text-[1.125rem] font-medium leading-[1.875rem] text-white transition-all duration-300 hover:scale-105 hover:bg-[#E07D02] active:scale-95 lg:flex"
-        >
+          className="bb-state-picker-010">
+          
           Submit
         </button>
 
         <div
-          className="hidden"
-        />
+          className="bb-state-picker-011" />
+        
 
         <div
-          className="relative z-[24] w-full bg-[#F8FAFC] px-5 py-4 sm:px-8 sm:py-5 lg:hidden"
-        >
-          <div className="rounded-[0.625rem] bg-white p-4 shadow-[0_0.625rem_1.875rem_rgba(0,0,0,0.12)] sm:p-5">
-            <div className="font-['Outfit'] text-[1.375rem] font-semibold leading-[1.625rem] text-[#012F42] sm:text-[1.5rem]">
+          className="bb-state-picker-012">
+          
+          <div className="bb-state-picker-013">
+            <div className="bb-state-picker-014">
               Pick Your State
             </div>
 
-            <div className="mt-3 grid gap-2 sm:grid-cols-2">
-              <div className="relative h-[2.75rem] sm:col-span-2">
+            <div className="bb-state-picker-015">
+              <div className="bb-state-picker-016">
                 <select
                   value={formData.state}
-                  onChange={e => setFormData({ ...formData, state: e.target.value })}
+                  onChange={(e) => setFormData({ ...formData, state: e.target.value })}
                   required
-                  className="h-full w-full cursor-pointer appearance-none rounded-[0.3125rem] border border-gray-300 bg-white pl-4 pr-10 font-['DM_Sans'] text-[0.9375rem] text-gray-800 outline-none transition-colors hover:border-gray-500"
-                >
+                  className="bb-state-picker-017">
+                  
                   <option value="" disabled hidden>View Your State</option>
-                  {["Alabama", "California", "Florida", "Georgia", "Illinois", "North Carolina", "South Carolina", "Texas", "Tennessee", "Virginia"].map((st) => (
-                    <option key={st} value={st}>{st}</option>
-                  ))}
+                  {["Alabama", "California", "Florida", "Georgia", "Illinois", "North Carolina", "South Carolina", "Texas", "Tennessee", "Virginia"].map((st) =>
+                  <option key={st} value={st}>{st}</option>
+                  )}
                 </select>
 
-                <div className="pointer-events-none absolute right-[1.25rem] top-[1.125rem]">
-                  <Image className="h-[0.5625rem] w-[0.6875rem]" src="/Icons/Polygon 16.svg" alt="Dropdown Arrow" width={11} height={9} unoptimized />
+                <div className="bb-state-picker-018">
+                  <Image className="bb-state-picker-019" src="/Icons/Polygon 16.svg" alt="Dropdown Arrow" width={11} height={9} unoptimized />
                 </div>
               </div>
 
@@ -119,24 +119,24 @@ export default function StatePickerCard() {
                 type="text"
                 placeholder="Name"
                 value={formData.name}
-                onChange={e => setFormData({ ...formData, name: e.target.value })}
+                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                 required
-                className="h-[2.75rem] w-full rounded-[0.3125rem] border border-gray-300 pl-4 font-['DM_Sans'] text-[0.9375rem] text-gray-800 outline-none transition-colors hover:border-gray-500"
-              />
+                className="bb-state-picker-020" />
+              
 
               <input
                 type="email"
                 placeholder="Youremail@gmail.com"
                 value={formData.email}
-                onChange={e => setFormData({ ...formData, email: e.target.value })}
+                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                 required
-                className="h-[2.75rem] w-full rounded-[0.3125rem] border border-gray-300 pl-4 font-['DM_Sans'] text-[0.9375rem] text-gray-800 outline-none transition-colors hover:border-gray-500"
-              />
+                className="bb-state-picker-020" />
+              
 
               <button
                 type="submit"
-                className="flex h-[2.75rem] w-full cursor-pointer items-center justify-center rounded-[0.3125rem] border-none bg-[#FE8F02] font-['Outfit'] text-[1rem] font-medium leading-[1.5rem] text-white transition-all duration-300 hover:bg-[#E07D02] active:scale-95 sm:col-span-2"
-              >
+                className="bb-state-picker-021">
+                
                 Submit
               </button>
             </div>
@@ -144,20 +144,20 @@ export default function StatePickerCard() {
         </div>
       </form>
 
-      {formSubmitted && (
-        <>
-          <div className="absolute left-[25rem] top-[41.25rem] z-[15] hidden w-[70rem] rounded-[0.3125rem] bg-[#10B981] px-[1.25rem] py-[0.625rem] text-center font-['DM_Sans'] text-[1.125rem] text-white lg:block">
+      {formSubmitted &&
+      <>
+          <div className="bb-state-picker-022">
             Thank you! Your request for state coverage has been submitted successfully.
           </div>
           <div
-            className="relative z-[25] w-full bg-[#F8FAFC] px-5 pb-3 sm:px-8 lg:hidden"
-          >
-            <div className="rounded-[0.3125rem] bg-[#10B981] px-[1.25rem] py-[0.625rem] text-center font-['DM_Sans'] text-[1rem] text-white">
+          className="bb-state-picker-023">
+          
+            <div className="bb-state-picker-024">
               Thank you! Your request for state coverage has been submitted successfully.
             </div>
           </div>
         </>
-      )}
-    </>
-  );
+      }
+    </>);
+
 }
