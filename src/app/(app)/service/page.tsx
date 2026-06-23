@@ -103,18 +103,9 @@ export default function ServiceDetailPage() {
                 fill
                 className="object-cover transition-transform duration-500 group-hover:scale-105"
               />
-              <div
-                className={`absolute inset-0 bg-gradient-to-b ${
-                  service.featured
-                    ? "from-[#FE8F02]/10 to-[#FE8F02]"
-                    : "from-[#012F42]/10 to-[#012F42]/80"
-                }`}
-              />
-              <div
-                className={`absolute bottom-0 left-0 h-2.5 w-full ${
-                  service.featured ? "bg-[#FE8F02]" : "bg-[#012F42]"
-                }`}
-              />
+              <div className="absolute inset-0 bg-gradient-to-b from-[#012F42]/10 to-[#012F42]/80" />
+              <div className="absolute inset-0 bg-gradient-to-b from-[#FE8F02]/10 to-[#FE8F02] opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+              <div className="absolute bottom-0 left-0 h-2.5 w-full bg-[#012F42] transition-colors duration-300 group-hover:bg-[#FE8F02]" />
 
               <div className="absolute inset-x-5 bottom-8">
                 {service.description && (
@@ -129,11 +120,9 @@ export default function ServiceDetailPage() {
                   </h3>
 
                   <span
-                    className={`flex h-6 w-8 shrink-0 items-center justify-center rounded-[2px] ${
-                      service.featured ? "bg-white/30" : "bg-[#FE8F02]"
-                    }`}
+                    className="flex h-6 w-8 shrink-0 items-center justify-center rounded-[2px] bg-[#FE8F02] transition-colors duration-300 group-hover:bg-white/30"
                   >
-                    <ArrowIcon isLinked={Boolean(service.href)} />
+                    <ArrowIcon />
                   </span>
                 </div>
               </div>
@@ -340,12 +329,10 @@ function ContactIcon({ type }: { type: "phone" | "mail" | "pin" }) {
   );
 }
 
-function ArrowIcon({ isLinked = false }: { isLinked?: boolean }) {
+function ArrowIcon() {
   return (
     <svg
-      className={`h-4 w-4 text-white ${
-        isLinked ? "transition-transform duration-300 group-hover:rotate-45" : ""
-      }`}
+      className="h-4 w-4 text-white transition-transform duration-300 group-hover:rotate-45"
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
