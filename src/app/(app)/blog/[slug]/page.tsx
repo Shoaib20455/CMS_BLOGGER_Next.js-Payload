@@ -1,145 +1,128 @@
+import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import ReadyTruckSection from "../../components/ReadyTruckSection";
 import BlogSection from "../../components/BlogSection";
+import configPromise from "@payload-config";
+import { getPayload } from "payload";
 
-const images = {
-  author: "/Images/David Thompson.png",
-  main: "/Images/Rectangle 1131.png",
-};
+function extractSectionText(node: Record<string, unknown>): string {
+  if (!node.children) return "";
+  return (node.children as Array<Record<string, unknown>>)
+    .map((child) => String(child.text ?? ""))
+    .join("");
+}
 
-const articleSections = [
-  {
-    heading: "",
-    body: [
-      "Box truck dispatching helps owner-operators and small fleets find better loads, reduce empty miles, and keep daily operations organized. A good dispatcher does more than book freight. They check lanes, negotiate rates, confirm paperwork, track delivery times, and protect your truck from weak-paying loads.",
-      "This guide explains how dispatch support works, why it matters for box truck owners, and what features make a dispatch service useful for carriers working across the United States.",
-    ],
-  },
-  {
-    heading: "Box Truck Dispatching Features",
-    body: [
-      "A strong dispatch setup gives your truck a steady operating rhythm. The dispatcher watches load boards, communicates with brokers, checks rate history, and keeps the driver focused on the road instead of chasing calls all day.",
-    ],
-  },
-  {
-    heading: "Load Booking",
-    body: [
-      "Load booking is the core part of dispatching. Dispatchers search for suitable loads based on your box truck size, location, available hours, lane preference, and rate target. They avoid random freight and focus on loads that make financial sense after fuel, tolls, deadhead, and delivery timing.",
-    ],
-  },
-  {
-    heading: "Rate Negotiation",
-    body: [
-      "Dispatchers negotiate with brokers before the load is accepted. They check pickup time, delivery time, detention terms, weight, commodity type, and lane demand. The goal is simple: secure loads that pay fairly and do not waste your driver’s hours.",
-    ],
-  },
-  {
-    heading: "Paperwork Support",
-    body: [
-      "Paperwork mistakes can delay payment. Dispatchers help manage rate confirmations, proof of delivery, broker packets, carrier setup documents, lumper receipts, and invoice details. Clean paperwork keeps the payment cycle moving without back-and-forth delays.",
-    ],
-  },
-  {
-    heading: "Route Planning",
-    body: [
-      "Good dispatching is not only about finding a load. The route matters too. Dispatchers check mileage, delivery windows, traffic risks, fuel stops, and reload options near the destination. Better route planning helps reduce wasted miles and improves weekly revenue.",
-    ],
-  },
-  {
-    heading: "Broker Communication",
-    body: [
-      "Box truck owners often lose time answering broker calls while driving. Dispatchers handle updates, appointment times, check calls, delays, and basic issue resolution. This keeps the carrier professional and responsive without distracting the driver.",
-    ],
-  },
-  {
-    heading: "Revenue Cycle",
-    body: [
-      "Dispatching affects the full revenue cycle of a trucking business. Better loads improve gross revenue. Cleaner paperwork supports faster payment. Strong broker follow-up reduces unpaid invoices. Every small process adds up.",
-    ],
-  },
-  {
-    heading: "Factoring Coordination",
-    body: [
-      "Many box truck owners use factoring to get paid faster. Dispatchers can help organize the documents needed for factoring submission, including rate confirmation, invoice, and signed POD. Faster submission usually means faster cash flow.",
-    ],
-  },
-  {
-    heading: "Compliance Support",
-    body: [
-      "Dispatchers also help carriers stay organized with insurance documents, MC authority details, W-9 forms, certificate of insurance requests, and broker setup requirements. They do not replace legal compliance, but they keep routine documents ready when brokers ask.",
-    ],
-  },
-  {
-    heading: "Empty Mile Reduction",
-    body: [
-      "Empty miles eat profit quietly. A dispatcher watches destination markets before accepting a load. They try to avoid sending the truck into weak freight zones without a reload plan. That one habit can protect the weekly numbers.",
-    ],
-  },
-  {
-    heading: "Performance Tracking",
-    body: [
-      "Tracking matters. Dispatchers can monitor average rate per mile, loaded miles, deadhead miles, broker quality, cancelled loads, detention issues, and weekly gross. These numbers show what is working and what needs to change.",
-    ],
-  },
-  {
-    heading: "Pricing Model",
-    body: [
-      "Most dispatch services charge a percentage of the gross load amount or a fixed weekly fee. The right model depends on your truck count, weekly load volume, and support needs. Owner-operators should look for transparent pricing with no surprise charges.",
-    ],
-  },
-];
+function parseContentToSections(content: unknown): Array<{ heading: string; body: string[] }> {
+  const root = (content as Record<string, unknown>)?.root as Record<string, unknown> | undefined;
+  const children = root?.children as Array<Record<string, unknown>> | undefined;
+  if (!children) return [];
 
-export default function BlogDetailPage() {
+  const sections: Array<{ heading: string; body: string[] }> = [];
+  let currentHeading = "";
+  let currentBody: string[] = [];
+
+  for (const child of children) {
+    if (child.type === "heading" && (child.tag === "h2" || child.tag === "h3")) {
+      if (currentBody.length > 0 || sections.length > 0) {
+        sections.push({ heading: currentHeading, body: currentBody });
+      }
+      currentHeading = extractSectionText(child);
+      currentBody = [];
+    } else if (child.type === "paragraph") {
+      const text = extractSectionText(child);
+      if (text) currentBody.push(text);
+    }
+  }
+
+  if (currentBody.length > 0 || currentHeading) {
+    sections.push({ heading: currentHeading, body: currentBody });
+  }
+
+  return sections;
+}
+
+export default async function BlogDetailPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+
+  const payload = await getPayload({ config: configPromise });
+  const result = await payload.find({
+    collection: "posts",
+    where: { slug: { equals: slug } },
+    depth: 2,
+    limit: 1,
+  });
+
+  const post = result.docs[0];
+  if (!post) notFound();
+
+  const author = post.author && typeof post.author === "object" ? (post.author as unknown as Record<string, unknown>) : null;
+  const category = post.category && typeof post.category === "object" ? (post.category as unknown as Record<string, unknown>) : null;
+  const featureImage = post.featureImage && typeof post.featureImage === "object" ? (post.featureImage as unknown as Record<string, unknown>) : null;
+
+  const authorName = (author?.name as string) || (author?.email as string) || "";
+  const categoryName = (category?.name as string) || "";
+  const categorySlug = (category?.slug as string) || "";
+  const featureImageUrl = (featureImage?.url as string) || "";
+  const featureImageAlt = (featureImage?.alt as string) || "";
+  const title = post.title;
+  const articleSections = parseContentToSections(post.content);
   return (
     <div className="bg-[#F8FAFC] pb-1 text-[#012F42]">
       <section className="mx-auto mt-[70px] w-[calc(100%_-_40px)] max-w-[1082px]">
         <p className="font-['DM_Sans'] mb-3 text-[14px] font-bold uppercase tracking-[0.12em] text-[#FE8F02]">
-          Dispatching Guide
+          {categoryName || "Category (from Payload)"}
         </p>
 
         <h1 className="font-['Outfit'] max-w-[900px] text-[48px] font-bold capitalize leading-[58px] text-[#012F42] max-lg:text-[40px] max-lg:leading-[50px] max-sm:text-[34px] max-sm:leading-[42px]">
-          Why Credentialing Matters For Small Practices
+          {title}
         </h1>
       </section>
 
       <section className="mx-auto mt-8 flex w-[calc(100%_-_40px)] max-w-[1082px] items-center justify-between gap-8 border-y border-[#D9DEE5] py-5 max-sm:flex-col max-sm:items-start">
         <div className="flex items-center gap-5">
-          <Image
-            src={images.author}
-            alt="Ahmad Churahi"
-            width={70}
-            height={70}
-            className="h-[70px] w-[70px] rounded-full object-cover"
-          />
+          <div className="flex h-[70px] w-[70px] items-center justify-center rounded-full bg-[#012F42] text-[28px] font-bold text-white">
+            {authorName ? authorName.charAt(0).toUpperCase() : "?"}
+          </div>
 
           <div>
             <h3 className="font-['Outfit'] mb-2 text-[22px] font-semibold leading-[22px] text-[#012F42]">
-              Ahmad Churahi
+              {authorName || "Author (from Payload)"}
             </h3>
 
             <p className="font-['DM_Sans'] text-[16px] font-normal leading-[25px] text-[#575D67]">
-              Professional
+              Author
             </p>
           </div>
         </div>
+
         <Link
-          href="/blog/category/dispatching"
+          href={categorySlug ? `/blog/category/${categorySlug}` : "#"}
           className="font-['Outfit'] inline-flex min-h-[44px] items-center justify-center rounded-[5px] bg-[#FE8F02] px-5 py-2.5 text-[16px] font-medium text-white no-underline transition-colors duration-300 hover:bg-[#E07D02] max-sm:w-full"
         >
-          Category
+          {categoryName || "Category (from Payload)"}
         </Link>
       </section>
 
-      <section className="mx-auto mt-[30px] h-[470px] w-[calc(100%_-_40px)] max-w-[1082px] overflow-hidden rounded-[10px] max-lg:h-[360px] max-sm:h-[260px]">
-        <Image
-          src={images.main}
-          alt="Box truck fleet"
-          width={1200}
-          height={600}
-          className="h-full w-full object-cover"
-          priority
-        />
+      <section className="mx-auto mt-[30px] h-[470px] w-[calc(100%_-_40px)] max-w-[1082px] overflow-hidden rounded-[10px] bg-[#E2E8F0] max-lg:h-[360px] max-sm:h-[260px]">
+        {featureImageUrl ? (
+          <Image
+            src={featureImageUrl}
+            alt={featureImageAlt || ""}
+            width={1200}
+            height={600}
+            className="h-full w-full object-contain"
+            priority
+          />
+        ) : (
+          <div className="flex h-full w-full items-center justify-center font-['DM_Sans'] text-[18px] text-[#575D67]">
+            Featured Image (from Payload)
+          </div>
+        )}
       </section>
 
       <section className="mx-auto mt-10 w-[calc(100%_-_40px)] max-w-[1082px]">
@@ -155,8 +138,8 @@ export default function BlogDetailPage() {
                 </h2>
               )}
 
-              {section.body.map((paragraph) => (
-                <p key={paragraph} className="mb-2">
+              {section.body.map((paragraph, pIdx) => (
+                <p key={pIdx} className="mb-2">
                   {paragraph}
                 </p>
               ))}

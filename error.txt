@@ -1,0 +1,23 @@
+ turbopackServerFastRefresh
+
+ GET /service/load-booking 200 in 3.0s (next.js: 1864ms, application-code: 1149ms)
+ GET / 200 in 3.1s (next.js: 1600ms, application-code: 1451ms)
+(node:16256) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[✓] Pulling schema from database...
+[20:13:56] WARN: No email adapter provided. Email will be written to console. More info at https://payloadcms.com/docs/email/overview.
+ GET /blog/why-credentialing-matters-for-small-practices 200 in 23.1s (next.js: 10.2s, application-code: 12.9s)
+ GET /admin/collections/posts/1 200 in 23.1s (next.js: 6.1s, application-code: 17.0s)
+[20:14:02] ERROR: File Pic_Resized.jpg for collection media is missing on the disk. Expected path: D:\CMS_BLOGGER_Next.js-Payload\media\Pic_Resized.jpg
+ GET /api/media/file/Pic_Resized.jpg 500 in 3.7s (next.js: 3.7s, application-code: 32ms)
+⨯ The requested resource isn't a valid image for /api/media/file/Pic_Resized.jpg received null
+ GET /admin 200 in 5.6s (next.js: 13ms, application-code: 5.6s)
+ GET /admin/collections/posts/1 200 in 5.2s (next.js: 12ms, application-code: 5.2s)
+ GET /admin 200 in 708ms (next.js: 16ms, application-code: 692ms)

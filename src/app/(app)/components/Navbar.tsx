@@ -9,7 +9,7 @@ interface NavbarProps {
   variant?: "absolute" | "flow";
 }
 
-const navItems = ["Home", "About", "Services", "Blog", "Contact"];
+const navItems = ["Home", "About", "Service", "Blog", "Contact"];
 
 function getFlowHref(item: string) {
   if (item === "Home") return "/";

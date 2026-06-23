@@ -153,7 +153,7 @@ function FlowFooter() {
             ].map((item) => (
               <Link
                 key={item}
-                href="/services"
+                href="/service"
                 className="font-['DM_Sans'] text-[12px] font-medium leading-[18px] text-white no-underline transition-colors hover:text-[#FE8F02]"
               >
                 {item}
