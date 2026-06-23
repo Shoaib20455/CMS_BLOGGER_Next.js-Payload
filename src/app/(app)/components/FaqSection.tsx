@@ -1,5 +1,5 @@
 "use client";
-
+import { usePathname } from "next/navigation";
 import { useLandingPageLayout } from "./LandingPageFrame";
 
 type Faq = {
@@ -60,6 +60,8 @@ function FaqCard({
 }
 
 export default function FaqSection() {
+  const pathname = usePathname();
+
   const {
     leftFaqs,
     rightFaqs,
@@ -68,8 +70,12 @@ export default function FaqSection() {
     setActiveLeftFaq,
     setActiveRightFaq,
     leftFaqTops,
-    rightFaqTops
+    rightFaqTops,
   } = useLandingPageLayout();
+
+  if (pathname.startsWith("/blog")) {
+    return null;
+  }
 
   const allFaqs = [...leftFaqs, ...rightFaqs];
   const activeMobileFaq =

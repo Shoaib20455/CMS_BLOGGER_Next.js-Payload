@@ -7,10 +7,6 @@ const images = {
   hero: "/images/blog-detail-hero.jpg",
   author: "/images/author.jpg",
   main: "/images/blog-main.jpg",
-  relatedLarge: "/images/related-blog-1.jpg",
-  relatedOne: "/images/related-blog-2.jpg",
-  relatedTwo: "/images/related-blog-3.jpg",
-  relatedThree: "/images/related-blog-4.jpg",
 };
 
 const articleSections = [
@@ -95,35 +91,6 @@ const articleSections = [
   },
 ];
 
-const relatedPosts = [
-  {
-    title: "Why Box Truck Owners Lose Profitable Loads",
-    date: "12 June 2026",
-    excerpt:
-      "Stop waiting 30-90 days for broker payments. Learn how freight factoring works, what to watch for, and when it makes sense for your trucking business.",
-    image: images.relatedLarge,
-    href: "/blog/why-box-truck-owners-lose-profitable-loads",
-  },
-  {
-    title: "How Dispatch Services Save Time for Owner-Operators",
-    date: "10 June 2026",
-    image: images.relatedOne,
-    href: "/blog/how-dispatch-services-save-time",
-  },
-  {
-    title: "Top Mistakes New Box Truck Businesses Make",
-    date: "08 June 2026",
-    image: images.relatedTwo,
-    href: "/blog/top-mistakes-new-box-truck-businesses",
-  },
-  {
-    title: "How to Reduce Empty Miles and Increase Revenue",
-    date: "03 June 2026",
-    image: images.relatedThree,
-    href: "/blog/reduce-empty-miles-increase-revenue",
-  },
-];
-
 export default function BlogDetailPage() {
   return (
     <main className="bg-[#F8FAFC] text-[#012F42]">
@@ -133,6 +100,7 @@ export default function BlogDetailPage() {
             <h1 className="font-outfit mb-[30px] text-[60px] font-bold capitalize leading-[70px] text-white max-lg:text-[42px] max-lg:leading-[50px]">
               Box Truck Dispatching Blog
             </h1>
+
             <p className="font-dm-sans text-[22px] font-normal leading-8 text-white max-lg:text-[18px] max-lg:leading-7">
               Insights, strategies, and real dispatch knowledge to help
               owner-operators and trucking businesses increase revenue, reduce
@@ -151,10 +119,12 @@ export default function BlogDetailPage() {
             height={70}
             className="h-[70px] w-[70px] rounded-full object-cover"
           />
+
           <div>
             <h3 className="font-outfit mb-2 text-[22px] font-semibold leading-[22px] text-[#012F42]">
               Ahmad Churahi
             </h3>
+
             <p className="font-dm-sans text-[16px] font-normal leading-[25px] text-[#575D67]">
               Professional
             </p>
@@ -204,102 +174,10 @@ export default function BlogDetailPage() {
         </article>
       </section>
 
-      <RelatedBlogs />
-
-      <ReadyTruckSection />
-      <BlogSection />
+      <div className="blog-detail-flow-sections">
+  <ReadyTruckSection />
+  <BlogSection />
+</div>
     </main>
-  );
-}
-
-function RelatedBlogs() {
-  const [mainPost, ...sidePosts] = relatedPosts;
-
-  return (
-    <section className="mx-auto mb-20 mt-[90px] w-[min(1520px,calc(100%-40px))]">
-      <div className="mb-[50px] flex items-center justify-between gap-8 max-lg:flex-col max-lg:items-start">
-        <h2 className="font-outfit text-[48px] font-bold leading-[58px] text-[#012F42] max-sm:text-[34px] max-sm:leading-[42px]">
-          Box Truck Dispatching Related Blog
-        </h2>
-
-        <Link
-          href="/blog"
-          className="font-outfit inline-flex min-h-[50px] items-center justify-center rounded-[5px] bg-[#FE8F02] px-5 py-2.5 text-[18px] font-medium text-white max-sm:w-full"
-        >
-          View All Blogs
-        </Link>
-      </div>
-
-      <div className="grid grid-cols-[742px_1fr] gap-[30px] max-xl:grid-cols-1">
-        <article className="rounded-[10px] border border-[#878B92] bg-white p-[30px]">
-          <Image
-            src={mainPost.image}
-            alt={mainPost.title}
-            width={682}
-            height={317}
-            className="mb-5 h-[317px] w-full rounded-[10px] object-cover"
-          />
-
-          <PostDate date={mainPost.date} />
-
-          <h3 className="font-outfit text-[22px] font-semibold leading-[33px] text-[#012F42]">
-            {mainPost.title}
-          </h3>
-
-          <p className="font-dm-sans my-5 text-[18px] font-normal leading-7 text-[#595E68]">
-            {mainPost.excerpt}
-          </p>
-
-          <ReadMore href={mainPost.href} />
-        </article>
-
-        <div className="grid gap-[30px]">
-          {sidePosts.map((post) => (
-            <article
-              key={post.title}
-              className="grid min-h-[180px] grid-cols-[220px_1fr] items-center gap-5 rounded-[10px] border border-[#878B92] bg-white p-[15px] max-lg:grid-cols-1"
-            >
-              <Image
-                src={post.image}
-                alt={post.title}
-                width={220}
-                height={150}
-                className="h-[150px] w-[220px] rounded-[10px] object-cover max-lg:h-60 max-lg:w-full"
-              />
-
-              <div>
-                <PostDate date={post.date} />
-
-                <h3 className="font-outfit mb-5 text-[22px] font-semibold leading-[33px] text-[#012F42]">
-                  {post.title}
-                </h3>
-
-                <ReadMore href={post.href} />
-              </div>
-            </article>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function PostDate({ date }: { date: string }) {
-  return (
-    <div className="font-dm-sans mb-4 flex items-center gap-2 text-[14px] font-normal text-[#595E68]">
-      <span className="h-2.5 w-2.5 rounded-full bg-[#FE8F02]" />
-      {date}
-    </div>
-  );
-}
-
-function ReadMore({ href }: { href: string }) {
-  return (
-    <Link
-      href={href}
-      className="font-outfit text-[18px] font-medium capitalize text-[#FE8F02] underline underline-offset-8"
-    >
-      Read More
-    </Link>
   );
 }

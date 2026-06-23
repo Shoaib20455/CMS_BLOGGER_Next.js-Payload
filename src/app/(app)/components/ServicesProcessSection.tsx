@@ -124,42 +124,37 @@ export default function ServicesProcessSection() {
 
             <div className="bb-services-process-011">
               {stepsData.map((step, idx) => {
-                const isOpen = activeStep === idx;
+  const isOpen = activeStep === idx;
 
-                return (
-                  <button
-                    key={step.title}
-                    type="button"
-                    aria-expanded={isOpen}
-                    onClick={() => setActiveStep(idx)}
-                    className={`bb-faq-016 ${
-                    isOpen ?
-                    "bb-services-process-012" :
-                    "bb-faq-018"}`
-                    }>
-                    
-                    <div className="bb-faq-019">
-                      <span className="bb-services-process-013">
-                        {step.title}
-                      </span>
-                      <span className="bb-faq-021">
-                        <span className="bb-faq-022" />
-                        <span
-                          className={`bb-faq-023 ${
-                          isOpen ? "bb-faq-010" : "bb-faq-011"}`
-                          } />
-                        
-                      </span>
-                    </div>
+  return (
+    <div
+      key={step.title}
+      onClick={() => setActiveStep(idx)}
+      className={`bb-services-process-003 ${
+        isOpen ? "bb-services-process-004" : "bb-faq-004"
+      } ${stepTopClassByValue[stepTops[idx]]}`}
+    >
+      <h3 className="bb-services-process-005">
+        {step.title}
+      </h3>
 
-                    {isOpen &&
-                    <p className="bb-services-process-014">
-                        {step.desc}
-                      </p>
-                    }
-                  </button>);
+      {isOpen && (
+        <div className="bb-services-process-006">
+          {step.desc}
+        </div>
+      )}
 
-              })}
+      <div className="bb-faq-007">
+        <div className="bb-faq-008" />
+        <div
+          className={`bb-faq-009 ${
+            isOpen ? "bb-faq-010" : "bb-faq-011"
+          }`}
+        />
+      </div>
+    </div>
+  );
+})}
             </div>
           </div>
         </div>

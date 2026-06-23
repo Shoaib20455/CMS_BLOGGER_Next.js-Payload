@@ -1,7 +1,7 @@
 "use client";
-
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useLandingPageLayout } from "./LandingPageFrame";
 
 const footerTopClasses: Record<
@@ -69,9 +69,14 @@ const footerTopClasses: Record<
 const socialLeftClasses = ["bb-dynamic-051", "bb-dynamic-052", "bb-dynamic-053", "bb-dynamic-054"];
 
 export default function Footer() {
+  const pathname = usePathname();
   const { footerTop } = useLandingPageLayout();
-  const top = footerTopClasses[footerTop];
 
+  if (pathname.startsWith("/blog")) {
+    return null;
+  }
+
+  const top = footerTopClasses[footerTop] ?? footerTopClasses[8808];
   return (
     <>
     <div className="bb-blog-001">
@@ -181,7 +186,7 @@ export default function Footer() {
       <div className={`bb-footer-015 ${top.divider}`} />
 
       <div className={`bb-footer-016 ${top.bottom}`}>
-        <span className="bb-footer-017">Ã‚Â© 2026, Box Truck Dispatching, Design &amp; Developed By </span>
+        <span className="bb-footer-017">© 2026, Box Truck Dispatching, Design &amp; Developed By </span>
         <span className="bb-footer-018">BitBlazeTec</span>
       </div>
 
@@ -265,7 +270,7 @@ export default function Footer() {
         </div>
 
         <div className="bb-footer-033">
-          <div>Â© 2026, Box Truck Dispatching, Design &amp; Developed By <span className="bb-footer-034">BitBlazeTec</span></div>
+          <div>© 2026, Box Truck Dispatching, Design &amp; Developed By <span className="bb-footer-034">BitBlazeTec</span></div>
           <div className="bb-footer-035">
             {["Privacy Policy", "Terms of Service", "Disclaimer"].map((policy) =>
             <Link key={policy} href="#policy" className="bb-footer-036">

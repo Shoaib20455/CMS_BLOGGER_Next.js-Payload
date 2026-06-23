@@ -473,6 +473,8 @@
 }
 .bb-intro-sections-020 {
   @apply text-white text-[1.875rem] font-['Outfit'] font-semibold capitalize;
+  margin: 0;
+  padding: 0;
 }
 .bb-intro-sections-021 {
   @apply relative z-[21] w-full overflow-hidden bg-[#F8FAFC] lg:hidden;
@@ -530,6 +532,8 @@
 }
 .bb-intro-sections-039 {
   @apply min-w-0 font-['Outfit'] text-[1rem] font-semibold leading-[1.4rem] text-white sm:text-[1.25rem] sm:leading-[1.75rem] min-[860px]:text-[1.0625rem] min-[860px]:leading-[1.45rem];
+  margin: 0;
+  padding: 0;
 }
 .bb-landing-page-001 {
   @apply relative flex min-h-screen w-full justify-center overflow-x-hidden bg-[#F8FAFC] lg:h-[var(--page-height)];
@@ -815,6 +819,8 @@
 }
 .bb-services-process-005 {
   @apply absolute left-[1.25rem] top-[1.25rem] w-[37.5rem] font-['Outfit'] text-[1.375rem] font-semibold leading-[2.0625rem] text-[#012F42];
+  margin: 0;
+  padding: 0;
 }
 .bb-services-process-006 {
   @apply absolute left-[1.25rem] top-[4.25rem] w-[44.375rem] font-['DM_Sans'] text-[1.125rem] font-normal leading-[1.6rem] text-[rgba(17,24,39,0.70)];
@@ -1255,3 +1261,74 @@
   @apply top-[297.5625rem];
 }
 /* End generated component utility classes */
+
+/* Shared Full Range section: one DOM version for desktop + mobile */
+.bb-intro-shared-range-001 {
+  @apply relative z-[21] min-h-[31.5rem] overflow-hidden px-5 py-10 sm:min-h-[32.5rem] sm:px-8 sm:py-12 min-[860px]:min-h-[23rem] lg:absolute lg:left-0 lg:top-[182.125rem] lg:z-auto lg:h-[38.125rem] lg:min-h-0 lg:w-[120rem] lg:p-0;
+}
+.bb-intro-shared-range-002 {
+  @apply absolute inset-0 h-full w-full object-cover lg:left-0 lg:top-0 lg:h-[38.125rem] lg:w-[120rem];
+}
+.bb-intro-shared-range-003 {
+  @apply absolute inset-0 bg-[rgba(1,47,66,0.78)] lg:bg-[rgba(1,47,66,0.75)];
+}
+.bb-intro-shared-range-004 {
+  @apply relative mx-auto grid max-w-[58rem] gap-7 min-[860px]:grid-cols-[1.05fr_0.95fr] min-[860px]:items-start lg:mx-0 lg:block lg:max-w-none;
+}
+.bb-intro-shared-range-005 {
+  @apply font-['Outfit'] text-[1.875rem] font-bold leading-[2.3rem] text-white sm:text-[2.25rem] sm:leading-[2.75rem] min-[860px]:text-[2rem] min-[860px]:leading-[2.45rem] lg:absolute lg:left-[14.625rem] lg:top-[9.1875rem] lg:h-[15rem] lg:w-[43.625rem] lg:text-[3rem] lg:leading-[3.625rem];
+  margin: 0;
+  padding: 0;
+}
+.bb-intro-shared-range-006 {
+  @apply mt-4 font-['DM_Sans'] text-[1rem] leading-[1.625rem] text-white lg:absolute lg:left-[14.625rem] lg:top-[26.0625rem] lg:mt-0 lg:w-[41.5625rem] lg:text-[1.125rem] lg:leading-[1.75rem];
+  margin-bottom: 0;
+}
+.bb-intro-shared-range-007 {
+  @apply space-y-3 min-[860px]:pt-1 lg:absolute lg:left-[70.75rem] lg:top-[10.625rem] lg:flex lg:flex-col lg:gap-[1.75rem] lg:space-y-0 lg:pt-0;
+}
+.bb-intro-shared-range-008 {
+  @apply flex gap-3 lg:items-center lg:gap-4;
+}
+.bb-intro-shared-range-009 {
+  @apply shrink-0 font-['Outfit'] text-[1rem] font-semibold text-[#FE8F02] sm:text-[1.25rem] min-[860px]:text-[1.0625rem] lg:text-[1.875rem] lg:capitalize;
+}
+.bb-intro-shared-range-010 {
+  @apply min-w-0 font-['Outfit'] text-[1rem] font-semibold leading-[1.4rem] text-white sm:text-[1.25rem] sm:leading-[1.75rem] min-[860px]:text-[1.0625rem] min-[860px]:leading-[1.45rem] lg:text-[1.875rem] lg:leading-normal lg:capitalize;
+  margin: 0;
+  padding: 0;
+}
+/* Blog detail page fix: remove homepage absolute spacing */
+.blog-detail-flow-sections {
+  width: 100%;
+  margin-top: 5rem;
+}
+
+/* Hide homepage absolute desktop versions only inside blog detail page */
+.blog-detail-flow-sections > .bb-blog-001 {
+  display: none !important;
+}
+
+/* Show normal responsive versions on desktop also */
+.blog-detail-flow-sections .bb-ready-truck-008,
+.blog-detail-flow-sections .bb-blog-020 {
+  display: block !important;
+}
+
+/* Make these sections wider on desktop */
+@media (min-width: 1024px) {
+  .blog-detail-flow-sections .bb-ready-truck-008 {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .blog-detail-flow-sections .bb-blog-020 {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
+  .blog-detail-flow-sections .bb-ready-truck-009,
+  .blog-detail-flow-sections .bb-blog-021 {
+    max-width: 95rem;
+  }
+}
