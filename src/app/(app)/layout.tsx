@@ -2,12 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-import Navbar from "./components/Navbar";
-import FaqSection from "./components/FaqSection";
-import CtaSection from "./components/CtaSection";
-import Footer from "./components/Footer";
-import LandingPageFrame from "./components/LandingPageFrame";
-
+import SiteShell from "./components/SiteShell";
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
 
 const geistSans = Geist({
@@ -82,15 +77,7 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col bg-[#F8FAFC] font-[Arial,Helvetica,sans-serif] text-[#171717]">
-        <LandingPageFrame>
-          <Navbar />
-
-          <main className="flex-1">{children}</main>
-
-          <FaqSection />
-          <CtaSection />
-          <Footer />
-        </LandingPageFrame>
+        <SiteShell>{children}</SiteShell>
       </body>
     </html>
   );

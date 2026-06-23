@@ -1298,37 +1298,3 @@
   margin: 0;
   padding: 0;
 }
-/* Blog detail page fix: remove homepage absolute spacing */
-.blog-detail-flow-sections {
-  width: 100%;
-  margin-top: 5rem;
-}
-
-/* Hide homepage absolute desktop versions only inside blog detail page */
-.blog-detail-flow-sections > .bb-blog-001 {
-  display: none !important;
-}
-
-/* Show normal responsive versions on desktop also */
-.blog-detail-flow-sections .bb-ready-truck-008,
-.blog-detail-flow-sections .bb-blog-020 {
-  display: block !important;
-}
-
-/* Make these sections wider on desktop */
-@media (min-width: 1024px) {
-  .blog-detail-flow-sections .bb-ready-truck-008 {
-    padding-top: 0;
-    padding-bottom: 0;
-  }
-
-  .blog-detail-flow-sections .bb-blog-020 {
-    padding-top: 5rem;
-    padding-bottom: 5rem;
-  }
-
-  .blog-detail-flow-sections .bb-ready-truck-009,
-  .blog-detail-flow-sections .bb-blog-021 {
-    max-width: 95rem;
-  }
-}

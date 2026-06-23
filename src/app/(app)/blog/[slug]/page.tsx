@@ -4,9 +4,8 @@ import ReadyTruckSection from "../../components/ReadyTruckSection";
 import BlogSection from "../../components/BlogSection";
 
 const images = {
-  hero: "/images/blog-detail-hero.jpg",
-  author: "/images/author.jpg",
-  main: "/images/blog-main.jpg",
+  author: "/Images/David Thompson.png",
+  main: "/Images/Rectangle 1131.png",
 };
 
 const articleSections = [
@@ -93,24 +92,18 @@ const articleSections = [
 
 export default function BlogDetailPage() {
   return (
-    <main className="bg-[#F8FAFC] text-[#012F42]">
-      <section className="mx-auto mt-20 h-[500px] w-[min(1520px,calc(100%-40px))] overflow-hidden rounded-[20px] bg-[url('/images/blog-detail-hero.jpg')] bg-cover bg-center max-lg:mt-10 max-lg:h-[420px]">
-        <div className="flex h-full w-full items-center rounded-[20px] bg-[linear-gradient(90deg,rgba(1,47,66,0.90)_0%,rgba(3,48,67,0.30)_89%)]">
-          <div className="ml-[100px] max-w-[770px] max-lg:mx-8">
-            <h1 className="font-outfit mb-[30px] text-[60px] font-bold capitalize leading-[70px] text-white max-lg:text-[42px] max-lg:leading-[50px]">
-              Box Truck Dispatching Blog
-            </h1>
+    <div className="bg-[#F8FAFC] pb-1 text-[#012F42]">
+      <section className="mx-auto mt-[70px] w-[calc(100%_-_40px)] max-w-[1082px]">
+        <p className="font-['DM_Sans'] mb-3 text-[14px] font-bold uppercase tracking-[0.12em] text-[#FE8F02]">
+          Dispatching Guide
+        </p>
 
-            <p className="font-dm-sans text-[22px] font-normal leading-8 text-white max-lg:text-[18px] max-lg:leading-7">
-              Insights, strategies, and real dispatch knowledge to help
-              owner-operators and trucking businesses increase revenue, reduce
-              deadhead, and run smarter operations across the US.
-            </p>
-          </div>
-        </div>
+        <h1 className="font-['Outfit'] max-w-[900px] text-[48px] font-bold capitalize leading-[58px] text-[#012F42] max-lg:text-[40px] max-lg:leading-[50px] max-sm:text-[34px] max-sm:leading-[42px]">
+          Why Credentialing Matters For Small Practices
+        </h1>
       </section>
 
-      <section className="mx-auto mt-20 flex w-[min(1200px,calc(100%-40px))] items-center justify-between gap-8 max-sm:flex-col max-sm:items-start">
+      <section className="mx-auto mt-8 flex w-[calc(100%_-_40px)] max-w-[1082px] items-center justify-between gap-8 border-y border-[#D9DEE5] py-5 max-sm:flex-col max-sm:items-start">
         <div className="flex items-center gap-5">
           <Image
             src={images.author}
@@ -121,25 +114,24 @@ export default function BlogDetailPage() {
           />
 
           <div>
-            <h3 className="font-outfit mb-2 text-[22px] font-semibold leading-[22px] text-[#012F42]">
+            <h3 className="font-['Outfit'] mb-2 text-[22px] font-semibold leading-[22px] text-[#012F42]">
               Ahmad Churahi
             </h3>
 
-            <p className="font-dm-sans text-[16px] font-normal leading-[25px] text-[#575D67]">
+            <p className="font-['DM_Sans'] text-[16px] font-normal leading-[25px] text-[#575D67]">
               Professional
             </p>
           </div>
         </div>
-
         <Link
           href="/blog/category/dispatching"
-          className="font-outfit inline-flex min-h-[50px] items-center justify-center rounded-[5px] bg-[#FE8F02] px-5 py-2.5 text-[18px] font-medium text-white max-sm:w-full"
+          className="font-['Outfit'] inline-flex min-h-[44px] items-center justify-center rounded-[5px] bg-[#FE8F02] px-5 py-2.5 text-[16px] font-medium text-white no-underline transition-colors duration-300 hover:bg-[#E07D02] max-sm:w-full"
         >
           Category
         </Link>
       </section>
 
-      <section className="mx-auto mt-[30px] h-[600px] w-[min(1200px,calc(100%-40px))] overflow-hidden rounded-[15px] max-lg:h-[360px]">
+      <section className="mx-auto mt-[30px] h-[470px] w-[calc(100%_-_40px)] max-w-[1082px] overflow-hidden rounded-[10px] max-lg:h-[360px] max-sm:h-[260px]">
         <Image
           src={images.main}
           alt="Box truck fleet"
@@ -150,16 +142,15 @@ export default function BlogDetailPage() {
         />
       </section>
 
-      <section className="mx-auto mt-10 w-[min(1200px,calc(100%-40px))]">
-        <div className="font-outfit flex h-[50px] w-full items-center justify-center rounded-[5px] bg-[#FE8F02] text-[18px] font-medium text-white">
+      <section className="mx-auto mt-10 w-[calc(100%_-_40px)] max-w-[1082px]">
+        <div className="font-['Outfit'] flex h-[50px] w-full items-center justify-center rounded-[5px] bg-[#FE8F02] text-[18px] font-medium text-white">
           Table of Contents
         </div>
-
-        <article className="font-dm-sans mt-[30px] text-[18px] font-normal leading-[30px] text-[#575D67]">
+        <article className="font-['DM_Sans'] mt-[30px] text-[18px] font-normal leading-[30px] text-[#575D67]">
           {articleSections.map((section, index) => (
             <div key={`${section.heading}-${index}`}>
               {section.heading && (
-                <h2 className="font-dm-sans mt-[18px] text-[22px] font-semibold leading-[30px] text-[#012F42]">
+                <h2 className="font-['DM_Sans'] mt-[18px] text-[22px] font-semibold leading-[30px] text-[#012F42]">
                   {section.heading}
                 </h2>
               )}
@@ -174,10 +165,9 @@ export default function BlogDetailPage() {
         </article>
       </section>
 
-      <div className="blog-detail-flow-sections">
-  <ReadyTruckSection />
-  <BlogSection />
-</div>
-    </main>
+      <ReadyTruckSection variant="flow" />
+
+      <BlogSection variant="flow" title="Box Truck Dispatching Related Blog" />
+    </div>
   );
 }

@@ -89,6 +89,7 @@ export default function LandingPageFrame({
 }) {
   const pathname = usePathname();
   const isBlogPage = pathname.startsWith("/blog");
+  const isServicePage = pathname.toLowerCase().startsWith("/service");
 
   const [scale, setScale] = useState(1);
   const [measuredHeight, setMeasuredHeight] = useState(0);
@@ -175,13 +176,18 @@ export default function LandingPageFrame({
   const maxFaqEnd = Math.max(currentLeftFaqTop, currentRightFaqTop);
   const ctaTop = maxFaqEnd + 10;
   const footerTop = ctaTop + 251 + 80;
-  const baseHeight = footerTop + 501;
-  const scaledHeight = baseHeight * scale;
-  const pageHeight = Math.max(scaledHeight, measuredHeight);
+  const landingBaseHeight = footerTop + 501;
+  const serviceBaseHeight =
+    measuredHeight > 0 ? Math.ceil(measuredHeight / scale) : landingBaseHeight;
+  const canvasHeight = isServicePage ? serviceBaseHeight : landingBaseHeight;
+  const scaledHeight = canvasHeight * scale;
+  const pageHeight = isServicePage
+    ? scaledHeight
+    : Math.max(scaledHeight, measuredHeight);
 
   const layoutVars = {
     "--page-height": `${pageHeight / 16}rem`,
-    "--canvas-height": `${baseHeight / 16}rem`,
+    "--canvas-height": `${canvasHeight / 16}rem`,
     "--canvas-scale": scale,
   } as CSSProperties;
 
