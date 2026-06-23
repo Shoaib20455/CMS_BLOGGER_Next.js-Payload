@@ -1,0 +1,641 @@
+import Image from "next/image";
+import Link from "next/link";
+
+const includeCards = [
+  {
+    title: "Load Search and Matching",
+    body: "We identify loads that match your equipment type, preferred routes, and schedule.",
+  },
+  {
+    title: "Rate Negotiation",
+    body: "Our dispatchers negotiate competitive rates to maximize your earnings on every trip.",
+  },
+  {
+    title: "Broker Communication",
+    body: "We coordinate directly with brokers and shippers, eliminating unnecessary phone calls and administrative work.",
+  },
+  {
+    title: "Rate Confirmation Management",
+    body: "We review and process all rate confirmations to ensure accuracy before dispatch.",
+  },
+  {
+    title: "Route Planning",
+    body: "We help minimize deadhead miles and create efficient load sequences for better profitability.",
+  },
+  {
+    title: "24/7 Dispatch Support",
+    body: "Questions or issues on the road? Our team is available to assist whenever you need support.",
+  },
+];
+
+const benefits = [
+  {
+    title: "Higher Revenue",
+    body: "Better-paying loads and stronger rate negotiations help increase your earnings.",
+    image: "/Images/Rectangle 1078.png",
+  },
+  {
+    title: "Reduced Deadhead Miles",
+    body: "Strategic load planning keeps your truck loaded and productive.",
+    image: "/Images/Rectangle 1080.png",
+  },
+  {
+    title: "More Time to Drive",
+    body: "Spend less time searching load boards and more time generating revenue.",
+    image: "/Images/Rectangle 1082.png",
+  },
+  {
+    title: "Access to Trusted Brokers",
+    body: "We work with reputable brokers and verify creditworthiness before booking.",
+    image: "/Images/Rectangle 1084.png",
+  },
+  {
+    title: "Consistent Freight Opportunities",
+    body: "Our goal is to keep your truck moving with steady freight throughout the year.",
+    image: "/Images/Rectangle 1093.png",
+  },
+];
+
+const chooseCards = [
+  {
+    title: "Experienced Dispatch Professionals",
+    body: "Our dispatchers understand freight markets, lane trends, and broker negotiations.",
+  },
+  {
+    title: "Personalized Service",
+    body: "Every truck operates differently. We tailor load strategies to your preferences.",
+  },
+  {
+    title: "Transparent Communication",
+    body: "No hidden fees. No surprises. Just clear communication and dedicated support.",
+  },
+  {
+    title: "Nationwide Coverage",
+    body: "We book freight across all 48 contiguous states.",
+  },
+  {
+    title: "Profit-Focused Approach",
+    body: "Our priority is helping you maximize revenue while maintaining efficiency.",
+  },
+];
+
+const processSteps = [
+  {
+    title: "Tell Us About Your Truck",
+    body: "Share your equipment type, operating regions, and availability.",
+  },
+  {
+    title: "We Search for Loads",
+    body: "Our team checks available freight and filters opportunities around your lanes and goals.",
+  },
+  {
+    title: "We Negotiate Rates",
+    body: "We contact brokers, negotiate pricing, and protect your margin before booking.",
+  },
+  {
+    title: "Load Confirmation",
+    body: "We verify the details, paperwork, appointment times, and requirements before dispatch.",
+  },
+  {
+    title: "Stay Loaded",
+    body: "We plan ahead so your next load is ready before your current one is finished.",
+  },
+];
+
+const industries = [
+  "General Freight",
+  "Refrigerated Freight",
+  "Construction Materials",
+  "Manufacturing",
+  "Retail Distribution",
+  "Automotive",
+  "Food & Beverage",
+  "Consumer Goods",
+];
+
+const faqs = [
+  "How quickly can you find a load?",
+  "Do you negotiate rates?",
+  "Can you book loads nationwide?",
+  "Do you work with new authorities?",
+  "What types of box trucks do you dispatch?",
+  "How do you find loads for my truck?",
+  "What types of box trucks do you dispatch?",
+  "How do you find loads for my truck?",
+];
+
+const quickLinks = ["Home", "About", "Service", "States", "Blog", "Contact"];
+const serviceLinks = [
+  "Load Booking",
+  "Dedicated Truck Dispatcher",
+  "Factoring",
+  "Paper Work",
+  "Driver Hiring",
+  "MC Setup",
+  "Accounting",
+  "Lease On",
+];
+
+export default function LoadBookingPage() {
+  return (
+    <div className="bg-[#F8FAFC] pt-16 lg:pt-40">
+      <section className="mx-auto w-[calc(100%_-_40px)] max-w-[1520px] overflow-hidden rounded-[20px] bg-[#012F42]">
+        <div className="relative min-h-[500px] overflow-hidden px-6 py-14 sm:px-10 lg:px-[100px] lg:py-[83px]">
+          <Image
+            src="/Images/Rectangle 1071.png"
+            alt=""
+            fill
+            priority
+            className="object-cover opacity-10"
+          />
+          <div className="absolute right-[-160px] top-[-160px] h-[720px] w-[150px] rotate-[15deg] bg-[#FE8F02]" />
+
+          <div className="relative z-10 max-w-[1156px]">
+            <h1 className="font-['Outfit'] text-[40px] font-bold capitalize leading-[50px] text-white sm:text-[54px] sm:leading-[64px] lg:text-[60px] lg:leading-[70px]">
+              Load Booking Services for Owner-Operators and Trucking Companies
+            </h1>
+
+            <p className="mt-8 font-['DM_Sans'] text-[20px] font-bold text-white">
+              Find Better Loads. Earn More Per Mile.
+            </p>
+
+            <div className="mt-5 max-w-[1143px] space-y-7 font-['DM_Sans'] text-[18px] leading-8 text-white sm:text-[20px]">
+              <p>
+                Our professional load booking service helps owner-operators and
+                fleet owners find profitable freight, negotiate better rates,
+                and reduce empty miles.
+              </p>
+              <p>
+                We work directly with brokers and shippers to secure loads that
+                fit your equipment, preferred lanes, and business goals. Our
+                team helps keep your wheels moving and your income growing.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto mt-20 grid w-[calc(100%_-_40px)] max-w-[1520px] gap-[30px] lg:grid-cols-[1fr_626px]">
+        <div>
+          <h2 className="font-['Outfit'] text-[42px] font-bold leading-[52px] text-[#012F42] lg:text-[48px]">
+            What Is Load Booking?
+          </h2>
+
+          <div className="mt-8 space-y-7 font-['DM_Sans'] text-[18px] leading-8 text-[#575D67]">
+            <p>
+              Load booking is much more than simply finding freight. It requires
+              continuous monitoring of load boards, evaluating available
+              opportunities, negotiating competitive rates, verifying broker
+              credibility, securing rate confirmations, and coordinating every
+              detail of the shipment process.
+            </p>
+            <p>
+              Our experienced dispatch specialists handle the entire load
+              booking process from start to finish. We actively search for
+              high-paying loads, negotiate on your behalf, verify broker and
+              shipper information, and ensure all documentation is accurate
+              before dispatch.
+            </p>
+            <p>
+              We also coordinate pickup and delivery schedules, communicate with
+              brokers and shippers, and provide real-time updates throughout the
+              process.
+            </p>
+          </div>
+
+          <Image
+            src="/Images/Rectangle 1080.png"
+            alt="Box truck load booking"
+            width={857}
+            height={296}
+            className="mt-10 h-[296px] w-full rounded-[10px] object-cover"
+          />
+        </div>
+
+        <Image
+          src="/Images/Rectangle 1078.png"
+          alt="Dispatcher reviewing load booking details"
+          width={626}
+          height={700}
+          className="h-full min-h-[420px] w-full rounded-[10px] object-cover"
+        />
+      </section>
+
+      <section className="mx-auto mt-20 grid w-[calc(100%_-_40px)] max-w-[1520px] gap-5 lg:grid-cols-4">
+        <div className="rounded-[10px] bg-[#012F42] p-[50px] lg:col-span-2">
+          <h2 className="font-['Outfit'] text-[38px] font-bold leading-[48px] text-white lg:text-[48px] lg:leading-[58px]">
+            Our Load Booking Services Include
+          </h2>
+        </div>
+
+        {includeCards.map((card) => (
+          <InfoCard key={card.title} title={card.title} body={card.body} />
+        ))}
+      </section>
+
+      <section className="mx-auto mt-20 w-[calc(100%_-_40px)] max-w-[1520px]">
+        <h2 className="mx-auto max-w-[720px] text-center font-['Outfit'] text-[42px] font-bold leading-[52px] text-[#012F42] lg:text-[48px] lg:leading-[58px]">
+          Benefits of Our Load Booking Service
+        </h2>
+
+        <div className="mt-[70px] grid gap-[30px] lg:grid-cols-6">
+          {benefits.map((benefit, index) => (
+            <BenefitCard
+              key={benefit.title}
+              benefit={benefit}
+              wide={index < 2}
+            />
+          ))}
+        </div>
+      </section>
+
+      <section className="mx-auto mt-20 w-[calc(100%_-_40px)] max-w-[1520px]">
+        <h2 className="mx-auto max-w-[720px] text-center font-['Outfit'] text-[42px] font-bold leading-[52px] text-[#012F42] lg:text-[48px] lg:leading-[58px]">
+          Why Choose Our Load Booking Team?
+        </h2>
+
+        <div className="mt-[70px] grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
+          {chooseCards.map((card, index) => (
+            <article
+              key={card.title}
+              className="rounded-[10px] border border-[#878B92] bg-white"
+            >
+              <div className="h-2.5 rounded-t-[10px] bg-[#012F42]" />
+              <div className="p-5">
+                <div className="flex h-12 w-12 items-center justify-center rounded-[5px] border border-[#012F42] text-[#012F42]">
+                  <span className="font-['Outfit'] text-[18px] font-bold">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                </div>
+                <h3 className="mt-5 font-['Outfit'] text-[22px] font-semibold leading-8 text-[#012F42]">
+                  {card.title}
+                </h3>
+                <p className="mt-5 font-['DM_Sans'] text-[18px] leading-6 text-[#111827]/70">
+                  {card.body}
+                </p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="mx-auto mt-20 w-[calc(100%_-_40px)] max-w-[1520px]">
+        <h2 className="text-center font-['Outfit'] text-[42px] font-bold leading-[52px] text-[#012F42] lg:text-[48px] lg:leading-[58px]">
+          How Our Process Works
+        </h2>
+
+        <div className="mt-[70px] grid gap-5 lg:grid-cols-2">
+          <Image
+            src="/Images/Rectangle 1120.png"
+            alt="Dispatch process"
+            width={750}
+            height={518}
+            className="h-full min-h-[360px] w-full rounded-[10px] object-cover"
+          />
+
+          <div className="space-y-3">
+            {processSteps.map((step, index) => (
+              <details
+                key={step.title}
+                className="group rounded-[10px] border border-[#111827]/50 bg-white p-5"
+                open={index === 0}
+              >
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4">
+                  <span className="font-['Outfit'] text-[22px] font-semibold leading-8 text-[#012F42]">
+                    <span className="text-[#FE8F02]">Step {index + 1}:</span>{" "}
+                    {step.title}
+                  </span>
+                  <PlusIcon />
+                </summary>
+                <p className="mt-4 max-w-[520px] font-['DM_Sans'] text-[18px] leading-6 text-[#111827]/70">
+                  {step.body}
+                </p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="relative mt-20 min-h-[610px] overflow-hidden">
+        <Image
+          src="/Images/Rectangle 1071.png"
+          alt=""
+          fill
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-[#012F42]/60" />
+        <div className="relative z-10 mx-auto flex min-h-[610px] w-[calc(100%_-_40px)] max-w-[1520px] flex-col items-center justify-center py-16">
+          <h2 className="font-['Outfit'] text-[42px] font-bold text-[#F8FAFC] lg:text-[48px]">
+            Industries We Serve
+          </h2>
+          <div className="mt-[70px] flex flex-wrap justify-center gap-5">
+            {industries.map((industry) => (
+              <span
+                key={industry}
+                className="rounded-[5px] bg-white/10 px-12 py-6 font-['Outfit'] text-[26px] font-semibold capitalize text-white backdrop-blur-lg lg:text-[30px]"
+              >
+                {industry}
+              </span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto mt-20 grid w-[calc(100%_-_40px)] max-w-[1520px] overflow-hidden rounded-[10px] bg-[#012F42] lg:grid-cols-2">
+        <div className="flex flex-col justify-center p-8 sm:p-12 lg:p-[50px]">
+          <h2 className="max-w-[641px] font-['Outfit'] text-[40px] font-bold capitalize leading-[50px] text-[#FE8F02] lg:text-[48px] lg:leading-[60px]">
+            Ready to Keep Your Truck Loaded?
+          </h2>
+          <p className="mt-10 max-w-[636px] font-['DM_Sans'] text-[18px] leading-7 text-white">
+            Stop spending hours searching load boards and negotiating with
+            brokers. Let our experienced dispatch team handle the load booking
+            process while you focus on driving and growing your business.
+          </p>
+          <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+            <Link
+              href="/contact"
+              className="inline-flex h-12 items-center justify-center rounded-[5px] bg-[#FE8F02] px-5 font-['Outfit'] text-[18px] font-medium capitalize text-white no-underline hover:bg-[#E07D02]"
+            >
+              Start Dispatching Today
+            </Link>
+            <Link
+              href="/contact"
+              className="inline-flex h-12 items-center justify-center rounded-[5px] border border-[#FE8F02] px-5 font-['Outfit'] text-[18px] font-medium capitalize text-[#FE8F02] no-underline hover:bg-[#FE8F02] hover:text-white"
+            >
+              Get a Free Consultation
+            </Link>
+          </div>
+        </div>
+
+        <Image
+          src="/Images/Rectangle 1117.png"
+          alt="Loaded box truck"
+          width={760}
+          height={585}
+          className="h-full min-h-[360px] w-full object-cover"
+        />
+      </section>
+
+      <section className="mx-auto mt-20 w-[calc(100%_-_40px)] max-w-[1520px]">
+        <h2 className="text-center font-['Outfit'] text-[42px] font-bold leading-[52px] text-[#012F42] lg:text-[48px] lg:leading-[58px]">
+          Frequently Asked Questions
+        </h2>
+
+        <div className="mt-[70px] grid gap-3 lg:grid-cols-2">
+          {faqs.map((question, index) => (
+            <details
+              key={`${question}-${index}`}
+              className="group rounded-[10px] border border-[#111827]/50 bg-white px-5 py-4"
+            >
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-['DM_Sans'] text-[18px] leading-8 text-[#012F42]">
+                {question}
+                <PlusIcon />
+              </summary>
+              <p className="mt-3 font-['DM_Sans'] text-[16px] leading-6 text-[#111827]/70">
+                Our dispatch team reviews your truck, lanes, schedule, and
+                market conditions to recommend the best available option.
+              </p>
+            </details>
+          ))}
+        </div>
+      </section>
+
+      <section className="mx-auto mt-20 w-[calc(100%_-_40px)] max-w-[1520px] rounded-[10px] bg-[#012F42] px-6 py-10 text-center sm:px-10">
+        <h2 className="font-['Outfit'] text-[40px] font-bold capitalize leading-[50px] text-white lg:text-[48px] lg:leading-[55px]">
+          Grow Your Business Faster
+        </h2>
+        <p className="mx-auto mt-5 max-w-[636px] font-['DM_Sans'] text-[18px] leading-7 text-white">
+          From load booking to payment follow-up, we handle the hard work behind
+          the scenes so you can stay focused on the road ahead.
+        </p>
+        <Link
+          href="/contact"
+          className="mt-7 inline-flex h-12 items-center justify-center rounded-[5px] bg-[#FE8F02] px-5 font-['Outfit'] text-[18px] font-medium capitalize text-white no-underline hover:bg-[#E07D02]"
+        >
+          Get Started
+        </Link>
+      </section>
+
+      <LandingStyleFooter />
+    </div>
+  );
+}
+
+function InfoCard({ title, body }: { title: string; body: string }) {
+  return (
+    <article className="rounded-[10px] border border-[#111827]/50 bg-white/20">
+      <div className="h-2.5 rounded-t-[10px] bg-[#012F42]" />
+      <div className="p-5">
+        <h3 className="font-['Outfit'] text-[22px] font-semibold leading-8 text-[#012F42]">
+          {title}
+        </h3>
+        <p className="mt-8 font-['DM_Sans'] text-[18px] leading-6 text-[#111827]/70">
+          {body}
+        </p>
+      </div>
+    </article>
+  );
+}
+
+function BenefitCard({
+  benefit,
+  wide,
+}: {
+  benefit: { title: string; body: string; image: string };
+  wide: boolean;
+}) {
+  return (
+    <article
+      className={`relative h-[400px] overflow-hidden rounded-[10px] ${
+        wide ? "lg:col-span-3" : "lg:col-span-2"
+      }`}
+    >
+      <Image
+        src={benefit.image}
+        alt={benefit.title}
+        fill
+        className="object-cover"
+      />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#012F42]/90 to-[#012F42]/35" />
+      <div className="absolute inset-x-[30px] bottom-[54px]">
+        <h3 className="font-['Outfit'] text-[22px] font-semibold leading-8 text-white">
+          {benefit.title}
+        </h3>
+        <p className="mt-5 max-w-[400px] font-['DM_Sans'] text-[18px] leading-6 text-white/70">
+          {benefit.body}
+        </p>
+      </div>
+    </article>
+  );
+}
+
+function LandingStyleFooter() {
+  return (
+    <footer className="mt-20 bg-[#012F42] text-white">
+      <div className="mx-auto grid w-[calc(100%_-_40px)] max-w-[1520px] gap-12 py-12 sm:grid-cols-2 lg:grid-cols-[1.2fr_0.75fr_1fr_0.95fr] lg:gap-[110px]">
+        <div>
+          <Image
+            src="/Images/Rectangle 6.png"
+            alt="Box Truck Dispatching Logo"
+            width={109}
+            height={80}
+            className="h-20 w-[109px] object-contain"
+          />
+          <p className="mt-5 max-w-[337px] font-['Poppins'] text-[14px] font-medium leading-6">
+            Box Truck Dispatching offers reliable and profit driven truck
+            dispatching services across the United States. We help owner
+            operators and fleets secure high-paying loads, reduce deadhead
+            miles, and streamline operations for maximum efficiency.
+          </p>
+          <div className="mt-9 flex gap-3">
+            {["f", "t", "in", "ig"].map((item) => (
+              <span
+                key={item}
+                className="flex h-9 w-9 items-center justify-center rounded-[5px] bg-[#003951] font-['DM_Sans'] text-[12px] font-bold"
+              >
+                {item}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        <FooterColumn title="Quick Links" items={quickLinks} />
+        <FooterColumn title="Our Services" items={serviceLinks} />
+
+        <div>
+          <h3 className="font-['Outfit'] text-[22px] font-semibold leading-[30px] text-[#FE8F02]">
+            Get In Touch
+          </h3>
+          <div className="mt-6 space-y-5 font-['DM_Sans']">
+            <ContactItem label="Phone" value="(555) 123-4567" icon="phone" />
+            <ContactItem label="Email" value="info@avenuemh.com" icon="mail" />
+            <ContactItem
+              label="Location"
+              value="Serving All 48 States"
+              icon="pin"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div className="border-t border-[#003951]">
+        <div className="mx-auto flex w-[calc(100%_-_40px)] max-w-[1520px] flex-col gap-4 py-6 font-['DM_Sans'] text-[14px] leading-[25px] sm:flex-row sm:items-center sm:justify-between">
+          <p>
+            &copy; 2026, Box Truck Dispatching, Design &amp; Developed By{" "}
+            <strong>BitBlazeTec</strong>
+          </p>
+          <div className="flex flex-wrap gap-[30px]">
+            {["Privacy Policy", "Terms of Service", "Disclaimer"].map(
+              (item) => (
+                <Link
+                  key={item}
+                  href="/"
+                  className="text-white no-underline transition-colors hover:text-[#FE8F02]"
+                >
+                  {item}
+                </Link>
+              )
+            )}
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+}
+
+function FooterColumn({ title, items }: { title: string; items: string[] }) {
+  return (
+    <div>
+      <h3 className="font-['Outfit'] text-[22px] font-semibold leading-[30px] text-[#FE8F02]">
+        {title}
+      </h3>
+      <div className="mt-6 grid gap-[15px]">
+        {items.map((item) => (
+          <Link
+            key={item}
+            href="/"
+            className="font-['DM_Sans'] text-[18px] font-medium leading-5 text-white no-underline transition-colors hover:text-[#FE8F02]"
+          >
+            {item}
+          </Link>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function ContactItem({
+  label,
+  value,
+  icon,
+}: {
+  label: string;
+  value: string;
+  icon: "phone" | "mail" | "pin";
+}) {
+  return (
+    <div>
+      <p className="flex items-center gap-2 text-[14px] font-semibold">
+        <ContactIcon type={icon} />
+        {label}
+      </p>
+      <p className="mt-2 text-[18px] font-medium">{value}</p>
+    </div>
+  );
+}
+
+function ContactIcon({ type }: { type: "phone" | "mail" | "pin" }) {
+  if (type === "mail") {
+    return (
+      <svg
+        className="h-[14px] w-[14px] text-[#FE8F02]"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        aria-hidden="true"
+      >
+        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+        <polyline points="22,6 12,13 2,6" />
+      </svg>
+    );
+  }
+
+  if (type === "pin") {
+    return (
+      <svg
+        className="h-[14px] w-[14px] text-[#FE8F02]"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        aria-hidden="true"
+      >
+        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+        <circle cx="12" cy="10" r="3" />
+      </svg>
+    );
+  }
+
+  return (
+    <svg
+      className="h-[14px] w-[14px] text-[#FE8F02]"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      aria-hidden="true"
+    >
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+    </svg>
+  );
+}
+
+function PlusIcon() {
+  return (
+    <span className="relative h-4 w-4 shrink-0">
+      <span className="absolute left-0 top-1/2 h-0.5 w-4 -translate-y-1/2 rounded bg-[#012F42]" />
+      <span className="absolute left-1/2 top-0 h-4 w-0.5 -translate-x-1/2 rounded bg-[#012F42] transition-transform group-open:rotate-90" />
+    </span>
+  );
+}

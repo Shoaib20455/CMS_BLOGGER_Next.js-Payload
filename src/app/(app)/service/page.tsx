@@ -8,6 +8,7 @@ const services = [
       "We negotiate with brokers, find high-paying loads, and keep your truck moving with profitable freight. Our team focuses on maximizing revenue while minimizing deadhead miles.",
     image: "/Images/Rectangle 1078.png",
     featured: true,
+    href: "/service/load-booking",
   },
   {
     title: "Dedicated Truck Dispatcher",
@@ -86,11 +87,16 @@ export default function ServiceDetailPage() {
         </h2>
 
         <div className="mt-[70px] grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
-          {services.map((service) => (
-            <article
-              key={service.title}
-              className="group relative h-[350px] overflow-hidden rounded-[10px]"
-            >
+          {services.map((service) => {
+            const CardTag = service.href ? Link : "article";
+            const cardProps = service.href ? { href: service.href } : {};
+
+            return (
+              <CardTag
+                key={service.title}
+                {...cardProps}
+                className="group relative h-[350px] overflow-hidden rounded-[10px] no-underline"
+              >
               <Image
                 src={service.image}
                 alt={service.title}
@@ -127,12 +133,13 @@ export default function ServiceDetailPage() {
                       service.featured ? "bg-white/30" : "bg-[#FE8F02]"
                     }`}
                   >
-                    <ArrowIcon />
+                    <ArrowIcon isLinked={Boolean(service.href)} />
                   </span>
                 </div>
               </div>
-            </article>
-          ))}
+              </CardTag>
+            );
+          })}
         </div>
       </section>
 
@@ -333,10 +340,12 @@ function ContactIcon({ type }: { type: "phone" | "mail" | "pin" }) {
   );
 }
 
-function ArrowIcon() {
+function ArrowIcon({ isLinked = false }: { isLinked?: boolean }) {
   return (
     <svg
-      className="h-4 w-4 text-white"
+      className={`h-4 w-4 text-white ${
+        isLinked ? "transition-transform duration-300 group-hover:rotate-45" : ""
+      }`}
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
