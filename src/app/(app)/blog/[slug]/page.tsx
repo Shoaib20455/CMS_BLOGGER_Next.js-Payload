@@ -1,240 +1,305 @@
-import configPromise from "@payload-config";
-import type { Metadata } from "next";
 import Image from "next/image";
-import { notFound } from "next/navigation";
-import { getPayload } from "payload";
-import { calculateReadingTime, extractHeadings, type Heading } from "../../../../lib/extract-headings";
+import Link from "next/link";
+import ReadyTruckSection from "../../components/ReadyTruckSection";
 import BlogSection from "../../components/BlogSection";
-import CtaSection from "../../components/CtaSection";
-import FaqSection from "../../components/FaqSection";
-import Footer from "../../components/Footer";
-import LandingPageFrame from "../../components/LandingPageFrame";
-import Navbar from "../../components/Navbar";
-import BlogContent from "./components/BlogContent";
-import SchemaJsonLd from "./components/SchemaJsonLd";
-import TableOfContents from "./components/TableOfContents";
 
-type Props = {
-  params: Promise<{ slug: string }>;
+const images = {
+  hero: "/images/blog-detail-hero.jpg",
+  author: "/images/author.jpg",
+  main: "/images/blog-main.jpg",
+  relatedLarge: "/images/related-blog-1.jpg",
+  relatedOne: "/images/related-blog-2.jpg",
+  relatedTwo: "/images/related-blog-3.jpg",
+  relatedThree: "/images/related-blog-4.jpg",
 };
 
-/* Local type matching the Posts collection (until Payload types are generated) */
-type PostData = {
-  id: string;
-  title: string;
-  slug: string;
-  content: unknown;
-  author: { email?: string; id: string } | string | null;
-  category: { id: string; name?: string; slug?: string } | string | null;
-  featureImage: { url?: string; alt?: string; width?: number; height?: number } | null;
-  faqs: Array<{ question: string; answer: Record<string, unknown> }> | null;
-  metaTitle?: string | null;
-  metaDescription?: string | null;
-  publishedDate?: string | null;
-  updatedAt: string;
-};
+const articleSections = [
+  {
+    heading: "",
+    body: [
+      "Box truck dispatching helps owner-operators and small fleets find better loads, reduce empty miles, and keep daily operations organized. A good dispatcher does more than book freight. They check lanes, negotiate rates, confirm paperwork, track delivery times, and protect your truck from weak-paying loads.",
+      "This guide explains how dispatch support works, why it matters for box truck owners, and what features make a dispatch service useful for carriers working across the United States.",
+    ],
+  },
+  {
+    heading: "Box Truck Dispatching Features",
+    body: [
+      "A strong dispatch setup gives your truck a steady operating rhythm. The dispatcher watches load boards, communicates with brokers, checks rate history, and keeps the driver focused on the road instead of chasing calls all day.",
+    ],
+  },
+  {
+    heading: "Load Booking",
+    body: [
+      "Load booking is the core part of dispatching. Dispatchers search for suitable loads based on your box truck size, location, available hours, lane preference, and rate target. They avoid random freight and focus on loads that make financial sense after fuel, tolls, deadhead, and delivery timing.",
+    ],
+  },
+  {
+    heading: "Rate Negotiation",
+    body: [
+      "Dispatchers negotiate with brokers before the load is accepted. They check pickup time, delivery time, detention terms, weight, commodity type, and lane demand. The goal is simple: secure loads that pay fairly and do not waste your driver’s hours.",
+    ],
+  },
+  {
+    heading: "Paperwork Support",
+    body: [
+      "Paperwork mistakes can delay payment. Dispatchers help manage rate confirmations, proof of delivery, broker packets, carrier setup documents, lumper receipts, and invoice details. Clean paperwork keeps the payment cycle moving without back-and-forth delays.",
+    ],
+  },
+  {
+    heading: "Route Planning",
+    body: [
+      "Good dispatching is not only about finding a load. The route matters too. Dispatchers check mileage, delivery windows, traffic risks, fuel stops, and reload options near the destination. Better route planning helps reduce wasted miles and improves weekly revenue.",
+    ],
+  },
+  {
+    heading: "Broker Communication",
+    body: [
+      "Box truck owners often lose time answering broker calls while driving. Dispatchers handle updates, appointment times, check calls, delays, and basic issue resolution. This keeps the carrier professional and responsive without distracting the driver.",
+    ],
+  },
+  {
+    heading: "Revenue Cycle",
+    body: [
+      "Dispatching affects the full revenue cycle of a trucking business. Better loads improve gross revenue. Cleaner paperwork supports faster payment. Strong broker follow-up reduces unpaid invoices. Every small process adds up.",
+    ],
+  },
+  {
+    heading: "Factoring Coordination",
+    body: [
+      "Many box truck owners use factoring to get paid faster. Dispatchers can help organize the documents needed for factoring submission, including rate confirmation, invoice, and signed POD. Faster submission usually means faster cash flow.",
+    ],
+  },
+  {
+    heading: "Compliance Support",
+    body: [
+      "Dispatchers also help carriers stay organized with insurance documents, MC authority details, W-9 forms, certificate of insurance requests, and broker setup requirements. They do not replace legal compliance, but they keep routine documents ready when brokers ask.",
+    ],
+  },
+  {
+    heading: "Empty Mile Reduction",
+    body: [
+      "Empty miles eat profit quietly. A dispatcher watches destination markets before accepting a load. They try to avoid sending the truck into weak freight zones without a reload plan. That one habit can protect the weekly numbers.",
+    ],
+  },
+  {
+    heading: "Performance Tracking",
+    body: [
+      "Tracking matters. Dispatchers can monitor average rate per mile, loaded miles, deadhead miles, broker quality, cancelled loads, detention issues, and weekly gross. These numbers show what is working and what needs to change.",
+    ],
+  },
+  {
+    heading: "Pricing Model",
+    body: [
+      "Most dispatch services charge a percentage of the gross load amount or a fixed weekly fee. The right model depends on your truck count, weekly load volume, and support needs. Owner-operators should look for transparent pricing with no surprise charges.",
+    ],
+  },
+];
 
-async function getPostBySlug(slug: string): Promise<PostData | null> {
-  const payload = await getPayload({ config: configPromise });
-  const posts = (await (
-    payload as unknown as {
-      find: (args: { collection: string; where?: Record<string, unknown>; limit?: number; depth?: number; draft?: boolean }) => Promise<{ docs: unknown[] }>;
-    }
-  ).find({
-    collection: "posts",
-    where: { slug: { equals: slug } },
-    limit: 1,
-    depth: 2,
-    draft: false,
-  })) as unknown as { docs: PostData[] };
-  return posts.docs[0] ?? null;
-}
+const relatedPosts = [
+  {
+    title: "Why Box Truck Owners Lose Profitable Loads",
+    date: "12 June 2026",
+    excerpt:
+      "Stop waiting 30-90 days for broker payments. Learn how freight factoring works, what to watch for, and when it makes sense for your trucking business.",
+    image: images.relatedLarge,
+    href: "/blog/why-box-truck-owners-lose-profitable-loads",
+  },
+  {
+    title: "How Dispatch Services Save Time for Owner-Operators",
+    date: "10 June 2026",
+    image: images.relatedOne,
+    href: "/blog/how-dispatch-services-save-time",
+  },
+  {
+    title: "Top Mistakes New Box Truck Businesses Make",
+    date: "08 June 2026",
+    image: images.relatedTwo,
+    href: "/blog/top-mistakes-new-box-truck-businesses",
+  },
+  {
+    title: "How to Reduce Empty Miles and Increase Revenue",
+    date: "03 June 2026",
+    image: images.relatedThree,
+    href: "/blog/reduce-empty-miles-increase-revenue",
+  },
+];
 
-export async function generateStaticParams() {
-  const payload = await getPayload({ config: configPromise });
-  const posts = (await (
-    payload as unknown as {
-      find: (args: { collection: string; limit?: number; draft?: boolean }) => Promise<{ docs: unknown[] }>;
-    }
-  ).find({ collection: "posts", limit: 0, draft: false })) as unknown as { docs: PostData[] };
-  return posts.docs.map((post) => ({ slug: post.slug }));
-}
-
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { slug } = await params;
-  const post = await getPostBySlug(slug);
-  if (!post) return { title: "Not Found" };
-
-  return {
-    title: post.metaTitle || post.title,
-    description: post.metaDescription || undefined,
-  };
-}
-
-export default async function BlogPostPage({ params }: Props) {
-  const { slug } = await params;
-  const post = await getPostBySlug(slug);
-  if (!post) notFound();
-
-  const headings: Heading[] = extractHeadings(post.content);
-  const readingTime = calculateReadingTime(post.content);
-
-  const author = post.author as { email?: string; id: string } | null;
-  const category = post.category as { id: string; name?: string; slug?: string } | null;
-  const featureImage = post.featureImage;
-  const authorName = author?.email?.split("@")[0] ?? "Author";
-  const heroImage = "/Images/Truck_Original_Sourced.png";
-  const articleImage = featureImage?.url ?? "/Images/Rectangle 1120.png";
-  const articleImageAlt = featureImage?.alt || post.title;
-
+export default function BlogDetailPage() {
   return (
-    <main className="min-h-screen overflow-hidden bg-[#F8FAFC] text-[#171717]">
-      <SchemaJsonLd post={post} />
-      <SharedComponentStyles />
-
-      <div className="blog-shared-nav">
-        <Navbar currentActive="Blog" />
-      </div>
-
-      <section className="px-5 pt-10 sm:px-8 lg:px-0 lg:pt-20">
-        <div className="relative mx-auto flex min-h-[360px] max-w-[1520px] overflow-hidden rounded-[20px] bg-[#012F42] px-6 py-14 shadow-[0_12px_30px_rgba(1,47,66,0.08)] sm:px-10 lg:min-h-[500px] lg:px-[100px] lg:py-[156px]">
-          <Image
-            src={heroImage}
-            alt=""
-            fill
-            className="object-cover opacity-55"
-            sizes="(max-width: 1024px) 100vw, 1520px"
-            preload
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-[rgba(1,47,66,0.92)] to-[rgba(3,48,67,0.30)]" />
-          <div className="relative z-10 max-w-[770px]">
-            <h1 className="font-['Outfit'] text-[40px] font-bold capitalize leading-[48px] text-white sm:text-[52px] sm:leading-[62px] lg:text-[60px] lg:leading-[70px]">
+    <main className="bg-[#F8FAFC] text-[#012F42]">
+      <section className="mx-auto mt-20 h-[500px] w-[min(1520px,calc(100%-40px))] overflow-hidden rounded-[20px] bg-[url('/images/blog-detail-hero.jpg')] bg-cover bg-center max-lg:mt-10 max-lg:h-[420px]">
+        <div className="flex h-full w-full items-center rounded-[20px] bg-[linear-gradient(90deg,rgba(1,47,66,0.90)_0%,rgba(3,48,67,0.30)_89%)]">
+          <div className="ml-[100px] max-w-[770px] max-lg:mx-8">
+            <h1 className="font-outfit mb-[30px] text-[60px] font-bold capitalize leading-[70px] text-white max-lg:text-[42px] max-lg:leading-[50px]">
               Box Truck Dispatching Blog
             </h1>
-            <p className="mt-5 font-['DM_Sans'] text-[18px] leading-[28px] text-white sm:text-[20px] lg:text-[22px] lg:leading-[32px]">
-              Insights, strategies, and real dispatch knowledge to help owner-operators and trucking businesses increase revenue, reduce deadhead, and run smarter operations across the US.
+            <p className="font-dm-sans text-[22px] font-normal leading-8 text-white max-lg:text-[18px] max-lg:leading-7">
+              Insights, strategies, and real dispatch knowledge to help
+              owner-operators and trucking businesses increase revenue, reduce
+              deadhead, and run smarter operations across the US.
             </p>
           </div>
         </div>
       </section>
 
-      <article className="mx-auto max-w-[1200px] px-5 pb-20 pt-14 sm:px-8 lg:px-0 lg:pt-20">
-        <div className="mb-[30px] flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
-          <div className="flex items-center gap-5">
-            <Image
-              src="/Images/James Carter.png"
-              alt=""
-              width={70}
-              height={70}
-              className="h-[70px] w-[70px] rounded-full object-cover"
-            />
-            <div>
-              <p className="font-['Outfit'] text-[22px] font-semibold leading-[22px] text-[#012F42]">
-                {authorName}
-              </p>
-              <p className="mt-2 font-['DM_Sans'] text-[16px] leading-[25px] text-[#575D67]">
-                Professional
-              </p>
-            </div>
-          </div>
-
-          <div className="flex flex-wrap items-center gap-3 sm:justify-end">
-            {post.publishedDate && (
-              <span className="font-['DM_Sans'] text-[15px] text-[#575D67]">
-                {new Date(post.publishedDate).toLocaleDateString("en-US", {
-                  day: "2-digit",
-                  month: "long",
-                  year: "numeric",
-                })}
-              </span>
-            )}
-            <span className="font-['DM_Sans'] text-[15px] text-[#575D67]">
-              {readingTime} min read
-            </span>
-            <span className="inline-flex h-[50px] min-w-[181px] items-center justify-center rounded-[5px] bg-[#FE8F02] px-5 font-['Outfit'] text-[18px] font-medium text-white shadow-[0_8px_18px_rgba(254,143,2,0.18)]">
-              {category?.name ?? "Category"}
-            </span>
-          </div>
-        </div>
-
-        <div className="relative mb-[30px] aspect-[2/1] overflow-hidden rounded-[15px] bg-[#012F42] shadow-[0_10px_28px_rgba(1,47,66,0.08)]">
+      <section className="mx-auto mt-20 flex w-[min(1200px,calc(100%-40px))] items-center justify-between gap-8 max-sm:flex-col max-sm:items-start">
+        <div className="flex items-center gap-5">
           <Image
-            src={articleImage}
-            alt={articleImageAlt}
-            fill
-            sizes="(max-width: 1024px) 100vw, 1200px"
-            className="object-cover"
-            preload
+            src={images.author}
+            alt="Ahmad Churahi"
+            width={70}
+            height={70}
+            className="h-[70px] w-[70px] rounded-full object-cover"
           />
+          <div>
+            <h3 className="font-outfit mb-2 text-[22px] font-semibold leading-[22px] text-[#012F42]">
+              Ahmad Churahi
+            </h3>
+            <p className="font-dm-sans text-[16px] font-normal leading-[25px] text-[#575D67]">
+              Professional
+            </p>
+          </div>
         </div>
 
-        <TableOfContents headings={headings} />
-        <BlogContent data={post.content} />
-      </article>
+        <Link
+          href="/blog/category/dispatching"
+          className="font-outfit inline-flex min-h-[50px] items-center justify-center rounded-[5px] bg-[#FE8F02] px-5 py-2.5 text-[18px] font-medium text-white max-sm:w-full"
+        >
+          Category
+        </Link>
+      </section>
 
-      <div className="blog-shared-section">
-        <LandingPageFrame>
-          <FaqSection />
-          <CtaSection />
-        </LandingPageFrame>
-      </div>
+      <section className="mx-auto mt-[30px] h-[600px] w-[min(1200px,calc(100%-40px))] overflow-hidden rounded-[15px] max-lg:h-[360px]">
+        <Image
+          src={images.main}
+          alt="Box truck fleet"
+          width={1200}
+          height={600}
+          className="h-full w-full object-cover"
+          priority
+        />
+      </section>
 
-      <div className="blog-shared-section blog-shared-blog">
-        <BlogSection />
-      </div>
+      <section className="mx-auto mt-10 w-[min(1200px,calc(100%-40px))]">
+        <div className="font-outfit flex h-[50px] w-full items-center justify-center rounded-[5px] bg-[#FE8F02] text-[18px] font-medium text-white">
+          Table of Contents
+        </div>
 
-      <div className="blog-shared-section">
-        <LandingPageFrame>
-          <Footer />
-        </LandingPageFrame>
-      </div>
+        <article className="font-dm-sans mt-[30px] text-[18px] font-normal leading-[30px] text-[#575D67]">
+          {articleSections.map((section, index) => (
+            <div key={`${section.heading}-${index}`}>
+              {section.heading && (
+                <h2 className="font-dm-sans mt-[18px] text-[22px] font-semibold leading-[30px] text-[#012F42]">
+                  {section.heading}
+                </h2>
+              )}
+
+              {section.body.map((paragraph) => (
+                <p key={paragraph} className="mb-2">
+                  {paragraph}
+                </p>
+              ))}
+            </div>
+          ))}
+        </article>
+      </section>
+
+      <RelatedBlogs />
+
+      <ReadyTruckSection />
+      <BlogSection />
     </main>
   );
 }
 
-function SharedComponentStyles() {
+function RelatedBlogs() {
+  const [mainPost, ...sidePosts] = relatedPosts;
+
   return (
-    <style>{`
-      .blog-shared-nav {
-        position: relative;
-        height: 5rem;
-        overflow: hidden;
-        background: #fff;
-        border-bottom: 1px solid #878B92;
-      }
+    <section className="mx-auto mb-20 mt-[90px] w-[min(1520px,calc(100%-40px))]">
+      <div className="mb-[50px] flex items-center justify-between gap-8 max-lg:flex-col max-lg:items-start">
+        <h2 className="font-outfit text-[48px] font-bold leading-[58px] text-[#012F42] max-sm:text-[34px] max-sm:leading-[42px]">
+          Box Truck Dispatching Related Blog
+        </h2>
 
-      .blog-shared-section .bb-landing-page-001 {
-        display: block !important;
-        height: auto !important;
-        min-height: 0 !important;
-        overflow: visible !important;
-        background: #F8FAFC !important;
-      }
+        <Link
+          href="/blog"
+          className="font-outfit inline-flex min-h-[50px] items-center justify-center rounded-[5px] bg-[#FE8F02] px-5 py-2.5 text-[18px] font-medium text-white max-sm:w-full"
+        >
+          View All Blogs
+        </Link>
+      </div>
 
-      .blog-shared-section .bb-landing-page-002 {
-        position: relative !important;
-        left: auto !important;
-        top: auto !important;
-        width: 100% !important;
-        height: auto !important;
-        transform: none !important;
-        overflow: visible !important;
-        background: #F8FAFC !important;
-      }
+      <div className="grid grid-cols-[742px_1fr] gap-[30px] max-xl:grid-cols-1">
+        <article className="rounded-[10px] border border-[#878B92] bg-white p-[30px]">
+          <Image
+            src={mainPost.image}
+            alt={mainPost.title}
+            width={682}
+            height={317}
+            className="mb-5 h-[317px] w-full rounded-[10px] object-cover"
+          />
 
-      .blog-shared-section .bb-blog-001 {
-        display: none !important;
-      }
+          <PostDate date={mainPost.date} />
 
-      .blog-shared-section [data-responsive-section] {
-        display: block !important;
-      }
+          <h3 className="font-outfit text-[22px] font-semibold leading-[33px] text-[#012F42]">
+            {mainPost.title}
+          </h3>
 
-      .blog-shared-section .bb-blog-021,
-      .blog-shared-section .bb-footer-022,
-      .blog-shared-section .bb-footer-033 {
-        max-width: 95rem !important;
-      }
-    `}</style>
+          <p className="font-dm-sans my-5 text-[18px] font-normal leading-7 text-[#595E68]">
+            {mainPost.excerpt}
+          </p>
+
+          <ReadMore href={mainPost.href} />
+        </article>
+
+        <div className="grid gap-[30px]">
+          {sidePosts.map((post) => (
+            <article
+              key={post.title}
+              className="grid min-h-[180px] grid-cols-[220px_1fr] items-center gap-5 rounded-[10px] border border-[#878B92] bg-white p-[15px] max-lg:grid-cols-1"
+            >
+              <Image
+                src={post.image}
+                alt={post.title}
+                width={220}
+                height={150}
+                className="h-[150px] w-[220px] rounded-[10px] object-cover max-lg:h-60 max-lg:w-full"
+              />
+
+              <div>
+                <PostDate date={post.date} />
+
+                <h3 className="font-outfit mb-5 text-[22px] font-semibold leading-[33px] text-[#012F42]">
+                  {post.title}
+                </h3>
+
+                <ReadMore href={post.href} />
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function PostDate({ date }: { date: string }) {
+  return (
+    <div className="font-dm-sans mb-4 flex items-center gap-2 text-[14px] font-normal text-[#595E68]">
+      <span className="h-2.5 w-2.5 rounded-full bg-[#FE8F02]" />
+      {date}
+    </div>
+  );
+}
+
+function ReadMore({ href }: { href: string }) {
+  return (
+    <Link
+      href={href}
+      className="font-outfit text-[18px] font-medium capitalize text-[#FE8F02] underline underline-offset-8"
+    >
+      Read More
+    </Link>
   );
 }

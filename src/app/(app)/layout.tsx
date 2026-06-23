@@ -2,6 +2,12 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
+import Navbar from "./components/Navbar";
+import FaqSection from "./components/FaqSection";
+import CtaSection from "./components/CtaSection";
+import Footer from "./components/Footer";
+import LandingPageFrame from "./components/LandingPageFrame";
+
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
 
 const geistSans = Geist({
@@ -27,14 +33,14 @@ export const metadata: Metadata = {
     "freight dispatch",
     "load booking",
     "rate negotiation",
-    "truck dispatcher"
+    "truck dispatcher",
   ],
   applicationName: "Box Truck Dispatching",
   authors: [{ name: "Box Truck Dispatching" }],
   creator: "Box Truck Dispatching",
   publisher: "Box Truck Dispatching",
   alternates: {
-    canonical: "/"
+    canonical: "/",
   },
   robots: {
     index: true,
@@ -44,8 +50,8 @@ export const metadata: Metadata = {
       follow: true,
       "max-image-preview": "large",
       "max-snippet": -1,
-      "max-video-preview": -1
-    }
+      "max-video-preview": -1,
+    },
   },
   openGraph: {
     title: "Box Truck Dispatch Services for Owner Operators",
@@ -54,15 +60,15 @@ export const metadata: Metadata = {
     url: "/",
     siteName: "Box Truck Dispatching",
     locale: "en_US",
-    type: "website"
+    type: "website",
   },
   twitter: {
     card: "summary_large_image",
     title: "Box Truck Dispatch Services for Owner Operators",
     description:
-      "Box truck dispatch services for owner operators and fleets, including load booking, rate negotiation, paperwork support, and route planning."
+      "Box truck dispatch services for owner operators and fleets, including load booking, rate negotiation, paperwork support, and route planning.",
   },
-  category: "Transportation"
+  category: "Transportation",
 };
 
 export default function RootLayout({
@@ -75,7 +81,17 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="flex min-h-full flex-col bg-white font-[Arial,Helvetica,sans-serif] text-[#171717] dark:bg-[#0a0a0a] dark:text-[#ededed]">{children}</body>
+      <body className="flex min-h-full flex-col bg-[#F8FAFC] font-[Arial,Helvetica,sans-serif] text-[#171717]">
+        <LandingPageFrame>
+          <Navbar />
+
+          <main className="flex-1">{children}</main>
+
+          <FaqSection />
+          <CtaSection />
+          <Footer />
+        </LandingPageFrame>
+      </body>
     </html>
   );
 }
