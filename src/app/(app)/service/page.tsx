@@ -6,37 +6,37 @@ const services = [
     title: "Load Booking",
     description:
       "We negotiate with brokers, find high-paying loads, and keep your truck moving with profitable freight. Our team focuses on maximizing revenue while minimizing deadhead miles.",
-    image: "/Images/Rectangle 1078.png",
+    image: "/Images/load-booking.png",
     featured: true,
     href: "/service/load-booking",
   },
   {
     title: "Dedicated Truck Dispatcher",
-    image: "/Images/Rectangle 1080.png",
+    image: "/Images/call-center.png",
   },
   {
     title: "Factoring",
-    image: "/Images/Rectangle 1082.png",
+    image: "/Images/Rectangle 1117@2x (3).png",
   },
   {
     title: "Paper Work",
-    image: "/Images/Rectangle 1084.png",
+    image: "/Images/Rectangle 1117@2x (1).png",
   },
   {
     title: "Driver Hiring",
-    image: "/Images/Rectangle 1093.png",
+    image: "/Images/Rectangle 1117@2x (5).png",
   },
   {
     title: "MC Setup",
-    image: "/Images/Rectangle 11.png",
+    image: "/Images/Rectangle 1117@2x (2).png",
   },
   {
     title: "Accounting",
-    image: "/Images/Rectangle 1120.png",
+    image: "/Images/Rectangle 1117@2x.png",
   },
   {
     title: "Lease On",
-    image: "/Images/Rectangle 1117.png",
+    image: "/Images/Rectangle 1117@2x (6).png",
   },
 ];
 
@@ -58,11 +58,11 @@ export default function ServiceDetailPage() {
       <section className="mx-auto w-[calc(100%_-_40px)] max-w-[1520px] overflow-hidden rounded-[20px] bg-[#012F42]">
         <div className="relative min-h-[420px] overflow-hidden px-6 py-16 sm:px-10 lg:min-h-[500px] lg:px-[100px] lg:py-[121px]">
           <Image
-            src="/Images/Rectangle 1071.png"
+            src="/Images/Frame 4@2x.png"
             alt=""
             fill
             priority
-            className="object-cover opacity-10"
+            className="object-cover opacity-40"
           />
           <div className="absolute right-[-160px] top-[-160px] h-[720px] w-[150px] rotate-[15deg] bg-[#FE8F02]" />
 
