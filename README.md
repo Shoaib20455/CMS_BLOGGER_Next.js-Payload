@@ -1,119 +1,138 @@
-Overview
-A Next.js 16 + Payload CMS 3 marketing website for a box truck dispatch service called "Box Truck Dispatching" (branded under Resolute Logistics). It's built by BitBlazeTec. The site targets owner-operators and small fleets needing load booking, rate negotiation, and dispatch support.
-Tech Stack
-Layer	Technology
-Framework	Next.js 16.2.9 (App Router)
-CMS	Payload CMS 3.85.1
-Database	PostgreSQL via Neon (serverless)
-Rich Text	Payload Lexical Editor
-Styling	Tailwind CSS v4 + custom utility classes
-Fonts	Geist (system), Outfit, DM Sans, Poppins (Google Fonts)
-Image Opt	sharp + next/image
-Project Structure
-box-truck/
-├── .env                          # PAYLOAD_SECRET + DATABASE_URL (Neon)
-├── Blog-page-details/            # Design reference (Figjam exports)
-│   ├── Blog Detail.png
-│   ├── code.txt                  # Pixel-perfect div layout from design
-│   └── text-styles.txt           # Extracted text style tokens
-├── CMS Guidelines(detailed).pdf  # CMS usage guide
-├── Blog Page & CMS Guidelines.pdf
-├── media/                        # Uploaded media assets
-└── src/
-    ├── payload.config.ts         # Payload CMS configuration
-    ├── payload-types.ts          # Auto-generated TS types
-    ├── collections/
-    │   ├── Users.ts              # Auth collection (email/password)
-    │   ├── Media.ts              # Upload collection (images)
-    │   ├── Categories.ts         # Blog categories (name, slug)
-    │   └── Posts.ts              # Blog posts (the richest collection)
-    ├── lib/
-    │   └── extract-headings.ts   # Walks Lexical JSON → h2/h3 headings + reading time
-    └── app/
-        ├── (app)/                # Public facing site
-        │   ├── layout.tsx        # Root layout (fonts, metadata, SEO)
-        │   ├── page.tsx          # Home/landing page (assembles all sections)
-        │   ├── globals.css       # ALL styles (1257 lines of Tailwind @apply)
-        │   ├── sitemap.ts        # Dynamic sitemap
-        │   ├── robots.ts         # Robots.txt config
-        │   ├── blog/[slug]/     # Blog detail page
-        │   │   ├── page.tsx      # SSG blog post with metadata, TOC, JSON-LD
-        │   │   └── components/
-        │   │       ├── BlogContent.tsx     # Lexical JSON → React renderer
-        │   │       ├── SchemaJsonLd.tsx    # Organization + Article + FAQ schema
-        │   │       ├── TableOfContents.tsx # Sticky TOC with IntersectionObserver
-        │   │       ├── RelatedPosts.tsx    # Server component, same-category posts
-        │   │       ├── FaqBlock.tsx        # Post-specific FAQs renderer
-        │   │       └── CtaBlock.tsx        # "Grow Your Business Faster" CTA
-        │   └── components/       # Landing page sections (15 components)
-        │       ├── Navbar.tsx              # Desktop/mobile nav with hamburger
-        │       ├── Hero.tsx                # Hero with truck image, orange strips
-        │       ├── StatePickerCard.tsx     # State/city/type dropdown picker
-        │       ├── IntroSections.tsx       # 3 dark intro sections with images
-        │       ├── ServicesProcessSection.tsx  # Accordion: how dispatch works
-        │       ├── WhyChooseUsSection.tsx  # 6-card grid of value props
-        │       ├── PricingSection.tsx      # Pricing card with feature lists
-        │       ├── ReadyTruckSection.tsx   # "Your Truck Is Ready" CTA banner
-        │       ├── BlogSection.tsx         # Featured + small blog cards
-        │       ├── TestimonialsSection.tsx # Carousel + grid of testimonials
-        │       ├── FaqSection.tsx          # Two-column FAQ accordion
-        │       ├── CtaSection.tsx          # Bottom CTA
-        │       ├── Footer.tsx              # Multi-column footer
-        │       └── LandingPageFrame.tsx    # Context wrapper with pixel-perfect scaling
-        ├── (payload)/             # Payload CMS admin
-        │   ├── layout.tsx         # Auto-generated Payload admin layout
-        │   ├── admin/[[...segments]]/  # Admin panel pages
-        │   ├── api/[...slug]/     # REST API routes
-        │   ├── api/graphql/       # GraphQL endpoint
-        │   └── api/graphql-playground/ # GraphQL playground
-        └── my-route/route.ts      # Example custom route
-Collections (Payload CMS)
-Posts (src/collections/Posts.ts)
-The core content model with:
-- title (H1), slug (auto-generated from title)
-- author (→ Users), category (→ Categories)
-- featureImage (→ Media upload)
-- content (Lexical rich text - the article body)
-- faqs (array: question + rich text answer)
-- metaTitle, metaDescription, focusKeyphrase (SEO fields)
-- publishedDate, status (draft/published)
-Categories (src/collections/Categories.ts)
-Simple name + auto-slug taxonomy.
-Media (src/collections/Media.ts)
-Upload collection with required alt text.
-Users (src/collections/Users.ts)
-Auth-enabled, email as title.
-Key Architectural Decisions
-1. Dual Rendering Strategy
-Each landing page section has two visual variants - a pixel-perfect absolute-positioned desktop version (lg:block hidden) and a responsive mobile/tablet version (lg:hidden). The desktop version uses exact pixel coordinates matching a 1920px Figma design.
-2. Pixel-Perfect Canvas Scaling (LandingPageFrame.tsx)
-The desktop layout wraps all sections in a 1920px-wide "canvas" that's scaled down with CSS transform: scale() based on viewport width. The page height is computed as max(canvasScale * baseHeight, naturalHeight) to ensure the scrollbar works correctly.
-3. Atomic CSS Utility Classes
-Rather than writing inline Tailwind on each component, all styles live in globals.css as @apply classes with bb-* prefixes (e.g., bb-hero-001 through .bb-dynamic-065). This likely came from a Figma-to-code export pipeline.
-4. Custom Lexical Renderer
-BlogContent.tsx manually traverses Lexical's JSON tree to render headings (with IDs for TOC linking), paragraphs, text formatting (bold/italic/underline/strikethrough), lists, blockquotes, and links.
-5. JSON-LD Structured Data
-SchemaJsonLd.tsx injects Organization, Article, and FAQPage schemas on each blog post.
-6. SEO Optimization
-- Per-post metaTitle/metaDescription
-- generateStaticParams for SSG blog posts
-- generateMetadata for dynamic <head>
-- Sitemap + robots.txt
-- Canonical URLs, OG tags, Twitter cards
-- Table of Contents with IntersectionObserver-based active highlighting
-Data Flow
-Figma Design → code.txt/text-styles.txt → globals.css (bb-* classes)
-                                              ↓
-LandingPageFrame (scale context) → Navbar, Hero, ...Footer (use bb-* classes)
-                                              ↓
-Payload CMS Admin → Postgres DB (Neon)
-                      ↓
-Blog Post Pages: getPayload() → Lexical JSON → BlogContent renderer
-                      ↓
-RelatedPosts: getPayload() where category/slug
-Current State Notes
-- The BlogSection has hardcoded demo blog data (not yet pulling from Payload)
-- The FAQ data in LandingPageFrame.tsx is hardcoded for the landing page FAQ section
-- Post-specific FAQs come from the CMS via the faqs array field
-- The PDF files listed cannot be previewed (unsupported format), but appear to be CMS/design guidelines
-- The CMS is connected to a Neon PostgreSQL database (credentials in .env)
+
+## Overview
+
+A **Next.js 16 + Payload CMS 3** website for a box truck dispatching service. It serves a marketing front-end for owner-operators and small fleets, with a headless CMS backend for managing blog content, media, categories, and users.
+
+---
+
+## Tech Stack
+
+| Layer | Technology |
+|---|---|
+| **Framework** | Next.js 16.2.9 (App Router) |
+| **CMS** | Payload CMS 3.85.1 |
+| **Database** | PostgreSQL via `@payloadcms/db-postgres` (hosted on Neon) |
+| **Rich Text** | Lexical editor (`@payloadcms/richtext-lexical`) |
+| **Styling** | Tailwind CSS v4 |
+| **Fonts** | Geist (Google Fonts via `next/font`) |
+| **Languages** | TypeScript, React 19 |
+
+---
+
+## Project Structure
+
+```
+src/
+├── app/
+│   ├── (app)/                    # Public-facing website
+│   │   ├── page.tsx              # Homepage
+│   │   ├── layout.tsx            # Root layout with SEO metadata
+│   │   ├── robots.ts             # robots.txt
+│   │   ├── blog/[slug]/page.tsx  # Blog detail page (hardcoded for now)
+│   │   ├── service/
+│   │   │   ├── page.tsx          # Services overview page
+│   │   │   └── load-booking/
+│   │   │       └── page.tsx      # Load booking sub-service page
+│   │   └── components/           # Shared UI components
+│   │       ├── SiteShell.tsx     # Layout shell (Navbar/Footer routing)
+│   │       ├── Navbar.tsx        # Dual-mode navbar (absolute/flow)
+│   │       ├── Hero.tsx          # Homepage hero with truck image
+│   │       ├── BlogSection.tsx   # Blog preview section
+│   │       ├── ...               # Other section components
+│   │       └── Footer.tsx
+│   ├── (payload)/                # Payload Admin panel
+│   │   ├── layout.tsx
+│   │   ├── admin/...             # Admin UI pages
+│   │   └── api/...               # REST, GraphQL routes
+│   ├── sitemap.ts                # Dynamic sitemap
+│   └── my-route/route.ts
+├── collections/                  # Payload CMS collections
+│   ├── Posts.ts                  # Blog posts (title, slug, rich content, FAQs, SEO fields)
+│   ├── Categories.ts             # Blog categories (name, slug)
+│   ├── Media.ts                  # Uploaded images (alt text)
+│   └── Users.ts                  # Auth users (email/password)
+├── lib/
+│   └── extract-headings.ts       # Utility: parse Lexical rich text → headings, reading time
+├── payload.config.ts             # Payload CMS configuration
+└── payload-types.ts              # Auto-generated TS types
+```
+
+---
+
+## Key Architecture Decisions
+
+### 1. Dual Route Groups
+- `(app)` — public marketing pages (home, services, blog)
+- `(payload)` — CMS admin panel at `/admin`, API at `/api`
+
+### 2. SiteShell Layout Router
+`SiteShell.tsx` dynamically switches layouts based on the current path:
+- **Blog pages**: `Navbar("flow")` + `Footer("flow")` (sticky, centered, slim)
+- **Service pages**: `Navbar` + children wrapped in `LandingPageFrame`
+- **Default (homepage)**: `Navbar` + `FaqSection` + `CtaSection` + `Footer`
+
+### 3. Dual-Component Rendering Strategy
+Many components (`Navbar`, `BlogSection`, `Navbar`) have **two rendering modes** via a `variant` prop:
+- `"absolute"` — positioned hero-style with `bb-*` CSS classes (legacy Figma design)
+- `"flow"` — standard document flow with Tailwind classes (responsive, modern)
+
+### 4. Payload Collections
+| Collection | Purpose | Key Fields |
+|---|---|---|
+| **Users** | Admin auth | email, password (built-in) |
+| **Media** | Image uploads | alt, file upload |
+| **Categories** | Blog taxonomy | name, auto-slug |
+| **Posts** | Blog content | title, slug, content (Lexical rich text), FAQs (array), featureImage, SEO fields (metaTitle, metaDescription, focusKeyphrase), status (draft/published), publishedDate, author, category |
+
+### 5. Content is Currently Hardcoded
+The front-end pages show static mock data (blog posts, services, testimonials). The Payload CMS is wired up and running, but the public pages do **not** yet fetch from the CMS API — they render inline content arrays. This is a typical intermediate state before integrating CMS-driven content.
+
+### 6. SEO Infrastructure
+- `robots.txt` via `/robots.ts` (two copies — one in `(app)`, one in root `app/`)
+- `sitemap.xml` via `/sitemap.ts`
+- Comprehensive `metadata` export in `layout.tsx` (Open Graph, Twitter, JSON-LD compatible)
+- `X-Robots-Tag` header set in `next.config.ts`
+
+### 7. Utility Library
+`src/lib/extract-headings.ts` provides helpers for Payload's Lexical rich text format:
+- `extractHeadings()` — walks the JSON tree to extract h2/h3 headings for table of contents
+- `extractAllText()` — concatenates all text nodes
+- `calculateReadingTime()` — estimates read time at 200 wpm
+
+---
+
+## Pages
+
+| Route | File | Description |
+|---|---|---|
+| `/` | `(app)/page.tsx` | Homepage with Hero, StatePicker, Intro, Services Process, Why Us, Pricing, Blog, Testimonials |
+| `/service` | `(app)/service/page.tsx` | Services overview (8 service cards), contact form |
+| `/service/load-booking` | `(app)/service/load-booking/page.tsx` | Load booking subpage with benefits, process, FAQs |
+| `/blog/[slug]` | `(app)/blog/[slug]/page.tsx` | Blog detail (hardcoded article with sections, author meta) |
+| `/admin` | Payload CMS admin | Managed by `(payload)/admin/[[...segments]]/page.tsx` |
+| `/api/*` | Payload REST/GraphQL | REST, GraphQL, GraphQL Playground |
+
+---
+
+## Environment & Configuration
+
+- **`.env`** contains `PAYLOAD_SECRET` and `DATABASE_URL` (Neon PostgreSQL)
+- **`next.config.ts`** wraps the Next config with `withPayload()` plugin + custom headers
+- **`tsconfig.json`** — standard Next.js TypeScript config
+- **`eslint.config.mjs`** — ESLint v9 flat config
+- **`postcss.config.mjs`** — PostCSS with Tailwind CSS v4
+
+---
+
+## npm Scripts
+
+| Script | Command |
+|---|---|
+| `npm run dev` | Start Next.js dev server |
+| `npm run build` | Production build |
+| `npm run start` | Start production server |
+| `npm run lint` | Run ESLint |
+| `npm run generate:importmap` | Regenerate Payload import map |
+
+---
+
