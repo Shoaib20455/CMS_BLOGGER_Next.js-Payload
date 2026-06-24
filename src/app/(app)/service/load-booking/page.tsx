@@ -127,7 +127,7 @@ const faqs = [
 
 export default function LoadBookingPage() {
   return (
-    <div className="bg-[#F8FAFC] pt-16 lg:pt-40">
+    <div className="bg-[#F8FAFC] pt-8 lg:pt-20">
       <section className="mx-auto w-[calc(100%_-_40px)] max-w-[1520px] overflow-hidden rounded-[20px] bg-[#012F42]">
         <div className="relative min-h-[500px] overflow-hidden px-6 py-14 sm:px-10 lg:px-[100px] lg:py-[83px]">
           <Image

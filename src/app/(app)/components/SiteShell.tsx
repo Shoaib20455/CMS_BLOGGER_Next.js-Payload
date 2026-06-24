@@ -32,33 +32,27 @@ export default function SiteShell({
 
   const currentActive = getCurrentActive(pathname);
 
-  if (isBlogPage) {
-    return (
-      <>
-        <Navbar currentActive={currentActive} />
-
-        <main className="bg-[#F8FAFC]">{children}</main>
-
-        <Footer variant="flow" />
-      </>
-    );
-  }
-
   return (
-    <LandingPageFrame>
+    <>
       <Navbar currentActive={currentActive} />
 
-      <main className="flex-1">{children}</main>
+      {isBlogPage ? (
+        <main className="bg-[#F8FAFC]">{children}</main>
+      ) : (
+        <LandingPageFrame>
+          <main className="flex-1">{children}</main>
 
-      {isHomePage && (
-        <>
-          <FaqSection />
-          <CtaSection />
-          <Footer />
-        </>
+          {isHomePage && (
+            <>
+              <FaqSection />
+              <CtaSection />
+              <Footer />
+            </>
+          )}
+
+          {!isHomePage && !isServicePage && <Footer variant="flow" />}
+        </LandingPageFrame>
       )}
-
-      {!isHomePage && !isServicePage && <Footer variant="flow" />}
-    </LandingPageFrame>
+    </>
   );
 }

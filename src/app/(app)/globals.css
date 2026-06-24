@@ -340,7 +340,7 @@
   @apply text-white no-underline transition-colors hover:text-[#FE8F02];
 }
 .bb-hero-001 {
-  @apply absolute left-[0.1875rem] top-[4.9375rem] hidden h-[43.75rem] w-[120rem] overflow-hidden bg-[#012F42] lg:block;
+  @apply absolute left-[0.1875rem] top-0 hidden h-[43.75rem] w-[120rem] overflow-hidden bg-[#012F42] lg:block;
 }
 .bb-hero-002 {
   @apply w-[120rem] h-[43.75rem] left-[0rem] top-[0rem] absolute opacity-[0.05] object-cover z-[1];
@@ -541,87 +541,7 @@
 .bb-landing-page-002 {
   @apply relative w-full overflow-visible bg-[#F8FAFC] lg:absolute lg:left-1/2 lg:top-0 lg:h-[var(--canvas-height)] lg:w-[120rem] lg:origin-top lg:-translate-x-1/2 lg:scale-[var(--canvas-scale)] lg:overflow-hidden;
 }
-.bb-navbar-001 {
-  @apply absolute left-0 top-0 z-10 hidden h-20 w-[120rem] bg-white shadow-[0_0.0625rem_0.1875rem_rgba(0,0,0,0.05)] lg:block;
-}
-.bb-navbar-002 {
-  @apply absolute left-[12.5rem] top-[0.9375rem] z-[11] hidden h-[3.125rem] w-[5.3125rem] object-contain lg:block;
-}
-.bb-navbar-003 {
-  @apply absolute left-[44.5625rem] top-[1.6875rem] z-[11] hidden gap-[3.125rem] lg:flex;
-}
-.bb-navbar-004 {
-  @apply font-['DM_Sans'] text-[1.125rem] font-bold leading-[1.5625rem] no-underline transition-colors duration-200;
-}
-.bb-navbar-005 {
-  @apply text-[#111827] hover:text-[#FE8F02];
-}
-.bb-navbar-006 {
-  @apply absolute left-[96.1875rem] top-[0.9375rem] z-[11] hidden h-[3.125rem] w-[11.3125rem] items-center justify-center rounded-[0.3125rem] border-none bg-[#FE8F02] font-['Outfit'] text-[1.125rem] font-medium text-white transition-all duration-300 hover:scale-105 hover:bg-[#E07D02] active:scale-95 lg:inline-flex;
-}
-.bb-navbar-007 {
-  @apply sticky top-0 z-50 h-16 w-full bg-white shadow-[0_0.0625rem_0.1875rem_rgba(0,0,0,0.05)] lg:hidden;
-}
-.bb-navbar-008 {
-  @apply flex h-full w-full items-center justify-between px-5 sm:px-8;
-}
-.bb-navbar-009 {
-  @apply flex shrink-0 items-center;
-}
-.bb-navbar-010 {
-  @apply h-[2.625rem] w-[4.5rem] object-contain;
-}
-.bb-navbar-011 {
-  @apply inline-flex h-11 w-11 items-center justify-center rounded-[0.3125rem] border border-[#E5E7EB] bg-white text-[#111827] transition-colors hover:border-[#FE8F02] hover:text-[#FE8F02];
-}
-.bb-navbar-012 {
-  @apply relative h-5 w-5;
-}
-.bb-navbar-013 {
-  @apply absolute left-0 top-0 h-0.5 w-5 rounded-full bg-current transition-transform duration-200;
-}
-.bb-navbar-014 {
-  @apply translate-y-[0.5625rem] rotate-45;
-}
-.bb-navbar-015 {
-  @apply absolute left-0 top-[0.5625rem] h-0.5 w-5 rounded-full bg-current transition-opacity duration-200;
-}
-.bb-navbar-016 {
-  @apply opacity-0;
-}
-.bb-navbar-017 {
-  @apply opacity-100;
-}
-.bb-navbar-018 {
-  @apply absolute left-0 top-[1.125rem] h-0.5 w-5 rounded-full bg-current transition-transform duration-200;
-}
-.bb-navbar-019 {
-  @apply -translate-y-[0.5625rem] -rotate-45;
-}
-.bb-navbar-020 {
-  @apply absolute left-0 top-full w-screen overflow-hidden bg-white shadow-[0_0.75rem_1.5rem_rgba(15,23,42,0.08)] transition-[max-height,opacity] duration-300;
-}
-.bb-navbar-021 {
-  @apply max-h-[28rem] opacity-100;
-}
-.bb-navbar-022 {
-  @apply max-h-0 opacity-0;
-}
-.bb-navbar-023 {
-  @apply flex w-full flex-col gap-1 px-5 py-4 sm:px-8;
-}
-.bb-navbar-024 {
-  @apply rounded-[0.3125rem] px-3 py-3 font-['DM_Sans'] text-[1rem] font-bold leading-6 no-underline transition-colors;
-}
-.bb-navbar-025 {
-  @apply bg-[#FFF4E5] text-[#FE8F02];
-}
-.bb-navbar-026 {
-  @apply text-[#111827] hover:bg-[#F8FAFC] hover:text-[#FE8F02];
-}
-.bb-navbar-027 {
-  @apply mt-3 h-[3.125rem] w-full rounded-[0.3125rem] border-none bg-[#FE8F02] font-['Outfit'] text-[1.125rem] font-medium text-white transition-colors hover:bg-[#E07D02] active:bg-[#C96F02] sm:w-[11.3125rem];
-}
+
 .bb-pricing-001 {
   @apply w-[95rem] h-[45.6875rem] left-[12.5rem] top-[317.5rem] absolute bg-white rounded-[0.625rem] shadow-[0_0.625rem_2.5rem_rgba(0,0,0,0.03)];
 }
