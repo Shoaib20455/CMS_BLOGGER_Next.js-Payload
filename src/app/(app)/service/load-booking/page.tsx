@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import Footer from "../../components/Footer";
 
 const includeCards = [
   {
@@ -423,7 +422,6 @@ export default function LoadBookingPage() {
         </Link>
       </section>
 
-      <Footer variant="flow" />
     </div>
   );
 }

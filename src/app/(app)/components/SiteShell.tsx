@@ -46,13 +46,12 @@ export default function SiteShell({
             <>
               <FaqSection />
               <CtaSection />
-              <Footer />
             </>
           )}
-
-          {!isHomePage && !isServicePage && <Footer variant="flow" />}
         </LandingPageFrame>
       )}
+
+      <Footer />
     </>
   );
 }

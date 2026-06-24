@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import Footer from "../components/Footer";
 
 const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
@@ -182,7 +181,6 @@ export default function ServiceDetailPage() {
         </form>
       </section>
 
-      <Footer variant="flow" />
     </div>
   );
 }

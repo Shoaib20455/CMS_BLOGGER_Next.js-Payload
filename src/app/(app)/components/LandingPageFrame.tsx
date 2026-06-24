@@ -28,7 +28,6 @@ type LandingPageLayoutContextValue = {
   leftFaqTops: number[];
   rightFaqTops: number[];
   ctaTop: number;
-  footerTop: number;
 };
 
 const leftFaqs: Faq[] = [
@@ -175,8 +174,7 @@ export default function LandingPageFrame({
 
   const maxFaqEnd = Math.max(currentLeftFaqTop, currentRightFaqTop);
   const ctaTop = maxFaqEnd + 10;
-  const footerTop = ctaTop + 251 + 80;
-  const landingBaseHeight = footerTop + 501;
+  const landingBaseHeight = ctaTop + 251 + 80;
   const serviceBaseHeight =
     measuredHeight > 0 ? Math.ceil(measuredHeight / scale) : landingBaseHeight;
   const canvasHeight = isServicePage ? serviceBaseHeight : landingBaseHeight;
@@ -201,7 +199,6 @@ export default function LandingPageFrame({
     leftFaqTops,
     rightFaqTops,
     ctaTop,
-    footerTop,
   };
 
   if (isBlogPage) {

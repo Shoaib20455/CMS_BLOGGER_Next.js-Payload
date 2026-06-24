@@ -24,13 +24,16 @@ export default function HomePage() {
     <>
       <Hero />
       <StatePickerCard />
-      <IntroSections />
-      <ServicesProcessSection />
-      <WhyChooseUsSection />
-      <PricingSection />
-      <ReadyTruckSection />
-      <BlogSection />
-      <TestimonialsSection />
+      <div className="lg:relative lg:-top-[4.75rem]">
+
+        <IntroSections />
+        <ServicesProcessSection />
+        <WhyChooseUsSection />
+        <PricingSection />
+        <ReadyTruckSection />
+        <BlogSection />
+        <TestimonialsSection />
+      </div>
     </>
   );
 }
