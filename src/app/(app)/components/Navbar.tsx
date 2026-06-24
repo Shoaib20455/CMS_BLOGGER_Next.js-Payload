@@ -24,20 +24,23 @@ export default function Navbar({
 
   if (variant === "flow") {
     return (
-      <header className="sticky top-0 z-50 w-full bg-white shadow-[0_1px_3px_rgba(0,0,0,0.05)]">
-        <div className="mx-auto flex h-14 w-[calc(100%_-_40px)] max-w-[1082px] items-center justify-between">
+      <header className="sticky top-0 z-50 w-full bg-white shadow-[0_0.0625rem_0.1875rem_rgba(0,0,0,0.05)]">
+        <div className="relative mx-auto hidden h-20 w-[calc(100%_-_40px)] max-w-[1520px] lg:block">
           <Link href="/" aria-label="Box Truck Dispatching Home">
             <Image
               src="/Images/Rectangle 6 (1).png"
               alt="Box Truck Dispatching Logo"
-              width={42}
-              height={25}
+              width={85}
+              height={50}
               priority
-              className="h-[25px] w-[42px] object-contain"
+              className="absolute left-0 top-[0.9375rem] h-[3.125rem] w-[5.3125rem] object-contain"
             />
           </Link>
 
-          <nav className="hidden items-center gap-[38px] lg:flex" aria-label="Primary navigation">
+          <nav
+            className="absolute left-[32.0625rem] top-[1.6875rem] flex gap-[3.125rem]"
+            aria-label="Primary navigation"
+          >
             {navItems.map((item) => {
               const isActive = item === currentActive;
 
@@ -45,7 +48,7 @@ export default function Navbar({
                 <Link
                   key={item}
                   href={getFlowHref(item)}
-                  className={`font-['DM_Sans'] text-[12px] font-bold leading-[18px] no-underline transition-colors duration-200 ${
+                  className={`font-['DM_Sans'] text-[1.125rem] font-bold leading-[1.5625rem] no-underline transition-colors duration-200 ${
                     isActive
                       ? "text-[#FE8F02]"
                       : "text-[#111827] hover:text-[#FE8F02]"
@@ -59,15 +62,35 @@ export default function Navbar({
 
           <Link
             href="/contact"
-            className="hidden h-[36px] w-[130px] items-center justify-center rounded-[5px] bg-[#FE8F02] px-4 font-['Outfit'] text-[12px] font-medium text-white no-underline transition-all duration-300 hover:bg-[#E07D02] lg:inline-flex"
+            className="absolute right-0 top-[0.9375rem] inline-flex h-[3.125rem] w-[11.3125rem] items-center justify-center rounded-[0.3125rem] border-none bg-[#FE8F02] font-['Outfit'] text-[1.125rem] font-medium text-white no-underline transition-all duration-300 hover:scale-105 hover:bg-[#E07D02] active:scale-95"
           >
             Schedule a Call
+          </Link>
+        </div>
+
+        <div className="flex h-16 w-full items-center justify-between px-5 sm:px-8 lg:hidden">
+          <Link
+            href="/"
+            className="flex shrink-0 items-center"
+            aria-label="Box Truck Dispatching Home"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            <Image
+              src="/Images/Rectangle 6 (1).png"
+              alt="Box Truck Dispatching Logo"
+              width={85}
+              height={50}
+              priority
+              className="h-[2.625rem] w-[4.5rem] object-contain"
+            />
           </Link>
 
           <button
             type="button"
-            className="inline-flex h-11 w-11 items-center justify-center rounded-[5px] border border-[#E5E7EB] bg-white text-[#111827] transition-colors hover:border-[#FE8F02] hover:text-[#FE8F02] lg:hidden"
-            aria-label={isMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+            className="inline-flex h-11 w-11 items-center justify-center rounded-[0.3125rem] border border-[#E5E7EB] bg-white text-[#111827] transition-colors hover:border-[#FE8F02] hover:text-[#FE8F02]"
+            aria-label={
+              isMenuOpen ? "Close navigation menu" : "Open navigation menu"
+            }
             aria-expanded={isMenuOpen}
             aria-controls="mobile-navigation"
             onClick={() => setIsMenuOpen((open) => !open)}
@@ -75,17 +98,19 @@ export default function Navbar({
             <span className="relative h-5 w-5">
               <span
                 className={`absolute left-0 top-0 h-0.5 w-5 rounded-full bg-current transition-transform duration-200 ${
-                  isMenuOpen ? "translate-y-[9px] rotate-45" : ""
+                  isMenuOpen ? "translate-y-[0.5625rem] rotate-45" : ""
                 }`}
               />
+
               <span
-                className={`absolute left-0 top-[9px] h-0.5 w-5 rounded-full bg-current transition-opacity duration-200 ${
+                className={`absolute left-0 top-[0.5625rem] h-0.5 w-5 rounded-full bg-current transition-opacity duration-200 ${
                   isMenuOpen ? "opacity-0" : "opacity-100"
                 }`}
               />
+
               <span
-                className={`absolute left-0 top-[18px] h-0.5 w-5 rounded-full bg-current transition-transform duration-200 ${
-                  isMenuOpen ? "-translate-y-[9px] -rotate-45" : ""
+                className={`absolute left-0 top-[1.125rem] h-0.5 w-5 rounded-full bg-current transition-transform duration-200 ${
+                  isMenuOpen ? "-translate-y-[0.5625rem] -rotate-45" : ""
                 }`}
               />
             </span>
@@ -94,14 +119,11 @@ export default function Navbar({
 
         <div
           id="mobile-navigation"
-          className={`overflow-hidden border-t border-[#E5E7EB] bg-white transition-all duration-300 lg:hidden ${
-            isMenuOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
+          className={`absolute left-0 top-16 w-screen overflow-hidden bg-white shadow-[0_0.75rem_1.5rem_rgba(15,23,42,0.08)] transition-[max-height,opacity] duration-300 lg:hidden ${
+            isMenuOpen ? "max-h-[28rem] opacity-100" : "max-h-0 opacity-0"
           }`}
         >
-          <nav
-            className="mx-auto grid w-[calc(100%_-_40px)] max-w-[1082px] gap-3 py-4"
-            aria-label="Mobile navigation"
-          >
+          <nav className="flex w-full flex-col gap-1 px-5 py-4 sm:px-8">
             {navItems.map((item) => {
               const isActive = item === currentActive;
 
@@ -110,10 +132,10 @@ export default function Navbar({
                   key={item}
                   href={getFlowHref(item)}
                   onClick={() => setIsMenuOpen(false)}
-                  className={`font-['DM_Sans'] text-[16px] font-bold no-underline transition-colors ${
+                  className={`rounded-[0.3125rem] px-3 py-3 font-['DM_Sans'] text-[1rem] font-bold leading-6 no-underline transition-colors ${
                     isActive
-                      ? "text-[#FE8F02]"
-                      : "text-[#111827] hover:text-[#FE8F02]"
+                      ? "bg-[#FFF4E5] text-[#FE8F02]"
+                      : "text-[#111827] hover:bg-[#F8FAFC] hover:text-[#FE8F02]"
                   }`}
                 >
                   {item}
@@ -123,10 +145,12 @@ export default function Navbar({
 
             <Link
               href="/contact"
+              className="mt-3 h-[3.125rem] w-full rounded-[0.3125rem] border-none bg-[#FE8F02] font-['Outfit'] text-[1.125rem] font-medium text-white no-underline transition-colors hover:bg-[#E07D02] active:bg-[#C96F02] sm:w-[11.3125rem]"
               onClick={() => setIsMenuOpen(false)}
-              className="mt-2 inline-flex h-[48px] items-center justify-center rounded-[5px] bg-[#FE8F02] px-5 font-['Outfit'] text-[16px] font-medium text-white no-underline"
             >
-              Schedule a Call
+              <span className="flex h-full w-full items-center justify-center">
+                Schedule a Call
+              </span>
             </Link>
           </nav>
         </div>
@@ -138,7 +162,7 @@ export default function Navbar({
     <>
       <div className="bb-navbar-001" />
 
-      <Link href="#home" aria-label="Box Truck Dispatching Home">
+      <Link href="/" aria-label="Box Truck Dispatching Home">
         <Image
           src="/Images/Rectangle 6 (1).png"
           alt="Box Truck Dispatching Logo"
@@ -156,7 +180,7 @@ export default function Navbar({
           return (
             <Link
               key={item}
-              href={`#${item.toLowerCase()}`}
+              href={getFlowHref(item)}
               className={`bb-navbar-004 ${
                 isActive ? "bb-hero-017" : "bb-navbar-005"
               }`}
@@ -167,12 +191,14 @@ export default function Navbar({
         })}
       </nav>
 
-      <button className="bb-navbar-006">Schedule a Call</button>
+      <Link href="/contact" className="bb-navbar-006">
+        Schedule a Call
+      </Link>
 
       <header className="bb-navbar-007">
         <div className="bb-navbar-008">
           <Link
-            href="#home"
+            href="/"
             className="bb-navbar-009"
             aria-label="Box Truck Dispatching Home"
             onClick={() => setIsMenuOpen(false)}
@@ -190,7 +216,9 @@ export default function Navbar({
           <button
             type="button"
             className="bb-navbar-011"
-            aria-label={isMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+            aria-label={
+              isMenuOpen ? "Close navigation menu" : "Open navigation menu"
+            }
             aria-expanded={isMenuOpen}
             aria-controls="mobile-navigation"
             onClick={() => setIsMenuOpen((open) => !open)}
@@ -230,7 +258,7 @@ export default function Navbar({
               return (
                 <Link
                   key={item}
-                  href={`#${item.toLowerCase()}`}
+                  href={getFlowHref(item)}
                   onClick={() => setIsMenuOpen(false)}
                   className={`bb-navbar-024 ${
                     isActive ? "bb-navbar-025" : "bb-navbar-026"
@@ -241,7 +269,13 @@ export default function Navbar({
               );
             })}
 
-            <button className="bb-navbar-027">Schedule a Call</button>
+            <Link
+              href="/contact"
+              className="bb-navbar-027"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Schedule a Call
+            </Link>
           </nav>
         </div>
       </header>

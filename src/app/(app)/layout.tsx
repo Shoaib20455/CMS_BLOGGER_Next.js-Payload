@@ -17,9 +17,15 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: "Box Truck Dispatch Services for Owner Operators",
+
+  title: {
+    default: "Box Truck Dispatch Services for Owner Operators",
+    template: "%s | Box Truck Dispatching",
+  },
+
   description:
     "Box truck dispatch services for owner operators and fleets, including load booking, rate negotiation, paperwork support, and route planning.",
+
   keywords: [
     "box truck dispatch",
     "box truck dispatch service",
@@ -30,13 +36,12 @@ export const metadata: Metadata = {
     "rate negotiation",
     "truck dispatcher",
   ],
+
   applicationName: "Box Truck Dispatching",
   authors: [{ name: "Box Truck Dispatching" }],
   creator: "Box Truck Dispatching",
   publisher: "Box Truck Dispatching",
-  alternates: {
-    canonical: "/",
-  },
+
   robots: {
     index: true,
     follow: true,
@@ -48,21 +53,17 @@ export const metadata: Metadata = {
       "max-video-preview": -1,
     },
   },
+
   openGraph: {
-    title: "Box Truck Dispatch Services for Owner Operators",
-    description:
-      "Box truck dispatch services for owner operators and fleets, including load booking, rate negotiation, paperwork support, and route planning.",
-    url: "/",
     siteName: "Box Truck Dispatching",
     locale: "en_US",
     type: "website",
   },
+
   twitter: {
     card: "summary_large_image",
-    title: "Box Truck Dispatch Services for Owner Operators",
-    description:
-      "Box truck dispatch services for owner operators and fleets, including load booking, rate negotiation, paperwork support, and route planning.",
   },
+
   category: "Transportation",
 };
 

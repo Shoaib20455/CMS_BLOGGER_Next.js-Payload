@@ -1,5 +1,36 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import Footer from "../components/Footer";
+
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
+
+export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
+
+  title: "Box Truck Dispatch Services for Owner Operators",
+
+  description:
+    "Box truck dispatch services for owner operators and fleets, including load booking, rate negotiation, paperwork support, and route planning.",
+
+  alternates: {
+    canonical: "/service",
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+  },
+
+  openGraph: {
+    title: "Box Truck Dispatch Services for Owner Operators",
+    description:
+      "Box truck dispatch services for owner operators and fleets, including load booking, rate negotiation, paperwork support, and route planning.",
+    url: "/service",
+    type: "website",
+  },
+};
 
 const services = [
   {
@@ -40,18 +71,6 @@ const services = [
   },
 ];
 
-const quickLinks = ["Home", "About", "Service", "States", "Blog", "Contact"];
-const serviceLinks = [
-  "Load Booking",
-  "Dedicated Truck Dispatcher",
-  "Factoring",
-  "Paper Work",
-  "Driver Hiring",
-  "MC Setup",
-  "Accounting",
-  "Lease On",
-];
-
 export default function ServiceDetailPage() {
   return (
     <div className="bg-[#F8FAFC] pt-16 lg:pt-40">
@@ -64,6 +83,7 @@ export default function ServiceDetailPage() {
             priority
             className="object-cover opacity-40"
           />
+
           <div className="absolute right-[-160px] top-[-160px] h-[720px] w-[150px] rotate-[15deg] bg-[#FE8F02]" />
 
           <div className="relative z-10 max-w-[970px]">
@@ -97,35 +117,34 @@ export default function ServiceDetailPage() {
                 {...cardProps}
                 className="group relative h-[350px] overflow-hidden rounded-[10px] no-underline"
               >
-              <Image
-                src={service.image}
-                alt={service.title}
-                fill
-                className="object-cover transition-transform duration-500 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-b from-[#012F42]/10 to-[#012F42]/80" />
-              <div className="absolute inset-0 bg-gradient-to-b from-[#FE8F02]/10 to-[#FE8F02] opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-              <div className="absolute bottom-0 left-0 h-2.5 w-full bg-[#012F42] transition-colors duration-300 group-hover:bg-[#FE8F02]" />
+                <Image
+                  src={service.image}
+                  alt={service.title}
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                />
 
-              <div className="absolute inset-x-5 bottom-8">
-                {service.description && (
-                  <p className="mb-[92px] font-['DM_Sans'] text-[18px] leading-[25px] text-white">
-                    {service.description}
-                  </p>
-                )}
+                <div className="absolute inset-0 bg-gradient-to-b from-[#012F42]/10 to-[#012F42]/80" />
+                <div className="absolute inset-0 bg-gradient-to-b from-[#FE8F02]/10 to-[#FE8F02] opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                <div className="absolute bottom-0 left-0 h-2.5 w-full bg-[#012F42] transition-colors duration-300 group-hover:bg-[#FE8F02]" />
 
-                <div className="flex items-center justify-between gap-4">
-                  <h3 className="font-['Outfit'] text-[22px] font-semibold leading-8 text-white">
-                    {service.title}
-                  </h3>
+                <div className="absolute inset-x-5 bottom-8">
+                  {service.description && (
+                    <p className="mb-[92px] font-['DM_Sans'] text-[18px] leading-[25px] text-white">
+                      {service.description}
+                    </p>
+                  )}
 
-                  <span
-                    className="flex h-6 w-8 shrink-0 items-center justify-center rounded-[2px] bg-[#FE8F02] transition-colors duration-300 group-hover:bg-white/30"
-                  >
-                    <ArrowIcon />
-                  </span>
+                  <div className="flex items-center justify-between gap-4">
+                    <h3 className="font-['Outfit'] text-[22px] font-semibold leading-8 text-white">
+                      {service.title}
+                    </h3>
+
+                    <span className="flex h-6 w-8 shrink-0 items-center justify-center rounded-[2px] bg-[#FE8F02] transition-colors duration-300 group-hover:bg-white/30">
+                      <ArrowIcon />
+                    </span>
+                  </div>
                 </div>
-              </div>
               </CardTag>
             );
           })}
@@ -163,7 +182,7 @@ export default function ServiceDetailPage() {
         </form>
       </section>
 
-      <LandingStyleFooter />
+      <Footer variant="flow" />
     </div>
   );
 }
@@ -180,152 +199,12 @@ function FormField({
       <span className="font-['Outfit'] text-[16px] font-medium text-white">
         {label}
       </span>
+
       <input
         className="mt-2.5 h-11 w-full rounded-[5px] border border-white/5 bg-[#012F42]/60 px-5 font-['DM_Sans'] text-[14px] font-light text-white outline-none transition-colors placeholder:text-white/70 focus:border-[#FE8F02]"
         placeholder={placeholder}
       />
     </label>
-  );
-}
-
-function LandingStyleFooter() {
-  return (
-    <footer className="mt-20 bg-[#012F42] text-white">
-      <div className="mx-auto grid w-[calc(100%_-_40px)] max-w-[1520px] gap-12 py-12 sm:grid-cols-2 lg:grid-cols-[1.2fr_0.75fr_1fr_0.95fr] lg:gap-[110px]">
-        <div>
-          <Image
-            src="/Images/Rectangle 6.png"
-            alt="Box Truck Dispatching Logo"
-            width={109}
-            height={80}
-            className="h-20 w-[109px] object-contain"
-          />
-          <p className="mt-5 max-w-[337px] font-['Poppins'] text-[14px] font-medium leading-6">
-            Box Truck Dispatching offers reliable and profit driven truck
-            dispatching services across the United States. We help owner
-            operators and fleets secure high-paying loads, reduce deadhead
-            miles, and streamline operations for maximum efficiency.
-          </p>
-          <div className="mt-9 flex gap-3">
-            {["f", "t", "in", "ig"].map((item) => (
-              <span
-                key={item}
-                className="flex h-9 w-9 items-center justify-center rounded-[5px] bg-[#003951] font-['DM_Sans'] text-[12px] font-bold"
-              >
-                {item}
-              </span>
-            ))}
-          </div>
-        </div>
-
-        <FooterColumn title="Quick Links" items={quickLinks} />
-        <FooterColumn title="Our Services" items={serviceLinks} />
-
-        <div>
-          <h3 className="font-['Outfit'] text-[22px] font-semibold leading-[30px] text-[#FE8F02]">
-            Get In Touch
-          </h3>
-          <div className="mt-6 space-y-5 font-['DM_Sans']">
-            <ContactItem label="Phone" value="(555) 123-4567" icon="phone" />
-            <ContactItem label="Email" value="info@avenuemh.com" icon="mail" />
-            <ContactItem
-              label="Location"
-              value="Serving All 48 States"
-              icon="pin"
-            />
-          </div>
-        </div>
-      </div>
-
-      <div className="border-t border-[#003951]">
-        <div className="mx-auto flex w-[calc(100%_-_40px)] max-w-[1520px] flex-col gap-4 py-6 font-['DM_Sans'] text-[14px] leading-[25px] sm:flex-row sm:items-center sm:justify-between">
-          <p>
-            &copy; 2026, Box Truck Dispatching, Design &amp; Developed By{" "}
-            <strong>BitBlazeTec</strong>
-          </p>
-          <div className="flex flex-wrap gap-[30px]">
-            {["Privacy Policy", "Terms of Service", "Disclaimer"].map(
-              (item) => (
-                <Link
-                  key={item}
-                  href="/"
-                  className="text-white no-underline transition-colors hover:text-[#FE8F02]"
-                >
-                  {item}
-                </Link>
-              )
-            )}
-          </div>
-        </div>
-      </div>
-    </footer>
-  );
-}
-
-function FooterColumn({ title, items }: { title: string; items: string[] }) {
-  return (
-    <div>
-      <h3 className="font-['Outfit'] text-[22px] font-semibold leading-[30px] text-[#FE8F02]">
-        {title}
-      </h3>
-      <div className="mt-6 grid gap-[15px]">
-        {items.map((item) => (
-          <Link
-            key={item}
-            href="/"
-            className="font-['DM_Sans'] text-[18px] font-medium leading-5 text-white no-underline transition-colors hover:text-[#FE8F02]"
-          >
-            {item}
-          </Link>
-        ))}
-      </div>
-    </div>
-  );
-}
-
-function ContactItem({
-  label,
-  value,
-  icon,
-}: {
-  label: string;
-  value: string;
-  icon: "phone" | "mail" | "pin";
-}) {
-  return (
-    <div>
-      <p className="flex items-center gap-2 text-[14px] font-semibold">
-        <ContactIcon type={icon} />
-        {label}
-      </p>
-      <p className="mt-2 text-[18px] font-medium">{value}</p>
-    </div>
-  );
-}
-
-function ContactIcon({ type }: { type: "phone" | "mail" | "pin" }) {
-  if (type === "mail") {
-    return (
-      <svg className="h-[14px] w-[14px] text-[#FE8F02]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-        <polyline points="22,6 12,13 2,6" />
-      </svg>
-    );
-  }
-
-  if (type === "pin") {
-    return (
-      <svg className="h-[14px] w-[14px] text-[#FE8F02]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-        <circle cx="12" cy="10" r="3" />
-      </svg>
-    );
-  }
-
-  return (
-    <svg className="h-[14px] w-[14px] text-[#FE8F02]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-    </svg>
   );
 }
 

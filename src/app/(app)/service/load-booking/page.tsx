@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import Footer from "../../components/Footer";
 
 const includeCards = [
   {
@@ -124,18 +125,6 @@ const faqs = [
   "How do you find loads for my truck?",
 ];
 
-const quickLinks = ["Home", "About", "Service", "States", "Blog", "Contact"];
-const serviceLinks = [
-  "Load Booking",
-  "Dedicated Truck Dispatcher",
-  "Factoring",
-  "Paper Work",
-  "Driver Hiring",
-  "MC Setup",
-  "Accounting",
-  "Lease On",
-];
-
 export default function LoadBookingPage() {
   return (
     <div className="bg-[#F8FAFC] pt-16 lg:pt-40">
@@ -148,6 +137,7 @@ export default function LoadBookingPage() {
             priority
             className="object-cover opacity-10"
           />
+
           <div className="absolute right-[-160px] top-[-160px] h-[720px] w-[150px] rotate-[15deg] bg-[#FE8F02]" />
 
           <div className="relative z-10 max-w-[1156px]">
@@ -165,6 +155,7 @@ export default function LoadBookingPage() {
                 fleet owners find profitable freight, negotiate better rates,
                 and reduce empty miles.
               </p>
+
               <p>
                 We work directly with brokers and shippers to secure loads that
                 fit your equipment, preferred lanes, and business goals. Our
@@ -189,6 +180,7 @@ export default function LoadBookingPage() {
               credibility, securing rate confirmations, and coordinating every
               detail of the shipment process.
             </p>
+
             <p>
               Our experienced dispatch specialists handle the entire load
               booking process from start to finish. We actively search for
@@ -196,6 +188,7 @@ export default function LoadBookingPage() {
               shipper information, and ensure all documentation is accurate
               before dispatch.
             </p>
+
             <p>
               We also coordinate pickup and delivery schedules, communicate with
               brokers and shippers, and provide real-time updates throughout the
@@ -261,15 +254,18 @@ export default function LoadBookingPage() {
               className="rounded-[10px] border border-[#878B92] bg-white"
             >
               <div className="h-2.5 rounded-t-[10px] bg-[#012F42]" />
+
               <div className="p-5">
                 <div className="flex h-12 w-12 items-center justify-center rounded-[5px] border border-[#012F42] text-[#012F42]">
                   <span className="font-['Outfit'] text-[18px] font-bold">
                     {String(index + 1).padStart(2, "0")}
                   </span>
                 </div>
+
                 <h3 className="mt-5 font-['Outfit'] text-[22px] font-semibold leading-8 text-[#012F42]">
                   {card.title}
                 </h3>
+
                 <p className="mt-5 font-['DM_Sans'] text-[18px] leading-6 text-[#111827]/70">
                   {card.body}
                 </p>
@@ -305,8 +301,10 @@ export default function LoadBookingPage() {
                     <span className="text-[#FE8F02]">Step {index + 1}:</span>{" "}
                     {step.title}
                   </span>
+
                   <PlusIcon />
                 </summary>
+
                 <p className="mt-4 max-w-[520px] font-['DM_Sans'] text-[18px] leading-6 text-[#111827]/70">
                   {step.body}
                 </p>
@@ -323,11 +321,14 @@ export default function LoadBookingPage() {
           fill
           className="object-cover"
         />
+
         <div className="absolute inset-0 bg-[#012F42]/60" />
+
         <div className="relative z-10 mx-auto flex min-h-[610px] w-[calc(100%_-_40px)] max-w-[1520px] flex-col items-center justify-center py-16">
           <h2 className="font-['Outfit'] text-[42px] font-bold text-[#F8FAFC] lg:text-[48px]">
             Industries We Serve
           </h2>
+
           <div className="mt-[70px] flex flex-wrap justify-center gap-5">
             {industries.map((industry) => (
               <span
@@ -346,11 +347,13 @@ export default function LoadBookingPage() {
           <h2 className="max-w-[641px] font-['Outfit'] text-[40px] font-bold capitalize leading-[50px] text-[#FE8F02] lg:text-[48px] lg:leading-[60px]">
             Ready to Keep Your Truck Loaded?
           </h2>
+
           <p className="mt-10 max-w-[636px] font-['DM_Sans'] text-[18px] leading-7 text-white">
             Stop spending hours searching load boards and negotiating with
             brokers. Let our experienced dispatch team handle the load booking
             process while you focus on driving and growing your business.
           </p>
+
           <div className="mt-10 flex flex-col gap-4 sm:flex-row">
             <Link
               href="/contact"
@@ -358,6 +361,7 @@ export default function LoadBookingPage() {
             >
               Start Dispatching Today
             </Link>
+
             <Link
               href="/contact"
               className="inline-flex h-12 items-center justify-center rounded-[5px] border border-[#FE8F02] px-5 font-['Outfit'] text-[18px] font-medium capitalize text-[#FE8F02] no-underline hover:bg-[#FE8F02] hover:text-white"
@@ -391,6 +395,7 @@ export default function LoadBookingPage() {
                 {question}
                 <PlusIcon />
               </summary>
+
               <p className="mt-3 font-['DM_Sans'] text-[16px] leading-6 text-[#111827]/70">
                 Our dispatch team reviews your truck, lanes, schedule, and
                 market conditions to recommend the best available option.
@@ -404,10 +409,12 @@ export default function LoadBookingPage() {
         <h2 className="font-['Outfit'] text-[40px] font-bold capitalize leading-[50px] text-white lg:text-[48px] lg:leading-[55px]">
           Grow Your Business Faster
         </h2>
+
         <p className="mx-auto mt-5 max-w-[636px] font-['DM_Sans'] text-[18px] leading-7 text-white">
           From load booking to payment follow-up, we handle the hard work behind
           the scenes so you can stay focused on the road ahead.
         </p>
+
         <Link
           href="/contact"
           className="mt-7 inline-flex h-12 items-center justify-center rounded-[5px] bg-[#FE8F02] px-5 font-['Outfit'] text-[18px] font-medium capitalize text-white no-underline hover:bg-[#E07D02]"
@@ -416,7 +423,7 @@ export default function LoadBookingPage() {
         </Link>
       </section>
 
-      <LandingStyleFooter />
+      <Footer variant="flow" />
     </div>
   );
 }
@@ -425,10 +432,12 @@ function InfoCard({ title, body }: { title: string; body: string }) {
   return (
     <article className="rounded-[10px] border border-[#111827]/50 bg-white/20">
       <div className="h-2.5 rounded-t-[10px] bg-[#012F42]" />
+
       <div className="p-5">
         <h3 className="font-['Outfit'] text-[22px] font-semibold leading-8 text-[#012F42]">
           {title}
         </h3>
+
         <p className="mt-8 font-['DM_Sans'] text-[18px] leading-6 text-[#111827]/70">
           {body}
         </p>
@@ -456,178 +465,19 @@ function BenefitCard({
         fill
         className="object-cover"
       />
+
       <div className="absolute inset-0 bg-gradient-to-b from-[#012F42]/90 to-[#012F42]/35" />
+
       <div className="absolute inset-x-[30px] bottom-[54px]">
         <h3 className="font-['Outfit'] text-[22px] font-semibold leading-8 text-white">
           {benefit.title}
         </h3>
+
         <p className="mt-5 max-w-[400px] font-['DM_Sans'] text-[18px] leading-6 text-white/70">
           {benefit.body}
         </p>
       </div>
     </article>
-  );
-}
-
-function LandingStyleFooter() {
-  return (
-    <footer className="mt-20 bg-[#012F42] text-white">
-      <div className="mx-auto grid w-[calc(100%_-_40px)] max-w-[1520px] gap-12 py-12 sm:grid-cols-2 lg:grid-cols-[1.2fr_0.75fr_1fr_0.95fr] lg:gap-[110px]">
-        <div>
-          <Image
-            src="/Images/Rectangle 6.png"
-            alt="Box Truck Dispatching Logo"
-            width={109}
-            height={80}
-            className="h-20 w-[109px] object-contain"
-          />
-          <p className="mt-5 max-w-[337px] font-['Poppins'] text-[14px] font-medium leading-6">
-            Box Truck Dispatching offers reliable and profit driven truck
-            dispatching services across the United States. We help owner
-            operators and fleets secure high-paying loads, reduce deadhead
-            miles, and streamline operations for maximum efficiency.
-          </p>
-          <div className="mt-9 flex gap-3">
-            {["f", "t", "in", "ig"].map((item) => (
-              <span
-                key={item}
-                className="flex h-9 w-9 items-center justify-center rounded-[5px] bg-[#003951] font-['DM_Sans'] text-[12px] font-bold"
-              >
-                {item}
-              </span>
-            ))}
-          </div>
-        </div>
-
-        <FooterColumn title="Quick Links" items={quickLinks} />
-        <FooterColumn title="Our Services" items={serviceLinks} />
-
-        <div>
-          <h3 className="font-['Outfit'] text-[22px] font-semibold leading-[30px] text-[#FE8F02]">
-            Get In Touch
-          </h3>
-          <div className="mt-6 space-y-5 font-['DM_Sans']">
-            <ContactItem label="Phone" value="(555) 123-4567" icon="phone" />
-            <ContactItem label="Email" value="info@avenuemh.com" icon="mail" />
-            <ContactItem
-              label="Location"
-              value="Serving All 48 States"
-              icon="pin"
-            />
-          </div>
-        </div>
-      </div>
-
-      <div className="border-t border-[#003951]">
-        <div className="mx-auto flex w-[calc(100%_-_40px)] max-w-[1520px] flex-col gap-4 py-6 font-['DM_Sans'] text-[14px] leading-[25px] sm:flex-row sm:items-center sm:justify-between">
-          <p>
-            &copy; 2026, Box Truck Dispatching, Design &amp; Developed By{" "}
-            <strong>BitBlazeTec</strong>
-          </p>
-          <div className="flex flex-wrap gap-[30px]">
-            {["Privacy Policy", "Terms of Service", "Disclaimer"].map(
-              (item) => (
-                <Link
-                  key={item}
-                  href="/"
-                  className="text-white no-underline transition-colors hover:text-[#FE8F02]"
-                >
-                  {item}
-                </Link>
-              )
-            )}
-          </div>
-        </div>
-      </div>
-    </footer>
-  );
-}
-
-function FooterColumn({ title, items }: { title: string; items: string[] }) {
-  return (
-    <div>
-      <h3 className="font-['Outfit'] text-[22px] font-semibold leading-[30px] text-[#FE8F02]">
-        {title}
-      </h3>
-      <div className="mt-6 grid gap-[15px]">
-        {items.map((item) => (
-          <Link
-            key={item}
-            href="/"
-            className="font-['DM_Sans'] text-[18px] font-medium leading-5 text-white no-underline transition-colors hover:text-[#FE8F02]"
-          >
-            {item}
-          </Link>
-        ))}
-      </div>
-    </div>
-  );
-}
-
-function ContactItem({
-  label,
-  value,
-  icon,
-}: {
-  label: string;
-  value: string;
-  icon: "phone" | "mail" | "pin";
-}) {
-  return (
-    <div>
-      <p className="flex items-center gap-2 text-[14px] font-semibold">
-        <ContactIcon type={icon} />
-        {label}
-      </p>
-      <p className="mt-2 text-[18px] font-medium">{value}</p>
-    </div>
-  );
-}
-
-function ContactIcon({ type }: { type: "phone" | "mail" | "pin" }) {
-  if (type === "mail") {
-    return (
-      <svg
-        className="h-[14px] w-[14px] text-[#FE8F02]"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        aria-hidden="true"
-      >
-        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-        <polyline points="22,6 12,13 2,6" />
-      </svg>
-    );
-  }
-
-  if (type === "pin") {
-    return (
-      <svg
-        className="h-[14px] w-[14px] text-[#FE8F02]"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        aria-hidden="true"
-      >
-        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-        <circle cx="12" cy="10" r="3" />
-      </svg>
-    );
-  }
-
-  return (
-    <svg
-      className="h-[14px] w-[14px] text-[#FE8F02]"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      aria-hidden="true"
-    >
-      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-    </svg>
   );
 }
 
