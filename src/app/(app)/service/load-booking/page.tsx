@@ -196,20 +196,20 @@ export default function LoadBookingPage() {
           </div>
 
           <Image
-            src="/Images/Rectangle 1080.png"
+            src="/loadBooking/loadbookingtruck_2.png"
             alt="Box truck load booking"
             width={857}
             height={296}
-            className="mt-10 h-[296px] w-full rounded-[10px] object-cover"
+            className="mt-10 h-[296px] w-full rounded-[10px] object-contain"
           />
         </div>
 
         <Image
-          src="/Images/Rectangle 1078.png"
+          src="/loadBooking/loadbookingtruck_1.png"
           alt="Dispatcher reviewing load booking details"
           width={626}
           height={700}
-          className="h-full min-h-[420px] w-full rounded-[10px] object-cover"
+          className="h-full min-h-[420px] w-full rounded-[10px] object-contain"
         />
       </section>
 
