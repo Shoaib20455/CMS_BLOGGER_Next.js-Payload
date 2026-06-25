@@ -341,7 +341,7 @@
   @apply text-white no-underline transition-colors hover:text-[#FE8F02];
 }
 .bb-hero-001 {
-  @apply absolute left-[0.1875rem] top-[4.9375rem] hidden h-[43.75rem] w-[120rem] overflow-hidden bg-[#012F42] lg:block;
+  @apply absolute left-[0.1875rem] top-0 hidden h-[43.75rem] w-[120rem] overflow-hidden bg-[#012F42] lg:block;
 }
 .bb-hero-002 {
   @apply w-[120rem] h-[43.75rem] left-[0rem] top-[0rem] absolute opacity-[0.05] object-cover z-[1];
