@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
+const heroImage = "/contact/images/Frame 4 (1).png";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -23,22 +25,55 @@ const contactCards = [
   {
     label: "Phone:",
     value: "+1 (555) 123-4567",
-    icon: <PhoneIcon />,
+    iconSrc: "/contact/images/phone.png",
+    iconAlt: "Phone icon",
   },
   {
     label: "Email:",
     value: "boxtruckdispatch@gmail.com",
-    icon: <MailIcon />,
+    iconSrc: "/contact/images/mail.png",
+    iconAlt: "Email icon",
   },
   {
     label: "Business Hours:",
     value: "Monday - Friday: 8:00 AM - 6:00 PM",
-    icon: <ClockIcon />,
+    iconSrc: "/contact/images/clock.png",
+    iconAlt: "Clock icon",
   },
   {
     label: "Service Area:",
     value: "All 50 U.S. States",
-    icon: <MapPinIcon />,
+    iconSrc: "/contact/images/location.png",
+    iconAlt: "Location icon",
+  },
+];
+
+const socialLinks = [
+  {
+    label: "LinkedIn",
+    href: "#social",
+    iconSrc: "/contact/icons/linkedin.svg",
+  },
+  {
+    label: "Facebook",
+    href: "#social",
+    iconSrc: "/contact/icons/facebook.svg",
+  },
+  {
+    label: "Twitter",
+    href: "#social",
+    iconSrc: "/contact/icons/twitter.svg",
+    bgSrc: "/contact/icons/twitter_back.svg",
+  },
+  {
+    label: "Instagram",
+    href: "#social",
+    iconSrc: "/contact/icons/instagram.svg",
+  },
+  {
+    label: "YouTube",
+    href: "#social",
+    iconSrc: "/contact/icons/youtube.svg",
   },
 ];
 
@@ -58,34 +93,50 @@ const testimonials = [
     quote:
       "Consistent loads with better rates every week. I no longer waste time searching or negotiating.",
     active: true,
+    avatarSrc: "/contact/images/James Carter.png",
+    avatarAlt: "James Carter icon",
   },
   {
     name: "Sophia Williams",
     role: "Fleet Owner",
     quote:
       "Dispatch runs smoothly without stress. My trucks stay loaded, and downtime has dropped significantly.",
+    avatarSrc: "/contact/icons/Sophia Williams.svg",
+    avatarAlt: "Sophia Williams icon",
   },
   {
     name: "David Thompson",
     role: "Flatbed Driver",
     quote:
       "Strong rate negotiation and proper load planning. I am seeing higher RPM and fewer empty miles.",
+    avatarSrc: "/contact/images/David Thompson.png",
+    avatarAlt: "David Thompson icon",
   },
   {
     name: "Emily Johnson",
     role: "New Authority",
     quote:
       "Got loads quickly after setup. Clear guidance and full support made the process simple.",
+    avatarSrc: "/contact/icons/Emily Johnson.svg",
+    avatarAlt: "Emily Johnson icon",
   },
 ];
 
 export default function ContactPage() {
   return (
     <div className="bg-[#F8FAFC] pt-8 lg:pt-20">
-      <section className="mx-auto w-[calc(100%_-_40px)] max-w-[1520px] overflow-hidden rounded-[20px] bg-[#012F42]">
-        <div className="relative min-h-[420px] overflow-hidden bg-gradient-to-r from-[#012F42]/95 to-[#012F42]/70 px-6 py-16 sm:px-10 lg:min-h-[500px] lg:px-[100px] lg:py-[137px]">
-          <div className="absolute right-[-120px] top-[-180px] h-[760px] w-[170px] rotate-[15deg] bg-[#FE8F02]" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_85%_20%,rgba(254,143,2,0.24),transparent_35%)]" />
+      <section className="mx-auto w-[calc(100%_-_40px)] max-w-[1520px] overflow-hidden rounded-[20px]">
+        <div className="relative min-h-[420px] overflow-hidden px-6 py-16 sm:px-10 lg:min-h-[500px] lg:px-[100px] lg:py-[137px]">
+          <Image
+            src={heroImage}
+            alt="Box truck dispatch contact hero"
+            fill
+            priority
+            sizes="(max-width: 1520px) calc(100vw - 40px), 1520px"
+            className="object-cover"
+          />
+
+          <div className="absolute inset-0 bg-gradient-to-r from-[#012F42]/95 via-[#012F42]/85 to-[#012F42]/55" />
 
           <div className="relative z-10 max-w-[970px]">
             <h1 className="font-['Outfit'] text-[42px] font-bold capitalize leading-[52px] text-white sm:text-[54px] sm:leading-[64px] lg:text-[60px] lg:leading-[70px]">
@@ -106,7 +157,7 @@ export default function ContactPage() {
 
       <section className="mx-auto mt-20 grid w-[calc(100%_-_40px)] max-w-[1520px] gap-10 lg:grid-cols-[626px_1fr] lg:items-start lg:gap-[176px]">
         <div>
-          <div className="rounded-[10px] bg-[#012F42] p-6 sm:p-10 lg:p-[50px]">
+          <div className="rounded-[10px] bg-[#012F42] px-6 pt-9 pb-3 sm:px-10 sm:pt-12 sm:pb-8 lg:px-[50px] lg:pt-[32px] lg:pb-[38px]">
             <h2 className="font-['Outfit'] text-[30px] font-semibold leading-10 text-white">
               Contact Information
             </h2>
@@ -117,8 +168,14 @@ export default function ContactPage() {
                   key={card.label}
                   className="flex min-h-24 items-center gap-5 rounded-[10px] bg-white/20 p-5"
                 >
-                  <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-[5px] bg-[#FE8F02] text-white">
-                    {card.icon}
+                  <span className="flex h-14 w-14 shrink-0 items-center justify-center">
+                    <Image
+                      src={card.iconSrc}
+                      alt={card.iconAlt}
+                      width={42}
+                      height={42}
+                      className="h-10 w-10 object-contain"
+                    />
                   </span>
 
                   <div>
@@ -138,18 +195,44 @@ export default function ContactPage() {
               Connect with me
             </h2>
 
-            <div className="mt-6 flex flex-wrap gap-6">
-              {["f", "x", "in", "ig"].map((item) => (
-                <a
-                  key={item}
-                  href="#social"
-                  className="flex h-11 w-11 items-center justify-center rounded-[5px] bg-[#FE8F02] font-['Outfit'] text-[14px] font-semibold uppercase text-[#012F42] transition-colors hover:bg-white"
-                  aria-label={`Follow us on ${item}`}
-                >
-                  {item}
-                </a>
-              ))}
-            </div>
+            <div className="mt-6 flex flex-wrap items-center gap-6">
+  {socialLinks.map((item) => (
+    <a
+      key={item.label}
+      href={item.href}
+      className="flex h-11 w-11 items-center justify-center transition-opacity hover:opacity-80"
+      aria-label={`Follow us on ${item.label}`}
+    >
+      {item.label === "Twitter" && item.bgSrc ? (
+        <span className="relative flex h-8 w-8 items-center justify-center">
+          <Image
+            src={item.bgSrc}
+            alt=""
+            fill
+            className="object-contain"
+            aria-hidden="true"
+          />
+
+          <Image
+            src={item.iconSrc}
+            alt={`${item.label} icon`}
+            width={18}
+            height={18}
+            className="relative z-10 h-[18px] w-[18px] object-contain"
+          />
+        </span>
+      ) : (
+        <Image
+          src={item.iconSrc}
+          alt={`${item.label} icon`}
+          width={32}
+          height={32}
+          className="h-8 w-8 object-contain"
+        />
+      )}
+    </a>
+  ))}
+</div>
           </div>
 
           <div className="mt-[30px] rounded-[10px] border border-[#A3A3A3] bg-white p-8">
@@ -181,57 +264,63 @@ export default function ContactPage() {
             contact you shortly.
           </p>
 
-          <form className="mt-8 grid gap-5 lg:mt-12">
-            <ContactField label="Full Name" placeholder="John Doe" />
-            <ContactField label="Phone Number" placeholder="(555) 000-0000" />
-            <ContactField
-              label="Email Address"
-              placeholder="name@company.com"
-              type="email"
-            />
-            <ContactField
-              label="Company Name (OPTIONAL)"
-              placeholder="Logistics LLC"
-            />
-            <ContactField label="MC Number" placeholder="MC# 000000" />
+          <form className="mt-8 grid gap-5 lg:mt-10">
+  <div className="grid gap-5 sm:grid-cols-2">
+    <ContactField label="Full Name" placeholder="John Doe" />
 
-            <label className="block">
-              <span className="font-['Outfit'] text-[16px] font-semibold leading-6 text-[#012F42]">
-                Truck Type
-              </span>
+    <ContactField label="Phone Number" placeholder="(555) 000-0000" />
 
-              <select className="mt-2 h-14 w-full rounded-[5px] border border-[#D4D4D4] bg-[#F8FAFC] px-4 font-['DM_Sans'] text-[16px] text-[#5B6472] outline-none transition-colors focus:border-[#FE8F02]">
-                <option>Box Truck</option>
-                <option>Dry Van</option>
-                <option>Flatbed</option>
-                <option>Reefer</option>
-                <option>Power Only</option>
-              </select>
-            </label>
+    <ContactField
+      label="Email Address"
+      placeholder="name@company.com"
+      type="email"
+    />
 
-            <ContactField
-              label="Preferred Lanes or States"
-              placeholder="e.g. TX, GA, FL, or Midwest Region"
-            />
+    <ContactField
+      label="Company Name (OPTIONAL)"
+      placeholder="Logistics LLC"
+    />
 
-            <label className="block">
-              <span className="font-['Outfit'] text-[16px] font-semibold leading-6 text-[#012F42]">
-                Message
-              </span>
+    <ContactField label="MC Number" placeholder="MC# 000000" />
 
-              <textarea
-                className="mt-2 min-h-[132px] w-full resize-y rounded-[5px] border border-[#D4D4D4] bg-[#F8FAFC] px-4 py-4 font-['DM_Sans'] text-[16px] text-[#111827] outline-none transition-colors placeholder:text-[#6B7280] focus:border-[#FE8F02]"
-                placeholder="Tell us about your current operation..."
-              />
-            </label>
+    <label className="block">
+      <span className="font-['Outfit'] text-[16px] font-semibold leading-6 text-[#012F42]">
+        Truck Type
+      </span>
 
-            <button
-              type="submit"
-              className="mt-4 flex h-12 w-full items-center justify-center rounded-[5px] bg-[#FE8F02] px-8 font-['Outfit'] text-[16px] font-medium uppercase tracking-[0.08em] text-white transition-colors hover:bg-[#E07D02]"
-            >
-              Request Free Consultation
-            </button>
-          </form>
+      <select className="mt-2 h-14 w-full rounded-[5px] border border-[#D4D4D4] bg-[#F8FAFC] px-4 font-['DM_Sans'] text-[16px] text-[#5B6472] outline-none transition-colors focus:border-[#FE8F02]">
+        <option>Box Truck</option>
+        <option>Dry Van</option>
+        <option>Flatbed</option>
+        <option>Reefer</option>
+        <option>Power Only</option>
+      </select>
+    </label>
+  </div>
+
+  <ContactField
+    label="Preferred Lanes or States"
+    placeholder="e.g. TX, GA, FL, or Midwest Region"
+  />
+
+  <label className="block">
+    <span className="font-['Outfit'] text-[16px] font-semibold leading-6 text-[#012F42]">
+      Message
+    </span>
+
+    <textarea
+      className="mt-2 min-h-[132px] w-full resize-y rounded-[5px] border border-[#D4D4D4] bg-[#F8FAFC] px-4 py-4 font-['DM_Sans'] text-[16px] text-[#111827] outline-none transition-colors placeholder:text-[#6B7280] focus:border-[#FE8F02]"
+      placeholder="Tell us about your current operation..."
+    />
+  </label>
+
+  <button
+    type="submit"
+    className="mt-2 flex h-12 w-full items-center justify-center rounded-[5px] bg-[#FE8F02] px-8 font-['Outfit'] text-[16px] font-medium uppercase tracking-[0.08em] text-white transition-colors hover:bg-[#E07D02]"
+  >
+    Request Free Consultation
+  </button>
+</form>
         </div>
       </section>
 
@@ -249,6 +338,7 @@ export default function ContactPage() {
             >
               <ArrowLeftIcon />
             </button>
+
             <button
               type="button"
               className="flex h-9 w-9 items-center justify-center rounded-[5px] bg-[#FE8F02] text-white"
@@ -260,46 +350,51 @@ export default function ContactPage() {
         </div>
 
         <div className="mt-12 grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
-          {testimonials.map((testimonial) => (
-            <article
-              key={testimonial.name}
-              className={`rounded-[10px] border bg-white px-7 py-8 text-center ${
-                testimonial.active ? "border-[#FE8F02]" : "border-[#A3A3A3]"
-              }`}
-            >
-              <div className="mx-auto flex h-24 w-24 items-center justify-center rounded-full bg-[#012F42] font-['Outfit'] text-[28px] font-semibold text-white">
-                {testimonial.name
-                  .split(" ")
-                  .map((part) => part[0])
-                  .join("")}
-              </div>
+  {testimonials.map((testimonial) => (
+    <article
+      key={testimonial.name}
+      className={`group rounded-[10px] border bg-white px-7 py-8 text-center transition-all duration-300 ease-out hover:-translate-y-2 hover:border-[#FACC15] hover:shadow-[0_0_0_3px_rgba(250,204,21,0.28),0_18px_40px_rgba(250,204,21,0.18)] ${
+        testimonial.active ? "border-[#FACC15]" : "border-[#A3A3A3]"
+      }`}
+    >
+      <div className="mx-auto flex h-24 w-24 items-center justify-center overflow-hidden rounded-full bg-[#012F42] transition-transform duration-300 group-hover:scale-105">
+        <Image
+          src={testimonial.avatarSrc}
+          alt={testimonial.avatarAlt}
+          width={96}
+          height={96}
+          className="h-full w-full object-cover"
+        />
+      </div>
 
-              <div
-                className={`mx-auto mt-5 h-0.5 w-40 rounded-full ${
-                  testimonial.active ? "bg-[#FE8F02]" : "bg-[#A3A3A3]"
-                }`}
-              />
+      <div
+        className={`mx-auto mt-5 h-0.5 w-40 rounded-full transition-colors duration-300 ${
+          testimonial.active
+            ? "bg-[#FACC15]"
+            : "bg-[#A3A3A3] group-hover:bg-[#FACC15]"
+        }`}
+      />
 
-              <h3 className="mt-5 font-['Outfit'] text-[20px] font-semibold leading-8 text-[#012F42]">
-                {testimonial.name}
-              </h3>
+      <h3 className="mt-5 font-['Outfit'] text-[20px] font-semibold leading-8 text-[#012F42]">
+        {testimonial.name}
+      </h3>
 
-              <p className="font-['DM_Sans'] text-[14px] font-medium leading-6 text-[#FE8F02]">
-                {testimonial.role}
-              </p>
+      <p className="font-['DM_Sans'] text-[14px] font-medium leading-6 text-[#FACC15]">
+        {testimonial.role}
+      </p>
 
-              <div className="mt-6 flex justify-center gap-1 text-[#FE8F02]">
-                {Array.from({ length: 5 }).map((_, index) => (
-                  <StarIcon key={index} />
-                ))}
-              </div>
+      <div className="mt-6 flex justify-center gap-1 text-[#FACC15]">
+        {Array.from({ length: 5 }).map((_, index) => (
+          <StarIcon key={index} />
+        ))}
+      </div>
 
-              <p className="mt-4 font-['DM_Sans'] text-[18px] leading-7 text-[#5B6472]">
-                {testimonial.quote}
-              </p>
-            </article>
-          ))}
-        </div>
+      <p className="mt-4 font-['DM_Sans'] text-[18px] leading-7 text-[#5B6472]">
+        {testimonial.quote}
+      </p>
+    </article>
+  ))}
+</div>
       </section>
 
       <section className="mx-auto mt-20 w-[calc(100%_-_40px)] max-w-[1520px] rounded-[10px] bg-[#012F42] px-6 py-12 sm:px-10 lg:grid lg:min-h-[535px] lg:grid-cols-[1fr_720px] lg:gap-20 lg:px-[100px] lg:py-[50px]">
@@ -379,77 +474,6 @@ function CtaField({
         placeholder={placeholder}
       />
     </label>
-  );
-}
-
-function PhoneIcon() {
-  return (
-    <svg
-      className="h-6 w-6"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-    >
-      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.11 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.92.33 1.82.62 2.68a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.4-1.19a2 2 0 0 1 2.11-.45c.86.29 1.76.5 2.68.62A2 2 0 0 1 22 16.92z" />
-    </svg>
-  );
-}
-
-function MailIcon() {
-  return (
-    <svg
-      className="h-6 w-6"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-    >
-      <rect x="3" y="5" width="18" height="14" rx="2" />
-      <path d="m3 7 9 6 9-6" />
-    </svg>
-  );
-}
-
-function ClockIcon() {
-  return (
-    <svg
-      className="h-6 w-6"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-    >
-      <circle cx="12" cy="12" r="9" />
-      <path d="M12 7v5l3 3" />
-    </svg>
-  );
-}
-
-function MapPinIcon() {
-  return (
-    <svg
-      className="h-6 w-6"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-    >
-      <path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0z" />
-      <circle cx="12" cy="10" r="3" />
-    </svg>
   );
 }
 

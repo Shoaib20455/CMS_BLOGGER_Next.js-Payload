@@ -93,13 +93,15 @@ export default function BlogSection({
                 key={post.title}
                 className="grid min-h-[169px] grid-cols-1 items-center gap-4 rounded-[10px] border border-[#878B92] bg-white p-[14px] md:grid-cols-[180px_1fr]"
               >
-                <Image
-                  src={post.img}
-                  alt={post.title}
-                  width={180}
-                  height={150}
-                  className="h-[220px] w-full rounded-[10px] object-cover md:h-[141px] md:w-[180px]"
-                />
+                <div className="relative h-[220px] w-full overflow-hidden rounded-[10px] md:h-[141px] md:w-[180px]">
+                  <Image
+                    src={post.img}
+                    alt={post.title}
+                    fill
+                    sizes="(min-width: 768px) 180px, calc(100vw - 68px)"
+                    className="object-cover"
+                  />
+                </div>
 
                 <div>
                   <PostDate date={post.date} />

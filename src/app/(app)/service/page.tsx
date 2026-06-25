@@ -80,6 +80,7 @@ export default function ServiceDetailPage() {
             alt=""
             fill
             priority
+            sizes="(min-width: 1520px) 1520px, calc(100vw - 40px)"
             className="object-cover opacity-40"
           />
 
@@ -120,6 +121,7 @@ export default function ServiceDetailPage() {
                   src={service.image}
                   alt={service.title}
                   fill
+                  sizes="(min-width: 1280px) 365px, (min-width: 640px) 50vw, calc(100vw - 40px)"
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />
 

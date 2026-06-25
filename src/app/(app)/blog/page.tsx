@@ -179,9 +179,9 @@ export default function BlogPage() {
           id="resources"
           className="mt-14 grid gap-x-5 gap-y-[70px] sm:grid-cols-2 md:grid-cols-3"
         >
-          {posts.map((post) => (
+          {posts.map((post, index) => (
             <article
-              key={post.title}
+              key={`${post.href}-${index}`}
               className="group overflow-hidden rounded-[10px] bg-[#F8FAFC]"
             >
               <Link href={post.href} className="block no-underline">
