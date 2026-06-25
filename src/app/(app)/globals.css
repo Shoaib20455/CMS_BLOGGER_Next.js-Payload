@@ -2077,24 +2077,44 @@
 
 .about-socials {
   display: flex;
-  gap: 20px;
+  align-items: center;
+  gap: 28px;
 }
 
 .about-socials a {
-  color: #fe8f02;
-  transition: color 160ms ease, transform 160ms ease;
+  width: 32px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 160ms ease, transform 160ms ease;
 }
 
 .about-socials a:hover {
-  color: #fff;
+  opacity: 0.85;
   transform: translateY(-2px);
 }
 
-.about-socials svg {
-  width: 26px;
-  height: 26px;
-  stroke: currentColor;
-  stroke-width: 2;
+.about-socials img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+.about-twitter-icon {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-twitter-icon img:last-child {
+  position: relative;
+  z-index: 1;
+  width: 18px;
+  height: 18px;
 }
 
 .about-benefits {

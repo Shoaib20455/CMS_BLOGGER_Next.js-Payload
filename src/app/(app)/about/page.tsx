@@ -57,7 +57,6 @@ export const metadata: Metadata = {
   },
 };
 
-type SocialIconProps = SVGProps<SVGSVGElement>;
 type IconProps = SVGProps<SVGSVGElement>;
 
 function JsonLd({ data }: { data: unknown }) {
@@ -134,95 +133,6 @@ function MapPin(props: IconProps) {
   );
 }
 
-function FacebookIcon(props: SocialIconProps) {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" {...props}>
-      <text
-        x="12"
-        y="17"
-        textAnchor="middle"
-        fontSize="16"
-        fontWeight="700"
-        fill="currentColor"
-        fontFamily="Arial, sans-serif"
-      >
-        f
-      </text>
-    </svg>
-  );
-}
-
-function InstagramIcon(props: SocialIconProps) {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" {...props}>
-      <rect
-        x="5"
-        y="5"
-        width="14"
-        height="14"
-        rx="4"
-        stroke="currentColor"
-        strokeWidth="2"
-      />
-      <circle cx="12" cy="12" r="3" stroke="currentColor" strokeWidth="2" />
-      <circle cx="16.5" cy="7.5" r="1" fill="currentColor" />
-    </svg>
-  );
-}
-
-function LinkedinIcon(props: SocialIconProps) {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" {...props}>
-      <text
-        x="12"
-        y="16"
-        textAnchor="middle"
-        fontSize="10"
-        fontWeight="700"
-        fill="currentColor"
-        fontFamily="Arial, sans-serif"
-      >
-        in
-      </text>
-    </svg>
-  );
-}
-
-function TwitterIcon(props: SocialIconProps) {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" {...props}>
-      <text
-        x="12"
-        y="16"
-        textAnchor="middle"
-        fontSize="12"
-        fontWeight="700"
-        fill="currentColor"
-        fontFamily="Arial, sans-serif"
-      >
-        X
-      </text>
-    </svg>
-  );
-}
-
-function YoutubeIcon(props: SocialIconProps) {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" {...props}>
-      <rect
-        x="4"
-        y="7"
-        width="16"
-        height="10"
-        rx="3"
-        stroke="currentColor"
-        strokeWidth="2"
-      />
-      <path d="M10 10L15 12L10 14V10Z" fill="currentColor" />
-    </svg>
-  );
-}
-
 const services = [
   "Load Booking Services",
   "Dedicated Truck Dispatcher",
@@ -263,6 +173,35 @@ const benefits = [
   "Broker Management",
   "Documentation Assistance",
   "Nationwide Dispatch Coverage",
+];
+
+const socialLinks = [
+  {
+    label: "LinkedIn",
+    href: "#",
+    iconSrc: "/about/linkedin.svg",
+  },
+  {
+    label: "Facebook",
+    href: "#",
+    iconSrc: "/about/facebook.svg",
+  },
+  {
+    label: "Twitter",
+    href: "#",
+    iconSrc: "/about/twitter.svg",
+    bgSrc: "/about/twitter_back.svg",
+  },
+  {
+    label: "Instagram",
+    href: "#",
+    iconSrc: "/about/instagram.svg",
+  },
+  {
+    label: "YouTube",
+    href: "#",
+    iconSrc: "/about/youtube.svg",
+  },
 ];
 
 const contactItems = [
@@ -614,25 +553,36 @@ export default function AboutPage() {
             <h3 className="about-social-title">Connect with me</h3>
 
             <div className="about-socials" aria-label="Social links">
-              <Link href="#" aria-label="LinkedIn">
-                <LinkedinIcon aria-hidden="true" />
-              </Link>
-
-              <Link href="#" aria-label="Facebook">
-                <FacebookIcon aria-hidden="true" />
-              </Link>
-
-              <Link href="#" aria-label="Twitter">
-                <TwitterIcon aria-hidden="true" />
-              </Link>
-
-              <Link href="#" aria-label="Instagram">
-                <InstagramIcon aria-hidden="true" />
-              </Link>
-
-              <Link href="#" aria-label="YouTube">
-                <YoutubeIcon aria-hidden="true" />
-              </Link>
+              {socialLinks.map((item) => (
+                <Link key={item.label} href={item.href} aria-label={item.label}>
+                  {item.label === "Twitter" && item.bgSrc ? (
+                    <span className="about-twitter-icon">
+                      <Image
+                        src={item.bgSrc}
+                        alt=""
+                        fill
+                        sizes="32px"
+                        aria-hidden="true"
+                      />
+                      <Image
+                        src={item.iconSrc}
+                        alt=""
+                        width={18}
+                        height={18}
+                        aria-hidden="true"
+                      />
+                    </span>
+                  ) : (
+                    <Image
+                      src={item.iconSrc}
+                      alt=""
+                      width={32}
+                      height={32}
+                      aria-hidden="true"
+                    />
+                  )}
+                </Link>
+              ))}
             </div>
           </div>
 
