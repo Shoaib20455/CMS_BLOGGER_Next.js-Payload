@@ -124,9 +124,9 @@ const testimonials = [
 
 export default function ContactPage() {
   return (
-    <div className="bg-[#F8FAFC] pt-8 lg:pt-20">
-      <section className="mx-auto w-[calc(100%_-_40px)] max-w-[1520px] overflow-hidden rounded-[20px]">
-        <div className="relative min-h-[420px] overflow-hidden px-6 py-16 sm:px-10 lg:min-h-[500px] lg:px-[100px] lg:py-[137px]">
+    <div className="bg-[#F8FAFC] pt-5 sm:pt-8 lg:pt-20">
+      <section className="mx-auto w-[calc(100%_-_32px)] max-w-[1520px] overflow-hidden rounded-[12px] sm:w-[calc(100%_-_40px)] sm:rounded-[20px]">
+        <div className="relative min-h-[360px] overflow-hidden px-5 py-12 sm:min-h-[420px] sm:px-10 sm:py-16 lg:min-h-[500px] lg:px-[100px] lg:py-[137px]">
           <Image
             src={heroImage}
             alt="Box truck dispatch contact hero"
@@ -139,15 +139,15 @@ export default function ContactPage() {
           <div className="absolute inset-0 bg-gradient-to-r from-[#012F42]/95 via-[#012F42]/85 to-[#012F42]/55" />
 
           <div className="relative z-10 max-w-[970px]">
-            <h1 className="font-['Outfit'] text-[42px] font-bold capitalize leading-[52px] text-white sm:text-[54px] sm:leading-[64px] lg:text-[60px] lg:leading-[70px]">
+            <h1 className="font-['Outfit'] text-[36px] font-bold capitalize leading-[44px] text-white sm:text-[54px] sm:leading-[64px] lg:text-[60px] lg:leading-[70px]">
               Contact Us
             </h1>
 
-            <p className="mt-6 font-['Outfit'] text-[24px] font-bold leading-8 text-[#FE8F02] sm:text-[30px] sm:leading-10">
+            <p className="mt-5 font-['Outfit'] text-[22px] font-bold leading-8 text-[#FE8F02] sm:mt-6 sm:text-[30px] sm:leading-10">
               Let&apos;s Keep Your Trucks Moving
             </p>
 
-            <p className="mt-8 max-w-[687px] font-['DM_Sans'] text-[18px] leading-8 text-white sm:text-[20px]">
+            <p className="mt-6 max-w-[687px] font-['DM_Sans'] text-[16px] leading-7 text-white sm:mt-8 sm:text-[20px] sm:leading-8">
               Get in touch today to learn how our dispatching services can help
               you increase revenue and spend more time on the road.
             </p>
@@ -155,10 +155,10 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="mx-auto mt-20 grid w-[calc(100%_-_40px)] max-w-[1520px] gap-10 lg:grid-cols-[626px_1fr] lg:items-start lg:gap-[176px]">
+      <section className="mx-auto mt-12 grid w-[calc(100%_-_32px)] max-w-[1520px] gap-8 sm:mt-16 sm:w-[calc(100%_-_40px)] sm:gap-10 lg:mt-20 lg:grid-cols-[626px_1fr] lg:items-start lg:gap-[176px]">
         <div>
-          <div className="rounded-[10px] bg-[#012F42] px-6 pt-9 pb-3 sm:px-10 sm:pt-12 sm:pb-8 lg:px-[50px] lg:pt-[32px] lg:pb-[38px]">
-            <h2 className="font-['Outfit'] text-[30px] font-semibold leading-10 text-white">
+          <div className="rounded-[10px] bg-[#012F42] px-5 pb-7 pt-8 sm:px-10 sm:pt-12 sm:pb-8 lg:px-[50px] lg:pt-[32px] lg:pb-[38px]">
+            <h2 className="font-['Outfit'] text-[26px] font-semibold leading-9 text-white sm:text-[30px] sm:leading-10">
               Contact Information
             </h2>
 
@@ -166,7 +166,7 @@ export default function ContactPage() {
               {contactCards.map((card) => (
                 <div
                   key={card.label}
-                  className="flex min-h-24 items-center gap-5 rounded-[10px] bg-white/20 p-5"
+                    className="flex min-h-24 items-center gap-4 rounded-[10px] bg-white/20 p-4 sm:gap-5 sm:p-5"
                 >
                   <span className="flex h-14 w-14 shrink-0 items-center justify-center">
                     <Image
@@ -179,11 +179,11 @@ export default function ContactPage() {
                   </span>
 
                   <div>
-                    <h3 className="font-['Outfit'] text-[20px] font-semibold leading-8 text-white">
+                    <h3 className="font-['Outfit'] text-[18px] font-semibold leading-7 text-white sm:text-[20px] sm:leading-8">
                       {card.label}
                     </h3>
 
-                    <p className="mt-1 font-['DM_Sans'] text-[18px] leading-7 text-white">
+                    <p className="mt-1 break-words font-['DM_Sans'] text-[15px] leading-6 text-white sm:text-[18px] sm:leading-7">
                       {card.value}
                     </p>
                   </div>
@@ -191,11 +191,11 @@ export default function ContactPage() {
               ))}
             </div>
 
-            <h2 className="mt-12 font-['Outfit'] text-[30px] font-semibold leading-10 text-white lg:mt-[74px]">
+            <h2 className="mt-10 font-['Outfit'] text-[26px] font-semibold leading-9 text-white sm:mt-12 sm:text-[30px] sm:leading-10 lg:mt-[74px]">
               Connect with me
             </h2>
 
-            <div className="mt-6 flex flex-wrap items-center gap-6">
+            <div className="mt-6 flex flex-wrap items-center gap-5 sm:gap-6">
   {socialLinks.map((item) => (
     <a
       key={item.label}
@@ -209,6 +209,7 @@ export default function ContactPage() {
             src={item.bgSrc}
             alt=""
             fill
+            sizes="32px"
             className="object-contain"
             aria-hidden="true"
           />
@@ -235,7 +236,7 @@ export default function ContactPage() {
 </div>
           </div>
 
-          <div className="mt-[30px] rounded-[10px] border border-[#A3A3A3] bg-white p-8">
+          <div className="mt-[30px] rounded-[10px] border border-[#A3A3A3] bg-white p-5 sm:p-8">
             <h2 className="font-['Outfit'] text-[20px] font-semibold leading-8 text-[#012F42]">
               Why Work With Us?
             </h2>
@@ -254,18 +255,18 @@ export default function ContactPage() {
           </div>
         </div>
 
-        <div className="rounded-[10px] border border-[#A3A3A3] bg-white/60 p-6 sm:p-10 lg:p-[50px]">
-          <h2 className="font-['Outfit'] text-[40px] font-bold leading-[50px] text-[#012F42] lg:text-[48px] lg:leading-[58px]">
+        <div className="rounded-[10px] border border-[#A3A3A3] bg-white/60 p-5 sm:p-10 lg:p-[50px]">
+          <h2 className="font-['Outfit'] text-[32px] font-bold leading-[40px] text-[#012F42] sm:text-[40px] sm:leading-[50px] lg:text-[48px] lg:leading-[58px]">
             Request a Free Consultation
           </h2>
 
-          <p className="mt-6 max-w-[614px] font-['DM_Sans'] text-[18px] leading-7 text-[#5B6472]">
+          <p className="mt-4 max-w-[614px] font-['DM_Sans'] text-[16px] leading-7 text-[#5B6472] sm:mt-6 sm:text-[18px]">
             Complete the form below and one of our dispatch specialists will
             contact you shortly.
           </p>
 
           <form className="mt-8 grid gap-5 lg:mt-10">
-  <div className="grid gap-5 sm:grid-cols-2">
+  <div className="grid gap-5 md:grid-cols-2">
     <ContactField label="Full Name" placeholder="John Doe" />
 
     <ContactField label="Phone Number" placeholder="(555) 000-0000" />
@@ -324,9 +325,9 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="mx-auto mt-20 w-[calc(100%_-_40px)] max-w-[1520px]">
-        <div className="flex flex-wrap items-center justify-between gap-6">
-          <h2 className="font-['Outfit'] text-[40px] font-semibold leading-[50px] text-[#012F42] lg:text-[48px] lg:leading-[58px]">
+      <section className="mx-auto mt-12 w-[calc(100%_-_32px)] max-w-[1520px] sm:mt-16 sm:w-[calc(100%_-_40px)] lg:mt-20">
+        <div className="flex flex-wrap items-center justify-center gap-5 text-center sm:justify-between sm:text-left">
+          <h2 className="font-['Outfit'] text-[32px] font-semibold leading-[40px] text-[#012F42] sm:text-[40px] sm:leading-[50px] lg:text-[48px] lg:leading-[58px]">
             What Our Clients Say
           </h2>
 
@@ -349,7 +350,7 @@ export default function ContactPage() {
           </div>
         </div>
 
-        <div className="mt-12 grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
+        <div className="mt-8 grid gap-5 sm:mt-12 sm:grid-cols-2 xl:grid-cols-4">
   {testimonials.map((testimonial) => (
     <article
       key={testimonial.name}
@@ -389,7 +390,7 @@ export default function ContactPage() {
         ))}
       </div>
 
-      <p className="mt-4 font-['DM_Sans'] text-[18px] leading-7 text-[#5B6472]">
+      <p className="mt-4 font-['DM_Sans'] text-[16px] leading-7 text-[#5B6472] sm:text-[18px]">
         {testimonial.quote}
       </p>
     </article>
@@ -397,21 +398,21 @@ export default function ContactPage() {
 </div>
       </section>
 
-      <section className="mx-auto mt-20 w-[calc(100%_-_40px)] max-w-[1520px] rounded-[10px] bg-[#012F42] px-6 py-12 sm:px-10 lg:grid lg:min-h-[535px] lg:grid-cols-[1fr_720px] lg:gap-20 lg:px-[100px] lg:py-[50px]">
+      <section className="mx-auto mt-12 w-[calc(100%_-_32px)] max-w-[1520px] rounded-[10px] bg-[#012F42] px-5 py-10 sm:mt-16 sm:w-[calc(100%_-_40px)] sm:px-10 sm:py-12 lg:mt-20 lg:grid lg:min-h-[535px] lg:grid-cols-[1fr_720px] lg:gap-20 lg:px-[100px] lg:py-[50px]">
         <div className="flex flex-col justify-center">
-          <h2 className="max-w-[462px] font-['Outfit'] text-[42px] font-bold leading-[54px] text-white lg:text-[48px] lg:leading-[60px]">
+          <h2 className="max-w-[462px] font-['Outfit'] text-[32px] font-bold leading-[40px] text-white sm:text-[42px] sm:leading-[54px] lg:text-[48px] lg:leading-[60px]">
             Ready to Find Better Loads?
           </h2>
 
-          <p className="mt-10 max-w-[395px] font-['DM_Sans'] text-[18px] leading-7 text-white/70">
+          <p className="mt-6 max-w-[395px] font-['DM_Sans'] text-[16px] leading-7 text-white/70 sm:mt-10 sm:text-[18px]">
             Stop spending hours searching load boards. Let our experienced
             dispatch team handle the freight while you focus on driving and
             growing your business.
           </p>
         </div>
 
-        <form className="mt-10 rounded-[10px] bg-white/10 p-6 lg:mt-0 lg:p-[50px]">
-          <div className="grid gap-5 sm:grid-cols-2">
+        <form className="mt-8 rounded-[10px] bg-white/10 p-5 sm:mt-10 sm:p-6 lg:mt-0 lg:p-[50px]">
+          <div className="grid gap-5 md:grid-cols-2">
             <CtaField label="First Name" placeholder="Enter First Name" />
             <CtaField label="Last Name" placeholder="Enter Last Name" />
             <CtaField label="Phone Number" placeholder="+1 (000) 123-1234" />
