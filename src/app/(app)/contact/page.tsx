@@ -399,36 +399,38 @@ export default function ContactPage() {
       </section>
 
       <section className="mx-auto mt-12 w-[calc(100%_-_32px)] max-w-[1520px] rounded-[10px] bg-[#012F42] px-5 py-10 sm:mt-16 sm:w-[calc(100%_-_40px)] sm:px-10 sm:py-12 lg:mt-20 lg:grid lg:min-h-[535px] lg:grid-cols-[1fr_720px] lg:gap-20 lg:px-[100px] lg:py-[50px]">
-        <div className="flex flex-col justify-center">
-          <h2 className="max-w-[462px] font-['Outfit'] text-[32px] font-bold leading-[40px] text-white sm:text-[42px] sm:leading-[54px] lg:text-[48px] lg:leading-[60px]">
-            Ready to Find Better Loads?
-          </h2>
+  <div className="flex flex-col justify-center">
+    <h2 className="max-w-[462px] font-['Outfit'] text-[32px] font-bold leading-[40px] text-white sm:text-[42px] sm:leading-[54px] lg:text-[48px] lg:leading-[60px]">
+      Ready to Grow Your Business?
+    </h2>
 
-          <p className="mt-6 max-w-[395px] font-['DM_Sans'] text-[16px] leading-7 text-white/70 sm:mt-10 sm:text-[18px]">
-            Stop spending hours searching load boards. Let our experienced
-            dispatch team handle the freight while you focus on driving and
-            growing your business.
-          </p>
-        </div>
+    <p className="mt-6 max-w-[395px] font-['DM_Sans'] text-[16px] leading-7 text-white/70 sm:mt-10 sm:text-[18px]">
+      Contact us today and start running high-paying loads!
+    </p>
+  </div>
 
-        <form className="mt-8 rounded-[10px] bg-white/10 p-5 sm:mt-10 sm:p-6 lg:mt-0 lg:p-[50px]">
-          <div className="grid gap-5 md:grid-cols-2">
-            <CtaField label="First Name" placeholder="Enter First Name" />
-            <CtaField label="Last Name" placeholder="Enter Last Name" />
-            <CtaField label="Phone Number" placeholder="+1 (000) 123-1234" />
-            <CtaField label="Email Address" placeholder="email@gmail.com" />
-            <CtaField label="Truck Type" placeholder="Enter Truck Type" />
-            <CtaField label="MC Number" placeholder="Enter MC Number" />
-          </div>
+  <form className="mt-10 rounded-[10px] bg-white/10 p-6 lg:mt-0 lg:p-[50px]">
+    <div className="grid gap-5 sm:grid-cols-2">
+      <CtaField label="First Name" placeholder="Enter First Name" />
+      <CtaField label="Last Name" placeholder="Enter Last Name" />
+      <CtaField label="Phone Number" placeholder="+1 (000) 123-1234" />
+      <CtaField label="Email Address" placeholder="email@gmail.com" />
+      <CtaField
+        label="Truck Type"
+        placeholder="Enter Truck Type"
+        select
+      />
+      <CtaField label="MC Number" placeholder="Enter MC Number" />
+    </div>
 
-          <button
-            type="submit"
-            className="mt-6 flex h-12 w-full items-center justify-center rounded-[5px] bg-[#FE8F02] px-5 font-['Outfit'] text-[18px] font-medium capitalize text-white transition-colors hover:bg-[#E07D02]"
-          >
-            Get Started Now
-          </button>
-        </form>
-      </section>
+    <button
+      type="submit"
+      className="mt-6 flex h-12 w-full items-center justify-center rounded-[5px] bg-[#FE8F02] px-5 font-['Outfit'] text-[18px] font-medium capitalize text-white transition-colors hover:bg-[#E07D02]"
+    >
+      Get Started Now
+    </button>
+  </form>
+</section>
     </div>
   );
 }
@@ -460,9 +462,11 @@ function ContactField({
 function CtaField({
   label,
   placeholder,
+  select = false,
 }: {
   label: string;
   placeholder: string;
+  select?: boolean;
 }) {
   return (
     <label className="block">
@@ -470,10 +474,33 @@ function CtaField({
         {label}
       </span>
 
-      <input
-        className="mt-2.5 h-11 w-full rounded-[5px] border border-white/5 bg-[#012F42]/60 px-5 font-['DM_Sans'] text-[14px] font-light text-white outline-none transition-colors placeholder:text-white/70 focus:border-[#FE8F02]"
-        placeholder={placeholder}
-      />
+      <span className="relative mt-2.5 block">
+        {select ? (
+          <>
+            <select
+              defaultValue=""
+              className="h-11 w-full appearance-none rounded-[5px] border border-white/5 bg-[#012F42]/60 px-5 pr-12 font-['DM_Sans'] text-[14px] font-light text-white/70 outline-none transition-colors focus:border-[#FE8F02]"
+            >
+              <option value="" disabled>
+                {placeholder}
+              </option>
+              <option value="box-truck">Box Truck</option>
+            </select>
+            <Image
+              src="/contact/images/downArrow.png"
+              alt=""
+              width={14}
+              height={14}
+              className="pointer-events-none absolute right-5 top-1/2 h-3.5 w-3.5 -translate-y-1/2"
+            />
+          </>
+        ) : (
+          <input
+            className="h-11 w-full rounded-[5px] border border-white/5 bg-[#012F42]/60 px-5 font-['DM_Sans'] text-[14px] font-light text-white outline-none transition-colors placeholder:text-white/70 focus:border-[#FE8F02]"
+            placeholder={placeholder}
+          />
+        )}
+      </span>
     </label>
   );
 }

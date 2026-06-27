@@ -50,9 +50,9 @@ export default function BlogSection({
 }: BlogSectionProps) {
   if (variant === "flow") {
     return (
-      <section className="mx-auto mb-20 mt-[70px] w-[calc(100%_-_40px)] max-w-[1082px]">
-        <div className="mb-[42px] flex items-center justify-between gap-8 max-lg:flex-col max-lg:items-start">
-          <h2 className="font-['Outfit'] text-[32px] font-bold leading-[40px] text-[#012F42] sm:text-[36px] sm:leading-[46px]">
+      <section className="mx-auto mb-20 mt-20 w-[calc(100%_-_40px)] max-w-[1520px]">
+        <div className="mb-[62px] flex items-center justify-between gap-8 max-lg:flex-col max-lg:items-start">
+          <h2 className="font-['Outfit'] text-[32px] font-bold leading-[40px] text-[#012F42] sm:text-[42px] sm:leading-[52px] lg:text-[48px] lg:leading-[58px]">
             {title}
           </h2>
 
@@ -64,14 +64,14 @@ export default function BlogSection({
           </Link>
         </div>
 
-        <div className="grid grid-cols-1 gap-[24px] lg:grid-cols-2">
-          <article className="rounded-[10px] border border-[#878B92] bg-white p-5">
+        <div className="grid grid-cols-1 gap-[30px] xl:grid-cols-[742px_1fr]">
+          <article className="min-h-[600px] rounded-[10px] border border-[#878B92] bg-white p-[30px]">
             <Image
               src={featuredPost.img}
               alt={featuredPost.title}
-              width={500}
+              width={682}
               height={317}
-              className="mb-5 h-[260px] w-full rounded-[10px] object-cover max-sm:h-[220px]"
+              className="mb-5 h-[317px] w-full rounded-[10px] object-cover max-sm:h-[220px]"
             />
 
             <PostDate date={featuredPost.date} />
@@ -87,18 +87,18 @@ export default function BlogSection({
             <ReadMore href={featuredPost.href} />
           </article>
 
-          <div className="grid gap-[24px]">
+          <div className="grid content-start gap-[30px]">
             {smallPosts.map((post) => (
               <article
                 key={post.title}
-                className="grid min-h-[169px] grid-cols-1 items-center gap-4 rounded-[10px] border border-[#878B92] bg-white p-[14px] md:grid-cols-[180px_1fr]"
+                className="grid min-h-[180px] grid-cols-1 items-center gap-[30px] rounded-[10px] border border-[#878B92] bg-white p-[15px] md:grid-cols-[220px_1fr]"
               >
-                <div className="relative h-[220px] w-full overflow-hidden rounded-[10px] md:h-[141px] md:w-[180px]">
+                <div className="relative h-[220px] w-full overflow-hidden rounded-[10px] md:h-[150px] md:w-[220px]">
                   <Image
                     src={post.img}
                     alt={post.title}
                     fill
-                    sizes="(min-width: 768px) 180px, calc(100vw - 68px)"
+                    sizes="(min-width: 768px) 220px, calc(100vw - 70px)"
                     className="object-cover"
                   />
                 </div>

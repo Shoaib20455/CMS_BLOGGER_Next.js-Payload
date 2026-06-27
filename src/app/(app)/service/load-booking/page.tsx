@@ -32,27 +32,27 @@ const benefits = [
   {
     title: "Higher Revenue",
     body: "Better-paying loads and stronger rate negotiations help increase your earnings.",
-    image: "/Images/Rectangle 1078.png",
+    image: "/loadBooking/Rectangle 1135.png",
   },
   {
     title: "Reduced Deadhead Miles",
     body: "Strategic load planning keeps your truck loaded and productive.",
-    image: "/Images/Rectangle 1080.png",
+    image: "/loadBooking/Rectangle 1136.png",
   },
   {
     title: "More Time to Drive",
     body: "Spend less time searching load boards and more time generating revenue.",
-    image: "/Images/Rectangle 1082.png",
+    image: "/loadBooking/Rectangle 1137.png",
   },
   {
     title: "Access to Trusted Brokers",
     body: "We work with reputable brokers and verify creditworthiness before booking.",
-    image: "/Images/Rectangle 1084.png",
+    image: "/loadBooking/Rectangle 1138.png",
   },
   {
     title: "Consistent Freight Opportunities",
     body: "Our goal is to keep your truck moving with steady freight throughout the year.",
-    image: "/Images/Rectangle 1093.png",
+    image: "/loadBooking/Rectangle 1139.png",
   },
 ];
 
@@ -60,22 +60,27 @@ const chooseCards = [
   {
     title: "Experienced Dispatch Professionals",
     body: "Our dispatchers understand freight markets, lane trends, and broker negotiations.",
+    icon: "/loadBooking/Rectangle 1524.png",
   },
   {
     title: "Personalized Service",
     body: "Every truck operates differently. We tailor load strategies to your preferences.",
+    icon: "/loadBooking/Rectangle 1524 (1).png",
   },
   {
     title: "Transparent Communication",
     body: "No hidden fees. No surprises. Just clear communication and dedicated support.",
+    icon: "/loadBooking/Rectangle 1524 (2).png",
   },
   {
     title: "Nationwide Coverage",
     body: "We book freight across all 48 contiguous states.",
+    icon: "/loadBooking/Rectangle 1524 (3).png",
   },
   {
     title: "Profit-Focused Approach",
     body: "Our priority is helping you maximize revenue while maintaining efficiency.",
+    icon: "/loadBooking/Rectangle 1524 (4).png",
   },
 ];
 
@@ -126,18 +131,19 @@ const faqs = [
 
 export default function LoadBookingPage() {
   return (
-    <div className="bg-[#F8FAFC] pt-8 lg:pt-20">
+    <div className="bg-[#F8FAFC] pb-20 pt-8 lg:pt-20">
       <section className="mx-auto w-[calc(100%_-_40px)] max-w-[1520px] overflow-hidden rounded-[20px] bg-[#012F42]">
         <div className="relative min-h-[500px] overflow-hidden px-6 py-14 sm:px-10 lg:px-[100px] lg:py-[83px]">
           <Image
-            src="/Images/Rectangle 1071.png"
+            src="/loadBooking/loadBooking_hero.png"
             alt=""
             fill
             priority
-            className="object-cover opacity-10"
+            sizes="(max-width: 1560px) calc(100vw - 40px), 1520px"
+            className="object-cover"
           />
 
-          <div className="absolute right-[-160px] top-[-160px] h-[720px] w-[150px] rotate-[15deg] bg-[#FE8F02]" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#012F42]/90 via-[#012F42]/70 to-[#012F42]/30" />
 
           <div className="relative z-10 max-w-[1156px]">
             <h1 className="font-['Outfit'] text-[40px] font-bold capitalize leading-[50px] text-white sm:text-[54px] sm:leading-[64px] lg:text-[60px] lg:leading-[70px]">
@@ -165,19 +171,21 @@ export default function LoadBookingPage() {
         </div>
       </section>
 
-      <section className="mx-auto mt-20 grid w-[calc(100%_-_40px)] max-w-[1520px] gap-[30px] lg:grid-cols-[1fr_626px]">
-        <div>
-          <h2 className="font-['Outfit'] text-[42px] font-bold leading-[52px] text-[#012F42] lg:text-[48px]">
+      <section className="mx-auto mt-20 grid w-[calc(100%_-_40px)] max-w-[1520px] gap-[30px] lg:h-[700px] lg:grid-cols-[857px_626px]">
+        <div className="flex min-w-0 flex-col">
+          <h2 className="font-['Outfit'] text-[38px] font-bold leading-[48px] text-[#012F42] sm:text-[42px] sm:leading-[52px] lg:text-[48px]">
             What Is Load Booking?
           </h2>
 
-          <div className="mt-8 space-y-7 font-['DM_Sans'] text-[18px] leading-8 text-[#575D67]">
+          <div className="mt-8 space-y-7 font-['DM_Sans'] text-[18px] leading-6 text-[#575D67]">
             <p>
               Load booking is much more than simply finding freight. It requires
               continuous monitoring of load boards, evaluating available
               opportunities, negotiating competitive rates, verifying broker
               credibility, securing rate confirmations, and coordinating every
-              detail of the shipment process.
+              detail of the shipment process. A well-managed load booking
+              strategy helps maximize revenue while reducing downtime and
+              operational disruptions.
             </p>
 
             <p>
@@ -185,13 +193,17 @@ export default function LoadBookingPage() {
               booking process from start to finish. We actively search for
               high-paying loads, negotiate on your behalf, verify broker and
               shipper information, and ensure all documentation is accurate
-              before dispatch.
+              before dispatch. Every load is carefully selected to match your
+              equipment, preferred routes, availability, and revenue goals.
             </p>
 
             <p>
               We also coordinate pickup and delivery schedules, communicate with
               brokers and shippers, and provide real-time updates throughout the
-              process.
+              process. By managing the logistics and paperwork, we allow drivers
+              and fleet owners to focus on the road while maintaining consistent
+              freight opportunities, minimizing empty miles, and improving
+              overall profitability.
             </p>
           </div>
 
@@ -200,7 +212,7 @@ export default function LoadBookingPage() {
             alt="Box truck load booking"
             width={857}
             height={296}
-            className="mt-10 h-[296px] w-full rounded-[10px] object-contain"
+            className="mt-10 h-auto w-full rounded-[10px] object-contain lg:mt-auto lg:h-[296px]"
           />
         </div>
 
@@ -209,12 +221,12 @@ export default function LoadBookingPage() {
           alt="Dispatcher reviewing load booking details"
           width={626}
           height={700}
-          className="h-full min-h-[420px] w-full rounded-[10px] object-contain"
+          className="h-auto w-full rounded-[10px] object-contain lg:h-[700px]"
         />
       </section>
 
       <section className="mx-auto mt-20 grid w-[calc(100%_-_40px)] max-w-[1520px] gap-5 lg:grid-cols-4">
-        <div className="rounded-[10px] bg-[#012F42] p-[50px] lg:col-span-2">
+        <div className="flex min-h-[223px] items-center rounded-[10px] bg-[#012F42] p-8 sm:p-[50px] lg:col-span-2">
           <h2 className="font-['Outfit'] text-[38px] font-bold leading-[48px] text-white lg:text-[48px] lg:leading-[58px]">
             Our Load Booking Services Include
           </h2>
@@ -247,18 +259,22 @@ export default function LoadBookingPage() {
         </h2>
 
         <div className="mt-[70px] grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
-          {chooseCards.map((card, index) => (
+          {chooseCards.map((card) => (
             <article
               key={card.title}
-              className="rounded-[10px] border border-[#878B92] bg-white"
+              className="group h-[288px] rounded-[10px] border border-[#878B92] bg-white transition-all duration-300 hover:-translate-y-1 hover:border-[#FE8F02] hover:shadow-[0_12px_30px_rgba(254,143,2,0.16)]"
             >
-              <div className="h-2.5 rounded-t-[10px] bg-[#012F42]" />
+              <div className="h-2.5 rounded-t-[10px] bg-[#012F42] transition-colors duration-300 group-hover:bg-[#FE8F02]" />
 
               <div className="p-5">
-                <div className="flex h-12 w-12 items-center justify-center rounded-[5px] border border-[#012F42] text-[#012F42]">
-                  <span className="font-['Outfit'] text-[18px] font-bold">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
+                <div className="flex h-12 w-12 items-center justify-center rounded-[5px] border border-[#012F42] transition-all duration-300 group-hover:border-[#FE8F02] group-hover:shadow-[0_0_18px_rgba(254,143,2,0.20)]">
+                  <Image
+                    src={card.icon}
+                    alt=""
+                    width={40}
+                    height={40}
+                    className="h-10 w-10 object-contain"
+                  />
                 </div>
 
                 <h3 className="mt-5 font-['Outfit'] text-[22px] font-semibold leading-8 text-[#012F42]">
@@ -281,21 +297,21 @@ export default function LoadBookingPage() {
 
         <div className="mt-[70px] grid gap-5 lg:grid-cols-2">
           <Image
-            src="/Images/Rectangle 1120.png"
+            src="/loadBooking/Rectangle 1093.png"
             alt="Dispatch process"
             width={750}
             height={518}
-            className="h-full min-h-[360px] w-full rounded-[10px] object-cover"
+            className="h-auto w-full rounded-[10px] object-cover lg:h-[518px]"
           />
 
           <div className="space-y-3">
             {processSteps.map((step, index) => (
               <details
                 key={step.title}
-                className="group rounded-[10px] border border-[#111827]/50 bg-white p-5"
+                className="group min-h-[80px] rounded-[10px] border border-[#111827]/50 bg-white p-5 transition-[border-color,box-shadow] duration-200 [&[open]]:min-h-[146px] [&[open]]:border-[#FE8F02] [&[open]]:shadow-[0_8px_22px_rgba(254,143,2,0.14)]"
                 open={index === 0}
               >
-                <summary className="flex cursor-pointer list-none items-center justify-between gap-4">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 rounded-[5px] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#FE8F02]">
                   <span className="font-['Outfit'] text-[22px] font-semibold leading-8 text-[#012F42]">
                     <span className="text-[#FE8F02]">Step {index + 1}:</span>{" "}
                     {step.title}
@@ -315,9 +331,10 @@ export default function LoadBookingPage() {
 
       <section className="relative mt-20 min-h-[610px] overflow-hidden">
         <Image
-          src="/Images/Rectangle 1071.png"
+          src="/loadBooking/Rectangle 1078.png"
           alt=""
           fill
+          sizes="100vw"
           className="object-cover"
         />
 
@@ -332,7 +349,7 @@ export default function LoadBookingPage() {
             {industries.map((industry) => (
               <span
                 key={industry}
-                className="rounded-[5px] bg-white/10 px-12 py-6 font-['Outfit'] text-[26px] font-semibold capitalize text-white backdrop-blur-lg lg:text-[30px]"
+                className="rounded-[5px] bg-white/10 px-12 py-6 font-['Outfit'] text-[26px] font-semibold capitalize text-white backdrop-blur-lg transition-all duration-300 hover:-translate-y-1 hover:bg-[#FE8F02] hover:shadow-[0_10px_26px_rgba(254,143,2,0.28)] lg:text-[30px]"
               >
                 {industry}
               </span>
@@ -356,14 +373,14 @@ export default function LoadBookingPage() {
           <div className="mt-10 flex flex-col gap-4 sm:flex-row">
             <Link
               href="/contact"
-              className="inline-flex h-12 items-center justify-center rounded-[5px] bg-[#FE8F02] px-5 font-['Outfit'] text-[18px] font-medium capitalize text-white no-underline hover:bg-[#E07D02]"
+              className="inline-flex h-12 items-center justify-center rounded-[5px] bg-[#FE8F02] px-5 font-['Outfit'] text-[18px] font-medium capitalize text-white no-underline transition-all duration-300 hover:scale-[1.03] hover:bg-[#E07D02] active:scale-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#FE8F02]"
             >
               Start Dispatching Today
             </Link>
 
             <Link
               href="/contact"
-              className="inline-flex h-12 items-center justify-center rounded-[5px] border border-[#FE8F02] px-5 font-['Outfit'] text-[18px] font-medium capitalize text-[#FE8F02] no-underline hover:bg-[#FE8F02] hover:text-white"
+              className="inline-flex h-12 items-center justify-center rounded-[5px] border border-[#FE8F02] px-5 font-['Outfit'] text-[18px] font-medium capitalize text-[#FE8F02] no-underline transition-all duration-300 hover:scale-[1.03] hover:bg-[#FE8F02] hover:text-white active:scale-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#FE8F02]"
             >
               Get a Free Consultation
             </Link>
@@ -371,7 +388,7 @@ export default function LoadBookingPage() {
         </div>
 
         <Image
-          src="/Images/Rectangle 1117.png"
+          src="/loadBooking/Rectangle 1117.png"
           alt="Loaded box truck"
           width={760}
           height={585}
@@ -388,9 +405,9 @@ export default function LoadBookingPage() {
           {faqs.map((question, index) => (
             <details
               key={`${question}-${index}`}
-              className="group rounded-[10px] border border-[#111827]/50 bg-white px-5 py-4"
+              className="group min-h-[80px] rounded-[10px] border border-[#111827]/50 bg-white px-5 py-4 transition-[border-color,box-shadow] duration-200 [&[open]]:border-[#FE8F02] [&[open]]:shadow-[0_8px_22px_rgba(254,143,2,0.14)]"
             >
-              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-['DM_Sans'] text-[18px] leading-8 text-[#012F42]">
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 rounded-[5px] font-['DM_Sans'] text-[18px] leading-8 text-[#012F42] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#FE8F02]">
                 {question}
                 <PlusIcon />
               </summary>
@@ -404,7 +421,7 @@ export default function LoadBookingPage() {
         </div>
       </section>
 
-      <section className="mx-auto mt-20 w-[calc(100%_-_40px)] max-w-[1520px] rounded-[10px] bg-[#012F42] px-6 py-10 text-center sm:px-10">
+      <section className="mx-auto mt-3 flex min-h-[256px] w-[calc(100%_-_40px)] max-w-[1520px] flex-col items-center justify-center rounded-[10px] bg-[#012F42] px-6 py-[30px] text-center sm:px-10">
         <h2 className="font-['Outfit'] text-[40px] font-bold capitalize leading-[50px] text-white lg:text-[48px] lg:leading-[55px]">
           Grow Your Business Faster
         </h2>
@@ -416,7 +433,7 @@ export default function LoadBookingPage() {
 
         <Link
           href="/contact"
-          className="mt-7 inline-flex h-12 items-center justify-center rounded-[5px] bg-[#FE8F02] px-5 font-['Outfit'] text-[18px] font-medium capitalize text-white no-underline hover:bg-[#E07D02]"
+          className="mt-7 inline-flex h-12 items-center justify-center rounded-[5px] bg-[#FE8F02] px-5 font-['Outfit'] text-[18px] font-medium capitalize text-white no-underline transition-all duration-300 hover:scale-105 hover:bg-[#E07D02] active:scale-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#FE8F02]"
         >
           Get Started
         </Link>
@@ -428,8 +445,8 @@ export default function LoadBookingPage() {
 
 function InfoCard({ title, body }: { title: string; body: string }) {
   return (
-    <article className="rounded-[10px] border border-[#111827]/50 bg-white/20">
-      <div className="h-2.5 rounded-t-[10px] bg-[#012F42]" />
+    <article className="group min-h-[223px] rounded-[10px] border border-[#111827]/50 bg-white/20 transition-all duration-300 hover:-translate-y-1 hover:border-[#FE8F02] hover:bg-white/40 hover:shadow-[0_12px_30px_rgba(254,143,2,0.16)]">
+      <div className="h-2.5 rounded-t-[10px] bg-[#012F42] transition-colors duration-300 group-hover:bg-[#FE8F02]" />
 
       <div className="p-5">
         <h3 className="font-['Outfit'] text-[22px] font-semibold leading-8 text-[#012F42]">
@@ -453,7 +470,7 @@ function BenefitCard({
 }) {
   return (
     <article
-      className={`relative h-[400px] overflow-hidden rounded-[10px] ${
+      className={`group relative h-[400px] overflow-hidden rounded-[10px] transition-shadow duration-300 hover:shadow-[0_16px_36px_rgba(254,143,2,0.22)] ${
         wide ? "lg:col-span-3" : "lg:col-span-2"
       }`}
     >
@@ -461,7 +478,8 @@ function BenefitCard({
         src={benefit.image}
         alt={benefit.title}
         fill
-        className="object-cover"
+        sizes="(max-width: 1023px) calc(100vw - 40px), (max-width: 1560px) 50vw, 745px"
+        className="object-cover transition-transform duration-500 ease-out group-hover:scale-105"
       />
 
       <div className="absolute inset-0 bg-gradient-to-b from-[#012F42]/90 to-[#012F42]/35" />
@@ -483,7 +501,7 @@ function PlusIcon() {
   return (
     <span className="relative h-4 w-4 shrink-0">
       <span className="absolute left-0 top-1/2 h-0.5 w-4 -translate-y-1/2 rounded bg-[#012F42]" />
-      <span className="absolute left-1/2 top-0 h-4 w-0.5 -translate-x-1/2 rounded bg-[#012F42] transition-transform group-open:rotate-90" />
+      <span className="absolute left-1/2 top-0 h-4 w-0.5 -translate-x-1/2 rounded bg-[#012F42] transition-transform duration-200 group-open:rotate-90" />
     </span>
   );
 }

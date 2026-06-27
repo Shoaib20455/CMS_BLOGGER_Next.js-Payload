@@ -8,7 +8,7 @@ interface NavbarProps {
   currentActive?: string;
 }
 
-const navItems = ["Home", "About", "Service", "Blog", "Contact"];
+const navItems = ["Home", "About", "Service", "Blog", "Contact", "State", "Pricing"];
 
 function getFlowHref(item: string) {
   if (item === "Home") return "/";
@@ -33,7 +33,7 @@ export default function Navbar({ currentActive = "Home" }: NavbarProps) {
         </Link>
 
         <nav
-          className="absolute left-[32.0625rem] top-[1.6875rem] flex gap-[3.125rem]"
+          className="absolute inset-y-0 left-28 right-52 flex items-center justify-center gap-5 xl:gap-8 2xl:gap-[3.125rem]"
           aria-label="Primary navigation"
         >
           {navItems.map((item) => {
@@ -115,7 +115,7 @@ export default function Navbar({ currentActive = "Home" }: NavbarProps) {
       <div
         id="mobile-navigation"
         className={`absolute left-0 top-16 w-screen overflow-hidden bg-white shadow-[0_0.75rem_1.5rem_rgba(15,23,42,0.08)] transition-[max-height,opacity] duration-300 lg:hidden ${
-          isMenuOpen ? "max-h-[28rem] opacity-100" : "max-h-0 opacity-0"
+          isMenuOpen ? "max-h-[36rem] opacity-100" : "max-h-0 opacity-0"
         }`}
       >
         <nav className="flex w-full flex-col gap-1 px-5 py-4 sm:px-8">

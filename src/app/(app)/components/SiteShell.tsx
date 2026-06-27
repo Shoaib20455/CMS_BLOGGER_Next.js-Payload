@@ -15,6 +15,8 @@ function getCurrentActive(pathname: string) {
   if (pathname.startsWith("/service")) return "Service";
   if (pathname.startsWith("/blog")) return "Blog";
   if (pathname.startsWith("/contact")) return "Contact";
+  if (pathname.startsWith("/state")) return "State";
+  if (pathname.startsWith("/pricing")) return "Pricing";
 
   return "Home";
 }

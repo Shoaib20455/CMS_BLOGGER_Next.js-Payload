@@ -1,45 +1,27 @@
-import { notFound } from "next/navigation";
+import configPromise from "@payload-config";
+import { RichText } from "@payloadcms/richtext-lexical/react";
+import type { SerializedEditorState } from "lexical";
 import Image from "next/image";
 import Link from "next/link";
-import ReadyTruckSection from "../../components/ReadyTruckSection";
-import BlogSection from "../../components/BlogSection";
-import configPromise from "@payload-config";
+import { notFound } from "next/navigation";
 import { getPayload } from "payload";
 
-function extractSectionText(node: Record<string, unknown>): string {
-  if (!node.children) return "";
-  return (node.children as Array<Record<string, unknown>>)
-    .map((child) => String(child.text ?? ""))
-    .join("");
-}
+import BlogSection from "../../components/BlogSection";
+import ReadyTruckSection from "../../components/ReadyTruckSection";
 
-function parseContentToSections(content: unknown): Array<{ heading: string; body: string[] }> {
-  const root = (content as Record<string, unknown>)?.root as Record<string, unknown> | undefined;
-  const children = root?.children as Array<Record<string, unknown>> | undefined;
-  if (!children) return [];
+type BlogFaq = {
+  id?: string | null;
+  question: string;
+  answer: SerializedEditorState;
+};
 
-  const sections: Array<{ heading: string; body: string[] }> = [];
-  let currentHeading = "";
-  let currentBody: string[] = [];
-
-  for (const child of children) {
-    if (child.type === "heading" && (child.tag === "h2" || child.tag === "h3")) {
-      if (currentBody.length > 0 || sections.length > 0) {
-        sections.push({ heading: currentHeading, body: currentBody });
-      }
-      currentHeading = extractSectionText(child);
-      currentBody = [];
-    } else if (child.type === "paragraph") {
-      const text = extractSectionText(child);
-      if (text) currentBody.push(text);
-    }
-  }
-
-  if (currentBody.length > 0 || currentHeading) {
-    sections.push({ heading: currentHeading, body: currentBody });
-  }
-
-  return sections;
+function isRichText(value: unknown): value is SerializedEditorState {
+  return Boolean(
+    value &&
+      typeof value === "object" &&
+      "root" in value &&
+      (value as { root?: unknown }).root,
+  );
 }
 
 export default async function BlogDetailPage({
@@ -48,7 +30,6 @@ export default async function BlogDetailPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-
   const payload = await getPayload({ config: configPromise });
   const result = await payload.find({
     collection: "posts",
@@ -60,97 +41,151 @@ export default async function BlogDetailPage({
   const post = result.docs[0];
   if (!post) notFound();
 
-  const author = post.author && typeof post.author === "object" ? (post.author as unknown as Record<string, unknown>) : null;
-  const category = post.category && typeof post.category === "object" ? (post.category as unknown as Record<string, unknown>) : null;
-  const featureImage = post.featureImage && typeof post.featureImage === "object" ? (post.featureImage as unknown as Record<string, unknown>) : null;
+  const author =
+    post.author && typeof post.author === "object"
+      ? (post.author as unknown as Record<string, unknown>)
+      : null;
+  const category =
+    post.category && typeof post.category === "object"
+      ? (post.category as unknown as Record<string, unknown>)
+      : null;
+  const featureImage =
+    post.featureImage && typeof post.featureImage === "object"
+      ? (post.featureImage as unknown as Record<string, unknown>)
+      : null;
 
-  const authorName = (author?.name as string) || (author?.email as string) || "";
-  const categoryName = (category?.name as string) || "";
+  const authorName =
+    (author?.name as string) || (author?.email as string) || "Professional";
+  const categoryName = (category?.name as string) || "Category";
   const categorySlug = (category?.slug as string) || "";
   const featureImageUrl = (featureImage?.url as string) || "";
-  const featureImageAlt = (featureImage?.alt as string) || "";
-  const title = post.title;
-  const articleSections = parseContentToSections(post.content);
+  const featureImageAlt = (featureImage?.alt as string) || post.title;
+  const content = isRichText(post.content) ? post.content : null;
+  const faqs = (Array.isArray(post.faqs) ? post.faqs : []).filter(
+    (faq): faq is BlogFaq =>
+      Boolean(faq?.question && isRichText(faq.answer)),
+  );
+  const faqMidpoint = Math.ceil(faqs.length / 2);
+  const faqColumns = [faqs.slice(0, faqMidpoint), faqs.slice(faqMidpoint)];
+
   return (
-    <div className="bg-[#F8FAFC] pb-1 text-[#012F42]">
-      <section className="mx-auto mt-[70px] w-[calc(100%_-_40px)] max-w-[1082px]">
-        <p className="font-['DM_Sans'] mb-3 text-[14px] font-bold uppercase tracking-[0.12em] text-[#FE8F02]">
-          {categoryName || "Category (from Payload)"}
-        </p>
+    <div className="bg-[#F8FAFC] pb-px text-[#012F42]">
+      <h1 className="sr-only">{post.title}</h1>
 
-        <h1 className="font-['Outfit'] max-w-[900px] text-[48px] font-bold capitalize leading-[58px] text-[#012F42] max-lg:text-[40px] max-lg:leading-[50px] max-sm:text-[34px] max-sm:leading-[42px]">
-          {title}
-        </h1>
-      </section>
-
-      <section className="mx-auto mt-8 flex w-[calc(100%_-_40px)] max-w-[1082px] items-center justify-between gap-8 border-y border-[#D9DEE5] py-5 max-sm:flex-col max-sm:items-start">
-        <div className="flex items-center gap-5">
-          <div className="flex h-[70px] w-[70px] items-center justify-center rounded-full bg-[#012F42] text-[28px] font-bold text-white">
-            {authorName ? authorName.charAt(0).toUpperCase() : "?"}
+      <section className="mx-auto mt-20 flex w-[calc(100%_-_40px)] max-w-[1200px] items-center justify-between gap-8 max-sm:flex-col max-sm:items-stretch">
+        <div className="flex min-w-0 items-center gap-5">
+          <div className="flex h-[70px] w-[70px] shrink-0 items-center justify-center rounded-full bg-[#012F42] font-['Outfit'] text-[28px] font-bold text-white">
+            {authorName.charAt(0).toUpperCase()}
           </div>
 
-          <div>
-            <h3 className="font-['Outfit'] mb-2 text-[22px] font-semibold leading-[22px] text-[#012F42]">
-              {authorName || "Author (from Payload)"}
-            </h3>
-
-            <p className="font-['DM_Sans'] text-[16px] font-normal leading-[25px] text-[#575D67]">
-              Author
+          <div className="min-w-0">
+            <h2 className="truncate font-['Outfit'] text-[22px] font-semibold leading-6 text-[#012F42]">
+              {authorName}
+            </h2>
+            <p className="mt-2 font-['DM_Sans'] text-[16px] leading-6 text-[#575D67]">
+              Professional
             </p>
           </div>
         </div>
 
         <Link
-          href={categorySlug ? `/blog/category/${categorySlug}` : "#"}
-          className="font-['Outfit'] inline-flex min-h-[44px] items-center justify-center rounded-[5px] bg-[#FE8F02] px-5 py-2.5 text-[16px] font-medium text-white no-underline transition-colors duration-300 hover:bg-[#E07D02] max-sm:w-full"
+          href={categorySlug ? `/blog/category/${categorySlug}` : "/blog"}
+          className="inline-flex h-12 min-w-44 items-center justify-center rounded-[5px] bg-[#FE8F02] px-5 font-['Outfit'] text-[18px] font-medium text-white no-underline transition-all duration-300 hover:scale-[1.03] hover:bg-[#E07D02] active:scale-95 max-sm:w-full"
         >
-          {categoryName || "Category (from Payload)"}
+          {categoryName}
         </Link>
       </section>
 
-      <section className="mx-auto mt-[30px] h-[470px] w-[calc(100%_-_40px)] max-w-[1082px] overflow-hidden rounded-[10px] bg-[#E2E8F0] max-lg:h-[360px] max-sm:h-[260px]">
+      <section className="mx-auto mt-[30px] aspect-[2/1] w-[calc(100%_-_40px)] max-w-[1200px] overflow-hidden rounded-2xl bg-[#E2E8F0]">
         {featureImageUrl ? (
           <Image
             src={featureImageUrl}
-            alt={featureImageAlt || ""}
+            alt={featureImageAlt}
             width={1200}
             height={600}
             className="h-full w-full object-contain"
             priority
           />
         ) : (
-          <div className="flex h-full w-full items-center justify-center font-['DM_Sans'] text-[18px] text-[#575D67]">
-            Featured Image (from Payload)
+          <div className="flex h-full w-full items-center justify-center px-6 text-center font-['DM_Sans'] text-[18px] text-[#575D67]">
+            Featured image unavailable
           </div>
         )}
       </section>
 
-      <section className="mx-auto mt-10 w-[calc(100%_-_40px)] max-w-[1082px]">
-        <div className="font-['Outfit'] flex h-[50px] w-full items-center justify-center rounded-[5px] bg-[#FE8F02] text-[18px] font-medium text-white">
+      <section className="mx-auto mt-[30px] w-[calc(100%_-_40px)] max-w-[1200px]">
+        <div className="flex h-12 items-center justify-center rounded-[5px] bg-[#FE8F02] px-5 font-['Outfit'] text-[18px] font-medium text-white">
           Table of Contents
         </div>
-        <article className="font-['DM_Sans'] mt-[30px] text-[18px] font-normal leading-[30px] text-[#575D67]">
-          {articleSections.map((section, index) => (
-            <div key={`${section.heading}-${index}`}>
-              {section.heading && (
-                <h2 className="font-['DM_Sans'] mt-[18px] text-[22px] font-semibold leading-[30px] text-[#012F42]">
-                  {section.heading}
-                </h2>
-              )}
 
-              {section.body.map((paragraph, pIdx) => (
-                <p key={pIdx} className="mb-2">
-                  {paragraph}
-                </p>
-              ))}
-            </div>
-          ))}
-        </article>
+        {content && (
+          <article className="mt-[30px] font-['DM_Sans'] text-[18px] leading-8 text-[#575D67] [&_a]:font-medium [&_a]:text-[#FE8F02] [&_a]:underline [&_a]:underline-offset-4 [&_blockquote]:my-6 [&_blockquote]:border-l-4 [&_blockquote]:border-[#FE8F02] [&_blockquote]:pl-5 [&_h2]:mb-3 [&_h2]:mt-7 [&_h2]:font-['DM_Sans'] [&_h2]:text-[22px] [&_h2]:font-semibold [&_h2]:leading-8 [&_h2]:text-[#012F42] [&_h3]:mb-3 [&_h3]:mt-6 [&_h3]:font-['DM_Sans'] [&_h3]:text-[20px] [&_h3]:font-semibold [&_h3]:leading-8 [&_h3]:text-[#012F42] [&_li]:mb-2 [&_ol]:my-5 [&_ol]:list-decimal [&_ol]:pl-7 [&_p]:mb-4 [&_ul]:my-5 [&_ul]:list-disc [&_ul]:pl-7">
+            <RichText data={content} />
+          </article>
+        )}
+      </section>
+
+      {faqs.length > 0 && (
+        <section className="mx-auto mt-20 w-[calc(100%_-_40px)] max-w-[1520px]">
+          <h2 className="text-center font-['Outfit'] text-[38px] font-bold leading-[48px] text-[#012F42] sm:text-[42px] sm:leading-[52px] lg:text-[48px] lg:leading-[58px]">
+            Frequently Asked Questions
+          </h2>
+
+          <div className="mt-[62px] grid gap-3 lg:grid-cols-2 lg:gap-x-5">
+            {faqColumns.map((column, columnIndex) => (
+              <div key={columnIndex} className="grid content-start gap-3">
+                {column.map((faq, index) => (
+                  <details
+                    key={faq.id || `${columnIndex}-${index}-${faq.question}`}
+                    className="group min-h-20 rounded-[10px] border border-[#111827]/50 bg-white px-5 py-4 transition-[border-color,box-shadow] duration-200 [&[open]]:border-[#FE8F02] [&[open]]:shadow-[0_8px_22px_rgba(254,143,2,0.14)]"
+                  >
+                    <summary className="flex min-h-12 cursor-pointer list-none items-center justify-between gap-5 rounded-[5px] font-['DM_Sans'] text-[18px] leading-8 text-[#012F42] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#FE8F02]">
+                      <span>{faq.question}</span>
+                      <PlusIcon />
+                    </summary>
+
+                    <div className="pb-2 pr-8 font-['DM_Sans'] text-[16px] leading-7 text-[#575D67] [&_a]:text-[#FE8F02] [&_li]:mb-1 [&_ol]:my-3 [&_ol]:list-decimal [&_ol]:pl-6 [&_p]:mb-3 [&_ul]:my-3 [&_ul]:list-disc [&_ul]:pl-6">
+                      <RichText data={faq.answer} />
+                    </div>
+                  </details>
+                ))}
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+
+      <section
+        className={`mx-auto flex min-h-64 w-[calc(100%_-_40px)] max-w-[1520px] flex-col items-center justify-center rounded-[10px] bg-[#012F42] px-6 py-[30px] text-center sm:px-10 ${
+          faqs.length > 0 ? "mt-3" : "mt-20"
+        }`}
+      >
+        <h2 className="font-['Outfit'] text-[38px] font-bold capitalize leading-[48px] text-white sm:text-[42px] sm:leading-[52px] lg:text-[48px] lg:leading-[55px]">
+          Grow Your Business Faster
+        </h2>
+        <p className="mx-auto mt-5 max-w-[636px] font-['DM_Sans'] text-[18px] leading-7 text-white">
+          From load booking to payment follow-up, we handle the hard work behind
+          the scenes so you can stay focused on the road ahead.
+        </p>
+        <Link
+          href="/contact"
+          className="mt-7 inline-flex h-12 min-w-40 items-center justify-center rounded-[5px] bg-[#FE8F02] px-5 font-['Outfit'] text-[18px] font-medium capitalize text-white no-underline transition-all duration-300 hover:scale-105 hover:bg-[#E07D02] active:scale-95"
+        >
+          Get Started
+        </Link>
       </section>
 
       <ReadyTruckSection variant="flow" />
-
       <BlogSection variant="flow" title="Box Truck Dispatching Related Blog" />
     </div>
+  );
+}
+
+function PlusIcon() {
+  return (
+    <span className="relative h-4 w-4 shrink-0">
+      <span className="absolute left-0 top-1/2 h-0.5 w-4 -translate-y-1/2 rounded bg-[#012F42]" />
+      <span className="absolute left-1/2 top-0 h-4 w-0.5 -translate-x-1/2 rounded bg-[#012F42] transition-transform duration-200 group-open:rotate-90" />
+    </span>
   );
 }
