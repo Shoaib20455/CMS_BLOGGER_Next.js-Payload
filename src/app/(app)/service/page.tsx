@@ -84,8 +84,6 @@ export default function ServiceDetailPage() {
             className="object-cover opacity-40"
           />
 
-          <div className="absolute right-[-160px] top-[-160px] h-[720px] w-[150px] rotate-[15deg] bg-[#FE8F02]" />
-
           <div className="relative z-10 max-w-[970px]">
             <h1 className="font-['Outfit'] text-[42px] font-bold capitalize leading-[52px] text-white sm:text-[54px] sm:leading-[64px] lg:text-[60px] lg:leading-[70px]">
               Providing Best Box Trucking Services in the USA

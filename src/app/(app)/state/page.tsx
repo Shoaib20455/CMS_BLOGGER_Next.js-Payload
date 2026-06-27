@@ -36,37 +36,37 @@ const states = [
     title: "Ohio",
     description:
       "Reliable box truck dispatching services across Ohio, helping carriers secure consistent freight and maximise revenue. We manage load booking, route planning, and broker communication so you can stay focused on the road.",
-    image: "/Images/load-booking.png",
+    image: "/state/Rectangle 1100.png",
     featured: true,
     href: "/state/stateDetails",
   },
   {
     title: "Indiana",
-    image: "/Images/call-center.png",
+    image: "/state/Rectangle 1117 (6).png",
   },
   {
     title: "Texas",
-    image: "/Images/Rectangle 1117@2x (3).png",
+    image: "/state/Rectangle 1117 (4).png",
   },
   {
     title: "Florida",
-    image: "/Images/Rectangle 1117@2x (1).png",
+    image: "/state/Rectangle 1117 (2).png",
   },
   {
     title: "New York",
-    image: "/Images/Rectangle 1117@2x (5).png",
+    image: "/state/Rectangle 1117 (5).png",
   },
   {
     title: "California",
-    image: "/Images/Rectangle 1117@2x (2).png",
+    image: "/state/Rectangle 1117 (3).png",
   },
   {
     title: "Kentucky",
-    image: "/Images/Rectangle 1117@2x.png",
+    image: "/state/Rectangle 1117 (1).png",
   },
   {
     title: "Illinois",
-    image: "/Images/Rectangle 1117@2x (6).png",
+    image: "/state/Rectangle 1117.png",
   },
 ];
 
@@ -83,8 +83,6 @@ export default function StatePage() {
             sizes="(min-width: 1520px) 1520px, calc(100vw - 40px)"
             className="object-cover opacity-40"
           />
-
-          <div className="absolute right-[-160px] top-[-160px] h-[720px] w-[150px] rotate-[15deg] bg-[#FE8F02]" />
 
           <div className="relative z-10 max-w-[970px]">
             <h1 className="font-['Outfit'] text-[42px] font-bold capitalize leading-[52px] text-white sm:text-[54px] sm:leading-[64px] lg:text-[60px] lg:leading-[70px]">
