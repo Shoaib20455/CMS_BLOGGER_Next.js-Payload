@@ -226,6 +226,18 @@ export interface Post {
   metaTitle?: string | null;
   metaDescription?: string | null;
   focusKeyphrase?: string | null;
+  /**
+   * Manually enter JSON-LD structured data for this post (e.g. Article, FAQPage schema).
+   */
+  jsonSchema?:
+    | {
+        [k: string]: unknown;
+      }
+    | unknown[]
+    | string
+    | number
+    | boolean
+    | null;
   publishedDate?: string | null;
   status?: ('draft' | 'published') | null;
   updatedAt: string;
@@ -384,6 +396,7 @@ export interface PostsSelect<T extends boolean = true> {
   metaTitle?: T;
   metaDescription?: T;
   focusKeyphrase?: T;
+  jsonSchema?: T;
   publishedDate?: T;
   status?: T;
   updatedAt?: T;

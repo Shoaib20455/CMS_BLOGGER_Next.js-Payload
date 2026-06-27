@@ -123,6 +123,16 @@ export const Posts: CollectionConfig = {
       },
     },
     {
+      name: "jsonSchema",
+      type: "json",
+      label: "JSON Schema (Structured Data)",
+      admin: {
+        position: "sidebar",
+        description:
+          "Manually enter JSON-LD structured data for this post (e.g. Article, FAQPage schema).",
+      },
+    },
+    {
       name: "publishedDate",
       type: "date",
       admin: {
