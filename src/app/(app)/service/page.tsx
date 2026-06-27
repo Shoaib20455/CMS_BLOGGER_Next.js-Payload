@@ -72,7 +72,7 @@ const services = [
 
 export default function ServiceDetailPage() {
   return (
-    <div className="bg-[#F8FAFC] pt-8 lg:pt-20">
+    <div className="bg-[#F8FAFC] pb-20 pt-8 lg:pt-20">
       <section className="mx-auto w-[calc(100%_-_40px)] max-w-[1520px] overflow-hidden rounded-[20px] bg-[#012F42]">
         <div className="relative min-h-[420px] overflow-hidden px-6 py-16 sm:px-10 lg:min-h-[500px] lg:px-[100px] lg:py-[121px]">
           <Image

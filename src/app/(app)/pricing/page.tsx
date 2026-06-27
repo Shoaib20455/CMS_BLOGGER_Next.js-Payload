@@ -167,44 +167,44 @@ export default function PricingPage() {
       </section>
 
       <section className="mx-auto mt-20 grid w-[calc(100%_-_40px)] max-w-[1520px] gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,49.35%)] lg:items-center lg:gap-[60px]">
-        <div>
-          <h2 className="font-['Outfit'] text-[40px] font-bold leading-[50px] text-[#012F42] lg:text-[48px] lg:leading-[58px]">
-            Why Choose Us?
-          </h2>
+  <div>
+    <h2 className="font-['Outfit'] text-[40px] font-bold leading-[50px] text-[#012F42] lg:text-[48px] lg:leading-[58px]">
+      Why Choose Us?
+    </h2>
 
-          <p className="mt-8 max-w-[710px] font-['DM_Sans'] text-[18px] leading-6 text-[#111827]/70">
-            Our experienced dispatchers work hard to keep your trucks loaded and
-            profitable. We focus on finding quality freight opportunities while
-            reducing downtime and unnecessary deadhead miles.
-          </p>
+    <p className="mt-8 max-w-[710px] font-['DM_Sans'] text-[18px] leading-6 text-[#111827]/70">
+      Our experienced dispatchers work hard to keep your trucks loaded and
+      profitable. We focus on finding quality freight opportunities while
+      reducing downtime and unnecessary deadhead miles.
+    </p>
 
-          <h3 className="mt-12 font-['Outfit'] text-[20px] font-semibold leading-8 text-[#012F42]">
-            Benefits of Working With Us
-          </h3>
+    <h3 className="mt-12 font-['Outfit'] text-[20px] font-semibold leading-8 text-[#012F42]">
+      Benefits of Working With Us
+    </h3>
 
-          <ul className="mt-6 grid gap-4">
-            {benefits.map((benefit) => (
-              <li
-                key={benefit}
-                className="flex items-center gap-3 font-['DM_Sans'] text-[16px] leading-6 text-[#5B6472]"
-              >
-                <CheckIcon />
-                {benefit}
-              </li>
-            ))}
-          </ul>
-        </div>
+    <ul className="mt-6 grid gap-4">
+      {benefits.map((benefit) => (
+        <li
+          key={benefit}
+          className="flex items-center gap-3 font-['DM_Sans'] text-[16px] leading-6 text-[#5B6472]"
+        >
+          <CheckIcon />
+          {benefit}
+        </li>
+      ))}
+    </ul>
+  </div>
 
-        <div className="group relative aspect-[750/434] overflow-hidden rounded-[10px] bg-[#E2E8F0] transition-shadow duration-300 hover:shadow-[0_16px_36px_rgba(254,143,2,0.22)]">
-          <Image
-            src="/pricing/Rectangle 1686.png"
-            alt="Dispatcher supporting box truck business growth"
-            fill
-            sizes="(max-width: 1023px) calc(100vw - 40px), 750px"
-            className="object-cover transition-transform duration-500 ease-out group-hover:scale-105"
-          />
-        </div>
-      </section>
+  <div className="group relative aspect-[750/434] overflow-hidden rounded-[10px] bg-[#E2E8F0] transition-shadow duration-300 hover:shadow-[0_16px_36px_rgba(254,143,2,0.22)]">
+    <Image
+      src="/pricing/Rectangle 1686.png"
+      alt="Dispatcher supporting box truck business growth"
+      fill
+      sizes="(max-width: 1023px) calc(100vw - 40px), 750px"
+      className="object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+    />
+  </div>
+</section>
 
       <section className="mx-auto mt-20 w-[calc(100%_-_40px)] max-w-[1520px] rounded-[10px] bg-[#012F42] px-6 py-12 sm:px-10 lg:grid lg:min-h-[535px] lg:grid-cols-[1fr_720px] lg:gap-20 lg:px-[100px] lg:py-[50px]">
         <div className="flex flex-col justify-center">

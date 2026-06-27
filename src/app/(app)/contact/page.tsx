@@ -124,7 +124,7 @@ const testimonials = [
 
 export default function ContactPage() {
   return (
-    <div className="bg-[#F8FAFC] pt-5 sm:pt-8 lg:pt-20">
+    <div className="bg-[#F8FAFC] pt-5 pb-20 sm:pt-8 lg:pt-20">
       <section className="mx-auto w-[calc(100%_-_32px)] max-w-[1520px] overflow-hidden rounded-[12px] sm:w-[calc(100%_-_40px)] sm:rounded-[20px]">
         <div className="relative min-h-[360px] overflow-hidden px-5 py-12 sm:min-h-[420px] sm:px-10 sm:py-16 lg:min-h-[500px] lg:px-[100px] lg:py-[137px]">
           <Image

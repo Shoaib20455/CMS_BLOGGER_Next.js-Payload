@@ -156,14 +156,14 @@ const industries = [
 ];
 
 const states = [
-  { image: "/images/about/Rectangle 1523@2x (5).png", name: "Ohio" },
-  { image: "/images/about/Rectangle 1523@2x (6).png", name: "Indiana" },
-  { image: "/images/about/Rectangle 1523@2x (7).png", name: "Texas" },
-  { image: "/images/about/Rectangle 1523@2x (8).png", name: "Florida" },
-  { image: "/images/about/Rectangle 1523@2x (5).png", name: "New York" },
-  { image: "/images/about/Rectangle 1523@2x (6).png", name: "California" },
-  { image: "/images/about/Rectangle 1523@2x (7).png", name: "Kentucky" },
-  { image: "/images/about/Rectangle 1523@2x (8).png", name: "Illinois" },
+  { image: "/about/ohio.png", name: "Ohio" },
+  { image: "/about/Indiana.png", name: "Indiana" },
+  { image: "/about/texas.png", name: "Texas" },
+  { image: "/about/florida.png", name: "Florida" },
+  { image: "/about/new_york.png", name: "New York" },
+  { image: "/about/california.png", name: "California" },
+  { image: "/about/Kentucky.png", name: "Kentucky" },
+  { image: "/about/illinois.png", name: "Illinois" },
 ];
 
 const benefits = [
@@ -516,18 +516,18 @@ export default function AboutPage() {
           </div>
 
           <div className="about-state-grid">
-            {states.map((state) => (
-              <article className="about-state-card" key={state.name}>
-                <Image
-                  src={state.image}
-                  alt={`${state.name} freight market`}
-                  width={290}
-                  height={290}
-                />
-                <span>{state.name}</span>
-              </article>
-            ))}
-          </div>
+  {states.map((state) => (
+    <article className="about-state-card" key={state.name}>
+      <Image
+        src={state.image}
+        alt={`${state.name} freight market`}
+        width={290}
+        height={290}
+      />
+      <h3 className="about-state-name">{state.name}</h3>
+    </article>
+  ))}
+</div>
         </section>
 
         <section className="about-contact">
@@ -601,7 +601,7 @@ export default function AboutPage() {
 
           <div className="about-why-layout">
             <Image
-              src="/images/about/Rectangle 1702@2x.png"
+              src="/about/Rectangle 1093.png"
               alt="White box truck parked in a lot"
               width={750}
               height={518}
@@ -624,7 +624,7 @@ export default function AboutPage() {
           </div>
         </section>
 
-        <section className="about-cta">
+                <section className="about-cta">
           <div>
             <h2>Contact Our Dispatch Team</h2>
             <p>
@@ -646,12 +646,17 @@ export default function AboutPage() {
           </div>
 
           <Image
-            src="/images/about/Rectangle 1702@2x.png"
+            src="/about/Rectangle 1117.png"
             alt="Box truck ready for dispatch"
             width={760}
             height={585}
           />
         </section>
+
+        <div
+          aria-hidden="true"
+          className="h-16 bg-[#F8FAFC] sm:h-20 lg:h-20"
+        />
       </div>
     </>
   );
