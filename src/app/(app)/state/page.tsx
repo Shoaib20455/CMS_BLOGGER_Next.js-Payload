@@ -69,26 +69,31 @@ const solutions = [
     title: "Dedicated Dispatch Management",
     description:
       "A dedicated dispatcher works directly with you to find profitable loads, coordinate schedules, and keep your truck moving consistently.",
+    icon: "/state Detail/Rectangle 1524.png",
   },
   {
     title: "Load Booking & Rate Negotiation",
     description:
       "We secure freight from trusted load boards and broker networks while negotiating competitive rates to maximize revenue.",
+    icon: "/state Detail/Rectangle 1524 (1).png",
   },
   {
     title: "Route Optimization",
     description:
       "Smart route planning helps reduce deadhead miles, increase loaded miles, and improve overall profitability.",
+    icon: "/state Detail/Rectangle 1524 (2).png",
   },
   {
     title: "Broker Setup & Paperwork Support",
     description:
       "From broker packets to rate confirmations, we handle the administrative work so you can focus on driving.",
+    icon: "/state Detail/Rectangle 1524 (3).png",
   },
   {
     title: "Driver Support & Business Growth",
     description:
       "Receive real-time dispatch assistance and growth-focused strategies designed to help Ohio box truck businesses scale efficiently.",
+    icon: "/state Detail/Rectangle 1524 (4).png",
   },
 ];
 
@@ -151,23 +156,37 @@ const counties = [
 ];
 
 const tileImages = [
-  "/Images/Rectangle 232.png",
-  "/Images/Rectangle 233.png",
-  "/Images/Rectangle 234.png",
-  "/Images/Rectangle 237.png",
-  "/Images/Rectangle 278.png",
-  "/Images/Rectangle 279.png",
-  "/Images/Rectangle 280.png",
-  "/Images/Rectangle 281.png",
+  "/state Detail/Rectangle 1523.png",
+  "/state Detail/Rectangle 1523 (1).png",
+  "/state Detail/Rectangle 1523 (2).png",
+  "/state Detail/Rectangle 1523 (3).png",
+  "/state Detail/Rectangle 1523 (4).png",
+  "/state Detail/Rectangle 1523 (5).png",
+  "/state Detail/Rectangle 1523 (6).png",
+  "/state Detail/Rectangle 1523 (7).png",
+  "/state Detail/Rectangle 1523 (8).png",
+  "/state Detail/Rectangle 1523 (9).png",
+  "/state Detail/Rectangle 1523 (10).png",
+  "/state Detail/Rectangle 1523 (11).png",
+  "/state Detail/Rectangle 1523 (12).png",
+  "/state Detail/Rectangle 1523 (13).png",
+  "/state Detail/Rectangle 1523 (14).png",
 ];
 
 export default function StatePage() {
   return (
-    <div className="bg-[#F8FAFC] pt-8 lg:pt-20">
+    <div className="bg-[#F8FAFC] pb-20 pt-8 lg:pt-20">
       <section className="mx-auto w-[calc(100%_-_40px)] max-w-[1520px] overflow-hidden rounded-[20px] bg-[#012F42]">
-        <div className="relative min-h-[500px] overflow-hidden bg-gradient-to-r from-[#012F42]/95 to-[#012F42]/70 px-6 py-14 sm:px-10 lg:px-[100px] lg:py-[55px]">
-          <div className="absolute right-[-120px] top-[-180px] h-[760px] w-[170px] rotate-[15deg] bg-[#FE8F02]" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_85%_20%,rgba(254,143,2,0.24),transparent_35%)]" />
+        <div className="relative min-h-[500px] overflow-hidden px-6 py-14 sm:px-10 lg:px-[100px] lg:py-[55px]">
+          <Image
+            src="/state Detail/Frame 4.png"
+            alt="Ohio box truck dispatching"
+            fill
+            priority
+            sizes="(max-width: 1560px) calc(100vw - 40px), 1520px"
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(1,47,66,0.90)_0%,rgba(1,47,66,0.30)_89%)]" />
 
           <div className="relative z-10 max-w-[967px]">
             <h1 className="font-['Outfit'] text-[42px] font-bold capitalize leading-[52px] text-white sm:text-[54px] sm:leading-[64px] lg:text-[60px] lg:leading-[70px]">
@@ -206,8 +225,8 @@ export default function StatePage() {
         </h2>
 
         <div className="mt-[70px] grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
-          {solutions.map((solution, index) => (
-            <SolutionCard key={solution.title} index={index + 1} {...solution} />
+          {solutions.map((solution) => (
+            <SolutionCard key={solution.title} {...solution} />
           ))}
         </div>
       </section>
@@ -215,10 +234,11 @@ export default function StatePage() {
       <section className="mt-20 overflow-hidden bg-[#012F42]">
         <div className="relative mx-auto min-h-[610px] w-full max-w-[1920px] px-5 py-20 text-center sm:px-8">
           <Image
-            src="/Images/Truck_Original_Sourced.png"
+            src="/state Detail/Rectangle 1078.png"
             alt=""
             fill
-            className="object-cover opacity-25"
+            sizes="100vw"
+            className="object-cover"
           />
           <div className="absolute inset-0 bg-[#012F42]/60" />
 
@@ -243,7 +263,7 @@ export default function StatePage() {
 
       <CtaSection />
 
-      <section className="mx-auto mt-20 grid w-[calc(100%_-_40px)] max-w-[1520px] gap-10 lg:grid-cols-[1fr_750px] lg:items-center lg:gap-[60px]">
+      <section className="mx-auto mt-20 grid w-[calc(100%_-_40px)] max-w-[1520px] gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,49.35%)] lg:items-center lg:gap-[60px]">
         <div>
           <h2 className="max-w-[710px] font-['Outfit'] text-[40px] font-bold leading-[50px] text-[#012F42] lg:text-[48px] lg:leading-[58px]">
             Major Ohio Regions Covered by Our Dispatch Team
@@ -265,9 +285,10 @@ export default function StatePage() {
 
         <div className="relative aspect-[750/526] overflow-hidden rounded-[10px] bg-[#012F42]">
           <Image
-            src="/Images/Rectangle 1510@2x.png"
+            src="/state Detail/Rectangle 1687.png"
             alt="Ohio freight route coverage"
             fill
+            sizes="(max-width: 1023px) calc(100vw - 40px), 750px"
             className="object-cover"
           />
         </div>
@@ -277,6 +298,7 @@ export default function StatePage() {
         title="All the Cities in Ohio Covered"
         description="We provide dispatch services across all major and regional cities in Ohio, ensuring consistent load availability and strong lane coverage. From high-demand freight hubs to local delivery routes, our network keeps your truck moving efficiently statewide."
         items={cities}
+        imageOffset={0}
         reverse={false}
       />
 
@@ -284,11 +306,12 @@ export default function StatePage() {
         title="Counties We Serve in Ohio"
         description="We provide dispatch services across all major and regional counties in Ohio, ensuring consistent load availability and strong lane coverage. From high-demand freight hubs to local delivery routes, our network keeps your truck moving efficiently statewide."
         items={counties}
+        imageOffset={8}
         reverse
       />
 
       <section className="mx-auto mt-20 grid w-[calc(100%_-_40px)] max-w-[1520px] overflow-hidden rounded-[10px] bg-[#012F42] lg:grid-cols-2">
-        <div className="px-6 py-12 sm:px-10 lg:px-[50px] lg:py-[136px]">
+        <div className="flex flex-col justify-center px-6 py-12 sm:px-10 lg:min-h-[585px] lg:px-[50px] lg:py-0">
           <h2 className="max-w-[641px] font-['Outfit'] text-[40px] font-bold capitalize leading-[52px] text-[#FE8F02] lg:text-[48px] lg:leading-[60px]">
             Start Growing Your Box Truck Business in Ohio
           </h2>
@@ -320,9 +343,10 @@ export default function StatePage() {
 
         <div className="relative min-h-[360px] lg:min-h-[585px]">
           <Image
-            src="/Images/Rectangle 1138@2x.png"
+            src="/state Detail/Rectangle 1117.png"
             alt="Box truck dispatching in Ohio"
             fill
+            sizes="(max-width: 1023px) calc(100vw - 40px), 760px"
             className="object-cover"
           />
         </div>
@@ -339,12 +363,21 @@ function ServicePicker() {
       </h2>
 
       <form className="mt-5 grid gap-4 md:grid-cols-[1fr_1fr_1fr_auto]">
-        <select className="h-12 rounded-[5px] border border-[#111827] bg-white px-5 font-['DM_Sans'] text-[18px] text-[#111827]/70 outline-none focus:border-[#FE8F02]">
-          <option>View Your Service</option>
-          <option>Load Booking</option>
-          <option>Dedicated Dispatch</option>
-          <option>Paperwork Support</option>
-        </select>
+        <div className="relative h-12">
+          <select className="h-full w-full appearance-none rounded-[5px] border border-[#111827] bg-white px-5 pr-12 font-['DM_Sans'] text-[18px] text-[#111827]/70 outline-none focus:border-[#FE8F02]">
+            <option>View Your Service</option>
+            <option>Load Booking</option>
+            <option>Dedicated Dispatch</option>
+            <option>Paperwork Support</option>
+          </select>
+          <Image
+            src="/state Detail/Polygon 16.svg"
+            alt=""
+            width={11}
+            height={9}
+            className="pointer-events-none absolute right-5 top-1/2 h-[9px] w-[11px] -translate-y-1/2"
+          />
+        </div>
 
         <input
           className="h-12 rounded-[5px] border border-[#111827] px-5 font-['DM_Sans'] text-[18px] text-[#111827] outline-none placeholder:text-[#111827]/70 focus:border-[#FE8F02]"
@@ -376,7 +409,7 @@ function InfoCard({
   description: string;
 }) {
   return (
-    <article className="overflow-hidden rounded-[10px] border border-[#111827]/50 bg-white/20">
+    <article className="min-h-[240px] overflow-hidden rounded-[10px] border border-[#111827]/50 bg-white/20">
       <div className="h-2.5 bg-[#012F42]" />
       <div className="p-5">
         <h3 className="min-h-16 font-['Outfit'] text-[20px] font-semibold leading-8 text-[#012F42]">
@@ -391,20 +424,26 @@ function InfoCard({
 }
 
 function SolutionCard({
-  index,
   title,
   description,
+  icon,
 }: {
-  index: number;
   title: string;
   description: string;
+  icon: string;
 }) {
   return (
-    <article className="overflow-hidden rounded-[10px] border border-[#6B7280] bg-white">
+    <article className="min-h-[384px] overflow-hidden rounded-[10px] border border-[#6B7280] bg-white">
       <div className="h-2.5 bg-[#012F42]" />
       <div className="p-5">
-        <div className="flex h-12 w-12 items-center justify-center rounded-[5px] border border-[#012F42] font-['Outfit'] text-[20px] font-semibold text-[#012F42]">
-          {index}
+        <div className="flex h-12 w-12 items-center justify-center rounded-[5px] border border-[#012F42]">
+          <Image
+            src={icon}
+            alt=""
+            width={40}
+            height={40}
+            className="h-10 w-10 object-contain"
+          />
         </div>
         <h3 className="mt-5 min-h-[64px] font-['Outfit'] text-[20px] font-semibold leading-8 text-[#012F42]">
           {title}
@@ -419,7 +458,7 @@ function SolutionCard({
 
 function CtaSection() {
   return (
-    <section className="mx-auto mt-20 w-[calc(100%_-_40px)] max-w-[1520px] rounded-[10px] bg-[#012F42] px-6 py-12 sm:px-10 lg:grid lg:min-h-[535px] lg:grid-cols-[1fr_720px] lg:gap-20 lg:px-[100px] lg:py-[50px]">
+    <section className="mx-auto mt-20 w-[calc(100%_-_40px)] max-w-[1520px] rounded-[10px] bg-[#012F42] px-6 py-12 sm:px-10 lg:grid lg:min-h-[535px] lg:grid-cols-[minmax(0,1fr)_minmax(0,54.55%)] lg:gap-20 lg:px-[100px] lg:py-[50px]">
       <div className="flex flex-col justify-center">
         <h2 className="max-w-[535px] font-['Outfit'] text-[40px] font-bold leading-[52px] text-white lg:text-[48px] lg:leading-[60px]">
           Stop Losing Revenue in Ohio&apos;s Competitive Freight Market
@@ -434,19 +473,23 @@ function CtaSection() {
         </p>
       </div>
 
-      <form className="mt-10 rounded-[10px] bg-white/10 p-6 lg:mt-0 lg:p-[50px]">
+      <form className="mt-10 rounded-[10px] bg-white/10 p-6 lg:mt-0 lg:h-[405px] lg:self-center lg:p-[50px] lg:pb-0">
         <div className="grid gap-5 sm:grid-cols-2">
           <CtaField label="First Name" placeholder="Enter First Name" />
           <CtaField label="Last Name" placeholder="Enter Last Name" />
           <CtaField label="Phone Number" placeholder="+1 (000) 123-1234" />
           <CtaField label="Email Address" placeholder="email@gmail.com" />
-          <CtaField label="Truck Type" placeholder="Enter Truck Type" />
+          <CtaField
+            label="Truck Type"
+            placeholder="Enter Truck Type"
+            select
+          />
           <CtaField label="MC Number" placeholder="Enter MC Number" />
         </div>
 
         <button
           type="submit"
-          className="mt-6 flex h-12 w-full items-center justify-center rounded-[5px] bg-[#FE8F02] px-5 font-['Outfit'] text-[18px] font-medium capitalize text-white transition-colors hover:bg-[#E07D02]"
+          className="mt-5 flex h-12 w-full items-center justify-center rounded-[5px] bg-[#FE8F02] px-5 font-['Outfit'] text-[18px] font-medium capitalize text-white transition-all duration-300 hover:scale-[1.01] hover:bg-[#E07D02] active:scale-[0.99]"
         >
           Get Started Now
         </button>
@@ -458,9 +501,11 @@ function CtaSection() {
 function CtaField({
   label,
   placeholder,
+  select = false,
 }: {
   label: string;
   placeholder: string;
+  select?: boolean;
 }) {
   return (
     <label className="block">
@@ -468,10 +513,33 @@ function CtaField({
         {label}
       </span>
 
-      <input
-        className="mt-2.5 h-11 w-full rounded-[5px] border border-white/5 bg-[#012F42]/60 px-5 font-['DM_Sans'] text-[14px] font-light text-white outline-none transition-colors placeholder:text-white/70 focus:border-[#FE8F02]"
-        placeholder={placeholder}
-      />
+      <span className="relative mt-2.5 block">
+        {select ? (
+          <>
+            <select
+              defaultValue=""
+              className="h-11 w-full appearance-none rounded-[5px] border border-white/5 bg-[#012F42]/60 px-5 pr-12 font-['DM_Sans'] text-[14px] font-light text-white/70 outline-none transition-colors focus:border-[#FE8F02]"
+            >
+              <option value="" disabled>
+                {placeholder}
+              </option>
+              <option value="box-truck">Box Truck</option>
+            </select>
+            <Image
+              src="/state Detail/Rectangle 1510.png"
+              alt=""
+              width={14}
+              height={14}
+              className="pointer-events-none absolute right-5 top-1/2 h-3.5 w-3.5 -translate-y-1/2"
+            />
+          </>
+        ) : (
+          <input
+            className="h-11 w-full rounded-[5px] border border-white/5 bg-[#012F42]/60 px-5 font-['DM_Sans'] text-[14px] font-light text-white outline-none transition-colors placeholder:text-white/70 focus:border-[#FE8F02]"
+            placeholder={placeholder}
+          />
+        )}
+      </span>
     </label>
   );
 }
@@ -480,11 +548,13 @@ function CoverageGrid({
   title,
   description,
   items,
+  imageOffset,
   reverse,
 }: {
   title: string;
   description: string;
   items: string[];
+  imageOffset: number;
   reverse: boolean;
 }) {
   const firstRowItems = items.slice(0, 3);
@@ -506,7 +576,9 @@ function CoverageGrid({
       <TileCard
         key={`${item}-${offset + index}`}
         title={item}
-        image={tileImages[(offset + index) % tileImages.length]}
+        image={
+          tileImages[(imageOffset + offset + index) % tileImages.length]
+        }
       />
     ));
 

@@ -54,7 +54,6 @@ export const Posts: CollectionConfig = {
     {
       name: "category",
       type: "relationship",
-      // @ts-expect-error - categories collection not yet in generated types
       relationTo: "categories",
       admin: {
         position: "sidebar",
