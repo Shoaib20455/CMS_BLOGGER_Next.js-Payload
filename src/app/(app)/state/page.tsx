@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   },
 };
 
-const services = [
+const states = [
   {
     title: "Ohio",
     description:
@@ -70,7 +70,7 @@ const services = [
   },
 ];
 
-export default function ServiceDetailPage() {
+export default function StatePage() {
   return (
     <div className="bg-[#F8FAFC] pb-20 pt-8 lg:pt-20">
       <section className="mx-auto w-[calc(100%_-_40px)] max-w-[1520px] overflow-hidden rounded-[20px] bg-[#012F42]">
@@ -103,23 +103,23 @@ export default function ServiceDetailPage() {
 
       <section className="mx-auto mt-20 w-[calc(100%_-_40px)] max-w-[1520px]">
         <h2 className="text-center font-['Outfit'] text-[42px] font-bold leading-[52px] text-[#012F42] lg:text-[48px] lg:leading-[58px]">
-          Our Services
+          States We Serve
         </h2>
 
         <div className="mt-[70px] grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
-          {services.map((service) => {
-            const CardTag = service.href ? Link : "article";
-            const cardProps = service.href ? { href: service.href } : {};
+          {states.map((state) => {
+            const CardTag = state.href ? Link : "article";
+            const cardProps = state.href ? { href: state.href } : {};
 
             return (
               <CardTag
-                key={service.title}
+                key={state.title}
                 {...cardProps}
                 className="group relative h-[350px] overflow-hidden rounded-[10px] no-underline"
               >
                 <Image
-                  src={service.image}
-                  alt={service.title}
+                  src={state.image}
+                  alt={state.title}
                   fill
                   sizes="(min-width: 1280px) 365px, (min-width: 640px) 50vw, calc(100vw - 40px)"
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
@@ -130,15 +130,15 @@ export default function ServiceDetailPage() {
                 <div className="absolute bottom-0 left-0 h-2.5 w-full bg-[#012F42] transition-colors duration-300 group-hover:bg-[#FE8F02]" />
 
                 <div className="absolute inset-x-5 bottom-8">
-                  {service.description && (
+                  {state.description && (
                     <p className="mb-[92px] font-['DM_Sans'] text-[18px] leading-[25px] text-white">
-                      {service.description}
+                      {state.description}
                     </p>
                   )}
 
                   <div className="flex items-center justify-between gap-4">
                     <h3 className="font-['Outfit'] text-[22px] font-semibold leading-8 text-white">
-                      {service.title}
+                      {state.title}
                     </h3>
 
                     <span className="flex h-6 w-8 shrink-0 items-center justify-center rounded-[2px] bg-[#FE8F02] transition-colors duration-300 group-hover:bg-white/30">
@@ -183,7 +183,6 @@ export default function ServiceDetailPage() {
           </button>
         </form>
       </section>
-
     </div>
   );
 }
