@@ -8,13 +8,13 @@ const siteUrl =
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
 
-  title: "Box Truck Dispatching Across All US States",
+  title: "Box Truck Dispatch Services for Owner Operators",
 
   description:
-    "Nationwide box truck dispatching services helping carriers secure quality freight, maximize earnings, and stay moving across the United States.",
+    "Box truck dispatch services for owner operators and fleets, including load booking, rate negotiation, paperwork support, and route planning.",
 
   alternates: {
-    canonical: "/state",
+    canonical: "/service",
   },
 
   robots: {
@@ -23,49 +23,49 @@ export const metadata: Metadata = {
   },
 
   openGraph: {
-    title: "Box Truck Dispatching Across All US States",
+    title: "Box Truck Dispatch Services for Owner Operators",
     description:
-      "Nationwide box truck dispatching services helping carriers secure quality freight, maximize earnings, and stay moving across the United States.",
-    url: "/state",
+      "Box truck dispatch services for owner operators and fleets, including load booking, rate negotiation, paperwork support, and route planning.",
+    url: "/service",
     type: "website",
   },
 };
 
 const services = [
   {
-    title: "Ohio",
+    title: "Load Booking",
     description:
-      "Reliable box truck dispatching services across Ohio, helping carriers secure consistent freight and maximise revenue. We manage load booking, route planning, and broker communication so you can stay focused on the road.",
+      "We negotiate with brokers, find high-paying loads, and keep your truck moving with profitable freight. Our team focuses on maximizing revenue while minimizing deadhead miles.",
     image: "/Images/load-booking.png",
     featured: true,
-    href: "/state/stateDetails",
+    href: "/service/load-booking",
   },
   {
-    title: "Indiana",
+    title: "Dedicated Truck Dispatcher",
     image: "/Images/call-center.png",
   },
   {
-    title: "Texas",
+    title: "Factoring",
     image: "/Images/Rectangle 1117@2x (3).png",
   },
   {
-    title: "Florida",
+    title: "Paper Work",
     image: "/Images/Rectangle 1117@2x (1).png",
   },
   {
-    title: "New York",
+    title: "Driver Hiring",
     image: "/Images/Rectangle 1117@2x (5).png",
   },
   {
-    title: "California",
+    title: "MC Setup",
     image: "/Images/Rectangle 1117@2x (2).png",
   },
   {
-    title: "Kentucky",
+    title: "Accounting",
     image: "/Images/Rectangle 1117@2x.png",
   },
   {
-    title: "Illinois",
+    title: "Lease On",
     image: "/Images/Rectangle 1117@2x (6).png",
   },
 ];
@@ -88,14 +88,14 @@ export default function ServiceDetailPage() {
 
           <div className="relative z-10 max-w-[970px]">
             <h1 className="font-['Outfit'] text-[42px] font-bold capitalize leading-[52px] text-white sm:text-[54px] sm:leading-[64px] lg:text-[60px] lg:leading-[70px]">
-              Box Truck Dispatching Across All the US States
+              Providing Best Box Trucking Services in the USA
             </h1>
 
             <p className="mt-8 max-w-[904px] font-['DM_Sans'] text-[18px] leading-8 text-white sm:text-[20px]">
-              From coast to coast, we help box truck carriers secure quality
-              freight and maximise earnings. Our dispatch team manages load
-              sourcing, negotiations, and paperwork to keep your trucks moving
-              and your business profitable.
+              Our commitment to reliability, compliance, and 24/7 availability
+              drives us to deliver the best truck dispatch services, tailored to
+              meet the operational needs of owner-operators and small fleets
+              across all 48 states in the USA.
             </p>
           </div>
         </div>
@@ -155,13 +155,12 @@ export default function ServiceDetailPage() {
       <section className="mx-auto mt-20 w-[calc(100%_-_40px)] max-w-[1520px] rounded-[10px] bg-[#012F42] px-6 py-12 sm:px-10 lg:grid lg:min-h-[535px] lg:grid-cols-[1fr_720px] lg:gap-20 lg:px-[100px] lg:py-[50px]">
         <div className="flex flex-col justify-center">
           <h2 className="max-w-[420px] font-['Outfit'] text-[42px] font-bold leading-[54px] text-white lg:text-[48px] lg:leading-[60px]">
-            Coverage Beyond These States
+            Box Truck Dispatching
           </h2>
 
           <p className="mt-10 max-w-[395px] font-['DM_Sans'] text-[18px] leading-7 text-white/70">
-            While these are our primary service areas, Box Truck Dispatching
-            operates nationwide, supporting carriers across all 48 states with
-            consistent load access and dispatch management.
+            Fill out the form to connect with our expert dispatch team and
+            start getting high-paying loads with full support and zero stress.
           </p>
         </div>
 
