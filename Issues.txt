@@ -1,114 +1,20 @@
-MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 11 close listeners added. Use emitter.setMaxListeners() to increase limit
-n @ contentscript.js:14083
-u @ contentscript.js:14083
-a.addListener @ contentscript.js:14083
-Z.on @ contentscript.js:14082
-a.once @ contentscript.js:14083
-j.pipe @ contentscript.js:14063
-q @ contentscript.js:14063
-D @ contentscript.js:14063
-P @ contentscript.js:14063
-M @ contentscript.js:14063
-I @ contentscript.js:14063
-(anonymous) @ contentscript.js:14083
-call.__webpack_require__._LM_.__webpack_require__.__webpack_require__ @ contentscript.js:14083
-(anonymous) @ contentscript.js:14083
-(anonymous) @ contentscript.js:14083
-contentscript.js:14083 MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 11 end listeners added. Use emitter.setMaxListeners() to increase limit
-n @ contentscript.js:14083
-u @ contentscript.js:14083
-a.addListener @ contentscript.js:14083
-Z.on @ contentscript.js:14082
-O @ contentscript.js:14083
-q @ contentscript.js:14063
-D @ contentscript.js:14063
-P @ contentscript.js:14063
-M @ contentscript.js:14063
-I @ contentscript.js:14063
-(anonymous) @ contentscript.js:14083
-call.__webpack_require__._LM_.__webpack_require__.__webpack_require__ @ contentscript.js:14083
-(anonymous) @ contentscript.js:14083
-(anonymous) @ contentscript.js:14083
-contentscript.js:14083 ObjectMultiplex - orphaned data for stream "app-init-liveness"
-warn @ contentscript.js:14083
-_write @ contentscript.js:14082
-M @ contentscript.js:14063
-x @ contentscript.js:14063
-E.write @ contentscript.js:14063
-d @ contentscript.js:14082
-a.emit @ contentscript.js:14083
-J @ contentscript.js:14082
-K @ contentscript.js:14082
-Z.push @ contentscript.js:14082
-(anonymous) @ contentscript.js:14063
-contentscript.js:14083 ObjectMultiplex - orphaned data for stream "app-init-liveness"
-warn @ contentscript.js:14083
-_write @ contentscript.js:14082
-M @ contentscript.js:14063
-x @ contentscript.js:14063
-E.write @ contentscript.js:14063
-d @ contentscript.js:14082
-a.emit @ contentscript.js:14083
-J @ contentscript.js:14082
-K @ contentscript.js:14082
-Z.push @ contentscript.js:14082
-(anonymous) @ contentscript.js:14082
-transform @ contentscript.js:14063
-s._write @ contentscript.js:14082
-I @ contentscript.js:14083
-L @ contentscript.js:14083
-O.write @ contentscript.js:14083
-d @ contentscript.js:14082
-a.emit @ contentscript.js:14083
-J @ contentscript.js:14082
-K @ contentscript.js:14082
-Z.push @ contentscript.js:14082
-(anonymous) @ contentscript.js:14063
-contentscript.js:14083 ObjectMultiplex - orphaned data for stream "background-liveness"
-warn @ contentscript.js:14083
-_write @ contentscript.js:14082
-M @ contentscript.js:14063
-x @ contentscript.js:14063
-E.write @ contentscript.js:14063
-d @ contentscript.js:14082
-a.emit @ contentscript.js:14083
-J @ contentscript.js:14082
-K @ contentscript.js:14082
-Z.push @ contentscript.js:14082
-(anonymous) @ contentscript.js:14063
-contentscript.js:14083 ObjectMultiplex - orphaned data for stream "background-liveness"
-warn @ contentscript.js:14083
-_write @ contentscript.js:14082
-M @ contentscript.js:14063
-x @ contentscript.js:14063
-E.write @ contentscript.js:14063
-d @ contentscript.js:14082
-a.emit @ contentscript.js:14083
-J @ contentscript.js:14082
-K @ contentscript.js:14082
-Z.push @ contentscript.js:14082
-(anonymous) @ contentscript.js:14082
-transform @ contentscript.js:14063
-s._write @ contentscript.js:14082
-I @ contentscript.js:14083
-L @ contentscript.js:14083
-O.write @ contentscript.js:14083
-d @ contentscript.js:14082
-a.emit @ contentscript.js:14083
-J @ contentscript.js:14082
-K @ contentscript.js:14082
-Z.push @ contentscript.js:14082
-(anonymous) @ contentscript.js:14063
-contentscript.js:14083 ObjectMultiplex - malformed chunk without name "[object Object]"
-warn @ contentscript.js:14083
-_write @ contentscript.js:14082
-M @ contentscript.js:14063
-x @ contentscript.js:14063
-E.write @ contentscript.js:14063
-d @ contentscript.js:14082
-a.emit @ contentscript.js:14083
-J @ contentscript.js:14082
-K @ contentscript.js:14082
-Z.push @ contentscript.js:14082
-(anonymous) @ contentscript.js:14063
-contentscript.js:14083 ObjectMultiplex - malformed chunk without name "[object Object]"
+ Creating an optimized production build ...
+✓ Compiled successfully in 43s
+  Running TypeScript ...
+Failed to type check.
+
+./src/app/(app)/blog/[slug]/page.tsx:65:19
+Type error: A type predicate's type must be assignable to its parameter's type.
+  Type 'BlogFaq' is not assignable to type '{ question: string; answer: { [k: string]: unknown; root: { type: string; children: { [k: string]: unknown; type: any; version: number; }[]; direction: "ltr" | "rtl" | null; format: "" | "left" | "start" | "center" | "right" | "end" | "justify"; indent: number; version: number; }; }; id?: string | ... 1 more ... | u...'.
+    Types of property 'answer' are incompatible.
+      Type 'SerializedEditorState<SerializedLexicalNode>' is not assignable to type '{ [k: string]: unknown; root: { type: string; children: { [k: string]: unknown; type: any; version: number; }[]; direction: "ltr" | "rtl" | null; format: "" | "left" | "start" | "center" | "right" | "end" | "justify"; indent: number; version: number; }; }'.
+        Index signature for type 'string' is missing in type 'SerializedEditorState<SerializedLexicalNode>'.
+  63 |   const content = isRichText(post.content) ? post.content : null;
+  64 |   const faqs = (Array.isArray(post.faqs) ? post.faqs : []).filter(
+> 65 |     (faq): faq is BlogFaq =>
+     |                   ^
+  66 |       Boolean(faq?.question && isRichText(faq.answer)),
+  67 |   );
+  68 |   const faqMidpoint = Math.ceil(faqs.length / 2);
+Next.js build worker exited with code: 1 and signal: null
+Error: Command "npm run build" exited with 1

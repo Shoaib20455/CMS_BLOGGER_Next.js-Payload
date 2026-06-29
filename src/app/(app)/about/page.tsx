@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/images/about/Rectangle 1702@2x.png",
+        url: "/about/Rectangle 1702@2x.png",
         width: 1200,
         height: 630,
         alt: "Box truck dispatching team support",
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: pageTitle,
     description: pageDescription,
-    images: ["/images/about/Rectangle 1702@2x.png"],
+    images: ["/about/Rectangle 1702@2x.png"],
   },
   robots: {
     index: true,
@@ -318,7 +318,7 @@ export default function AboutPage() {
       <div className="about-page">
           <section className="about-hero" aria-labelledby="about-title">
             <Image
-              src="/images/about/Frame 4@2x.png"
+              src="/about/Frame 4@2x.png"
               alt=""
               fill
               priority
@@ -379,7 +379,7 @@ export default function AboutPage() {
           </div>
 
           <Image
-            src="/images/about/Rectangle 1511@2x.png"
+            src="/about/Rectangle 1511@2x.png"
             alt="White box truck parked near trees"
             width={626}
             height={700}
@@ -387,7 +387,7 @@ export default function AboutPage() {
           />
 
           <Image
-            src="/images/about/Rectangle 1525@2x.png"
+            src="/about/Rectangle 1525@2x.png"
             alt="White box truck parked outside a warehouse"
             width={857}
             height={296}
@@ -398,7 +398,7 @@ export default function AboutPage() {
         <section className="about-founder">
           <div className="about-founder-media">
             <Image
-              src="/images/about/Rectangle 1689@2x.png"
+              src="/about/Rectangle 1689@2x.png"
               alt="Michael Carter"
               width={760}
               height={585}
@@ -426,7 +426,7 @@ export default function AboutPage() {
             <div className="about-values">
               <span>
                 <Image
-                  src="/images/about/transparency.png"
+                  src="/about/transparency.png"
                   alt=""
                   width={72}
                   height={72}
@@ -436,7 +436,7 @@ export default function AboutPage() {
               </span>
               <span>
                 <Image
-                  src="/images/about/profitability.png"
+                  src="/about/profitability.png"
                   alt=""
                   width={72}
                   height={72}
@@ -446,7 +446,7 @@ export default function AboutPage() {
               </span>
               <span>
                 <Image
-                  src="/images/about/longtermrelationship.png"
+                  src="/about/longtermrelationship.png"
                   alt=""
                   width={72}
                   height={72}
@@ -466,7 +466,7 @@ export default function AboutPage() {
               including:
             </p>
             <Image
-              src="/images/about/Rectangle 1702@2x.png"
+              src="/about/Rectangle 1702@2x.png"
               alt="White box truck parked outside a warehouse"
               width={570}
               height={344}
@@ -484,7 +484,7 @@ export default function AboutPage() {
 
         <section className="about-industries">
           <Image
-            src="/images/about/Rectangle 1078@2x.png"
+            src="/about/Rectangle 1078@2x.png"
             alt=""
             fill
             sizes="100vw"

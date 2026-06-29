@@ -15,7 +15,7 @@ type BlogFaq = {
   answer: SerializedEditorState;
 };
 
-function isRichText(value: unknown): value is SerializedEditorState {
+function isRichText(value: unknown): boolean {
   return Boolean(
     value &&
       typeof value === "object" &&
@@ -60,11 +60,11 @@ export default async function BlogDetailPage({
   const categorySlug = (category?.slug as string) || "";
   const featureImageUrl = (featureImage?.url as string) || "";
   const featureImageAlt = (featureImage?.alt as string) || post.title;
-  const content = isRichText(post.content) ? post.content : null;
-  const faqs = (Array.isArray(post.faqs) ? post.faqs : []).filter(
-    (faq): faq is BlogFaq =>
+  const content = isRichText(post.content) ? (post.content as SerializedEditorState) : null;
+  const faqs = ((Array.isArray(post.faqs) ? post.faqs : []).filter(
+    (faq) =>
       Boolean(faq?.question && isRichText(faq.answer)),
-  );
+  ) as BlogFaq[]);
   const faqMidpoint = Math.ceil(faqs.length / 2);
   const faqColumns = [faqs.slice(0, faqMidpoint), faqs.slice(faqMidpoint)];
 

@@ -106,15 +106,8 @@ export default function ServiceDetailPage() {
 
         <div className="mt-[70px] grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
           {services.map((service) => {
-            const CardTag = service.href ? Link : "article";
-            const cardProps = service.href ? { href: service.href } : {};
-
-            return (
-              <CardTag
-                key={service.title}
-                {...cardProps}
-                className="group relative h-[350px] overflow-hidden rounded-[10px] no-underline"
-              >
+            const cardContent = (
+              <>
                 <Image
                   src={service.image}
                   alt={service.title}
@@ -138,13 +131,29 @@ export default function ServiceDetailPage() {
                     <h3 className="font-['Outfit'] text-[22px] font-semibold leading-8 text-white">
                       {service.title}
                     </h3>
-
                     <span className="flex h-6 w-8 shrink-0 items-center justify-center rounded-[2px] bg-[#FE8F02] transition-colors duration-300 group-hover:bg-white/30">
                       <ArrowIcon />
                     </span>
                   </div>
                 </div>
-              </CardTag>
+              </>
+            );
+
+            return service.href ? (
+              <Link
+                key={service.title}
+                href={service.href}
+                className="group relative h-[350px] overflow-hidden rounded-[10px] no-underline"
+              >
+                {cardContent}
+              </Link>
+            ) : (
+              <article
+                key={service.title}
+                className="group relative h-[350px] overflow-hidden rounded-[10px] no-underline"
+              >
+                {cardContent}
+              </article>
             );
           })}
         </div>
