@@ -1,5 +1,10 @@
+import withBundleAnalyzer from "@next/bundle-analyzer";
 import { withPayload } from "@payloadcms/next/withPayload";
 import type { NextConfig } from "next";
+
+const analyzer = withBundleAnalyzer({
+  enabled: process.env.ANALYZE === "true",
+});
 
 const nextConfig: NextConfig = {
   async headers() {
@@ -17,4 +22,4 @@ const nextConfig: NextConfig = {
   }
 };
 
-export default withPayload(nextConfig);
+export default analyzer(withPayload(nextConfig));

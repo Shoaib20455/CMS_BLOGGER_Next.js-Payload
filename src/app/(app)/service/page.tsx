@@ -106,15 +106,8 @@ export default function ServiceDetailPage() {
 
         <div className="mt-[70px] grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
           {services.map((service) => {
-            const CardTag = service.href ? Link : "article";
-            const cardProps = service.href ? { href: service.href } : {};
-
-            return (
-              <CardTag
-                key={service.title}
-                {...cardProps}
-                className="group relative h-[350px] overflow-hidden rounded-[10px] no-underline"
-              >
+            const content = (
+              <>
                 <Image
                   src={service.image}
                   alt={service.title}
@@ -144,8 +137,25 @@ export default function ServiceDetailPage() {
                     </span>
                   </div>
                 </div>
-              </CardTag>
-            );
+              </>
+            )
+
+            return service.href ? (
+              <Link
+                key={service.title}
+                href={service.href}
+                className="group relative block h-[350px] overflow-hidden rounded-[10px] no-underline"
+              >
+                {content}
+              </Link>
+            ) : (
+              <article
+                key={service.title}
+                className="group relative h-[350px] overflow-hidden rounded-[10px]"
+              >
+                {content}
+              </article>
+            )
           })}
         </div>
       </section>

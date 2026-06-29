@@ -6,14 +6,9 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getPayload } from "payload";
 
+import type { Post } from "@/payload-types";
 import BlogSection from "../../components/BlogSection";
 import ReadyTruckSection from "../../components/ReadyTruckSection";
-
-type BlogFaq = {
-  id?: string | null;
-  question: string;
-  answer: SerializedEditorState;
-};
 
 function isRichText(value: unknown): value is SerializedEditorState {
   return Boolean(
@@ -23,6 +18,9 @@ function isRichText(value: unknown): value is SerializedEditorState {
       (value as { root?: unknown }).root,
   );
 }
+
+type PostFaq = NonNullable<Post["faqs"]>[number];
+type BlogFaq = Omit<PostFaq, "answer"> & { answer: SerializedEditorState };
 
 export default async function BlogDetailPage({
   params,
@@ -61,10 +59,10 @@ export default async function BlogDetailPage({
   const featureImageUrl = (featureImage?.url as string) || "";
   const featureImageAlt = (featureImage?.alt as string) || post.title;
   const content = isRichText(post.content) ? post.content : null;
-  const faqs = (Array.isArray(post.faqs) ? post.faqs : []).filter(
-    (faq): faq is BlogFaq =>
+  const faqs = ((Array.isArray(post.faqs) ? post.faqs : []).filter(
+    (faq) =>
       Boolean(faq?.question && isRichText(faq.answer)),
-  );
+  ) as unknown as BlogFaq[]);
   const faqMidpoint = Math.ceil(faqs.length / 2);
   const faqColumns = [faqs.slice(0, faqMidpoint), faqs.slice(faqMidpoint)];
 

@@ -106,15 +106,8 @@ export default function StatePage() {
 
         <div className="mt-[70px] grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
           {states.map((state) => {
-            const CardTag = state.href ? Link : "article";
-            const cardProps = state.href ? { href: state.href } : {};
-
-            return (
-              <CardTag
-                key={state.title}
-                {...cardProps}
-                className="group relative h-[350px] overflow-hidden rounded-[10px] no-underline"
-              >
+            const content = (
+              <>
                 <Image
                   src={state.image}
                   alt={state.title}
@@ -144,8 +137,25 @@ export default function StatePage() {
                     </span>
                   </div>
                 </div>
-              </CardTag>
-            );
+              </>
+            )
+
+            return state.href ? (
+              <Link
+                key={state.title}
+                href={state.href}
+                className="group relative block h-[350px] overflow-hidden rounded-[10px] no-underline"
+              >
+                {content}
+              </Link>
+            ) : (
+              <article
+                key={state.title}
+                className="group relative h-[350px] overflow-hidden rounded-[10px]"
+              >
+                {content}
+              </article>
+            )
           })}
         </div>
       </section>
