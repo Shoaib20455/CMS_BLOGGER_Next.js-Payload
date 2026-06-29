@@ -1,8 +1,7 @@
- Creating an optimized production build ...
+Creating an optimized production build ...
 ✓ Compiled successfully in 43s
   Running TypeScript ...
 Failed to type check.
-
 ./src/app/(app)/blog/[slug]/page.tsx:65:19
 Type error: A type predicate's type must be assignable to its parameter's type.
   Type 'BlogFaq' is not assignable to type '{ question: string; answer: { [k: string]: unknown; root: { type: string; children: { [k: string]: unknown; type: any; version: number; }[]; direction: "ltr" | "rtl" | null; format: "" | "left" | "start" | "center" | "right" | "end" | "justify"; indent: number; version: number; }; }; id?: string | ... 1 more ... | u...'.
