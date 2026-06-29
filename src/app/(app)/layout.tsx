@@ -3,7 +3,7 @@ import { DM_Sans, Outfit, Poppins } from "next/font/google";
 import "./globals.css";
 
 import SiteShell from "./components/SiteShell";
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL!;
 
 const outfit = Outfit({ variable: "--font-outfit", subsets: ["latin"], display: "swap" });
 const dmSans = DM_Sans({ variable: "--font-dm-sans", subsets: ["latin"], display: "swap" });
