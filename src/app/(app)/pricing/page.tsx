@@ -66,7 +66,7 @@ export default function PricingPage() {
       <section className="mx-auto w-[calc(100%_-_40px)] max-w-[1520px] overflow-hidden rounded-[20px] bg-[#012F42]">
         <div className="relative min-h-[420px] overflow-hidden px-6 py-16 sm:px-10 lg:min-h-[500px] lg:px-[100px] lg:py-[122px]">
           <Image
-            src="/pricing/Frame 4 (1).png"
+            src="/pricing/Frame 4 (1).webp"
             alt="Box truck dispatching pricing hero"
             fill
             priority
@@ -77,11 +77,11 @@ export default function PricingPage() {
           <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(1,47,66,0.90)_0%,rgba(1,47,66,0.30)_89%)]" />
 
           <div className="relative z-10 max-w-[967px]">
-            <h1 className="font-['Outfit'] text-[42px] font-bold capitalize leading-[52px] text-white sm:text-[54px] sm:leading-[64px] lg:text-[60px] lg:leading-[70px]">
+            <h1 className="font-[family-name:var(--font-outfit)] text-[42px] font-bold capitalize leading-[52px] text-white sm:text-[54px] sm:leading-[64px] lg:text-[60px] lg:leading-[70px]">
               Reliable Dispatching. More Miles. More Profit.
             </h1>
 
-            <p className="mt-8 max-w-[687px] font-['DM_Sans'] text-[18px] leading-8 text-white sm:text-[20px]">
+            <p className="mt-8 max-w-[687px] font-[family-name:var(--font-dm-sans)] text-[18px] leading-8 text-white sm:text-[20px]">
               We specialize in box truck dispatching, connecting you with the
               best loads at competitive rates. Our goal is to keep your trucks
               moving and your business growing with reliable support 24/7.
@@ -91,7 +91,7 @@ export default function PricingPage() {
       </section>
 
       <section className="mx-auto mt-20 w-[calc(100%_-_40px)] max-w-[1520px]">
-        <h2 className="mx-auto max-w-[547px] text-center font-['Outfit'] text-[40px] font-bold leading-[50px] text-[#012F42] lg:text-[48px] lg:leading-[58px]">
+        <h2 className="mx-auto max-w-[547px] text-center font-[family-name:var(--font-outfit)] text-[40px] font-bold leading-[50px] text-[#012F42] lg:text-[48px] lg:leading-[58px]">
           Box Truck Dispatching Fee Chart
         </h2>
 
@@ -108,7 +108,7 @@ export default function PricingPage() {
                   <th
                     key={heading}
                     scope="col"
-                    className="h-16 border-r border-[#012F42] px-6 text-left font-['Outfit'] text-[20px] font-semibold leading-8 last:border-r-0 lg:px-[50px]"
+                    className="h-16 border-r border-[#012F42] px-6 text-left font-[family-name:var(--font-outfit)] text-[20px] font-semibold leading-8 last:border-r-0 lg:px-[50px]"
                   >
                     {heading}
                   </th>
@@ -127,7 +127,7 @@ export default function PricingPage() {
                   ].map((value) => (
                     <td
                       key={value}
-                      className="h-16 border-r border-t border-[#012F42] px-6 font-['DM_Sans'] text-[18px] leading-6 text-[#111827]/70 last:border-r-0 lg:px-[50px]"
+                      className="h-16 border-r border-t border-[#012F42] px-6 font-[family-name:var(--font-dm-sans)] text-[18px] leading-6 text-[#111827]/70 last:border-r-0 lg:px-[50px]"
                     >
                       {value}
                     </td>
@@ -140,7 +140,7 @@ export default function PricingPage() {
       </section>
 
       <section className="mx-auto mt-20 w-[calc(100%_-_40px)] max-w-[1520px]">
-        <h2 className="text-center font-['Outfit'] text-[40px] font-bold leading-[50px] text-[#012F42] lg:text-[48px] lg:leading-[58px]">
+        <h2 className="text-center font-[family-name:var(--font-outfit)] text-[40px] font-bold leading-[50px] text-[#012F42] lg:text-[48px] lg:leading-[58px]">
           Our Key Advantages
         </h2>
 
@@ -153,11 +153,11 @@ export default function PricingPage() {
   <div className="h-2.5 bg-[#012F42] transition-colors duration-300 group-hover:bg-[#FE8F02]" />
 
   <div className="p-5">
-    <h3 className="min-h-16 font-['Outfit'] text-[20px] font-semibold leading-8 text-[#012F42]">
+    <h3 className="min-h-16 font-[family-name:var(--font-outfit)] text-[20px] font-semibold leading-8 text-[#012F42]">
       {advantage.title}
     </h3>
 
-    <p className="mt-6 font-['DM_Sans'] text-[18px] leading-6 text-[#111827]/70">
+    <p className="mt-6 font-[family-name:var(--font-dm-sans)] text-[18px] leading-6 text-[#111827]/70">
       {advantage.description}
     </p>
   </div>
@@ -168,17 +168,17 @@ export default function PricingPage() {
 
       <section className="mx-auto mt-20 grid w-[calc(100%_-_40px)] max-w-[1520px] gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,49.35%)] lg:items-center lg:gap-[60px]">
   <div>
-    <h2 className="font-['Outfit'] text-[40px] font-bold leading-[50px] text-[#012F42] lg:text-[48px] lg:leading-[58px]">
+    <h2 className="font-[family-name:var(--font-outfit)] text-[40px] font-bold leading-[50px] text-[#012F42] lg:text-[48px] lg:leading-[58px]">
       Why Choose Us?
     </h2>
 
-    <p className="mt-8 max-w-[710px] font-['DM_Sans'] text-[18px] leading-6 text-[#111827]/70">
+    <p className="mt-8 max-w-[710px] font-[family-name:var(--font-dm-sans)] text-[18px] leading-6 text-[#111827]/70">
       Our experienced dispatchers work hard to keep your trucks loaded and
       profitable. We focus on finding quality freight opportunities while
       reducing downtime and unnecessary deadhead miles.
     </p>
 
-    <h3 className="mt-12 font-['Outfit'] text-[20px] font-semibold leading-8 text-[#012F42]">
+    <h3 className="mt-12 font-[family-name:var(--font-outfit)] text-[20px] font-semibold leading-8 text-[#012F42]">
       Benefits of Working With Us
     </h3>
 
@@ -186,7 +186,7 @@ export default function PricingPage() {
       {benefits.map((benefit) => (
         <li
           key={benefit}
-          className="flex items-center gap-3 font-['DM_Sans'] text-[16px] leading-6 text-[#5B6472]"
+          className="flex items-center gap-3 font-[family-name:var(--font-dm-sans)] text-[16px] leading-6 text-[#5B6472]"
         >
           <CheckIcon />
           {benefit}
@@ -197,7 +197,7 @@ export default function PricingPage() {
 
   <div className="group relative aspect-[750/434] overflow-hidden rounded-[10px] bg-[#E2E8F0] transition-shadow duration-300 hover:shadow-[0_16px_36px_rgba(254,143,2,0.22)]">
     <Image
-      src="/pricing/Rectangle 1686.png"
+      src="/pricing/Rectangle 1686.webp"
       alt="Dispatcher supporting box truck business growth"
       fill
       sizes="(max-width: 1023px) calc(100vw - 40px), 750px"
@@ -208,11 +208,11 @@ export default function PricingPage() {
 
       <section className="mx-auto mt-20 w-[calc(100%_-_40px)] max-w-[1520px] rounded-[10px] bg-[#012F42] px-6 py-12 sm:px-10 lg:grid lg:min-h-[535px] lg:grid-cols-[1fr_720px] lg:gap-20 lg:px-[100px] lg:py-[50px]">
         <div className="flex flex-col justify-center">
-          <h2 className="max-w-[462px] font-['Outfit'] text-[42px] font-bold leading-[54px] text-white lg:text-[48px] lg:leading-[60px]">
+          <h2 className="max-w-[462px] font-[family-name:var(--font-outfit)] text-[42px] font-bold leading-[54px] text-white lg:text-[48px] lg:leading-[60px]">
             Ready to Grow Your Business?
           </h2>
 
-          <p className="mt-10 max-w-[395px] font-['DM_Sans'] text-[18px] leading-7 text-white/70">
+          <p className="mt-10 max-w-[395px] font-[family-name:var(--font-dm-sans)] text-[18px] leading-7 text-white/70">
             Contact us today and start running high-paying loads!
           </p>
         </div>
@@ -233,7 +233,7 @@ export default function PricingPage() {
 
           <button
             type="submit"
-            className="mt-6 flex h-12 w-full items-center justify-center rounded-[5px] bg-[#FE8F02] px-5 font-['Outfit'] text-[18px] font-medium capitalize text-white transition-colors hover:bg-[#E07D02]"
+            className="mt-6 flex h-12 w-full items-center justify-center rounded-[5px] bg-[#FE8F02] px-5 font-[family-name:var(--font-outfit)] text-[18px] font-medium capitalize text-white transition-colors hover:bg-[#E07D02]"
           >
             Get Started Now
           </button>
@@ -254,7 +254,7 @@ function CtaField({
 }) {
   return (
     <label className="block">
-      <span className="font-['Outfit'] text-[16px] font-medium text-white">
+      <span className="font-[family-name:var(--font-outfit)] text-[16px] font-medium text-white">
         {label}
       </span>
 
@@ -263,7 +263,7 @@ function CtaField({
           <>
             <select
               defaultValue=""
-              className="h-11 w-full appearance-none rounded-[5px] border border-white/5 bg-[#012F42]/60 px-5 pr-12 font-['DM_Sans'] text-[14px] font-light text-white/70 outline-none transition-colors focus:border-[#FE8F02]"
+              className="h-11 w-full appearance-none rounded-[5px] border border-white/5 bg-[#012F42]/60 px-5 pr-12 font-[family-name:var(--font-dm-sans)] text-[14px] font-light text-white/70 outline-none transition-colors focus:border-[#FE8F02]"
             >
               <option value="" disabled>
                 {placeholder}
@@ -280,7 +280,7 @@ function CtaField({
           </>
         ) : (
           <input
-            className="h-11 w-full rounded-[5px] border border-white/5 bg-[#012F42]/60 px-5 font-['DM_Sans'] text-[14px] font-light text-white outline-none transition-colors placeholder:text-white/70 focus:border-[#FE8F02]"
+            className="h-11 w-full rounded-[5px] border border-white/5 bg-[#012F42]/60 px-5 font-[family-name:var(--font-dm-sans)] text-[14px] font-light text-white outline-none transition-colors placeholder:text-white/70 focus:border-[#FE8F02]"
             placeholder={placeholder}
           />
         )}

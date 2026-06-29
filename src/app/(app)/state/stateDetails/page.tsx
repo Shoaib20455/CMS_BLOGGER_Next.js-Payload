@@ -179,7 +179,7 @@ export default function StatePage() {
       <section className="mx-auto w-[calc(100%_-_40px)] max-w-[1520px] overflow-hidden rounded-[20px] bg-[#012F42]">
         <div className="relative min-h-[500px] overflow-hidden px-6 py-14 sm:px-10 lg:px-[100px] lg:py-[55px]">
           <Image
-            src="/state Detail/Frame 4.png"
+            src="/state Detail/Frame 4.webp"
             alt="Ohio box truck dispatching"
             fill
             priority
@@ -189,11 +189,11 @@ export default function StatePage() {
           <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(1,47,66,0.90)_0%,rgba(1,47,66,0.30)_89%)]" />
 
           <div className="relative z-10 max-w-[967px]">
-            <h1 className="font-['Outfit'] text-[42px] font-bold capitalize leading-[52px] text-white sm:text-[54px] sm:leading-[64px] lg:text-[60px] lg:leading-[70px]">
+            <h1 className="font-[family-name:var(--font-outfit)] text-[42px] font-bold capitalize leading-[52px] text-white sm:text-[54px] sm:leading-[64px] lg:text-[60px] lg:leading-[70px]">
               Best Box Truck Dispatching Company in Ohio
             </h1>
 
-            <p className="mt-8 max-w-[791px] font-['DM_Sans'] text-[18px] leading-8 text-white sm:text-[20px]">
+            <p className="mt-8 max-w-[791px] font-[family-name:var(--font-dm-sans)] text-[18px] leading-8 text-white sm:text-[20px]">
               Ohio is one of the busiest freight corridors in the Midwest,
               connecting major markets such as Columbus, Cleveland, Cincinnati,
               Toledo, Akron, and Dayton. Our Ohio-focused box truck dispatching
@@ -208,7 +208,7 @@ export default function StatePage() {
       <ServicePicker />
 
       <section className="mx-auto mt-20 w-[calc(100%_-_40px)] max-w-[1520px]">
-        <h2 className="mx-auto max-w-[781px] text-center font-['Outfit'] text-[40px] font-bold leading-[50px] text-[#012F42] lg:text-[48px] lg:leading-[58px]">
+        <h2 className="mx-auto max-w-[781px] text-center font-[family-name:var(--font-outfit)] text-[40px] font-bold leading-[50px] text-[#012F42] lg:text-[48px] lg:leading-[58px]">
           Box Truck Dispatching Challenges Facing Ohio Truck Owners
         </h2>
 
@@ -220,7 +220,7 @@ export default function StatePage() {
       </section>
 
       <section className="mx-auto mt-20 w-[calc(100%_-_40px)] max-w-[1520px]">
-        <h2 className="mx-auto max-w-[776px] text-center font-['Outfit'] text-[40px] font-bold leading-[50px] text-[#012F42] lg:text-[48px] lg:leading-[58px]">
+        <h2 className="mx-auto max-w-[776px] text-center font-[family-name:var(--font-outfit)] text-[40px] font-bold leading-[50px] text-[#012F42] lg:text-[48px] lg:leading-[58px]">
           Dispatching Solutions Designed for Ohio Box Truck Businesses
         </h2>
 
@@ -234,7 +234,7 @@ export default function StatePage() {
       <section className="mt-20 overflow-hidden bg-[#012F42]">
         <div className="relative mx-auto min-h-[610px] w-full max-w-[1920px] px-5 py-20 text-center sm:px-8">
           <Image
-            src="/state Detail/Rectangle 1078.png"
+            src="/state Detail/Rectangle 1078.webp"
             alt=""
             fill
             sizes="100vw"
@@ -243,7 +243,7 @@ export default function StatePage() {
           <div className="absolute inset-0 bg-[#012F42]/60" />
 
           <div className="relative z-10 mx-auto max-w-[1520px]">
-            <h2 className="font-['Outfit'] text-[40px] font-bold leading-[50px] text-[#F8FAFC] lg:text-[48px] lg:leading-[58px]">
+            <h2 className="font-[family-name:var(--font-outfit)] text-[40px] font-bold leading-[50px] text-[#F8FAFC] lg:text-[48px] lg:leading-[58px]">
               Industries We Help Move Across Ohio
             </h2>
 
@@ -251,7 +251,7 @@ export default function StatePage() {
               {industries.map((industry) => (
                 <span
                   key={industry}
-                  className="rounded-[5px] bg-white/10 px-8 py-5 font-['Outfit'] text-[24px] font-semibold capitalize text-white backdrop-blur-lg transition-all duration-300 hover:-translate-y-1 hover:bg-[#FE8F02] hover:shadow-[0_10px_26px_rgba(254,143,2,0.28)] lg:px-12 lg:py-6 lg:text-[30px]"
+                  className="rounded-[5px] bg-white/10 px-8 py-5 font-[family-name:var(--font-outfit)] text-[24px] font-semibold capitalize text-white backdrop-blur-lg transition-all duration-300 hover:-translate-y-1 hover:bg-[#FE8F02] hover:shadow-[0_10px_26px_rgba(254,143,2,0.28)] lg:px-12 lg:py-6 lg:text-[30px]"
                 >
                   {industry}
                 </span>
@@ -265,7 +265,7 @@ export default function StatePage() {
 
       <section className="mx-auto mt-20 grid w-[calc(100%_-_40px)] max-w-[1520px] gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,49.35%)] lg:items-center lg:gap-[60px]">
         <div>
-          <h2 className="max-w-[710px] font-['Outfit'] text-[40px] font-bold leading-[50px] text-[#012F42] lg:text-[48px] lg:leading-[58px]">
+          <h2 className="max-w-[710px] font-[family-name:var(--font-outfit)] text-[40px] font-bold leading-[50px] text-[#012F42] lg:text-[48px] lg:leading-[58px]">
             Major Ohio Regions Covered by Our Dispatch Team
           </h2>
 
@@ -275,10 +275,10 @@ export default function StatePage() {
                 key={region.title}
                 className="transition-transform duration-300 hover:translate-x-1"
               >
-                <h3 className="font-['Outfit'] text-[20px] font-semibold leading-8 text-[#012F42]">
+                <h3 className="font-[family-name:var(--font-outfit)] text-[20px] font-semibold leading-8 text-[#012F42]">
                   {region.title}
                 </h3>
-                <p className="mt-3 max-w-[710px] font-['DM_Sans'] text-[18px] leading-6 text-[#111827]/70">
+                <p className="mt-3 max-w-[710px] font-[family-name:var(--font-dm-sans)] text-[18px] leading-6 text-[#111827]/70">
                   {region.description}
                 </p>
               </div>
@@ -315,11 +315,11 @@ export default function StatePage() {
 
       <section className="mx-auto mt-20 grid w-[calc(100%_-_40px)] max-w-[1520px] overflow-hidden rounded-[10px] bg-[#012F42] lg:grid-cols-2">
         <div className="flex flex-col justify-center px-6 py-12 sm:px-10 lg:min-h-[585px] lg:px-[50px] lg:py-0">
-          <h2 className="max-w-[641px] font-['Outfit'] text-[40px] font-bold capitalize leading-[52px] text-[#FE8F02] lg:text-[48px] lg:leading-[60px]">
+          <h2 className="max-w-[641px] font-[family-name:var(--font-outfit)] text-[40px] font-bold capitalize leading-[52px] text-[#FE8F02] lg:text-[48px] lg:leading-[60px]">
             Start Growing Your Box Truck Business in Ohio
           </h2>
 
-          <p className="mt-8 max-w-[636px] font-['DM_Sans'] text-[18px] leading-7 text-white">
+          <p className="mt-8 max-w-[636px] font-[family-name:var(--font-dm-sans)] text-[18px] leading-7 text-white">
             Ohio offers tremendous freight opportunities, but success depends
             on securing the right loads at the right rates. Our dispatching team
             helps owner-operators and fleet owners stay loaded, increase
@@ -330,14 +330,14 @@ export default function StatePage() {
           <div className="mt-10 flex flex-wrap gap-4">
             <Link
               href="/contact"
-              className="inline-flex h-12 items-center justify-center rounded-[5px] bg-[#FE8F02] px-5 font-['Outfit'] text-[18px] font-medium capitalize text-white no-underline transition-all duration-300 hover:scale-[1.03] hover:bg-[#E07D02] hover:shadow-[0_10px_24px_rgba(254,143,2,0.24)] active:scale-95"
+              className="inline-flex h-12 items-center justify-center rounded-[5px] bg-[#FE8F02] px-5 font-[family-name:var(--font-outfit)] text-[18px] font-medium capitalize text-white no-underline transition-all duration-300 hover:scale-[1.03] hover:bg-[#E07D02] hover:shadow-[0_10px_24px_rgba(254,143,2,0.24)] active:scale-95"
             >
               Start Dispatching Today
             </Link>
 
             <Link
               href="/contact"
-              className="inline-flex h-12 items-center justify-center rounded-[5px] border border-[#FE8F02] px-5 font-['Outfit'] text-[18px] font-medium capitalize text-[#FE8F02] no-underline transition-all duration-300 hover:scale-[1.03] hover:bg-white/10 hover:shadow-[0_10px_24px_rgba(254,143,2,0.20)] active:scale-95"
+              className="inline-flex h-12 items-center justify-center rounded-[5px] border border-[#FE8F02] px-5 font-[family-name:var(--font-outfit)] text-[18px] font-medium capitalize text-[#FE8F02] no-underline transition-all duration-300 hover:scale-[1.03] hover:bg-white/10 hover:shadow-[0_10px_24px_rgba(254,143,2,0.20)] active:scale-95"
             >
               Get a Free Consultation
             </Link>
@@ -346,7 +346,7 @@ export default function StatePage() {
 
         <div className="relative min-h-[360px] lg:min-h-[585px]">
           <Image
-            src="/state Detail/Rectangle 1117.png"
+            src="/state Detail/Rectangle 1117.webp"
             alt="Box truck dispatching in Ohio"
             fill
             sizes="(max-width: 1023px) calc(100vw - 40px), 760px"
@@ -361,13 +361,13 @@ export default function StatePage() {
 function ServicePicker() {
   return (
     <section className="relative z-10 mx-auto -mt-[75px] w-[calc(100%_-_40px)] max-w-[1120px] rounded-[10px] bg-white p-6 shadow-[0_0.625rem_1.875rem_rgba(0,0,0,0.08)] lg:p-[25px_51px]">
-      <h2 className="font-['Outfit'] text-[30px] font-semibold leading-8 text-[#012F42]">
+      <h2 className="font-[family-name:var(--font-outfit)] text-[30px] font-semibold leading-8 text-[#012F42]">
         Pick Your Service
       </h2>
 
       <form className="mt-5 grid gap-4 md:grid-cols-[1fr_1fr_1fr_auto]">
         <div className="relative h-12">
-          <select className="h-full w-full appearance-none rounded-[5px] border border-[#111827] bg-white px-5 pr-12 font-['DM_Sans'] text-[18px] text-[#111827]/70 outline-none transition-[border-color,box-shadow] duration-200 hover:border-[#FE8F02] focus:border-[#FE8F02] focus:shadow-[0_0_0_3px_rgba(254,143,2,0.12)]">
+          <select className="h-full w-full appearance-none rounded-[5px] border border-[#111827] bg-white px-5 pr-12 font-[family-name:var(--font-dm-sans)] text-[18px] text-[#111827]/70 outline-none transition-[border-color,box-shadow] duration-200 hover:border-[#FE8F02] focus:border-[#FE8F02] focus:shadow-[0_0_0_3px_rgba(254,143,2,0.12)]">
             <option>View Your Service</option>
             <option>Load Booking</option>
             <option>Dedicated Dispatch</option>
@@ -383,19 +383,19 @@ function ServicePicker() {
         </div>
 
         <input
-          className="h-12 rounded-[5px] border border-[#111827] px-5 font-['DM_Sans'] text-[18px] text-[#111827] outline-none transition-[border-color,box-shadow] duration-200 placeholder:text-[#111827]/70 hover:border-[#FE8F02] focus:border-[#FE8F02] focus:shadow-[0_0_0_3px_rgba(254,143,2,0.12)]"
+          className="h-12 rounded-[5px] border border-[#111827] px-5 font-[family-name:var(--font-dm-sans)] text-[18px] text-[#111827] outline-none transition-[border-color,box-shadow] duration-200 placeholder:text-[#111827]/70 hover:border-[#FE8F02] focus:border-[#FE8F02] focus:shadow-[0_0_0_3px_rgba(254,143,2,0.12)]"
           placeholder="Name"
         />
 
         <input
           type="email"
-          className="h-12 rounded-[5px] border border-[#111827] px-5 font-['DM_Sans'] text-[18px] text-[#111827] outline-none transition-[border-color,box-shadow] duration-200 placeholder:text-[#111827]/70 hover:border-[#FE8F02] focus:border-[#FE8F02] focus:shadow-[0_0_0_3px_rgba(254,143,2,0.12)]"
+          className="h-12 rounded-[5px] border border-[#111827] px-5 font-[family-name:var(--font-dm-sans)] text-[18px] text-[#111827] outline-none transition-[border-color,box-shadow] duration-200 placeholder:text-[#111827]/70 hover:border-[#FE8F02] focus:border-[#FE8F02] focus:shadow-[0_0_0_3px_rgba(254,143,2,0.12)]"
           placeholder="Youremail@gmail.com"
         />
 
         <button
           type="submit"
-          className="h-12 rounded-[5px] bg-[#FE8F02] px-7 font-['Outfit'] text-[18px] font-medium leading-8 text-white transition-all duration-300 hover:scale-[1.03] hover:bg-[#E07D02] hover:shadow-[0_10px_24px_rgba(254,143,2,0.24)] active:scale-95"
+          className="h-12 rounded-[5px] bg-[#FE8F02] px-7 font-[family-name:var(--font-outfit)] text-[18px] font-medium leading-8 text-white transition-all duration-300 hover:scale-[1.03] hover:bg-[#E07D02] hover:shadow-[0_10px_24px_rgba(254,143,2,0.24)] active:scale-95"
         >
           Submit
         </button>
@@ -415,10 +415,10 @@ function InfoCard({
     <article className="group min-h-[240px] overflow-hidden rounded-[10px] border border-[#111827]/50 bg-white/20 transition-all duration-300 hover:-translate-y-1 hover:border-[#FE8F02] hover:bg-white/40 hover:shadow-[0_12px_30px_rgba(254,143,2,0.16)]">
       <div className="h-2.5 bg-[#012F42] transition-colors duration-300 group-hover:bg-[#FE8F02]" />
       <div className="p-5">
-        <h3 className="min-h-16 font-['Outfit'] text-[20px] font-semibold leading-8 text-[#012F42]">
+        <h3 className="min-h-16 font-[family-name:var(--font-outfit)] text-[20px] font-semibold leading-8 text-[#012F42]">
           {title}
         </h3>
-        <p className="mt-6 font-['DM_Sans'] text-[18px] leading-6 text-[#111827]/70">
+        <p className="mt-6 font-[family-name:var(--font-dm-sans)] text-[18px] leading-6 text-[#111827]/70">
           {description}
         </p>
       </div>
@@ -448,10 +448,10 @@ function SolutionCard({
             className="h-10 w-10 object-contain"
           />
         </div>
-        <h3 className="mt-5 min-h-[64px] font-['Outfit'] text-[20px] font-semibold leading-8 text-[#012F42]">
+        <h3 className="mt-5 min-h-[64px] font-[family-name:var(--font-outfit)] text-[20px] font-semibold leading-8 text-[#012F42]">
           {title}
         </h3>
-        <p className="mt-5 font-['DM_Sans'] text-[18px] leading-6 text-[#111827]/70">
+        <p className="mt-5 font-[family-name:var(--font-dm-sans)] text-[18px] leading-6 text-[#111827]/70">
           {description}
         </p>
       </div>
@@ -463,11 +463,11 @@ function CtaSection() {
   return (
     <section className="mx-auto mt-20 w-[calc(100%_-_40px)] max-w-[1520px] rounded-[10px] bg-[#012F42] px-6 py-12 sm:px-10 lg:grid lg:min-h-[535px] lg:grid-cols-[minmax(0,1fr)_minmax(0,54.55%)] lg:gap-20 lg:px-[100px] lg:py-[50px]">
       <div className="flex flex-col justify-center">
-        <h2 className="max-w-[535px] font-['Outfit'] text-[40px] font-bold leading-[52px] text-white lg:text-[48px] lg:leading-[60px]">
+        <h2 className="max-w-[535px] font-[family-name:var(--font-outfit)] text-[40px] font-bold leading-[52px] text-white lg:text-[48px] lg:leading-[60px]">
           Stop Losing Revenue in Ohio&apos;s Competitive Freight Market
         </h2>
 
-        <p className="mt-10 max-w-[511px] font-['DM_Sans'] text-[18px] leading-7 text-white/70">
+        <p className="mt-10 max-w-[511px] font-[family-name:var(--font-dm-sans)] text-[18px] leading-7 text-white/70">
           Consistent freight opportunities, better rates, and professional
           dispatch support can make a significant difference to your bottom
           line. Whether you&apos;re an owner-operator or managing a growing
@@ -492,7 +492,7 @@ function CtaSection() {
 
         <button
           type="submit"
-          className="mt-5 flex h-12 w-full items-center justify-center rounded-[5px] bg-[#FE8F02] px-5 font-['Outfit'] text-[18px] font-medium capitalize text-white transition-all duration-300 hover:scale-[1.01] hover:bg-[#E07D02] active:scale-[0.99]"
+          className="mt-5 flex h-12 w-full items-center justify-center rounded-[5px] bg-[#FE8F02] px-5 font-[family-name:var(--font-outfit)] text-[18px] font-medium capitalize text-white transition-all duration-300 hover:scale-[1.01] hover:bg-[#E07D02] active:scale-[0.99]"
         >
           Get Started Now
         </button>
@@ -512,7 +512,7 @@ function CtaField({
 }) {
   return (
     <label className="block">
-      <span className="font-['Outfit'] text-[16px] font-medium text-white">
+      <span className="font-[family-name:var(--font-outfit)] text-[16px] font-medium text-white">
         {label}
       </span>
 
@@ -521,7 +521,7 @@ function CtaField({
           <>
             <select
               defaultValue=""
-              className="h-11 w-full appearance-none rounded-[5px] border border-white/5 bg-[#012F42]/60 px-5 pr-12 font-['DM_Sans'] text-[14px] font-light text-white/70 outline-none transition-[border-color,box-shadow] duration-200 hover:border-[#FE8F02]/70 focus:border-[#FE8F02] focus:shadow-[0_0_0_3px_rgba(254,143,2,0.12)]"
+              className="h-11 w-full appearance-none rounded-[5px] border border-white/5 bg-[#012F42]/60 px-5 pr-12 font-[family-name:var(--font-dm-sans)] text-[14px] font-light text-white/70 outline-none transition-[border-color,box-shadow] duration-200 hover:border-[#FE8F02]/70 focus:border-[#FE8F02] focus:shadow-[0_0_0_3px_rgba(254,143,2,0.12)]"
             >
               <option value="" disabled>
                 {placeholder}
@@ -538,7 +538,7 @@ function CtaField({
           </>
         ) : (
           <input
-            className="h-11 w-full rounded-[5px] border border-white/5 bg-[#012F42]/60 px-5 font-['DM_Sans'] text-[14px] font-light text-white outline-none transition-[border-color,box-shadow] duration-200 placeholder:text-white/70 hover:border-[#FE8F02]/70 focus:border-[#FE8F02] focus:shadow-[0_0_0_3px_rgba(254,143,2,0.12)]"
+            className="h-11 w-full rounded-[5px] border border-white/5 bg-[#012F42]/60 px-5 font-[family-name:var(--font-dm-sans)] text-[14px] font-light text-white outline-none transition-[border-color,box-shadow] duration-200 placeholder:text-white/70 hover:border-[#FE8F02]/70 focus:border-[#FE8F02] focus:shadow-[0_0_0_3px_rgba(254,143,2,0.12)]"
             placeholder={placeholder}
           />
         )}
@@ -565,10 +565,10 @@ function CoverageGrid({
 
   const intro = (
     <div className="flex flex-col justify-center rounded-[10px] py-2 lg:col-span-2">
-      <h2 className="max-w-[420px] font-['Outfit'] text-[32px] font-bold leading-[38px] text-[#012F42] lg:text-[36px] lg:leading-[42px]">
+      <h2 className="max-w-[420px] font-[family-name:var(--font-outfit)] text-[32px] font-bold leading-[38px] text-[#012F42] lg:text-[36px] lg:leading-[42px]">
         {title}
       </h2>
-      <p className="mt-5 max-w-[420px] font-['DM_Sans'] text-[16px] leading-6 text-[#5B6472]">
+      <p className="mt-5 max-w-[420px] font-[family-name:var(--font-dm-sans)] text-[16px] leading-6 text-[#5B6472]">
         {description}
       </p>
     </div>
@@ -616,7 +616,7 @@ function TileCard({ title, image }: { title: string; image: string }) {
       />
       <div className="absolute inset-0 bg-gradient-to-b from-[#012F42]/10 to-[#012F42]/80" />
       <div className="absolute inset-x-0 bottom-0 h-2.5 bg-[#012F42] transition-colors duration-300 group-hover:bg-[#FE8F02]" />
-      <h3 className="absolute bottom-8 left-5 right-4 font-['Outfit'] text-[18px] font-semibold leading-7 text-white xl:text-[20px] xl:leading-8">
+      <h3 className="absolute bottom-8 left-5 right-4 font-[family-name:var(--font-outfit)] text-[18px] font-semibold leading-7 text-white xl:text-[20px] xl:leading-8">
         {title}
       </h3>
     </article>

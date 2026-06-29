@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
+import { getCategories, getPosts } from "@/lib/payload-data";
+
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
 
 export const metadata: Metadata = {
@@ -21,7 +23,7 @@ export const metadata: Metadata = {
   },
 };
 
-const categories = [
+const fallbackCategories = [
   "Load Booking",
   "Dispatching",
   "Compliance",
@@ -29,13 +31,13 @@ const categories = [
   "Owner Operators",
 ];
 
-const posts = [
+const fallbackPosts = [
   {
     title: "Maximizing Reimbursement for Teletherapy",
     description:
       "how to properly bill for telehealth mental health services and maximize your reimbursements.",
     date: "12 June 2026",
-    image: "/Images/Rectangle 249@2x.png",
+    image: "/Images/Rectangle 249@2x.webp",
     href: "/blog/why-box-truck-owners-lose-profitable-loads",
   },
   {
@@ -43,7 +45,7 @@ const posts = [
     description:
       "Ensure patient coverage before appointments to reduce claim denials.",
     date: "12 June 2026",
-    image: "/Images/Rectangle 250@2x.png",
+    image: "/Images/Rectangle 250@2x.webp",
     href: "/blog/how-dispatch-services-save-time",
   },
   {
@@ -51,7 +53,7 @@ const posts = [
     description:
       "how to properly bill for telehealth mental health services and maximize your reimbursements.",
     date: "12 June 2026",
-    image: "/Images/Rectangle 251@2x.png",
+    image: "/Images/Rectangle 251@2x.webp",
     href: "/blog/top-mistakes-new-box-truck-businesses",
   },
    {
@@ -59,7 +61,7 @@ const posts = [
     description:
       "how to properly bill for telehealth mental health services and maximize your reimbursements.",
     date: "12 June 2026",
-    image: "/Images/Rectangle 249@2x.png",
+    image: "/Images/Rectangle 249@2x.webp",
     href: "/blog/why-box-truck-owners-lose-profitable-loads",
   },
   {
@@ -67,7 +69,7 @@ const posts = [
     description:
       "Ensure patient coverage before appointments to reduce claim denials.",
     date: "12 June 2026",
-    image: "/Images/Rectangle 250@2x.png",
+    image: "/Images/Rectangle 250@2x.webp",
     href: "/blog/how-dispatch-services-save-time",
   },
   {
@@ -75,7 +77,7 @@ const posts = [
     description:
       "how to properly bill for telehealth mental health services and maximize your reimbursements.",
     date: "12 June 2026",
-    image: "/Images/Rectangle 251@2x.png",
+    image: "/Images/Rectangle 251@2x.webp",
     href: "/blog/top-mistakes-new-box-truck-businesses",
   },
    {
@@ -83,7 +85,7 @@ const posts = [
     description:
       "how to properly bill for telehealth mental health services and maximize your reimbursements.",
     date: "12 June 2026",
-    image: "/Images/Rectangle 249@2x.png",
+    image: "/Images/Rectangle 249@2x.webp",
     href: "/blog/why-box-truck-owners-lose-profitable-loads",
   },
   {
@@ -91,7 +93,7 @@ const posts = [
     description:
       "Ensure patient coverage before appointments to reduce claim denials.",
     date: "12 June 2026",
-    image: "/Images/Rectangle 250@2x.png",
+    image: "/Images/Rectangle 250@2x.webp",
     href: "/blog/how-dispatch-services-save-time",
   },
   {
@@ -99,7 +101,7 @@ const posts = [
     description:
       "how to properly bill for telehealth mental health services and maximize your reimbursements.",
     date: "12 June 2026",
-    image: "/Images/Rectangle 251@2x.png",
+    image: "/Images/Rectangle 251@2x.webp",
     href: "/blog/top-mistakes-new-box-truck-businesses",
   },
    {
@@ -107,7 +109,7 @@ const posts = [
     description:
       "how to properly bill for telehealth mental health services and maximize your reimbursements.",
     date: "12 June 2026",
-    image: "/Images/Rectangle 249@2x.png",
+    image: "/Images/Rectangle 249@2x.webp",
     href: "/blog/why-box-truck-owners-lose-profitable-loads",
   },
   {
@@ -115,7 +117,7 @@ const posts = [
     description:
       "Ensure patient coverage before appointments to reduce claim denials.",
     date: "12 June 2026",
-    image: "/Images/Rectangle 250@2x.png",
+    image: "/Images/Rectangle 250@2x.webp",
     href: "/blog/how-dispatch-services-save-time",
   },
   {
@@ -123,18 +125,33 @@ const posts = [
     description:
       "how to properly bill for telehealth mental health services and maximize your reimbursements.",
     date: "12 June 2026",
-    image: "/Images/Rectangle 251@2x.png",
+    image: "/Images/Rectangle 251@2x.webp",
     href: "/blog/top-mistakes-new-box-truck-businesses",
   },
 ];
 
-export default function BlogPage() {
+export default async function BlogPage() {
+  const [postResult, categoryResult] = await Promise.all([getPosts(1, 12), getCategories()]);
+  const categories = categoryResult.docs.length ? categoryResult.docs.map(({ name }) => name) : fallbackCategories;
+  const posts = postResult.docs.length
+    ? postResult.docs.map((post) => {
+        const media = post.featureImage && typeof post.featureImage === "object" ? post.featureImage : null;
+        return {
+          title: post.title,
+          description: post.metaDescription || "Read the latest dispatch insights for owner-operators and fleets.",
+          date: post.publishedDate ? new Intl.DateTimeFormat("en-US", { dateStyle: "medium" }).format(new Date(post.publishedDate)) : "",
+          image: media?.sizes?.card?.url || media?.url || "/Images/Rectangle 249@2x.webp",
+          href: `/blog/${post.slug}`,
+        };
+      })
+    : fallbackPosts;
+
   return (
     <div className="bg-[#F8FAFC] pb-20">
       <section className="mx-auto mt-8 w-[calc(100%_-_40px)] max-w-[1520px] overflow-hidden rounded-[20px] bg-[#012F42] lg:mt-20">
   <div className="relative min-h-[420px] overflow-hidden bg-gradient-to-r from-[#012F42]/95 to-[#012F42]/70 px-6 py-16 sm:px-10 lg:min-h-[500px] lg:px-[100px] lg:py-[156px]">
     <Image
-      src="/Images/blog_hero.png"
+      src="/Images/blog_hero.webp"
       alt="Box truck dispatch blog hero"
       fill
       priority
@@ -145,11 +162,11 @@ export default function BlogPage() {
     <div className="absolute inset-0 bg-gradient-to-r from-[#012F42]/95 to-[#012F42]/70" />
 
     <div className="relative z-10 max-w-[900px]">
-      <h1 className="font-['Outfit'] text-[42px] font-bold capitalize leading-[52px] text-white sm:text-[54px] sm:leading-[64px] lg:text-[60px] lg:leading-[70px]">
+      <h1 className="font-[family-name:var(--font-outfit)] text-[42px] font-bold capitalize leading-[52px] text-white sm:text-[54px] sm:leading-[64px] lg:text-[60px] lg:leading-[70px]">
         Guides &amp; Dispatch Insights
       </h1>
 
-      <p className="mt-8 max-w-[770px] font-['DM_Sans'] text-[18px] leading-8 text-white sm:text-[20px]">
+      <p className="mt-8 max-w-[770px] font-[family-name:var(--font-dm-sans)] text-[18px] leading-8 text-white sm:text-[20px]">
         Step-by-step resources designed to help owner-operators and fleets
         improve load selection, increase revenue per mile, and stay compliant
         on every run.
@@ -159,7 +176,7 @@ export default function BlogPage() {
 </section>
 
       <section className="mx-auto mt-20 w-[calc(100%_-_40px)] max-w-[1520px]">
-        <h2 className="text-center font-['Outfit'] text-[40px] font-bold leading-[50px] text-[#012F42] lg:text-[48px] lg:leading-[58px]">
+        <h2 className="text-center font-[family-name:var(--font-outfit)] text-[40px] font-bold leading-[50px] text-[#012F42] lg:text-[48px] lg:leading-[58px]">
           Our Learning Resources
         </h2>
 
@@ -168,7 +185,7 @@ export default function BlogPage() {
             <Link
               key={category}
               href="#resources"
-              className="inline-flex h-12 items-center justify-center rounded-[5px] bg-[#FE8F02] px-5 font-['Outfit'] text-[18px] font-medium text-white no-underline transition-colors hover:bg-[#E07D02]"
+              className="inline-flex h-12 items-center justify-center rounded-[5px] bg-[#FE8F02] px-5 font-[family-name:var(--font-outfit)] text-[18px] font-medium text-white no-underline transition-colors hover:bg-[#E07D02]"
             >
               {category}
             </Link>
@@ -198,11 +215,11 @@ export default function BlogPage() {
                 <div className="pt-5">
                   <PostDate date={post.date} />
 
-                  <h3 className="mt-3 max-w-[390px] font-['Outfit'] text-[18px] font-semibold leading-7 text-[#012F42] transition-colors group-hover:text-[#FE8F02] lg:text-[20px] lg:leading-8">
+                  <h3 className="mt-3 max-w-[390px] font-[family-name:var(--font-outfit)] text-[18px] font-semibold leading-7 text-[#012F42] transition-colors group-hover:text-[#FE8F02] lg:text-[20px] lg:leading-8">
                     {post.title}
                   </h3>
 
-                  <p className="mt-4 max-w-[470px] font-['DM_Sans'] text-[16px] leading-6 text-[#5B6472] lg:text-[18px]">
+                  <p className="mt-4 max-w-[470px] font-[family-name:var(--font-dm-sans)] text-[16px] leading-6 text-[#5B6472] lg:text-[18px]">
                     {post.description}
                   </p>
                 </div>
@@ -212,7 +229,7 @@ export default function BlogPage() {
         </div>
 
         <nav
-          className="mt-16 flex flex-wrap items-center justify-center gap-4 font-['Outfit'] text-[24px] font-semibold text-[#012F42]"
+          className="mt-16 flex flex-wrap items-center justify-center gap-4 font-[family-name:var(--font-outfit)] text-[24px] font-semibold text-[#012F42]"
           aria-label="Blog pagination"
         >
           <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[#FE8F02] text-[30px] leading-none text-white">
@@ -239,11 +256,11 @@ export default function BlogPage() {
 
       <section className="mx-auto mt-20 w-[calc(100%_-_40px)] max-w-[1520px] rounded-[10px] bg-[#012F42] px-6 py-12 sm:px-10 lg:grid lg:min-h-[535px] lg:grid-cols-[1fr_720px] lg:gap-20 lg:px-[100px] lg:py-[50px]">
         <div className="flex flex-col justify-center">
-          <h2 className="max-w-[462px] font-['Outfit'] text-[42px] font-bold leading-[54px] text-white lg:text-[48px] lg:leading-[60px]">
+          <h2 className="max-w-[462px] font-[family-name:var(--font-outfit)] text-[42px] font-bold leading-[54px] text-white lg:text-[48px] lg:leading-[60px]">
             Ready to Find Better Loads?
           </h2>
 
-          <p className="mt-10 max-w-[395px] font-['DM_Sans'] text-[18px] leading-7 text-white/70">
+          <p className="mt-10 max-w-[395px] font-[family-name:var(--font-dm-sans)] text-[18px] leading-7 text-white/70">
             Stop spending hours searching load boards. Let our experienced
             dispatch team handle the freight while you focus on driving and
             growing your business.
@@ -262,7 +279,7 @@ export default function BlogPage() {
 
           <button
             type="submit"
-            className="mt-6 flex h-12 w-full items-center justify-center rounded-[5px] bg-[#FE8F02] px-5 font-['Outfit'] text-[18px] font-medium capitalize text-white transition-colors hover:bg-[#E07D02]"
+            className="mt-6 flex h-12 w-full items-center justify-center rounded-[5px] bg-[#FE8F02] px-5 font-[family-name:var(--font-outfit)] text-[18px] font-medium capitalize text-white transition-colors hover:bg-[#E07D02]"
           >
             Get Started Now
           </button>
@@ -274,7 +291,7 @@ export default function BlogPage() {
 
 function PostDate({ date }: { date: string }) {
   return (
-    <div className="mt-7 flex items-center gap-2 font-['DM_Sans'] text-[14px] leading-4 text-[#FE8F02]">
+    <div className="mt-7 flex items-center gap-2 font-[family-name:var(--font-dm-sans)] text-[14px] leading-4 text-[#FE8F02]">
       <span className="h-2.5 w-2.5 rounded-full bg-[#FE8F02]" />
       {date}
     </div>
@@ -290,12 +307,12 @@ function CtaField({
 }) {
   return (
     <label className="block">
-      <span className="font-['Outfit'] text-[16px] font-medium text-white">
+      <span className="font-[family-name:var(--font-outfit)] text-[16px] font-medium text-white">
         {label}
       </span>
 
       <input
-        className="mt-2.5 h-11 w-full rounded-[5px] border border-white/5 bg-[#012F42]/60 px-5 font-['DM_Sans'] text-[14px] font-light text-white outline-none transition-colors placeholder:text-white/70 focus:border-[#FE8F02]"
+        className="mt-2.5 h-11 w-full rounded-[5px] border border-white/5 bg-[#012F42]/60 px-5 font-[family-name:var(--font-dm-sans)] text-[14px] font-light text-white outline-none transition-colors placeholder:text-white/70 focus:border-[#FE8F02]"
         placeholder={placeholder}
       />
     </label>

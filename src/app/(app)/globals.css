@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=DM+Sans:wght@400;500;700&family=Poppins:wght@500&display=swap');
 
 @import "tailwindcss";
 
@@ -11,10 +10,10 @@
   @apply hidden lg:block;
 }
 .bb-blog-002 {
-  @apply left-[12.5rem] top-[409.75rem] absolute text-[#012F42] text-[3rem] font-['Outfit'] font-bold;
+  @apply left-[12.5rem] top-[409.75rem] absolute text-[#012F42] text-[3rem] font-[family-name:var(--font-outfit)] font-bold;
 }
 .bb-blog-003 {
-  @apply hover:bg-[#E07D02] hover:scale-105 transition-all duration-300 cursor-pointer active:scale-95 border-none w-[9.5rem] h-[3.125rem] pl-[1.25rem] pr-[1.25rem] pt-[0.625rem] pb-[0.625rem] left-[98rem] top-[410.0625rem] absolute bg-[#FE8F02] rounded-[0.3125rem] text-white text-[1.125rem] font-['Outfit'] font-medium;
+  @apply hover:bg-[#E07D02] hover:scale-105 transition-all duration-300 cursor-pointer active:scale-95 border-none w-[9.5rem] h-[3.125rem] pl-[1.25rem] pr-[1.25rem] pt-[0.625rem] pb-[0.625rem] left-[98rem] top-[410.0625rem] absolute bg-[#FE8F02] rounded-[0.3125rem] text-white text-[1.125rem] font-[family-name:var(--font-outfit)] font-medium;
 }
 .bb-blog-004 {
   @apply w-[46.375rem] h-[37.5rem] left-[12.5rem] top-[417.25rem] absolute bg-white rounded-[0.625rem] border-[0.0625rem] border-solid border-[#878B92] overflow-hidden shadow-[0_0.25rem_0.625rem_rgba(0,0,0,0.01)];
@@ -29,16 +28,16 @@
   @apply w-[0.875rem] h-[0.875rem] mt-[0.1875rem];
 }
 .bb-blog-008 {
-  @apply text-[#595E68] text-[0.875rem] font-['DM_Sans'] font-normal;
+  @apply text-[#595E68] text-[0.875rem] font-[family-name:var(--font-dm-sans)] font-normal;
 }
 .bb-blog-009 {
-  @apply left-[14.375rem] top-[442.5625rem] w-[42.5rem] absolute text-[#012F42] text-[1.375rem] font-['Outfit'] font-semibold leading-[2.0625rem];
+  @apply left-[14.375rem] top-[442.5625rem] w-[42.5rem] absolute text-[#012F42] text-[1.375rem] font-[family-name:var(--font-outfit)] font-semibold leading-[2.0625rem];
 }
 .bb-blog-010 {
-  @apply w-[39.75rem] left-[14.375rem] top-[445.875rem] absolute text-[#595E68] text-[1.125rem] font-['DM_Sans'] font-normal leading-[1.625rem];
+  @apply w-[39.75rem] left-[14.375rem] top-[445.875rem] absolute text-[#595E68] text-[1.125rem] font-[family-name:var(--font-dm-sans)] font-normal leading-[1.625rem];
 }
 .bb-blog-011 {
-  @apply hover:text-[#E07D02] hover:underline left-[14.375rem] top-[451.4375rem] absolute text-[#FE8F02] text-[1.125rem] font-['Outfit'] font-medium capitalize no-underline;
+  @apply hover:text-[#E07D02] hover:underline left-[14.375rem] top-[451.4375rem] absolute text-[#FE8F02] text-[1.125rem] font-[family-name:var(--font-outfit)] font-medium capitalize no-underline;
 }
 .bb-blog-012 {
   @apply w-[5.4375rem] h-[0.0625rem] left-[14.375rem] top-[453rem] absolute bg-[#FE8F02];
@@ -56,10 +55,10 @@
   @apply w-[0.625rem] h-[0.625rem] mt-[0.3125rem];
 }
 .bb-blog-017 {
-  @apply w-[28rem] left-[15.9375rem] top-[3.375rem] absolute text-[#012F42] text-[1.375rem] font-['Outfit'] font-semibold leading-[1.875rem];
+  @apply w-[28rem] left-[15.9375rem] top-[3.375rem] absolute text-[#012F42] text-[1.375rem] font-[family-name:var(--font-outfit)] font-semibold leading-[1.875rem];
 }
 .bb-blog-018 {
-  @apply hover:text-[#E07D02] hover:underline left-[15.9375rem] top-[8.4375rem] absolute text-[#FE8F02] text-[1.125rem] font-['Outfit'] font-medium capitalize no-underline;
+  @apply hover:text-[#E07D02] hover:underline left-[15.9375rem] top-[8.4375rem] absolute text-[#FE8F02] text-[1.125rem] font-[family-name:var(--font-outfit)] font-medium capitalize no-underline;
 }
 .bb-blog-019 {
   @apply w-[5.4375rem] h-[0.0625rem] left-[15.9375rem] top-[10rem] absolute bg-[#FE8F02];
@@ -74,10 +73,10 @@
   @apply flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between;
 }
 .bb-blog-023 {
-  @apply font-['Outfit'] text-[2rem] font-bold leading-[2.45rem] text-[#012F42] sm:text-[2.25rem] sm:leading-[2.75rem];
+  @apply font-[family-name:var(--font-outfit)] text-[2rem] font-bold leading-[2.45rem] text-[#012F42] sm:text-[2.25rem] sm:leading-[2.75rem];
 }
 .bb-blog-024 {
-  @apply flex h-[3rem] w-full cursor-pointer items-center justify-center rounded-[0.3125rem] border-none bg-[#FE8F02] px-5 font-['Outfit'] text-[1rem] font-medium text-white transition-all duration-300 hover:bg-[#E07D02] active:scale-95 sm:w-[9.5rem];
+  @apply flex h-[3rem] w-full cursor-pointer items-center justify-center rounded-[0.3125rem] border-none bg-[#FE8F02] px-5 font-[family-name:var(--font-outfit)] text-[1rem] font-medium text-white transition-all duration-300 hover:bg-[#E07D02] active:scale-95 sm:w-[9.5rem];
 }
 .bb-blog-025 {
   @apply mt-7 grid gap-4 min-[860px]:grid-cols-[1.05fr_0.95fr];
@@ -98,16 +97,16 @@
   @apply h-[0.75rem] w-[0.75rem];
 }
 .bb-blog-031 {
-  @apply font-['DM_Sans'] text-[0.875rem] text-[#595E68];
+  @apply font-[family-name:var(--font-dm-sans)] text-[0.875rem] text-[#595E68];
 }
 .bb-blog-032 {
-  @apply mt-3 font-['Outfit'] text-[1.25rem] font-semibold leading-[1.65rem] text-[#012F42] sm:text-[1.375rem] sm:leading-[1.875rem];
+  @apply mt-3 font-[family-name:var(--font-outfit)] text-[1.25rem] font-semibold leading-[1.65rem] text-[#012F42] sm:text-[1.375rem] sm:leading-[1.875rem];
 }
 .bb-blog-033 {
-  @apply mt-3 font-['DM_Sans'] text-[0.95rem] leading-[1.55rem] text-[#595E68] sm:text-[1rem];
+  @apply mt-3 font-[family-name:var(--font-dm-sans)] text-[0.95rem] leading-[1.55rem] text-[#595E68] sm:text-[1rem];
 }
 .bb-blog-034 {
-  @apply mt-4 inline-block font-['Outfit'] text-[1rem] font-medium capitalize text-[#FE8F02] no-underline hover:text-[#E07D02] hover:underline;
+  @apply mt-4 inline-block font-[family-name:var(--font-outfit)] text-[1rem] font-medium capitalize text-[#FE8F02] no-underline hover:text-[#E07D02] hover:underline;
 }
 .bb-blog-035 {
   @apply grid gap-4;
@@ -125,25 +124,25 @@
   @apply h-[0.625rem] w-[0.625rem];
 }
 .bb-blog-040 {
-  @apply font-['DM_Sans'] text-[0.8125rem] text-[#595E68];
+  @apply font-[family-name:var(--font-dm-sans)] text-[0.8125rem] text-[#595E68];
 }
 .bb-blog-041 {
-  @apply mt-2 font-['Outfit'] text-[1rem] font-semibold leading-[1.35rem] text-[#012F42] sm:text-[1.125rem] sm:leading-[1.5rem];
+  @apply mt-2 font-[family-name:var(--font-outfit)] text-[1rem] font-semibold leading-[1.35rem] text-[#012F42] sm:text-[1.125rem] sm:leading-[1.5rem];
 }
 .bb-blog-042 {
-  @apply mt-3 inline-block font-['Outfit'] text-[0.95rem] font-medium capitalize text-[#FE8F02] no-underline hover:text-[#E07D02] hover:underline;
+  @apply mt-3 inline-block font-[family-name:var(--font-outfit)] text-[0.95rem] font-medium capitalize text-[#FE8F02] no-underline hover:text-[#E07D02] hover:underline;
 }
 .bb-cta-001 {
   @apply absolute left-[12.5rem] h-[15.6875rem] w-[95rem] rounded-[0.625rem] bg-[#012F42] shadow-[0_0.625rem_1.875rem_rgba(0,0,0,0.1)];
 }
 .bb-cta-002 {
-  @apply absolute left-[39.9375rem] w-[40.0625rem] text-center font-['Outfit'] text-[2.875rem] font-bold leading-[3.4375rem] text-white capitalize;
+  @apply absolute left-[39.9375rem] w-[40.0625rem] text-center font-[family-name:var(--font-outfit)] text-[2.875rem] font-bold leading-[3.4375rem] text-white capitalize;
 }
 .bb-cta-003 {
-  @apply absolute left-[40.0625rem] w-[39.75rem] text-center font-['DM_Sans'] text-[1.125rem] font-normal leading-[1.75rem] text-white;
+  @apply absolute left-[40.0625rem] w-[39.75rem] text-center font-[family-name:var(--font-dm-sans)] text-[1.125rem] font-normal leading-[1.75rem] text-white;
 }
 .bb-cta-004 {
-  @apply absolute left-[55.125rem] h-[3.125rem] w-[9.6875rem] cursor-pointer rounded-[0.3125rem] border-none bg-[#FE8F02] px-[1.25rem] py-[0.625rem] font-['Outfit'] text-[1.125rem] font-medium text-white capitalize transition-all duration-300 hover:scale-105 hover:bg-[#E07D02] active:scale-95;
+  @apply absolute left-[55.125rem] h-[3.125rem] w-[9.6875rem] cursor-pointer rounded-[0.3125rem] border-none bg-[#FE8F02] px-[1.25rem] py-[0.625rem] font-[family-name:var(--font-outfit)] text-[1.125rem] font-medium text-white capitalize transition-all duration-300 hover:scale-105 hover:bg-[#E07D02] active:scale-95;
 }
 .bb-cta-005 {
   @apply relative z-[29] w-full overflow-hidden bg-[#F8FAFC] px-5 py-8 sm:px-8 sm:py-10 lg:hidden;
@@ -152,13 +151,13 @@
   @apply mx-auto max-w-[58rem] rounded-[0.625rem] bg-[#012F42] px-5 py-8 text-center shadow-[0_0.625rem_1.875rem_rgba(0,0,0,0.1)] sm:px-8 sm:py-10;
 }
 .bb-cta-007 {
-  @apply font-['Outfit'] text-[2rem] font-bold capitalize leading-[2.45rem] text-white sm:text-[2.25rem] sm:leading-[2.75rem];
+  @apply font-[family-name:var(--font-outfit)] text-[2rem] font-bold capitalize leading-[2.45rem] text-white sm:text-[2.25rem] sm:leading-[2.75rem];
 }
 .bb-cta-008 {
-  @apply mx-auto mt-4 max-w-[42rem] font-['DM_Sans'] text-[1rem] leading-[1.625rem] text-white sm:text-[1.0625rem] sm:leading-[1.75rem];
+  @apply mx-auto mt-4 max-w-[42rem] font-[family-name:var(--font-dm-sans)] text-[1rem] leading-[1.625rem] text-white sm:text-[1.0625rem] sm:leading-[1.75rem];
 }
 .bb-cta-009 {
-  @apply mt-6 h-[3.125rem] w-full cursor-pointer rounded-[0.3125rem] border-none bg-[#FE8F02] px-5 font-['Outfit'] text-[1.0625rem] font-medium text-white capitalize transition-all duration-300 hover:bg-[#E07D02] active:scale-95 sm:w-[9.6875rem];
+  @apply mt-6 h-[3.125rem] w-full cursor-pointer rounded-[0.3125rem] border-none bg-[#FE8F02] px-5 font-[family-name:var(--font-outfit)] text-[1.0625rem] font-medium text-white capitalize transition-all duration-300 hover:bg-[#E07D02] active:scale-95 sm:w-[9.6875rem];
 }
 .bb-faq-001 {
   @apply absolute;
@@ -173,10 +172,10 @@
   @apply h-[4.5625rem] border border-solid border-[rgba(17,24,39,0.15)];
 }
 .bb-faq-005 {
-  @apply absolute left-[1.25rem] top-[1.25rem] w-[37.5rem] font-['DM_Sans'] text-[1.125rem] font-medium leading-[2.0625rem] text-[#012F42];
+  @apply absolute left-[1.25rem] top-[1.25rem] w-[37.5rem] font-[family-name:var(--font-dm-sans)] text-[1.125rem] font-medium leading-[2.0625rem] text-[#012F42];
 }
 .bb-faq-006 {
-  @apply absolute left-[1.25rem] top-[4.25rem] w-[44.375rem] font-['DM_Sans'] text-[1rem] font-normal leading-[1.5rem] text-[rgba(17,24,39,0.70)];
+  @apply absolute left-[1.25rem] top-[4.25rem] w-[44.375rem] font-[family-name:var(--font-dm-sans)] text-[1rem] font-normal leading-[1.5rem] text-[rgba(17,24,39,0.70)];
 }
 .bb-faq-007 {
   @apply absolute right-[1.5625rem] top-[1.75rem] flex h-[1rem] w-[1rem] items-center justify-center;
@@ -194,13 +193,13 @@
   @apply -rotate-90;
 }
 .bb-faq-012 {
-  @apply absolute left-[35.5625rem] top-[498.4375rem] w-[48.8125rem] text-center font-['Outfit'] text-[3rem] font-bold text-[#012F42];
+  @apply absolute left-[35.5625rem] top-[498.4375rem] w-[48.8125rem] text-center font-[family-name:var(--font-outfit)] text-[3rem] font-bold text-[#012F42];
 }
 .bb-faq-013 {
   @apply relative z-[28] w-full overflow-hidden bg-[#F8FAFC] px-5 py-10 sm:px-8 sm:py-12 lg:hidden;
 }
 .bb-faq-014 {
-  @apply text-center font-['Outfit'] text-[2rem] font-bold leading-[2.45rem] text-[#012F42] sm:text-[2.25rem] sm:leading-[2.75rem];
+  @apply text-center font-[family-name:var(--font-outfit)] text-[2rem] font-bold leading-[2.45rem] text-[#012F42] sm:text-[2.25rem] sm:leading-[2.75rem];
 }
 .bb-faq-015 {
   @apply mt-7 grid gap-3 min-[860px]:grid-cols-2;
@@ -218,7 +217,7 @@
   @apply flex min-h-[4rem] items-center justify-between gap-4 px-4 py-3;
 }
 .bb-faq-020 {
-  @apply min-w-0 font-['DM_Sans'] text-[1rem] font-medium leading-[1.45rem] text-[#012F42] sm:text-[1.0625rem];
+  @apply min-w-0 font-[family-name:var(--font-dm-sans)] text-[1rem] font-medium leading-[1.45rem] text-[#012F42] sm:text-[1.0625rem];
 }
 .bb-faq-021 {
   @apply relative h-4 w-4 shrink-0;
@@ -230,7 +229,7 @@
   @apply absolute left-0 top-1/2 h-[0.125rem] w-4 -translate-y-1/2 rounded-[0.0625rem] bg-[#012F42] transition-transform duration-300;
 }
 .bb-faq-024 {
-  @apply px-4 pb-4 font-['DM_Sans'] text-[0.95rem] leading-[1.55rem] text-[rgba(17,24,39,0.70)];
+  @apply px-4 pb-4 font-[family-name:var(--font-dm-sans)] text-[0.95rem] leading-[1.55rem] text-[rgba(17,24,39,0.70)];
 }
 .bb-footer-001 {
   @apply absolute left-0 h-[31.3125rem] w-[120rem] bg-[#012F42];
@@ -239,7 +238,7 @@
   @apply absolute left-[15rem] h-[5rem] w-[6.8125rem];
 }
 .bb-footer-003 {
-  @apply absolute left-[15rem] h-[9rem] w-[21.0625rem] font-['Poppins'] text-[0.875rem] font-medium leading-[1.5rem] text-white;
+  @apply absolute left-[15rem] h-[9rem] w-[21.0625rem] font-[family-name:var(--font-poppins)] text-[0.875rem] font-medium leading-[1.5rem] text-white;
 }
 .bb-footer-004 {
   @apply h-[1.125rem] w-[1.125rem];
@@ -248,31 +247,31 @@
   @apply absolute flex h-[2.25rem] w-[2.25rem] cursor-pointer items-center justify-center rounded-[0.3125rem] bg-[#003951] text-white transition-all duration-300 hover:bg-[#FE8F02]/10 hover:text-[#FE8F02];
 }
 .bb-footer-006 {
-  @apply absolute left-[46.5rem] font-['Outfit'] text-[1.375rem] font-semibold leading-[1.875rem] text-[#FE8F02];
+  @apply absolute left-[46.5rem] font-[family-name:var(--font-outfit)] text-[1.375rem] font-semibold leading-[1.875rem] text-[#FE8F02];
 }
 .bb-footer-007 {
   @apply absolute left-[46.5rem] flex flex-col gap-[0.9375rem];
 }
 .bb-footer-008 {
-  @apply cursor-pointer font-['DM_Sans'] text-[1.125rem] font-medium leading-[1.25rem] text-white no-underline transition-colors duration-200 hover:text-[#FE8F02];
+  @apply cursor-pointer font-[family-name:var(--font-dm-sans)] text-[1.125rem] font-medium leading-[1.25rem] text-white no-underline transition-colors duration-200 hover:text-[#FE8F02];
 }
 .bb-footer-009 {
-  @apply absolute left-[65.0625rem] font-['Outfit'] text-[1.375rem] font-semibold leading-[1.875rem] text-[#FE8F02];
+  @apply absolute left-[65.0625rem] font-[family-name:var(--font-outfit)] text-[1.375rem] font-semibold leading-[1.875rem] text-[#FE8F02];
 }
 .bb-footer-010 {
   @apply absolute left-[65.0625rem] flex flex-col gap-[0.9375rem];
 }
 .bb-footer-011 {
-  @apply absolute left-[92.6875rem] font-['Outfit'] text-[1.375rem] font-semibold leading-[1.875rem] text-[#FE8F02];
+  @apply absolute left-[92.6875rem] font-[family-name:var(--font-outfit)] text-[1.375rem] font-semibold leading-[1.875rem] text-[#FE8F02];
 }
 .bb-footer-012 {
   @apply absolute left-[92.6875rem] h-[1.125rem] w-[1.125rem] text-[#FE8F02];
 }
 .bb-footer-013 {
-  @apply absolute left-[94.25rem] font-['DM_Sans'] text-[0.875rem] font-semibold leading-[0.875rem] text-white;
+  @apply absolute left-[94.25rem] font-[family-name:var(--font-dm-sans)] text-[0.875rem] font-semibold leading-[0.875rem] text-white;
 }
 .bb-footer-014 {
-  @apply absolute left-[92.6875rem] font-['DM_Sans'] text-[1.125rem] font-medium leading-[1.25rem] text-white;
+  @apply absolute left-[92.6875rem] font-[family-name:var(--font-dm-sans)] text-[1.125rem] font-medium leading-[1.25rem] text-white;
 }
 .bb-footer-015 {
   @apply absolute left-0 h-[0.0625rem] w-[120rem] bg-[#003951];
@@ -281,16 +280,16 @@
   @apply absolute left-[15rem];
 }
 .bb-footer-017 {
-  @apply font-['DM_Sans'] text-[0.875rem] font-normal leading-[1.5625rem] text-white;
+  @apply font-[family-name:var(--font-dm-sans)] text-[0.875rem] font-normal leading-[1.5625rem] text-white;
 }
 .bb-footer-018 {
-  @apply font-['DM_Sans'] text-[0.875rem] font-bold leading-[1.5625rem] text-white;
+  @apply font-[family-name:var(--font-dm-sans)] text-[0.875rem] font-bold leading-[1.5625rem] text-white;
 }
 .bb-footer-019 {
   @apply absolute left-[87.625rem] flex gap-[1.875rem];
 }
 .bb-footer-020 {
-  @apply cursor-pointer font-['DM_Sans'] text-[0.875rem] font-normal leading-[1.5625rem] text-white transition-colors duration-200 hover:text-[#FE8F02];
+  @apply cursor-pointer font-[family-name:var(--font-dm-sans)] text-[0.875rem] font-normal leading-[1.5625rem] text-white transition-colors duration-200 hover:text-[#FE8F02];
 }
 .bb-footer-021 {
   @apply relative z-[30] w-full overflow-hidden bg-[#012F42] px-5 py-10 sm:px-8 sm:py-12 lg:hidden;
@@ -302,25 +301,25 @@
   @apply h-[5rem] w-[6.8125rem];
 }
 .bb-footer-024 {
-  @apply mt-4 font-['Poppins'] text-[0.875rem] font-medium leading-[1.5rem] text-white;
+  @apply mt-4 font-[family-name:var(--font-poppins)] text-[0.875rem] font-medium leading-[1.5rem] text-white;
 }
 .bb-footer-025 {
   @apply mt-5 flex gap-3;
 }
 .bb-footer-026 {
-  @apply flex h-[2.25rem] w-[2.25rem] items-center justify-center rounded-[0.3125rem] bg-[#003951] font-['DM_Sans'] text-[0.75rem] font-bold text-white;
+  @apply flex h-[2.25rem] w-[2.25rem] items-center justify-center rounded-[0.3125rem] bg-[#003951] font-[family-name:var(--font-dm-sans)] text-[0.75rem] font-bold text-white;
 }
 .bb-footer-027 {
-  @apply font-['Outfit'] text-[1.25rem] font-semibold leading-[1.75rem] text-[#FE8F02];
+  @apply font-[family-name:var(--font-outfit)] text-[1.25rem] font-semibold leading-[1.75rem] text-[#FE8F02];
 }
 .bb-footer-028 {
   @apply mt-4 flex flex-col gap-3;
 }
 .bb-footer-029 {
-  @apply font-['DM_Sans'] text-[1rem] font-medium text-white no-underline transition-colors hover:text-[#FE8F02];
+  @apply font-[family-name:var(--font-dm-sans)] text-[1rem] font-medium text-white no-underline transition-colors hover:text-[#FE8F02];
 }
 .bb-footer-030 {
-  @apply mt-4 space-y-4 font-['DM_Sans'] text-white;
+  @apply mt-4 space-y-4 font-[family-name:var(--font-dm-sans)] text-white;
 }
 .bb-footer-031 {
   @apply text-[0.875rem] font-semibold;
@@ -329,7 +328,7 @@
   @apply mt-1 text-[1rem] font-medium;
 }
 .bb-footer-033 {
-  @apply mx-auto mt-8 max-w-[58rem] border-t border-[#003951] pt-5 font-['DM_Sans'] text-[0.875rem] leading-[1.5rem] text-white sm:flex sm:items-center sm:justify-between;
+  @apply mx-auto mt-8 max-w-[58rem] border-t border-[#003951] pt-5 font-[family-name:var(--font-dm-sans)] text-[0.875rem] leading-[1.5rem] text-white sm:flex sm:items-center sm:justify-between;
 }
 .bb-footer-034 {
   @apply font-bold;
@@ -356,19 +355,19 @@
   @apply w-[36.25rem] left-[12.5rem] top-[3.75rem] absolute z-[10];
 }
 .bb-hero-006 {
-  @apply text-[#FE8F02] text-[4.375rem] font-['Outfit'] font-bold capitalize leading-[5rem] break-words;
+  @apply text-[#FE8F02] text-[4.375rem] font-[family-name:var(--font-outfit)] font-bold capitalize leading-[5rem] break-words;
 }
 .bb-hero-007 {
-  @apply text-white text-[4.375rem] font-['Outfit'] font-bold capitalize leading-[5rem] break-words;
+  @apply text-white text-[4.375rem] font-[family-name:var(--font-outfit)] font-bold capitalize leading-[5rem] break-words;
 }
 .bb-hero-008 {
-  @apply w-[44.8125rem] left-[12.5rem] top-[15.625rem] absolute text-white text-[1.375rem] font-['DM_Sans'] font-normal break-words leading-[2rem] z-[10];
+  @apply w-[44.8125rem] left-[12.5rem] top-[15.625rem] absolute text-white text-[1.375rem] font-[family-name:var(--font-dm-sans)] font-normal break-words leading-[2rem] z-[10];
 }
 .bb-hero-009 {
-  @apply w-[43.4375rem] left-[12.5rem] top-[23.5rem] absolute text-white text-[1.375rem] font-['DM_Sans'] font-normal break-words leading-[2rem] z-[10];
+  @apply w-[43.4375rem] left-[12.5rem] top-[23.5rem] absolute text-white text-[1.375rem] font-[family-name:var(--font-dm-sans)] font-normal break-words leading-[2rem] z-[10];
 }
 .bb-hero-010 {
-  @apply hover:bg-[#E07D02] hover:scale-105 transition-all duration-300 cursor-pointer active:scale-95 w-[15.5rem] h-[3.125rem] pl-[1.25rem] pr-[1.25rem] pt-[0.625rem] pb-[0.625rem] left-[12.5rem] top-[32.625rem] absolute bg-[#FE8F02] rounded-[0.3125rem] justify-center items-center inline-flex border-none text-white text-[1.125rem] font-['Outfit'] font-medium capitalize z-[10];
+  @apply hover:bg-[#E07D02] hover:scale-105 transition-all duration-300 cursor-pointer active:scale-95 w-[15.5rem] h-[3.125rem] pl-[1.25rem] pr-[1.25rem] pt-[0.625rem] pb-[0.625rem] left-[12.5rem] top-[32.625rem] absolute bg-[#FE8F02] rounded-[0.3125rem] justify-center items-center inline-flex border-none text-white text-[1.125rem] font-[family-name:var(--font-outfit)] font-medium capitalize z-[10];
 }
 .bb-hero-011 {
   @apply w-[66.625rem] h-[39.0625rem] left-[57.6875rem] top-[0rem] absolute object-contain z-[20];
@@ -386,19 +385,19 @@
   @apply max-w-[42rem];
 }
 .bb-hero-016 {
-  @apply font-['Outfit'] text-[2.25rem] font-bold capitalize leading-[2.625rem] text-white sm:text-[3.25rem] sm:leading-[3.75rem];
+  @apply font-[family-name:var(--font-outfit)] text-[2.25rem] font-bold capitalize leading-[2.625rem] text-white sm:text-[3.25rem] sm:leading-[3.75rem];
 }
 .bb-hero-017 {
   @apply text-[#FE8F02];
 }
 .bb-hero-018 {
-  @apply mt-4 font-['DM_Sans'] text-[1rem] font-normal leading-[1.55rem] text-white sm:text-[1.125rem] sm:leading-[1.75rem];
+  @apply mt-4 font-[family-name:var(--font-dm-sans)] text-[1rem] font-normal leading-[1.55rem] text-white sm:text-[1.125rem] sm:leading-[1.75rem];
 }
 .bb-hero-019 {
-  @apply mt-3 font-['DM_Sans'] text-[1rem] font-normal leading-[1.55rem] text-white sm:text-[1.125rem] sm:leading-[1.75rem];
+  @apply mt-3 font-[family-name:var(--font-dm-sans)] text-[1rem] font-normal leading-[1.55rem] text-white sm:text-[1.125rem] sm:leading-[1.75rem];
 }
 .bb-hero-020 {
-  @apply mt-5 inline-flex h-[3.125rem] w-full items-center justify-center rounded-[0.3125rem] border-none bg-[#FE8F02] px-5 font-['Outfit'] text-[1.0625rem] font-medium capitalize text-white transition-all duration-300 hover:scale-105 hover:bg-[#E07D02] active:scale-95 sm:w-[15.5rem];
+  @apply mt-5 inline-flex h-[3.125rem] w-full items-center justify-center rounded-[0.3125rem] border-none bg-[#FE8F02] px-5 font-[family-name:var(--font-outfit)] text-[1.0625rem] font-medium capitalize text-white transition-all duration-300 hover:scale-105 hover:bg-[#E07D02] active:scale-95 sm:w-[15.5rem];
 }
 .bb-hero-021 {
   @apply relative mt-5 min-h-0 flex-1 overflow-visible sm:mt-6;
@@ -419,10 +418,10 @@
   @apply w-[60rem] h-[41.25rem] left-[0rem] top-[58.375rem] absolute bg-[#012F42];
 }
 .bb-intro-sections-002 {
-  @apply w-[35.1875rem] left-[12.5rem] top-[68.125rem] absolute text-white text-[3rem] font-['Outfit'] font-bold break-words;
+  @apply w-[35.1875rem] left-[12.5rem] top-[68.125rem] absolute text-white text-[3rem] font-[family-name:var(--font-outfit)] font-bold break-words;
 }
 .bb-intro-sections-003 {
-  @apply w-[35.8125rem] h-[8.5625rem] left-[12.5rem] top-[81.25rem] absolute text-[rgba(255,255,255,0.70)] text-[1.125rem] font-['DM_Sans'] font-normal break-words leading-[1.75rem];
+  @apply w-[35.8125rem] h-[8.5625rem] left-[12.5rem] top-[81.25rem] absolute text-[rgba(255,255,255,0.70)] text-[1.125rem] font-[family-name:var(--font-dm-sans)] font-normal break-words leading-[1.75rem];
 }
 .bb-intro-sections-004 {
   @apply w-[60rem] h-[41.25rem] left-[60rem] top-[58.375rem] absolute object-cover;
@@ -434,19 +433,19 @@
   @apply w-[60rem] h-[41.25rem] left-[60rem] top-[99.625rem] absolute bg-[#012F42];
 }
 .bb-intro-sections-007 {
-  @apply w-[35.1875rem] left-[71.6875rem] top-[105.8125rem] absolute text-white text-[3rem] font-['Outfit'] font-bold break-words;
+  @apply w-[35.1875rem] left-[71.6875rem] top-[105.8125rem] absolute text-white text-[3rem] font-[family-name:var(--font-outfit)] font-bold break-words;
 }
 .bb-intro-sections-008 {
-  @apply w-[35.8125rem] h-[15.75rem] left-[71.6875rem] top-[118.9375rem] absolute text-[rgba(255,255,255,0.70)] text-[1.125rem] font-['DM_Sans'] font-normal break-words leading-[1.75rem];
+  @apply w-[35.8125rem] h-[15.75rem] left-[71.6875rem] top-[118.9375rem] absolute text-[rgba(255,255,255,0.70)] text-[1.125rem] font-[family-name:var(--font-dm-sans)] font-normal break-words leading-[1.75rem];
 }
 .bb-intro-sections-009 {
   @apply w-[60rem] h-[41.25rem] left-[0rem] top-[140.875rem] absolute bg-[#012F42];
 }
 .bb-intro-sections-010 {
-  @apply w-[35.1875rem] left-[12.5rem] top-[147.9375rem] absolute text-white text-[3rem] font-['Outfit'] font-bold break-words;
+  @apply w-[35.1875rem] left-[12.5rem] top-[147.9375rem] absolute text-white text-[3rem] font-[family-name:var(--font-outfit)] font-bold break-words;
 }
 .bb-intro-sections-011 {
-  @apply w-[35.8125rem] h-[25rem] left-[12.5rem] top-[153.5625rem] absolute text-[rgba(255,255,255,0.70)] text-[1.125rem] font-['DM_Sans'] font-normal break-words leading-[1.75rem];
+  @apply w-[35.8125rem] h-[25rem] left-[12.5rem] top-[153.5625rem] absolute text-[rgba(255,255,255,0.70)] text-[1.125rem] font-[family-name:var(--font-dm-sans)] font-normal break-words leading-[1.75rem];
 }
 .bb-intro-sections-012 {
   @apply w-[60rem] h-[41.25rem] left-[60rem] top-[140.875rem] absolute object-cover;
@@ -458,10 +457,10 @@
   @apply w-[120rem] h-[38.125rem] left-[0rem] top-[182.125rem] absolute bg-[rgba(1,47,66,0.75)];
 }
 .bb-intro-sections-015 {
-  @apply w-[43.625rem] h-[15rem] left-[14.625rem] top-[191.3125rem] absolute text-[#F8FAFC] text-[3rem] font-['Outfit'] font-bold break-words leading-[3.625rem];
+  @apply w-[43.625rem] h-[15rem] left-[14.625rem] top-[191.3125rem] absolute text-[#F8FAFC] text-[3rem] font-[family-name:var(--font-outfit)] font-bold break-words leading-[3.625rem];
 }
 .bb-intro-sections-016 {
-  @apply w-[41.5625rem] left-[14.625rem] top-[208.1875rem] absolute text-white text-[1.125rem] font-['DM_Sans'] font-normal break-words leading-[1.75rem];
+  @apply w-[41.5625rem] left-[14.625rem] top-[208.1875rem] absolute text-white text-[1.125rem] font-[family-name:var(--font-dm-sans)] font-normal break-words leading-[1.75rem];
 }
 .bb-intro-sections-017 {
   @apply left-[70.75rem] top-[192.75rem] absolute flex flex-col gap-[1.75rem];
@@ -470,10 +469,10 @@
   @apply flex gap-4 items-center;
 }
 .bb-intro-sections-019 {
-  @apply text-[#FE8F02] text-[1.875rem] font-['Outfit'] font-semibold capitalize;
+  @apply text-[#FE8F02] text-[1.875rem] font-[family-name:var(--font-outfit)] font-semibold capitalize;
 }
 .bb-intro-sections-020 {
-  @apply text-white text-[1.875rem] font-['Outfit'] font-semibold capitalize;
+  @apply text-white text-[1.875rem] font-[family-name:var(--font-outfit)] font-semibold capitalize;
 }
 .bb-intro-sections-021 {
   @apply relative z-[21] w-full overflow-hidden bg-[#F8FAFC] lg:hidden;
@@ -485,10 +484,10 @@
   @apply mx-auto grid max-w-[58rem] gap-6 min-[860px]:grid-cols-2 min-[860px]:items-center;
 }
 .bb-intro-sections-024 {
-  @apply font-['Outfit'] text-[2rem] font-bold leading-[2.45rem] text-white sm:text-[2.25rem] sm:leading-[2.75rem];
+  @apply font-[family-name:var(--font-outfit)] text-[2rem] font-bold leading-[2.45rem] text-white sm:text-[2.25rem] sm:leading-[2.75rem];
 }
 .bb-intro-sections-025 {
-  @apply mt-4 font-['DM_Sans'] text-[1rem] leading-[1.625rem] text-[rgba(255,255,255,0.72)];
+  @apply mt-4 font-[family-name:var(--font-dm-sans)] text-[1rem] leading-[1.625rem] text-[rgba(255,255,255,0.72)];
 }
 .bb-intro-sections-026 {
   @apply aspect-[16/11] h-auto w-full object-cover;
@@ -515,10 +514,10 @@
   @apply relative mx-auto grid max-w-[58rem] gap-7 min-[860px]:grid-cols-[1.05fr_0.95fr] min-[860px]:items-start;
 }
 .bb-intro-sections-034 {
-  @apply font-['Outfit'] text-[1.875rem] font-bold leading-[2.3rem] text-white sm:text-[2.25rem] sm:leading-[2.75rem] min-[860px]:text-[2rem] min-[860px]:leading-[2.45rem];
+  @apply font-[family-name:var(--font-outfit)] text-[1.875rem] font-bold leading-[2.3rem] text-white sm:text-[2.25rem] sm:leading-[2.75rem] min-[860px]:text-[2rem] min-[860px]:leading-[2.45rem];
 }
 .bb-intro-sections-035 {
-  @apply mt-4 font-['DM_Sans'] text-[1rem] leading-[1.625rem] text-white;
+  @apply mt-4 font-[family-name:var(--font-dm-sans)] text-[1rem] leading-[1.625rem] text-white;
 }
 .bb-intro-sections-036 {
   @apply space-y-3 min-[860px]:pt-1;
@@ -527,10 +526,10 @@
   @apply flex gap-3;
 }
 .bb-intro-sections-038 {
-  @apply shrink-0 font-['Outfit'] text-[1rem] font-semibold text-[#FE8F02] sm:text-[1.25rem] min-[860px]:text-[1.0625rem];
+  @apply shrink-0 font-[family-name:var(--font-outfit)] text-[1rem] font-semibold text-[#FE8F02] sm:text-[1.25rem] min-[860px]:text-[1.0625rem];
 }
 .bb-intro-sections-039 {
-  @apply min-w-0 font-['Outfit'] text-[1rem] font-semibold leading-[1.4rem] text-white sm:text-[1.25rem] sm:leading-[1.75rem] min-[860px]:text-[1.0625rem] min-[860px]:leading-[1.45rem];
+  @apply min-w-0 font-[family-name:var(--font-outfit)] text-[1rem] font-semibold leading-[1.4rem] text-white sm:text-[1.25rem] sm:leading-[1.75rem] min-[860px]:text-[1.0625rem] min-[860px]:leading-[1.45rem];
 }
 
 /* Shared Full Range section: one DOM version for desktop + mobile */
@@ -547,12 +546,12 @@
   @apply relative mx-auto grid max-w-[58rem] gap-7 min-[860px]:grid-cols-[1.05fr_0.95fr] min-[860px]:items-start lg:mx-0 lg:block lg:max-w-none;
 }
 .bb-intro-shared-range-005 {
-  @apply font-['Outfit'] text-[1.875rem] font-bold leading-[2.3rem] text-white sm:text-[2.25rem] sm:leading-[2.75rem] min-[860px]:text-[2rem] min-[860px]:leading-[2.45rem] lg:absolute lg:left-[14.625rem] lg:top-[9.1875rem] lg:h-[15rem] lg:w-[43.625rem] lg:text-[3rem] lg:leading-[3.625rem];
+  @apply font-[family-name:var(--font-outfit)] text-[1.875rem] font-bold leading-[2.3rem] text-white sm:text-[2.25rem] sm:leading-[2.75rem] min-[860px]:text-[2rem] min-[860px]:leading-[2.45rem] lg:absolute lg:left-[14.625rem] lg:top-[9.1875rem] lg:h-[15rem] lg:w-[43.625rem] lg:text-[3rem] lg:leading-[3.625rem];
   margin: 0;
   padding: 0;
 }
 .bb-intro-shared-range-006 {
-  @apply mt-4 font-['DM_Sans'] text-[1rem] leading-[1.625rem] text-white lg:absolute lg:left-[14.625rem] lg:top-[26.0625rem] lg:mt-0 lg:w-[41.5625rem] lg:text-[1.125rem] lg:leading-[1.75rem];
+  @apply mt-4 font-[family-name:var(--font-dm-sans)] text-[1rem] leading-[1.625rem] text-white lg:absolute lg:left-[14.625rem] lg:top-[26.0625rem] lg:mt-0 lg:w-[41.5625rem] lg:text-[1.125rem] lg:leading-[1.75rem];
   margin-bottom: 0;
 }
 .bb-intro-shared-range-007 {
@@ -562,10 +561,10 @@
   @apply flex gap-3 lg:items-center lg:gap-4;
 }
 .bb-intro-shared-range-009 {
-  @apply shrink-0 font-['Outfit'] text-[1rem] font-semibold text-[#FE8F02] sm:text-[1.25rem] min-[860px]:text-[1.0625rem] lg:text-[1.875rem] lg:capitalize;
+  @apply shrink-0 font-[family-name:var(--font-outfit)] text-[1rem] font-semibold text-[#FE8F02] sm:text-[1.25rem] min-[860px]:text-[1.0625rem] lg:text-[1.875rem] lg:capitalize;
 }
 .bb-intro-shared-range-010 {
-  @apply min-w-0 font-['Outfit'] text-[1rem] font-semibold leading-[1.4rem] text-white sm:text-[1.25rem] sm:leading-[1.75rem] min-[860px]:text-[1.0625rem] min-[860px]:leading-[1.45rem] lg:text-[1.875rem] lg:leading-normal lg:capitalize;
+  @apply min-w-0 font-[family-name:var(--font-outfit)] text-[1rem] font-semibold leading-[1.4rem] text-white sm:text-[1.25rem] sm:leading-[1.75rem] min-[860px]:text-[1.0625rem] min-[860px]:leading-[1.45rem] lg:text-[1.875rem] lg:leading-normal lg:capitalize;
   margin: 0;
   padding: 0;
 }
@@ -585,13 +584,13 @@
   @apply absolute left-[44.5625rem] top-[1.6875rem] z-[11] hidden gap-[3.125rem] lg:flex;
 }
 .bb-navbar-004 {
-  @apply font-['DM_Sans'] text-[1.125rem] font-bold leading-[1.5625rem] no-underline transition-colors duration-200;
+  @apply font-[family-name:var(--font-dm-sans)] text-[1.125rem] font-bold leading-[1.5625rem] no-underline transition-colors duration-200;
 }
 .bb-navbar-005 {
   @apply text-[#111827] hover:text-[#FE8F02];
 }
 .bb-navbar-006 {
-  @apply absolute left-[96.1875rem] top-[0.9375rem] z-[11] hidden h-[3.125rem] w-[11.3125rem] items-center justify-center rounded-[0.3125rem] border-none bg-[#FE8F02] font-['Outfit'] text-[1.125rem] font-medium text-white transition-all duration-300 hover:scale-105 hover:bg-[#E07D02] active:scale-95 lg:inline-flex;
+  @apply absolute left-[96.1875rem] top-[0.9375rem] z-[11] hidden h-[3.125rem] w-[11.3125rem] items-center justify-center rounded-[0.3125rem] border-none bg-[#FE8F02] font-[family-name:var(--font-outfit)] text-[1.125rem] font-medium text-white transition-all duration-300 hover:scale-105 hover:bg-[#E07D02] active:scale-95 lg:inline-flex;
 }
 .bb-navbar-007 {
   @apply sticky top-0 z-50 h-16 w-full bg-white shadow-[0_0.0625rem_0.1875rem_rgba(0,0,0,0.05)] lg:hidden;
@@ -645,7 +644,7 @@
   @apply flex w-full flex-col gap-1 px-5 py-4 sm:px-8;
 }
 .bb-navbar-024 {
-  @apply rounded-[0.3125rem] px-3 py-3 font-['DM_Sans'] text-[1rem] font-bold leading-6 no-underline transition-colors;
+  @apply rounded-[0.3125rem] px-3 py-3 font-[family-name:var(--font-dm-sans)] text-[1rem] font-bold leading-6 no-underline transition-colors;
 }
 .bb-navbar-025 {
   @apply bg-[#FFF4E5] text-[#FE8F02];
@@ -654,7 +653,7 @@
   @apply text-[#111827] hover:bg-[#F8FAFC] hover:text-[#FE8F02];
 }
 .bb-navbar-027 {
-  @apply mt-3 h-[3.125rem] w-full rounded-[0.3125rem] border-none bg-[#FE8F02] font-['Outfit'] text-[1.125rem] font-medium text-white transition-colors hover:bg-[#E07D02] active:bg-[#C96F02] sm:w-[11.3125rem];
+  @apply mt-3 h-[3.125rem] w-full rounded-[0.3125rem] border-none bg-[#FE8F02] font-[family-name:var(--font-outfit)] text-[1.125rem] font-medium text-white transition-colors hover:bg-[#E07D02] active:bg-[#C96F02] sm:w-[11.3125rem];
 }
 .bb-pricing-001 {
   @apply w-[95rem] h-[45.6875rem] left-[12.5rem] top-[317.5rem] absolute bg-white rounded-[0.625rem] shadow-[0_0.625rem_2.5rem_rgba(0,0,0,0.03)];
@@ -666,28 +665,28 @@
   @apply w-[38.5625rem] h-[45.6875rem] left-[12.5rem] top-[317.5rem] absolute bg-[rgba(1,47,66,0.75)] rounded-[0.625rem];
 }
 .bb-pricing-004 {
-  @apply w-[27.0625rem] left-[18.25rem] top-[326.1875rem] absolute text-center text-white text-[3rem] font-['Outfit'] font-bold;
+  @apply w-[27.0625rem] left-[18.25rem] top-[326.1875rem] absolute text-center text-white text-[3rem] font-[family-name:var(--font-outfit)] font-bold;
 }
 .bb-pricing-005 {
-  @apply left-[26.625rem] top-[334.9375rem] absolute text-[#FE8F02] text-[8.125rem] font-['Outfit'] font-bold;
+  @apply left-[26.625rem] top-[334.9375rem] absolute text-[#FE8F02] text-[8.125rem] font-[family-name:var(--font-outfit)] font-bold;
 }
 .bb-pricing-006 {
-  @apply left-[26.1875rem] top-[346.4375rem] absolute text-white text-[1.375rem] font-['Outfit'] font-semibold leading-[2.0625rem];
+  @apply left-[26.1875rem] top-[346.4375rem] absolute text-white text-[1.375rem] font-[family-name:var(--font-outfit)] font-semibold leading-[2.0625rem];
 }
 .bb-pricing-007 {
-  @apply w-[23.6875rem] left-[19.875rem] top-[349.75rem] absolute text-center text-white text-[1.125rem] font-['DM_Sans'] font-normal leading-[1.6rem];
+  @apply w-[23.6875rem] left-[19.875rem] top-[349.75rem] absolute text-center text-white text-[1.125rem] font-[family-name:var(--font-dm-sans)] font-normal leading-[1.6rem];
 }
 .bb-pricing-008 {
-  @apply w-[43rem] left-[54.1875rem] top-[320rem] absolute text-[#012F42] text-[3rem] font-['Outfit'] font-bold;
+  @apply w-[43rem] left-[54.1875rem] top-[320rem] absolute text-[#012F42] text-[3rem] font-[family-name:var(--font-outfit)] font-bold;
 }
 .bb-pricing-009 {
-  @apply w-[27.4375rem] left-[54.1875rem] top-[329.375rem] absolute text-[#012F42] text-[1.375rem] font-['Outfit'] font-semibold leading-[2.0625rem];
+  @apply w-[27.4375rem] left-[54.1875rem] top-[329.375rem] absolute text-[#012F42] text-[1.375rem] font-[family-name:var(--font-outfit)] font-semibold leading-[2.0625rem];
 }
 .bb-pricing-010 {
-  @apply w-[44.375rem] left-[54.1875rem] top-[332.6875rem] absolute text-[rgba(17,24,39,0.70)] text-[1.125rem] font-['DM_Sans'] font-normal leading-[1.6rem];
+  @apply w-[44.375rem] left-[54.1875rem] top-[332.6875rem] absolute text-[rgba(17,24,39,0.70)] text-[1.125rem] font-[family-name:var(--font-dm-sans)] font-normal leading-[1.6rem];
 }
 .bb-pricing-011 {
-  @apply w-[27.4375rem] left-[54.1875rem] top-[335.5625rem] absolute text-[#012F42] text-[1.375rem] font-['Outfit'] font-semibold leading-[2.0625rem];
+  @apply w-[27.4375rem] left-[54.1875rem] top-[335.5625rem] absolute text-[#012F42] text-[1.375rem] font-[family-name:var(--font-outfit)] font-semibold leading-[2.0625rem];
 }
 .bb-pricing-012 {
   @apply left-[54.1875rem] top-[338.4375rem] absolute flex gap-[6.25rem];
@@ -702,22 +701,22 @@
   @apply w-[1.125rem] h-[1.125rem];
 }
 .bb-pricing-016 {
-  @apply text-[rgba(17,24,39,0.70)] text-[1.125rem] font-['DM_Sans'] font-normal;
+  @apply text-[rgba(17,24,39,0.70)] text-[1.125rem] font-[family-name:var(--font-dm-sans)] font-normal;
 }
 .bb-pricing-017 {
-  @apply left-[54.1875rem] top-[350.75rem] absolute text-[#012F42] text-[1.375rem] font-['Outfit'] font-semibold leading-[2.0625rem];
+  @apply left-[54.1875rem] top-[350.75rem] absolute text-[#012F42] text-[1.375rem] font-[family-name:var(--font-outfit)] font-semibold leading-[2.0625rem];
 }
 .bb-pricing-018 {
-  @apply left-[54.1875rem] top-[354.0625rem] absolute text-[rgba(17,24,39,0.70)] text-[1.125rem] font-['DM_Sans'] font-normal leading-[1.6rem];
+  @apply left-[54.1875rem] top-[354.0625rem] absolute text-[rgba(17,24,39,0.70)] text-[1.125rem] font-[family-name:var(--font-dm-sans)] font-normal leading-[1.6rem];
 }
 .bb-pricing-019 {
-  @apply left-[75rem] top-[350.75rem] absolute text-[#012F42] text-[1.375rem] font-['Outfit'] font-semibold leading-[2.0625rem];
+  @apply left-[75rem] top-[350.75rem] absolute text-[#012F42] text-[1.375rem] font-[family-name:var(--font-outfit)] font-semibold leading-[2.0625rem];
 }
 .bb-pricing-020 {
-  @apply left-[75rem] top-[354.0625rem] absolute text-[rgba(17,24,39,0.70)] text-[1.125rem] font-['DM_Sans'] font-normal leading-[1.6rem];
+  @apply left-[75rem] top-[354.0625rem] absolute text-[rgba(17,24,39,0.70)] text-[1.125rem] font-[family-name:var(--font-dm-sans)] font-normal leading-[1.6rem];
 }
 .bb-pricing-021 {
-  @apply hover:bg-[#E07D02] hover:scale-105 transition-all duration-300 cursor-pointer active:scale-95 border-none w-[15.875rem] h-[3.125rem] pl-[1.25rem] pr-[1.25rem] pt-[0.625rem] pb-[0.625rem] left-[54.1875rem] top-[357.5625rem] absolute bg-[#FE8F02] rounded-[0.3125rem] text-white text-[1.125rem] font-['Outfit'] font-medium capitalize;
+  @apply hover:bg-[#E07D02] hover:scale-105 transition-all duration-300 cursor-pointer active:scale-95 border-none w-[15.875rem] h-[3.125rem] pl-[1.25rem] pr-[1.25rem] pt-[0.625rem] pb-[0.625rem] left-[54.1875rem] top-[357.5625rem] absolute bg-[#FE8F02] rounded-[0.3125rem] text-white text-[1.125rem] font-[family-name:var(--font-outfit)] font-medium capitalize;
 }
 .bb-pricing-022 {
   @apply relative z-[24] w-full overflow-hidden bg-[#F8FAFC] px-5 py-10 sm:px-8 sm:py-12 lg:hidden;
@@ -735,31 +734,31 @@
   @apply relative z-10 flex min-h-[19rem] flex-col items-center justify-center md:min-h-full;
 }
 .bb-pricing-027 {
-  @apply max-w-[22rem] font-['Outfit'] text-[2rem] font-bold leading-[2.45rem] text-white sm:text-[2.25rem] sm:leading-[2.75rem] md:text-[2rem] md:leading-[2.45rem];
+  @apply max-w-[22rem] font-[family-name:var(--font-outfit)] text-[2rem] font-bold leading-[2.45rem] text-white sm:text-[2.25rem] sm:leading-[2.75rem] md:text-[2rem] md:leading-[2.45rem];
 }
 .bb-pricing-028 {
-  @apply mt-4 font-['Outfit'] text-[6rem] font-bold leading-none text-[#FE8F02] sm:text-[7rem] md:text-[6.25rem];
+  @apply mt-4 font-[family-name:var(--font-outfit)] text-[6rem] font-bold leading-none text-[#FE8F02] sm:text-[7rem] md:text-[6.25rem];
 }
 .bb-pricing-029 {
-  @apply mt-3 font-['Outfit'] text-[1.25rem] font-semibold leading-[1.75rem] text-white sm:text-[1.375rem];
+  @apply mt-3 font-[family-name:var(--font-outfit)] text-[1.25rem] font-semibold leading-[1.75rem] text-white sm:text-[1.375rem];
 }
 .bb-pricing-030 {
-  @apply mt-4 max-w-[24rem] font-['DM_Sans'] text-[1rem] leading-[1.625rem] text-white sm:text-[1.0625rem];
+  @apply mt-4 max-w-[24rem] font-[family-name:var(--font-dm-sans)] text-[1rem] leading-[1.625rem] text-white sm:text-[1.0625rem];
 }
 .bb-pricing-031 {
   @apply px-5 py-8 sm:px-8 md:px-7 md:py-10;
 }
 .bb-pricing-032 {
-  @apply font-['Outfit'] text-[2rem] font-bold leading-[2.45rem] text-[#012F42] sm:text-[2.25rem] sm:leading-[2.75rem] md:text-[2rem] md:leading-[2.45rem];
+  @apply font-[family-name:var(--font-outfit)] text-[2rem] font-bold leading-[2.45rem] text-[#012F42] sm:text-[2.25rem] sm:leading-[2.75rem] md:text-[2rem] md:leading-[2.45rem];
 }
 .bb-pricing-033 {
-  @apply mt-5 font-['Outfit'] text-[1.25rem] font-semibold leading-[1.75rem] text-[#012F42];
+  @apply mt-5 font-[family-name:var(--font-outfit)] text-[1.25rem] font-semibold leading-[1.75rem] text-[#012F42];
 }
 .bb-pricing-034 {
-  @apply mt-2 font-['DM_Sans'] text-[1rem] leading-[1.625rem] text-[rgba(17,24,39,0.70)];
+  @apply mt-2 font-[family-name:var(--font-dm-sans)] text-[1rem] leading-[1.625rem] text-[rgba(17,24,39,0.70)];
 }
 .bb-pricing-035 {
-  @apply mt-6 font-['Outfit'] text-[1.25rem] font-semibold leading-[1.75rem] text-[#012F42];
+  @apply mt-6 font-[family-name:var(--font-outfit)] text-[1.25rem] font-semibold leading-[1.75rem] text-[#012F42];
 }
 .bb-pricing-036 {
   @apply mt-4 grid gap-3 sm:grid-cols-2 md:grid-cols-1 min-[900px]:grid-cols-2;
@@ -771,7 +770,7 @@
   @apply h-[1.125rem] w-[1.125rem] shrink-0;
 }
 .bb-pricing-039 {
-  @apply min-w-0 font-['DM_Sans'] text-[1rem] leading-[1.45rem] text-[rgba(17,24,39,0.70)];
+  @apply min-w-0 font-[family-name:var(--font-dm-sans)] text-[1rem] leading-[1.45rem] text-[rgba(17,24,39,0.70)];
 }
 .bb-pricing-040 {
   @apply mt-7 grid gap-4 sm:grid-cols-2;
@@ -780,31 +779,31 @@
   @apply rounded-[0.5rem] border border-solid border-[rgba(17,24,39,0.12)] px-4 py-3;
 }
 .bb-pricing-042 {
-  @apply font-['Outfit'] text-[1.125rem] font-semibold leading-[1.5rem] text-[#012F42];
+  @apply font-[family-name:var(--font-outfit)] text-[1.125rem] font-semibold leading-[1.5rem] text-[#012F42];
 }
 .bb-pricing-043 {
-  @apply mt-2 font-['DM_Sans'] text-[1rem] leading-[1.5rem] text-[rgba(17,24,39,0.70)];
+  @apply mt-2 font-[family-name:var(--font-dm-sans)] text-[1rem] leading-[1.5rem] text-[rgba(17,24,39,0.70)];
 }
 .bb-pricing-044 {
-  @apply mt-7 flex h-[3.125rem] w-full cursor-pointer items-center justify-center rounded-[0.3125rem] border-none bg-[#FE8F02] px-5 font-['Outfit'] text-[1.0625rem] font-medium capitalize text-white transition-all duration-300 hover:bg-[#E07D02] active:scale-95 sm:w-[15.875rem];
+  @apply mt-7 flex h-[3.125rem] w-full cursor-pointer items-center justify-center rounded-[0.3125rem] border-none bg-[#FE8F02] px-5 font-[family-name:var(--font-outfit)] text-[1.0625rem] font-medium capitalize text-white transition-all duration-300 hover:bg-[#E07D02] active:scale-95 sm:w-[15.875rem];
 }
 .bb-ready-truck-001 {
   @apply w-[95rem] h-[36.5625rem] left-[12.5rem] top-[368.1875rem] absolute bg-[#012F42] rounded-[0.625rem];
 }
 .bb-ready-truck-002 {
-  @apply left-[15.625rem] top-[377.4375rem] absolute text-[#FE8F02] text-[3rem] font-['Outfit'] font-bold capitalize leading-[3.75rem];
+  @apply left-[15.625rem] top-[377.4375rem] absolute text-[#FE8F02] text-[3rem] font-[family-name:var(--font-outfit)] font-bold capitalize leading-[3.75rem];
 }
 .bb-ready-truck-003 {
-  @apply w-[40.0625rem] left-[15.625rem] top-[383.0625rem] absolute text-white text-[1.875rem] font-['Outfit'] font-bold capitalize leading-[2.5rem];
+  @apply w-[40.0625rem] left-[15.625rem] top-[383.0625rem] absolute text-white text-[1.875rem] font-[family-name:var(--font-outfit)] font-bold capitalize leading-[2.5rem];
 }
 .bb-ready-truck-004 {
-  @apply w-[39.75rem] left-[15.625rem] top-[386.8125rem] absolute text-white text-[1.125rem] font-['DM_Sans'] font-normal leading-[1.75rem];
+  @apply w-[39.75rem] left-[15.625rem] top-[386.8125rem] absolute text-white text-[1.125rem] font-[family-name:var(--font-dm-sans)] font-normal leading-[1.75rem];
 }
 .bb-ready-truck-005 {
-  @apply hover:bg-[#E07D02] hover:scale-105 transition-all duration-300 cursor-pointer active:scale-95 border-none w-[15.875rem] h-[3.125rem] pl-[1.25rem] pr-[1.25rem] pt-[0.625rem] pb-[0.625rem] left-[15.625rem] top-[392.375rem] absolute bg-[#FE8F02] rounded-[0.3125rem] text-white text-[1.125rem] font-['Outfit'] font-medium capitalize;
+  @apply hover:bg-[#E07D02] hover:scale-105 transition-all duration-300 cursor-pointer active:scale-95 border-none w-[15.875rem] h-[3.125rem] pl-[1.25rem] pr-[1.25rem] pt-[0.625rem] pb-[0.625rem] left-[15.625rem] top-[392.375rem] absolute bg-[#FE8F02] rounded-[0.3125rem] text-white text-[1.125rem] font-[family-name:var(--font-outfit)] font-medium capitalize;
 }
 .bb-ready-truck-006 {
-  @apply hover:bg-white/10 hover:scale-105 transition-all duration-300 cursor-pointer active:scale-95 bg-transparent w-[13.9375rem] h-[3.125rem] pl-[1.25rem] pr-[1.25rem] pt-[0.625rem] pb-[0.625rem] left-[32.75rem] top-[392.375rem] absolute rounded-[0.3125rem] border-[0.0625rem] border-solid border-[#FE8F02] text-[#FE8F02] text-[1.125rem] font-['Outfit'] font-medium capitalize;
+  @apply hover:bg-white/10 hover:scale-105 transition-all duration-300 cursor-pointer active:scale-95 bg-transparent w-[13.9375rem] h-[3.125rem] pl-[1.25rem] pr-[1.25rem] pt-[0.625rem] pb-[0.625rem] left-[32.75rem] top-[392.375rem] absolute rounded-[0.3125rem] border-[0.0625rem] border-solid border-[#FE8F02] text-[#FE8F02] text-[1.125rem] font-[family-name:var(--font-outfit)] font-medium capitalize;
 }
 .bb-ready-truck-007 {
   @apply w-[47.5rem] h-[36.5625rem] left-[60rem] top-[368.1875rem] absolute rounded-tr-[0.625rem] rounded-br-[0.625rem] object-cover;
@@ -819,28 +818,28 @@
   @apply px-5 py-8 sm:px-8 sm:py-10 md:px-7 md:py-8;
 }
 .bb-ready-truck-011 {
-  @apply font-['Outfit'] text-[2rem] font-bold capitalize leading-[2.45rem] text-[#FE8F02] sm:text-[2.25rem] sm:leading-[2.75rem] md:text-[2rem] md:leading-[2.45rem];
+  @apply font-[family-name:var(--font-outfit)] text-[2rem] font-bold capitalize leading-[2.45rem] text-[#FE8F02] sm:text-[2.25rem] sm:leading-[2.75rem] md:text-[2rem] md:leading-[2.45rem];
 }
 .bb-ready-truck-012 {
-  @apply mt-4 font-['Outfit'] text-[1.5rem] font-bold capitalize leading-[2rem] text-white sm:text-[1.875rem] sm:leading-[2.5rem] md:text-[1.375rem] md:leading-[1.85rem];
+  @apply mt-4 font-[family-name:var(--font-outfit)] text-[1.5rem] font-bold capitalize leading-[2rem] text-white sm:text-[1.875rem] sm:leading-[2.5rem] md:text-[1.375rem] md:leading-[1.85rem];
 }
 .bb-ready-truck-013 {
-  @apply mt-4 font-['DM_Sans'] text-[1rem] leading-[1.625rem] text-white sm:text-[1.0625rem] sm:leading-[1.75rem] md:text-[0.9375rem] md:leading-[1.55rem];
+  @apply mt-4 font-[family-name:var(--font-dm-sans)] text-[1rem] leading-[1.625rem] text-white sm:text-[1.0625rem] sm:leading-[1.75rem] md:text-[0.9375rem] md:leading-[1.55rem];
 }
 .bb-ready-truck-014 {
   @apply mt-6 grid gap-3 sm:grid-cols-2 md:grid-cols-1 min-[900px]:grid-cols-2;
 }
 .bb-ready-truck-015 {
-  @apply flex h-[3.125rem] w-full cursor-pointer items-center justify-center rounded-[0.3125rem] border-none bg-[#FE8F02] px-5 font-['Outfit'] text-[1.0625rem] font-medium capitalize text-white transition-all duration-300 hover:bg-[#E07D02] active:scale-95;
+  @apply flex h-[3.125rem] w-full cursor-pointer items-center justify-center rounded-[0.3125rem] border-none bg-[#FE8F02] px-5 font-[family-name:var(--font-outfit)] text-[1.0625rem] font-medium capitalize text-white transition-all duration-300 hover:bg-[#E07D02] active:scale-95;
 }
 .bb-ready-truck-016 {
-  @apply flex h-[3.125rem] w-full cursor-pointer items-center justify-center rounded-[0.3125rem] border border-solid border-[#FE8F02] bg-transparent px-5 font-['Outfit'] text-[1.0625rem] font-medium capitalize text-[#FE8F02] transition-all duration-300 hover:bg-white/10 active:scale-95;
+  @apply flex h-[3.125rem] w-full cursor-pointer items-center justify-center rounded-[0.3125rem] border border-solid border-[#FE8F02] bg-transparent px-5 font-[family-name:var(--font-outfit)] text-[1.0625rem] font-medium capitalize text-[#FE8F02] transition-all duration-300 hover:bg-white/10 active:scale-95;
 }
 .bb-ready-truck-017 {
   @apply aspect-[16/11] h-auto w-full object-cover md:h-full;
 }
 .bb-services-process-001 {
-  @apply absolute left-[35.5625rem] top-[225.25rem] w-[48.8125rem] text-center font-['Outfit'] text-[3rem] font-bold break-words text-[#012F42];
+  @apply absolute left-[35.5625rem] top-[225.25rem] w-[48.8125rem] text-center font-[family-name:var(--font-outfit)] text-[3rem] font-bold break-words text-[#012F42];
 }
 .bb-services-process-002 {
   @apply absolute left-[12.5rem] top-[236.5rem] h-[32.375rem] w-[46.875rem] rounded-[0.625rem] object-cover;
@@ -852,16 +851,16 @@
   @apply h-[9.125rem] border-[0.125rem] border-solid border-[#FE8F02] shadow-[0_0.25rem_1.25rem_rgba(0,0,0,0.06)];
 }
 .bb-services-process-005 {
-  @apply absolute left-[1.25rem] top-[1.25rem] w-[37.5rem] font-['Outfit'] text-[1.375rem] font-semibold leading-[2.0625rem] text-[#012F42];
+  @apply absolute left-[1.25rem] top-[1.25rem] w-[37.5rem] font-[family-name:var(--font-outfit)] text-[1.375rem] font-semibold leading-[2.0625rem] text-[#012F42];
 }
 .bb-services-process-006 {
-  @apply absolute left-[1.25rem] top-[4.25rem] w-[44.375rem] font-['DM_Sans'] text-[1.125rem] font-normal leading-[1.6rem] text-[rgba(17,24,39,0.70)];
+  @apply absolute left-[1.25rem] top-[4.25rem] w-[44.375rem] font-[family-name:var(--font-dm-sans)] text-[1.125rem] font-normal leading-[1.6rem] text-[rgba(17,24,39,0.70)];
 }
 .bb-services-process-007 {
   @apply relative z-[22] w-full overflow-hidden bg-[#F8FAFC] px-5 pb-10 pt-6 sm:px-8 sm:pb-12 sm:pt-8 lg:hidden;
 }
 .bb-services-process-008 {
-  @apply mx-auto max-w-[36rem] text-center font-['Outfit'] text-[1.875rem] font-bold leading-[2.3rem] text-[#012F42] sm:text-[2.25rem] sm:leading-[2.75rem] min-[860px]:text-[2rem] min-[860px]:leading-[2.45rem];
+  @apply mx-auto max-w-[36rem] text-center font-[family-name:var(--font-outfit)] text-[1.875rem] font-bold leading-[2.3rem] text-[#012F42] sm:text-[2.25rem] sm:leading-[2.75rem] min-[860px]:text-[2rem] min-[860px]:leading-[2.45rem];
 }
 .bb-services-process-009 {
   @apply mt-7 grid gap-5 min-[860px]:grid-cols-[0.95fr_1.05fr] min-[860px]:items-start;
@@ -876,22 +875,22 @@
   @apply border-[0.125rem] border-solid border-[#FE8F02] shadow-[0_0.25rem_1.25rem_rgba(0,0,0,0.06)];
 }
 .bb-services-process-013 {
-  @apply min-w-0 font-['Outfit'] text-[1.125rem] font-semibold leading-[1.45rem] text-[#012F42] sm:text-[1.25rem] sm:leading-[1.625rem];
+  @apply min-w-0 font-[family-name:var(--font-outfit)] text-[1.125rem] font-semibold leading-[1.45rem] text-[#012F42] sm:text-[1.25rem] sm:leading-[1.625rem];
 }
 .bb-services-process-014 {
-  @apply px-4 pb-4 font-['DM_Sans'] text-[0.95rem] leading-[1.55rem] text-[rgba(17,24,39,0.70)] sm:text-[1rem];
+  @apply px-4 pb-4 font-[family-name:var(--font-dm-sans)] text-[0.95rem] leading-[1.55rem] text-[rgba(17,24,39,0.70)] sm:text-[1rem];
 }
 .bb-state-picker-001 {
   @apply absolute left-[25rem] top-[39rem] z-[12] hidden h-[9.375rem] w-[70rem] rounded-[0.625rem] bg-white shadow-[0_0.625rem_1.875rem_rgba(0,0,0,0.1)] lg:block;
 }
 .bb-state-picker-002 {
-  @apply absolute left-[28.1875rem] top-[40.5625rem] z-[13] hidden font-['Outfit'] text-[1.875rem] font-semibold leading-[1.875rem] text-[#012F42] lg:block;
+  @apply absolute left-[28.1875rem] top-[40.5625rem] z-[13] hidden font-[family-name:var(--font-outfit)] text-[1.875rem] font-semibold leading-[1.875rem] text-[#012F42] lg:block;
 }
 .bb-state-picker-003 {
   @apply absolute left-[28.1875rem] top-[43.6875rem] z-[13] hidden h-[3.125rem] w-[17.5rem] lg:block;
 }
 .bb-state-picker-004 {
-  @apply w-full h-full border border-gray-300 rounded-[0.3125rem] pl-5 pr-10 text-[1.125rem] font-['DM_Sans'] text-gray-800 outline-none cursor-pointer hover:border-gray-500 transition-colors appearance-none bg-white;
+  @apply w-full h-full border border-gray-300 rounded-[0.3125rem] pl-5 pr-10 text-[1.125rem] font-[family-name:var(--font-dm-sans)] text-gray-800 outline-none cursor-pointer hover:border-gray-500 transition-colors appearance-none bg-white;
 }
 .bb-state-picker-005 {
   @apply absolute right-[1.25rem] top-[1.3125rem] pointer-events-none;
@@ -903,13 +902,13 @@
   @apply absolute left-[46.9375rem] top-[43.6875rem] z-[13] hidden h-[3.125rem] w-[17.5rem] lg:block;
 }
 .bb-state-picker-008 {
-  @apply w-full h-full border border-gray-300 rounded-[0.3125rem] pl-5 text-[1.125rem] font-['DM_Sans'] text-gray-800 outline-none hover:border-gray-500 transition-colors;
+  @apply w-full h-full border border-gray-300 rounded-[0.3125rem] pl-5 text-[1.125rem] font-[family-name:var(--font-dm-sans)] text-gray-800 outline-none hover:border-gray-500 transition-colors;
 }
 .bb-state-picker-009 {
   @apply absolute left-[65.6875rem] top-[43.6875rem] z-[13] hidden h-[3.125rem] w-[17.5rem] lg:block;
 }
 .bb-state-picker-010 {
-  @apply absolute left-[84.4375rem] top-[43.6875rem] z-[13] hidden h-[3.125rem] w-[7.3125rem] cursor-pointer items-center justify-center rounded-[0.3125rem] border-none bg-[#FE8F02] font-['Outfit'] text-[1.125rem] font-medium leading-[1.875rem] text-white transition-all duration-300 hover:scale-105 hover:bg-[#E07D02] active:scale-95 lg:flex;
+  @apply absolute left-[84.4375rem] top-[43.6875rem] z-[13] hidden h-[3.125rem] w-[7.3125rem] cursor-pointer items-center justify-center rounded-[0.3125rem] border-none bg-[#FE8F02] font-[family-name:var(--font-outfit)] text-[1.125rem] font-medium leading-[1.875rem] text-white transition-all duration-300 hover:scale-105 hover:bg-[#E07D02] active:scale-95 lg:flex;
 }
 .bb-state-picker-011 {
   @apply hidden;
@@ -921,7 +920,7 @@
   @apply rounded-[0.625rem] bg-white p-4 shadow-[0_0.625rem_1.875rem_rgba(0,0,0,0.12)] sm:p-5;
 }
 .bb-state-picker-014 {
-  @apply font-['Outfit'] text-[1.375rem] font-semibold leading-[1.625rem] text-[#012F42] sm:text-[1.5rem];
+  @apply font-[family-name:var(--font-outfit)] text-[1.375rem] font-semibold leading-[1.625rem] text-[#012F42] sm:text-[1.5rem];
 }
 .bb-state-picker-015 {
   @apply mt-3 grid gap-2 sm:grid-cols-2;
@@ -930,7 +929,7 @@
   @apply relative h-[2.75rem] sm:col-span-2;
 }
 .bb-state-picker-017 {
-  @apply h-full w-full cursor-pointer appearance-none rounded-[0.3125rem] border border-gray-300 bg-white pl-4 pr-10 font-['DM_Sans'] text-[0.9375rem] text-gray-800 outline-none transition-colors hover:border-gray-500;
+  @apply h-full w-full cursor-pointer appearance-none rounded-[0.3125rem] border border-gray-300 bg-white pl-4 pr-10 font-[family-name:var(--font-dm-sans)] text-[0.9375rem] text-gray-800 outline-none transition-colors hover:border-gray-500;
 }
 .bb-state-picker-018 {
   @apply pointer-events-none absolute right-[1.25rem] top-[1.125rem];
@@ -939,22 +938,22 @@
   @apply h-[0.5625rem] w-[0.6875rem];
 }
 .bb-state-picker-020 {
-  @apply h-[2.75rem] w-full rounded-[0.3125rem] border border-gray-300 pl-4 font-['DM_Sans'] text-[0.9375rem] text-gray-800 outline-none transition-colors hover:border-gray-500;
+  @apply h-[2.75rem] w-full rounded-[0.3125rem] border border-gray-300 pl-4 font-[family-name:var(--font-dm-sans)] text-[0.9375rem] text-gray-800 outline-none transition-colors hover:border-gray-500;
 }
 .bb-state-picker-021 {
-  @apply flex h-[2.75rem] w-full cursor-pointer items-center justify-center rounded-[0.3125rem] border-none bg-[#FE8F02] font-['Outfit'] text-[1rem] font-medium leading-[1.5rem] text-white transition-all duration-300 hover:bg-[#E07D02] active:scale-95 sm:col-span-2;
+  @apply flex h-[2.75rem] w-full cursor-pointer items-center justify-center rounded-[0.3125rem] border-none bg-[#FE8F02] font-[family-name:var(--font-outfit)] text-[1rem] font-medium leading-[1.5rem] text-white transition-all duration-300 hover:bg-[#E07D02] active:scale-95 sm:col-span-2;
 }
 .bb-state-picker-022 {
-  @apply absolute left-[25rem] top-[36.25rem] z-[15] hidden w-[70rem] rounded-[0.3125rem] bg-[#10B981] px-[1.25rem] py-[0.625rem] text-center font-['DM_Sans'] text-[1.125rem] text-white lg:block;
+  @apply absolute left-[25rem] top-[36.25rem] z-[15] hidden w-[70rem] rounded-[0.3125rem] bg-[#10B981] px-[1.25rem] py-[0.625rem] text-center font-[family-name:var(--font-dm-sans)] text-[1.125rem] text-white lg:block;
 }
 .bb-state-picker-023 {
   @apply relative z-[25] w-full bg-[#F8FAFC] px-5 pb-3 sm:px-8 lg:hidden;
 }
 .bb-state-picker-024 {
-  @apply rounded-[0.3125rem] bg-[#10B981] px-[1.25rem] py-[0.625rem] text-center font-['DM_Sans'] text-[1rem] text-white;
+  @apply rounded-[0.3125rem] bg-[#10B981] px-[1.25rem] py-[0.625rem] text-center font-[family-name:var(--font-dm-sans)] text-[1rem] text-white;
 }
 .bb-testimonials-001 {
-  @apply absolute left-[45.5rem] top-[459.75rem] font-['Outfit'] text-[3rem] font-semibold text-[#012F42];
+  @apply absolute left-[45.5rem] top-[459.75rem] font-[family-name:var(--font-outfit)] text-[3rem] font-semibold text-[#012F42];
 }
 .bb-testimonials-002 {
   @apply absolute left-[102.0625rem] top-[467.25rem] flex h-[2.25rem] w-[2.25rem] cursor-pointer items-center justify-center rounded-[0.3125rem] bg-[#012F42] transition-colors hover:bg-[#012F42]/90;
@@ -1002,10 +1001,10 @@
   @apply bg-[#878B92];
 }
 .bb-testimonials-017 {
-  @apply mt-[1.25rem] font-['Outfit'] text-[1.375rem] font-semibold text-[#012F42];
+  @apply mt-[1.25rem] font-[family-name:var(--font-outfit)] text-[1.375rem] font-semibold text-[#012F42];
 }
 .bb-testimonials-018 {
-  @apply mt-[0.3125rem] font-['DM_Sans'] text-[0.875rem] font-medium text-[#FE8F02];
+  @apply mt-[0.3125rem] font-[family-name:var(--font-dm-sans)] text-[0.875rem] font-medium text-[#FE8F02];
 }
 .bb-testimonials-019 {
   @apply mt-2 flex gap-1;
@@ -1014,13 +1013,13 @@
   @apply h-[0.875rem] w-[0.875rem];
 }
 .bb-testimonials-021 {
-  @apply mt-[1.25rem] w-[18.5625rem] text-center font-['DM_Sans'] text-[1.125rem] font-normal leading-[1.625rem] text-[#595E68];
+  @apply mt-[1.25rem] w-[18.5625rem] text-center font-[family-name:var(--font-dm-sans)] text-[1.125rem] font-normal leading-[1.625rem] text-[#595E68];
 }
 .bb-testimonials-022 {
   @apply relative z-[27] w-full overflow-hidden bg-[#F8FAFC] px-5 py-10 sm:px-8 sm:py-12 lg:hidden;
 }
 .bb-testimonials-023 {
-  @apply text-center font-['Outfit'] text-[2rem] font-semibold leading-[2.45rem] text-[#012F42] sm:text-[2.25rem] sm:leading-[2.75rem];
+  @apply text-center font-[family-name:var(--font-outfit)] text-[2rem] font-semibold leading-[2.45rem] text-[#012F42] sm:text-[2.25rem] sm:leading-[2.75rem];
 }
 .bb-testimonials-024 {
   @apply mt-7 grid gap-4 sm:grid-cols-2 min-[860px]:grid-cols-4;
@@ -1035,19 +1034,19 @@
   @apply mt-4 h-[0.125rem] w-[8rem] rounded-[1.375rem];
 }
 .bb-testimonials-028 {
-  @apply mt-4 font-['Outfit'] text-[1.25rem] font-semibold text-[#012F42];
+  @apply mt-4 font-[family-name:var(--font-outfit)] text-[1.25rem] font-semibold text-[#012F42];
 }
 .bb-testimonials-029 {
-  @apply mt-1 font-['DM_Sans'] text-[0.875rem] font-medium text-[#FE8F02];
+  @apply mt-1 font-[family-name:var(--font-dm-sans)] text-[0.875rem] font-medium text-[#FE8F02];
 }
 .bb-testimonials-030 {
   @apply mt-3 flex gap-1;
 }
 .bb-testimonials-031 {
-  @apply mt-4 font-['DM_Sans'] text-[0.95rem] leading-[1.55rem] text-[#595E68];
+  @apply mt-4 font-[family-name:var(--font-dm-sans)] text-[0.95rem] leading-[1.55rem] text-[#595E68];
 }
 .bb-why-choose-us-001 {
-  @apply absolute left-[35.5625rem] top-[273.875rem] w-[48.8125rem] text-center font-['Outfit'] text-[3rem] font-bold break-words text-[#012F42];
+  @apply absolute left-[35.5625rem] top-[273.875rem] w-[48.8125rem] text-center font-[family-name:var(--font-outfit)] text-[3rem] font-bold break-words text-[#012F42];
 }
 .bb-why-choose-us-002 {
   @apply absolute h-[14.9375rem] w-[22.8125rem] overflow-hidden rounded-[0.625rem] bg-white transition-all duration-300;
@@ -1065,16 +1064,16 @@
   @apply bg-[#012F42];
 }
 .bb-why-choose-us-007 {
-  @apply absolute left-[1.25rem] top-[1.875rem] w-[20.5rem] font-['Outfit'] text-[1.375rem] font-semibold leading-[2.0625rem] text-[#012F42];
+  @apply absolute left-[1.25rem] top-[1.875rem] w-[20.5rem] font-[family-name:var(--font-outfit)] text-[1.375rem] font-semibold leading-[2.0625rem] text-[#012F42];
 }
 .bb-why-choose-us-008 {
-  @apply absolute left-[1.25rem] top-[7.25rem] w-[20.1875rem] font-['DM_Sans'] text-[1.125rem] font-normal leading-[1.6rem] text-[rgba(17,24,39,0.70)];
+  @apply absolute left-[1.25rem] top-[7.25rem] w-[20.1875rem] font-[family-name:var(--font-dm-sans)] text-[1.125rem] font-normal leading-[1.6rem] text-[rgba(17,24,39,0.70)];
 }
 .bb-why-choose-us-009 {
   @apply relative z-[23] w-full overflow-hidden bg-[#F8FAFC] px-5 py-10 sm:px-8 sm:py-12 lg:hidden;
 }
 .bb-why-choose-us-010 {
-  @apply text-center font-['Outfit'] text-[1.875rem] font-bold leading-[2.3rem] text-[#012F42] sm:text-[2.25rem] sm:leading-[2.75rem] md:text-[2rem] md:leading-[2.45rem];
+  @apply text-center font-[family-name:var(--font-outfit)] text-[1.875rem] font-bold leading-[2.3rem] text-[#012F42] sm:text-[2.25rem] sm:leading-[2.75rem] md:text-[2rem] md:leading-[2.45rem];
 }
 .bb-why-choose-us-011 {
   @apply overflow-hidden rounded-[0.625rem] border border-solid border-[rgba(17,24,39,0.15)] bg-white;
@@ -1086,10 +1085,10 @@
   @apply p-4 sm:p-5 md:p-4;
 }
 .bb-why-choose-us-014 {
-  @apply font-['Outfit'] text-[1.125rem] font-semibold leading-[1.45rem] text-[#012F42] sm:text-[1.25rem] sm:leading-[1.625rem] min-[860px]:text-[1.0625rem] min-[860px]:leading-[1.35rem];
+  @apply font-[family-name:var(--font-outfit)] text-[1.125rem] font-semibold leading-[1.45rem] text-[#012F42] sm:text-[1.25rem] sm:leading-[1.625rem] min-[860px]:text-[1.0625rem] min-[860px]:leading-[1.35rem];
 }
 .bb-why-choose-us-015 {
-  @apply mt-3 font-['DM_Sans'] text-[0.95rem] leading-[1.55rem] text-[rgba(17,24,39,0.70)] sm:text-[1rem] min-[860px]:text-[0.9375rem] min-[860px]:leading-[1.45rem];
+  @apply mt-3 font-[family-name:var(--font-dm-sans)] text-[0.95rem] leading-[1.55rem] text-[rgba(17,24,39,0.70)] sm:text-[1rem] min-[860px]:text-[0.9375rem] min-[860px]:leading-[1.45rem];
 }
 .bb-dynamic-001 {
   @apply top-[417.25rem];
@@ -1356,7 +1355,7 @@
 .about-cta h2 {
   margin: 0;
   color: #012f42;
-  font-family: "Outfit", sans-serif;
+  font-family: var(--font-outfit), sans-serif;
   font-size: clamp(34px, 4vw, 48px);
   font-weight: 700;
   line-height: 1.16;
@@ -1376,7 +1375,7 @@
 .about-eyebrow {
   margin: 22px 0 0;
   color: #fe8f02;
-  font-family: "Outfit", sans-serif;
+  font-family: var(--font-outfit), sans-serif;
   font-size: 22px;
   font-weight: 600;
   line-height: 1.5;
@@ -1430,7 +1429,7 @@
 .about-founder h3 {
   margin: 28px 0 18px;
   color: #012f42;
-  font-family: "Outfit", sans-serif;
+  font-family: var(--font-outfit), sans-serif;
   font-size: 22px;
   font-weight: 600;
   line-height: 1.4;
@@ -1449,7 +1448,7 @@
   border-radius: 8px;
   background: #fff;
   color: #012f42;
-  font-family: "Outfit", sans-serif;
+  font-family: var(--font-outfit), sans-serif;
   font-size: 18px;
   font-weight: 600;
   box-shadow: 0 10px 22px rgba(1, 47, 66, 0.08);
@@ -1478,7 +1477,7 @@
   border-radius: 10px;
   background: #fff;
   color: #012f42;
-  font-family: "Outfit", sans-serif;
+  font-family: var(--font-outfit), sans-serif;
   font-size: 20px;
   font-weight: 600;
   line-height: 1.35;
@@ -1514,7 +1513,7 @@
   border-radius: 5px;
   background: rgba(255, 255, 255, 0.12);
   color: #fff;
-  font-family: "Outfit", sans-serif;
+  font-family: var(--font-outfit), sans-serif;
   font-size: 24px;
   font-weight: 600;
   backdrop-filter: blur(12px);
@@ -1570,7 +1569,7 @@
   margin: 0;
   padding: 0;
   color: #fff;
-  font-family: "Outfit", sans-serif;
+  font-family: var(--font-outfit), sans-serif;
   font-size: 20px;
   font-weight: 600;
 }
@@ -1585,7 +1584,7 @@
 .about-benefits h3 {
   margin: 0 0 22px;
   color: #012f42;
-  font-family: "Outfit", sans-serif;
+  font-family: var(--font-outfit), sans-serif;
   font-size: 22px;
 }
 
@@ -1673,7 +1672,7 @@
 .about-reason h3 {
   margin: 0;
   color: #012f42;
-  font-family: "Outfit", sans-serif;
+  font-family: var(--font-outfit), sans-serif;
   font-size: 22px;
   font-weight: 600;
 }
@@ -1719,7 +1718,7 @@
   border-radius: 5px;
   border: 1px solid #fe8f02;
   color: #fe8f02;
-  font-family: "Outfit", sans-serif;
+  font-family: var(--font-outfit), sans-serif;
   font-size: 16px;
   font-weight: 500;
 }
@@ -2031,7 +2030,7 @@
 .about-social-title {
   margin: 0 0 24px;
   color: #fff;
-  font-family: "Outfit", sans-serif;
+  font-family: var(--font-outfit), sans-serif;
   font-size: 24px;
   font-weight: 700;
 }
@@ -2062,7 +2061,7 @@
 .about-contact-item h3 {
   margin: 0 0 4px;
   color: #fff;
-  font-family: "Outfit", sans-serif;
+  font-family: var(--font-outfit), sans-serif;
   font-size: 16px;
   font-weight: 700;
 }
@@ -2280,7 +2279,7 @@
 .about-story h2 {
   margin: 0 0 20px;
   color: #012f42;
-  font-family: "Outfit", sans-serif;
+  font-family: var(--font-outfit), sans-serif;
   font-size: clamp(30px, 3vw, 36px);
   font-weight: 800;
   line-height: 1.15;
@@ -2930,7 +2929,7 @@
   .about-hero-kicker {
     margin-top: 24px;
     color: #fff;
-    font-family: "DM Sans", sans-serif;
+    font-family: var(--font-dm-sans), sans-serif;
     font-size: 20px;
     font-weight: 700;
     line-height: 1.2;
@@ -2940,7 +2939,7 @@
     max-width: 1143px;
     margin-top: 22px;
     color: #fff;
-    font-family: "DM Sans", sans-serif;
+    font-family: var(--font-dm-sans), sans-serif;
     font-size: 20px;
     line-height: 1.35;
   }
@@ -2961,7 +2960,7 @@
   .about-why h2,
   .about-cta h2 {
     color: #012f42;
-    font-family: "Outfit", sans-serif;
+    font-family: var(--font-outfit), sans-serif;
     font-size: 48px;
     font-weight: 700;
     line-height: 54px;
@@ -2975,7 +2974,7 @@
     max-width: 857px;
     margin: 0;
     color: #575d67;
-    font-family: "DM Sans", sans-serif;
+    font-family: var(--font-dm-sans), sans-serif;
     font-size: 18px;
     line-height: 1.35;
   }
@@ -3041,7 +3040,7 @@
   .about-eyebrow {
     margin: 0;
     color: #fe8f02;
-    font-family: "Outfit", sans-serif;
+    font-family: var(--font-outfit), sans-serif;
     font-size: 20px;
     font-weight: 600;
     line-height: 32px;
@@ -3063,7 +3062,7 @@
   .about-founder h3 {
     margin: 43px 0 0;
     color: #012f42;
-    font-family: "Outfit", sans-serif;
+    font-family: var(--font-outfit), sans-serif;
     font-size: 20px;
     font-weight: 600;
     line-height: 32px;
@@ -3073,7 +3072,7 @@
     max-width: 714px;
     margin-top: 36px;
     color: #575d67;
-    font-family: "DM Sans", sans-serif;
+    font-family: var(--font-dm-sans), sans-serif;
     font-size: 18px;
     line-height: 1.35;
   }
@@ -3092,7 +3091,7 @@
 
   .about-values span {
     color: #012f42;
-    font-family: "Outfit", sans-serif;
+    font-family: var(--font-outfit), sans-serif;
     font-size: 20px;
     font-weight: 600;
     line-height: 32px;
@@ -3121,7 +3120,7 @@
     max-width: 575px;
     margin-top: 22px;
     color: #575d67;
-    font-family: "DM Sans", sans-serif;
+    font-family: var(--font-dm-sans), sans-serif;
     font-size: 18px;
     line-height: 1.45;
   }
@@ -3155,7 +3154,7 @@
   .about-service-card h3 {
     margin: 0;
     color: #012f42;
-    font-family: "Outfit", sans-serif;
+    font-family: var(--font-outfit), sans-serif;
     font-size: 20px;
     font-weight: 600;
     line-height: 32px;
@@ -3183,7 +3182,7 @@
 
   .about-industries h2 {
     color: #f8fafc;
-    font-family: "Outfit", sans-serif;
+    font-family: var(--font-outfit), sans-serif;
     font-size: 48px;
     font-weight: 700;
     line-height: 54px;
@@ -3202,7 +3201,7 @@
     border-radius: 5px;
     background: rgba(255, 255, 255, 0.1);
     color: #fff;
-    font-family: "Outfit", sans-serif;
+    font-family: var(--font-outfit), sans-serif;
     font-size: 30px;
     font-weight: 600;
     line-height: 1.2;
@@ -3232,7 +3231,7 @@
   .about-coverage p {
     margin-top: 30px;
     color: #575d67;
-    font-family: "DM Sans", sans-serif;
+    font-family: var(--font-dm-sans), sans-serif;
     font-size: 18px;
     line-height: 1.35;
   }
@@ -3270,7 +3269,7 @@
     bottom: 41px;
     z-index: 1;
     color: #fff;
-    font-family: "Outfit", sans-serif;
+    font-family: var(--font-outfit), sans-serif;
     font-size: 20px;
     font-weight: 600;
     line-height: 32px;
@@ -3305,7 +3304,7 @@
   .about-contact-card h2,
   .about-social-title {
     color: #fff;
-    font-family: "Outfit", sans-serif;
+    font-family: var(--font-outfit), sans-serif;
     font-size: 30px;
     font-weight: 600;
     line-height: 40px;
@@ -3336,7 +3335,7 @@
 
   .about-contact-item h3 {
     color: #fff;
-    font-family: "Outfit", sans-serif;
+    font-family: var(--font-outfit), sans-serif;
     font-size: 20px;
     font-weight: 600;
     line-height: 32px;
@@ -3345,7 +3344,7 @@
   .about-contact-item p {
     margin-top: 8px;
     color: #fff;
-    font-family: "DM Sans", sans-serif;
+    font-family: var(--font-dm-sans), sans-serif;
     font-size: 18px;
     line-height: 1.2;
   }
@@ -3388,7 +3387,7 @@
   .about-benefits h3 {
     margin: 0 0 24px;
     color: #012f42;
-    font-family: "Outfit", sans-serif;
+    font-family: var(--font-outfit), sans-serif;
     font-size: 20px;
     font-weight: 600;
     line-height: 32px;
@@ -3406,7 +3405,7 @@
     display: flex;
     align-items: center;
     color: #575d67;
-    font-family: "DM Sans", sans-serif;
+    font-family: var(--font-dm-sans), sans-serif;
     font-size: 16px;
     line-height: 24px;
   }
@@ -3475,7 +3474,7 @@
 
   .about-reason h3 {
     color: #012f42;
-    font-family: "Outfit", sans-serif;
+    font-family: var(--font-outfit), sans-serif;
     font-size: 20px;
     font-weight: 600;
     line-height: 32px;
@@ -3484,7 +3483,7 @@
   .about-reason p {
     margin: 10px 20px 22px;
     color: rgba(17, 24, 39, 0.7);
-    font-family: "DM Sans", sans-serif;
+    font-family: var(--font-dm-sans), sans-serif;
     font-size: 18px;
     line-height: 24px;
   }
@@ -3506,7 +3505,7 @@
   .about-cta h2 {
     max-width: 641px;
     color: #fe8f02;
-    font-family: "Outfit", sans-serif;
+    font-family: var(--font-outfit), sans-serif;
     font-size: 48px;
     font-weight: 700;
     line-height: 60px;
@@ -3515,7 +3514,7 @@
   .about-cta p {
     max-width: 636px;
     color: #fff;
-    font-family: "DM Sans", sans-serif;
+    font-family: var(--font-dm-sans), sans-serif;
     font-size: 18px;
     line-height: 1.35;
   }
@@ -3543,7 +3542,7 @@
     border: 1px solid #fe8f02;
     border-radius: 5px;
     color: #fe8f02;
-    font-family: "Outfit", sans-serif;
+    font-family: var(--font-outfit), sans-serif;
     font-size: 18px;
     font-weight: 500;
     text-transform: capitalize;

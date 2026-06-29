@@ -6,14 +6,16 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "clean": "node -e \"require('fs').rmSync('.next',{recursive:true,force:true})\" && next build",
-    "analyze": "cross-env ANALYZE=true next build",
+    "clean": "node scripts/clean.mjs",
+    "analyze": "next experimental-analyze --output",
     "start": "next start",
     "lint": "eslint",
     "lighthouse": "lhci autorun",
     "test:e2e": "playwright test",
     "test:e2e:ui": "playwright test --ui",
-    "generate:importmap": "payload generate:importmap"
+    "generate:importmap": "payload generate:importmap",
+    "build:clean": "npm run clean && next build",
+    "optimize:images": "node scripts/optimize-images.mjs"
   },
   "dependencies": {
     "@payloadcms/db-postgres": "^3.85.1",
@@ -27,7 +29,6 @@
   },
   "devDependencies": {
     "@lhci/cli": "^0.15.1",
-    "@next/bundle-analyzer": "^16.2.9",
     "@playwright/test": "^1.61.1",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",

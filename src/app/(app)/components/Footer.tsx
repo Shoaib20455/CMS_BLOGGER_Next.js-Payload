@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
 
@@ -20,7 +18,7 @@ function FlowFooter() {
             height={80}
           />
 
-          <div className="absolute left-[15rem] top-[9.375rem] h-[9rem] w-[21.0625rem] font-['Poppins'] text-[0.875rem] font-medium leading-[1.5rem] text-white">
+          <div className="absolute left-[15rem] top-[9.375rem] h-[9rem] w-[21.0625rem] font-[family-name:var(--font-poppins)] text-[0.875rem] font-medium leading-[1.5rem] text-white">
             Box Truck Dispatching offers reliable and profit driven truck
             dispatching services across the United States. We help owner
             operators and fleets secure high-paying loads, reduce deadhead
@@ -98,7 +96,7 @@ function FlowFooter() {
             );
           })}
 
-          <div className="absolute left-[46.5rem] top-[3.125rem] font-['Outfit'] text-[1.375rem] font-semibold leading-[1.875rem] text-[#FE8F02]">
+          <div className="absolute left-[46.5rem] top-[3.125rem] font-[family-name:var(--font-outfit)] text-[1.375rem] font-semibold leading-[1.875rem] text-[#FE8F02]">
             Quick Links
           </div>
 
@@ -108,7 +106,7 @@ function FlowFooter() {
                 <Link
                   key={item}
                   href={item === "Home" ? "/" : `/${item.toLowerCase()}`}
-                  className="cursor-pointer font-['DM_Sans'] text-[1.125rem] font-medium leading-[1.25rem] text-white no-underline transition-colors duration-200 hover:text-[#FE8F02]"
+                  className="cursor-pointer font-[family-name:var(--font-dm-sans)] text-[1.125rem] font-medium leading-[1.25rem] text-white no-underline transition-colors duration-200 hover:text-[#FE8F02]"
                 >
                   {item}
                 </Link>
@@ -116,7 +114,7 @@ function FlowFooter() {
             )}
           </div>
 
-          <div className="absolute left-[65.0625rem] top-[3.125rem] font-['Outfit'] text-[1.375rem] font-semibold leading-[1.875rem] text-[#FE8F02]">
+          <div className="absolute left-[65.0625rem] top-[3.125rem] font-[family-name:var(--font-outfit)] text-[1.375rem] font-semibold leading-[1.875rem] text-[#FE8F02]">
             Our Services
           </div>
 
@@ -134,14 +132,14 @@ function FlowFooter() {
               <Link
                 key={item}
                 href="/service"
-                className="cursor-pointer font-['DM_Sans'] text-[1.125rem] font-medium leading-[1.25rem] text-white no-underline transition-colors duration-200 hover:text-[#FE8F02]"
+                className="cursor-pointer font-[family-name:var(--font-dm-sans)] text-[1.125rem] font-medium leading-[1.25rem] text-white no-underline transition-colors duration-200 hover:text-[#FE8F02]"
               >
                 {item}
               </Link>
             ))}
           </div>
 
-          <div className="absolute left-[92.6875rem] top-[3.125rem] font-['Outfit'] text-[1.375rem] font-semibold leading-[1.875rem] text-[#FE8F02]">
+          <div className="absolute left-[92.6875rem] top-[3.125rem] font-[family-name:var(--font-outfit)] text-[1.375rem] font-semibold leading-[1.875rem] text-[#FE8F02]">
             Get In Touch
           </div>
 
@@ -156,10 +154,10 @@ function FlowFooter() {
           >
             <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
           </svg>
-          <div className="absolute left-[94.25rem] top-[6.375rem] font-['DM_Sans'] text-[0.875rem] font-semibold leading-[0.875rem] text-white">
+          <div className="absolute left-[94.25rem] top-[6.375rem] font-[family-name:var(--font-dm-sans)] text-[0.875rem] font-semibold leading-[0.875rem] text-white">
             Phone
           </div>
-          <div className="absolute left-[92.6875rem] top-[8rem] font-['DM_Sans'] text-[1.125rem] font-medium leading-[1.25rem] text-white">
+          <div className="absolute left-[92.6875rem] top-[8rem] font-[family-name:var(--font-dm-sans)] text-[1.125rem] font-medium leading-[1.25rem] text-white">
             (555) 123-4567
           </div>
 
@@ -175,10 +173,10 @@ function FlowFooter() {
             <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
             <polyline points="22,6 12,13 2,6" />
           </svg>
-          <div className="absolute left-[94.25rem] top-[10.75rem] font-['DM_Sans'] text-[0.875rem] font-semibold leading-[0.875rem] text-white">
+          <div className="absolute left-[94.25rem] top-[10.75rem] font-[family-name:var(--font-dm-sans)] text-[0.875rem] font-semibold leading-[0.875rem] text-white">
             Email
           </div>
-          <div className="absolute left-[92.6875rem] top-[12.375rem] font-['DM_Sans'] text-[1.125rem] font-medium leading-[1.25rem] text-white">
+          <div className="absolute left-[92.6875rem] top-[12.375rem] font-[family-name:var(--font-dm-sans)] text-[1.125rem] font-medium leading-[1.25rem] text-white">
             info@avenuemh.com
           </div>
 
@@ -194,20 +192,20 @@ function FlowFooter() {
             <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
             <circle cx="12" cy="10" r="3" />
           </svg>
-          <div className="absolute left-[94.25rem] top-[15.125rem] font-['DM_Sans'] text-[0.875rem] font-semibold leading-[0.875rem] text-white">
+          <div className="absolute left-[94.25rem] top-[15.125rem] font-[family-name:var(--font-dm-sans)] text-[0.875rem] font-semibold leading-[0.875rem] text-white">
             Location
           </div>
-          <div className="absolute left-[92.6875rem] top-[16.75rem] font-['DM_Sans'] text-[1.125rem] font-medium leading-[1.25rem] text-white">
+          <div className="absolute left-[92.6875rem] top-[16.75rem] font-[family-name:var(--font-dm-sans)] text-[1.125rem] font-medium leading-[1.25rem] text-white">
             Serving All 48 States
           </div>
 
           <div className="absolute left-0 top-[25.9375rem] h-[0.0625rem] w-[120rem] bg-[#003951]" />
 
           <div className="absolute left-[15rem] top-[27.875rem]">
-            <span className="font-['DM_Sans'] text-[0.875rem] font-normal leading-[1.5625rem] text-white">
+            <span className="font-[family-name:var(--font-dm-sans)] text-[0.875rem] font-normal leading-[1.5625rem] text-white">
               © 2026, Box Truck Dispatching, Design &amp; Developed By{" "}
             </span>
-            <span className="font-['DM_Sans'] text-[0.875rem] font-bold leading-[1.5625rem] text-white">
+            <span className="font-[family-name:var(--font-dm-sans)] text-[0.875rem] font-bold leading-[1.5625rem] text-white">
               BitBlazeTec
             </span>
           </div>
@@ -218,7 +216,7 @@ function FlowFooter() {
                 <Link
                   key={policy}
                   href="#policy"
-                  className="cursor-pointer font-['DM_Sans'] text-[0.875rem] font-normal leading-[1.5625rem] text-white no-underline transition-colors duration-200 hover:text-[#FE8F02]"
+                  className="cursor-pointer font-[family-name:var(--font-dm-sans)] text-[0.875rem] font-normal leading-[1.5625rem] text-white no-underline transition-colors duration-200 hover:text-[#FE8F02]"
                 >
                   {policy}
                 </Link>

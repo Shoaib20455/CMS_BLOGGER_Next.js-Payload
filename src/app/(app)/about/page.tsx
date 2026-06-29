@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/about/Rectangle 1702@2x.png",
+        url: "/about/Rectangle 1702@2x.webp",
         width: 1200,
         height: 630,
         alt: "Box truck dispatching team support",
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: pageTitle,
     description: pageDescription,
-    images: ["/about/Rectangle 1702@2x.png"],
+    images: ["/about/Rectangle 1702@2x.webp"],
   },
   robots: {
     index: true,
@@ -159,11 +159,11 @@ const states = [
   { image: "/about/ohio.png", name: "Ohio" },
   { image: "/about/Indiana.png", name: "Indiana" },
   { image: "/about/texas.png", name: "Texas" },
-  { image: "/about/florida.png", name: "Florida" },
-  { image: "/about/new_york.png", name: "New York" },
-  { image: "/about/california.png", name: "California" },
+  { image: "/about/florida.webp", name: "Florida" },
+  { image: "/about/new_york.webp", name: "New York" },
+  { image: "/about/california.webp", name: "California" },
   { image: "/about/Kentucky.png", name: "Kentucky" },
-  { image: "/about/illinois.png", name: "Illinois" },
+  { image: "/about/illinois.webp", name: "Illinois" },
 ];
 
 const benefits = [
@@ -318,7 +318,7 @@ export default function AboutPage() {
       <div className="about-page">
           <section className="about-hero" aria-labelledby="about-title">
             <Image
-              src="/about/Frame 4@2x.png"
+              src="/about/Frame 4@2x.webp"
               alt=""
               fill
               priority
@@ -379,7 +379,7 @@ export default function AboutPage() {
           </div>
 
           <Image
-            src="/about/Rectangle 1511@2x.png"
+            src="/about/Rectangle 1511@2x.webp"
             alt="White box truck parked near trees"
             width={626}
             height={700}
@@ -387,7 +387,7 @@ export default function AboutPage() {
           />
 
           <Image
-            src="/about/Rectangle 1525@2x.png"
+            src="/about/Rectangle 1525@2x.webp"
             alt="White box truck parked outside a warehouse"
             width={857}
             height={296}
@@ -398,7 +398,7 @@ export default function AboutPage() {
         <section className="about-founder">
           <div className="about-founder-media">
             <Image
-              src="/about/Rectangle 1689@2x.png"
+              src="/about/Rectangle 1689@2x.webp"
               alt="Michael Carter"
               width={760}
               height={585}
@@ -466,7 +466,7 @@ export default function AboutPage() {
               including:
             </p>
             <Image
-              src="/about/Rectangle 1702@2x.png"
+              src="/about/Rectangle 1702@2x.webp"
               alt="White box truck parked outside a warehouse"
               width={570}
               height={344}
@@ -484,7 +484,7 @@ export default function AboutPage() {
 
         <section className="about-industries">
           <Image
-            src="/about/Rectangle 1078@2x.png"
+            src="/about/Rectangle 1078@2x.webp"
             alt=""
             fill
             sizes="100vw"
@@ -601,7 +601,7 @@ export default function AboutPage() {
 
           <div className="about-why-layout">
             <Image
-              src="/about/Rectangle 1093.png"
+              src="/about/Rectangle 1093.webp"
               alt="White box truck parked in a lot"
               width={750}
               height={518}
@@ -646,7 +646,7 @@ export default function AboutPage() {
           </div>
 
           <Image
-            src="/about/Rectangle 1117.png"
+            src="/about/Rectangle 1117.webp"
             alt="Box truck ready for dispatch"
             width={760}
             height={585}

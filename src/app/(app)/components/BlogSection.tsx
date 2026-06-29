@@ -52,13 +52,13 @@ export default function BlogSection({
     return (
       <section className="mx-auto mb-20 mt-20 w-[calc(100%_-_40px)] max-w-[1520px]">
         <div className="mb-[62px] flex items-center justify-between gap-8 max-lg:flex-col max-lg:items-start">
-          <h2 className="font-['Outfit'] text-[32px] font-bold leading-[40px] text-[#012F42] sm:text-[42px] sm:leading-[52px] lg:text-[48px] lg:leading-[58px]">
+          <h2 className="font-[family-name:var(--font-outfit)] text-[32px] font-bold leading-[40px] text-[#012F42] sm:text-[42px] sm:leading-[52px] lg:text-[48px] lg:leading-[58px]">
             {title}
           </h2>
 
           <Link
             href="/blog"
-            className="inline-flex min-h-[50px] items-center justify-center rounded-[5px] bg-[#FE8F02] px-5 py-2.5 font-['Outfit'] text-[18px] font-medium text-white transition-all duration-300 hover:bg-[#E07D02] max-sm:w-full"
+            className="inline-flex min-h-[50px] items-center justify-center rounded-[5px] bg-[#FE8F02] px-5 py-2.5 font-[family-name:var(--font-outfit)] text-[18px] font-medium text-white transition-all duration-300 hover:bg-[#E07D02] max-sm:w-full"
           >
             View All Blogs
           </Link>
@@ -76,11 +76,11 @@ export default function BlogSection({
 
             <PostDate date={featuredPost.date} />
 
-            <h3 className="font-['Outfit'] text-[22px] font-semibold leading-[33px] text-[#012F42]">
+            <h3 className="font-[family-name:var(--font-outfit)] text-[22px] font-semibold leading-[33px] text-[#012F42]">
               {featuredPost.title}
             </h3>
 
-            <p className="my-5 font-['DM_Sans'] text-[18px] font-normal leading-7 text-[#595E68]">
+            <p className="my-5 font-[family-name:var(--font-dm-sans)] text-[18px] font-normal leading-7 text-[#595E68]">
               {featuredPost.desc}
             </p>
 
@@ -106,7 +106,7 @@ export default function BlogSection({
                 <div>
                   <PostDate date={post.date} />
 
-                  <h3 className="mb-5 font-['Outfit'] text-[20px] font-semibold leading-[29px] text-[#012F42]">
+                  <h3 className="mb-5 font-[family-name:var(--font-outfit)] text-[20px] font-semibold leading-[29px] text-[#012F42]">
                     {post.title}
                   </h3>
 
@@ -280,7 +280,7 @@ export default function BlogSection({
 
 function PostDate({ date }: { date: string }) {
   return (
-    <div className="mb-4 flex items-center gap-2 font-['DM_Sans'] text-[14px] font-normal text-[#595E68]">
+    <div className="mb-4 flex items-center gap-2 font-[family-name:var(--font-dm-sans)] text-[14px] font-normal text-[#595E68]">
       <span className="h-2.5 w-2.5 rounded-full bg-[#FE8F02]" />
       {date}
     </div>
@@ -291,7 +291,7 @@ function ReadMore({ href }: { href: string }) {
   return (
     <Link
       href={href}
-      className="font-['Outfit'] text-[18px] font-medium capitalize text-[#FE8F02] underline underline-offset-8 transition-colors duration-300 hover:text-[#E07D02]"
+      className="font-[family-name:var(--font-outfit)] text-[18px] font-medium capitalize text-[#FE8F02] underline underline-offset-8 transition-colors duration-300 hover:text-[#E07D02]"
     >
       Read More
     </Link>

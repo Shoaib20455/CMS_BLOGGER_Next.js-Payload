@@ -49,12 +49,10 @@ export default function Hero() {
         {/* Truck Image */}
         <Image
           className="bb-hero-011"
-          src="/Images/Truck_Original_Sourced.png"
+          src="/Images/Truck_Original_Sourced.webp"
           alt="White Box Truck Dispatch"
           width={1066}
-          height={625}
-          loading="eager"
-          fetchPriority="high" />
+          height={625} />
         
       </div>
 
@@ -95,12 +93,10 @@ export default function Hero() {
               <div className="bb-hero-024" />
               <Image
                 className="bb-hero-025"
-                src="/Images/Truck_Original_Sourced.png"
+                src="/Images/Truck_Original_Sourced.webp"
                 alt="White Box Truck Dispatch"
                 width={1650}
-                height={953}
-                loading="eager"
-                fetchPriority="high" />
+                height={953} />
               
             </div>
           </div>

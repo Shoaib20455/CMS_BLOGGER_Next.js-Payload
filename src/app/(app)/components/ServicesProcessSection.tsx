@@ -62,7 +62,7 @@ export default function ServicesProcessSection() {
         </div>
         <Image
           className="bb-services-process-002"
-          src="/Images/Rectangle 1093.png"
+          src="/Images/Rectangle 1093.webp"
           alt="Managing Box Truck"
           width={750}
           height={518} />
@@ -116,7 +116,7 @@ export default function ServicesProcessSection() {
           <div className="bb-services-process-009">
             <Image
               className="bb-services-process-010"
-              src="/Images/Rectangle 1093.png"
+              src="/Images/Rectangle 1093.webp"
               alt="Managing Box Truck"
               width={750}
               height={518} />

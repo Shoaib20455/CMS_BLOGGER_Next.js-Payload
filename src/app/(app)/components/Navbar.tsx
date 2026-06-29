@@ -2,11 +2,8 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import React, { useState } from "react";
-
-interface NavbarProps {
-  currentActive?: string;
-}
 
 const navItems = ["Home", "About", "Service", "Blog", "Contact", "State", "Pricing"];
 
@@ -15,7 +12,9 @@ function getFlowHref(item: string) {
   return `/${item.toLowerCase()}`;
 }
 
-export default function Navbar({ currentActive = "Home" }: NavbarProps) {
+export default function Navbar() {
+  const pathname = usePathname();
+  const currentActive = pathname === "/" ? "Home" : navItems.find((item) => pathname.startsWith(getFlowHref(item))) || "Home";
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
@@ -43,7 +42,7 @@ export default function Navbar({ currentActive = "Home" }: NavbarProps) {
               <Link
                 key={item}
                 href={getFlowHref(item)}
-                className={`font-['DM_Sans'] text-[1.125rem] font-bold leading-[1.5625rem] no-underline transition-colors duration-200 ${
+                className={`font-[family-name:var(--font-dm-sans)] text-[1.125rem] font-bold leading-[1.5625rem] no-underline transition-colors duration-200 ${
                   isActive
                     ? "text-[#FE8F02]"
                     : "text-[#111827] hover:text-[#FE8F02]"
@@ -57,7 +56,7 @@ export default function Navbar({ currentActive = "Home" }: NavbarProps) {
 
         <Link
           href="/contact"
-          className="absolute right-0 top-[0.9375rem] inline-flex h-[3.125rem] w-[11.3125rem] items-center justify-center rounded-[0.3125rem] border-none bg-[#FE8F02] font-['Outfit'] text-[1.125rem] font-medium text-white no-underline transition-all duration-300 hover:scale-105 hover:bg-[#E07D02] active:scale-95"
+          className="absolute right-0 top-[0.9375rem] inline-flex h-[3.125rem] w-[11.3125rem] items-center justify-center rounded-[0.3125rem] border-none bg-[#FE8F02] font-[family-name:var(--font-outfit)] text-[1.125rem] font-medium text-white no-underline transition-all duration-300 hover:scale-105 hover:bg-[#E07D02] active:scale-95"
         >
           Schedule a Call
         </Link>
@@ -127,7 +126,7 @@ export default function Navbar({ currentActive = "Home" }: NavbarProps) {
                 key={item}
                 href={getFlowHref(item)}
                 onClick={() => setIsMenuOpen(false)}
-                className={`rounded-[0.3125rem] px-3 py-3 font-['DM_Sans'] text-[1rem] font-bold leading-6 no-underline transition-colors ${
+                className={`rounded-[0.3125rem] px-3 py-3 font-[family-name:var(--font-dm-sans)] text-[1rem] font-bold leading-6 no-underline transition-colors ${
                   isActive
                     ? "bg-[#FFF4E5] text-[#FE8F02]"
                     : "text-[#111827] hover:bg-[#F8FAFC] hover:text-[#FE8F02]"
@@ -140,7 +139,7 @@ export default function Navbar({ currentActive = "Home" }: NavbarProps) {
 
           <Link
             href="/contact"
-            className="mt-3 h-[3.125rem] w-full rounded-[0.3125rem] border-none bg-[#FE8F02] font-['Outfit'] text-[1.125rem] font-medium text-white no-underline transition-colors hover:bg-[#E07D02] active:bg-[#C96F02] sm:w-[11.3125rem]"
+            className="mt-3 h-[3.125rem] w-full rounded-[0.3125rem] border-none bg-[#FE8F02] font-[family-name:var(--font-outfit)] text-[1.125rem] font-medium text-white no-underline transition-colors hover:bg-[#E07D02] active:bg-[#C96F02] sm:w-[11.3125rem]"
             onClick={() => setIsMenuOpen(false)}
           >
             <span className="flex h-full w-full items-center justify-center">

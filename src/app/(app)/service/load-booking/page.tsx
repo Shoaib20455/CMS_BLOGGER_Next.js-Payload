@@ -32,12 +32,12 @@ const benefits = [
   {
     title: "Higher Revenue",
     body: "Better-paying loads and stronger rate negotiations help increase your earnings.",
-    image: "/loadBooking/Rectangle 1135.png",
+    image: "/loadBooking/Rectangle 1135.webp",
   },
   {
     title: "Reduced Deadhead Miles",
     body: "Strategic load planning keeps your truck loaded and productive.",
-    image: "/loadBooking/Rectangle 1136.png",
+    image: "/loadBooking/Rectangle 1136.webp",
   },
   {
     title: "More Time to Drive",
@@ -135,7 +135,7 @@ export default function LoadBookingPage() {
       <section className="mx-auto w-[calc(100%_-_40px)] max-w-[1520px] overflow-hidden rounded-[20px] bg-[#012F42]">
         <div className="relative min-h-[500px] overflow-hidden px-6 py-14 sm:px-10 lg:px-[100px] lg:py-[83px]">
           <Image
-            src="/loadBooking/loadBooking_hero.png"
+            src="/loadBooking/loadBooking_hero.webp"
             alt=""
             fill
             priority
@@ -146,15 +146,15 @@ export default function LoadBookingPage() {
           <div className="absolute inset-0 bg-gradient-to-r from-[#012F42]/90 via-[#012F42]/70 to-[#012F42]/30" />
 
           <div className="relative z-10 max-w-[1156px]">
-            <h1 className="font-['Outfit'] text-[40px] font-bold capitalize leading-[50px] text-white sm:text-[54px] sm:leading-[64px] lg:text-[60px] lg:leading-[70px]">
+            <h1 className="font-[family-name:var(--font-outfit)] text-[40px] font-bold capitalize leading-[50px] text-white sm:text-[54px] sm:leading-[64px] lg:text-[60px] lg:leading-[70px]">
               Load Booking Services for Owner-Operators and Trucking Companies
             </h1>
 
-            <p className="mt-8 font-['DM_Sans'] text-[20px] font-bold text-white">
+            <p className="mt-8 font-[family-name:var(--font-dm-sans)] text-[20px] font-bold text-white">
               Find Better Loads. Earn More Per Mile.
             </p>
 
-            <div className="mt-5 max-w-[1143px] space-y-7 font-['DM_Sans'] text-[18px] leading-8 text-white sm:text-[20px]">
+            <div className="mt-5 max-w-[1143px] space-y-7 font-[family-name:var(--font-dm-sans)] text-[18px] leading-8 text-white sm:text-[20px]">
               <p>
                 Our professional load booking service helps owner-operators and
                 fleet owners find profitable freight, negotiate better rates,
@@ -173,11 +173,11 @@ export default function LoadBookingPage() {
 
       <section className="mx-auto mt-20 grid w-[calc(100%_-_40px)] max-w-[1520px] gap-[30px] lg:h-[700px] lg:grid-cols-[857px_626px]">
         <div className="flex min-w-0 flex-col">
-          <h2 className="font-['Outfit'] text-[38px] font-bold leading-[48px] text-[#012F42] sm:text-[42px] sm:leading-[52px] lg:text-[48px]">
+          <h2 className="font-[family-name:var(--font-outfit)] text-[38px] font-bold leading-[48px] text-[#012F42] sm:text-[42px] sm:leading-[52px] lg:text-[48px]">
             What Is Load Booking?
           </h2>
 
-          <div className="mt-8 space-y-7 font-['DM_Sans'] text-[18px] leading-6 text-[#575D67]">
+          <div className="mt-8 space-y-7 font-[family-name:var(--font-dm-sans)] text-[18px] leading-6 text-[#575D67]">
             <p>
               Load booking is much more than simply finding freight. It requires
               continuous monitoring of load boards, evaluating available
@@ -208,7 +208,7 @@ export default function LoadBookingPage() {
           </div>
 
           <Image
-            src="/loadBooking/loadbookingtruck_2.png"
+            src="/loadBooking/loadbookingtruck_2.webp"
             alt="Box truck load booking"
             width={857}
             height={296}
@@ -217,7 +217,7 @@ export default function LoadBookingPage() {
         </div>
 
         <Image
-          src="/loadBooking/loadbookingtruck_1.png"
+          src="/loadBooking/loadbookingtruck_1.webp"
           alt="Dispatcher reviewing load booking details"
           width={626}
           height={700}
@@ -227,7 +227,7 @@ export default function LoadBookingPage() {
 
       <section className="mx-auto mt-20 grid w-[calc(100%_-_40px)] max-w-[1520px] gap-5 lg:grid-cols-4">
         <div className="flex min-h-[223px] items-center rounded-[10px] bg-[#012F42] p-8 sm:p-[50px] lg:col-span-2">
-          <h2 className="font-['Outfit'] text-[38px] font-bold leading-[48px] text-white lg:text-[48px] lg:leading-[58px]">
+          <h2 className="font-[family-name:var(--font-outfit)] text-[38px] font-bold leading-[48px] text-white lg:text-[48px] lg:leading-[58px]">
             Our Load Booking Services Include
           </h2>
         </div>
@@ -238,7 +238,7 @@ export default function LoadBookingPage() {
       </section>
 
       <section className="mx-auto mt-20 w-[calc(100%_-_40px)] max-w-[1520px]">
-        <h2 className="mx-auto max-w-[720px] text-center font-['Outfit'] text-[42px] font-bold leading-[52px] text-[#012F42] lg:text-[48px] lg:leading-[58px]">
+        <h2 className="mx-auto max-w-[720px] text-center font-[family-name:var(--font-outfit)] text-[42px] font-bold leading-[52px] text-[#012F42] lg:text-[48px] lg:leading-[58px]">
           Benefits of Our Load Booking Service
         </h2>
 
@@ -254,7 +254,7 @@ export default function LoadBookingPage() {
       </section>
 
       <section className="mx-auto mt-20 w-[calc(100%_-_40px)] max-w-[1520px]">
-        <h2 className="mx-auto max-w-[720px] text-center font-['Outfit'] text-[42px] font-bold leading-[52px] text-[#012F42] lg:text-[48px] lg:leading-[58px]">
+        <h2 className="mx-auto max-w-[720px] text-center font-[family-name:var(--font-outfit)] text-[42px] font-bold leading-[52px] text-[#012F42] lg:text-[48px] lg:leading-[58px]">
           Why Choose Our Load Booking Team?
         </h2>
 
@@ -277,11 +277,11 @@ export default function LoadBookingPage() {
                   />
                 </div>
 
-                <h3 className="mt-5 font-['Outfit'] text-[22px] font-semibold leading-8 text-[#012F42]">
+                <h3 className="mt-5 font-[family-name:var(--font-outfit)] text-[22px] font-semibold leading-8 text-[#012F42]">
                   {card.title}
                 </h3>
 
-                <p className="mt-5 font-['DM_Sans'] text-[18px] leading-6 text-[#111827]/70">
+                <p className="mt-5 font-[family-name:var(--font-dm-sans)] text-[18px] leading-6 text-[#111827]/70">
                   {card.body}
                 </p>
               </div>
@@ -291,13 +291,13 @@ export default function LoadBookingPage() {
       </section>
 
       <section className="mx-auto mt-20 w-[calc(100%_-_40px)] max-w-[1520px]">
-        <h2 className="text-center font-['Outfit'] text-[42px] font-bold leading-[52px] text-[#012F42] lg:text-[48px] lg:leading-[58px]">
+        <h2 className="text-center font-[family-name:var(--font-outfit)] text-[42px] font-bold leading-[52px] text-[#012F42] lg:text-[48px] lg:leading-[58px]">
           How Our Process Works
         </h2>
 
         <div className="mt-[70px] grid gap-5 lg:grid-cols-2">
           <Image
-            src="/loadBooking/Rectangle 1093.png"
+            src="/loadBooking/Rectangle 1093.webp"
             alt="Dispatch process"
             width={750}
             height={518}
@@ -312,7 +312,7 @@ export default function LoadBookingPage() {
                 open={index === 0}
               >
                 <summary className="flex cursor-pointer list-none items-center justify-between gap-4 rounded-[5px] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#FE8F02]">
-                  <span className="font-['Outfit'] text-[22px] font-semibold leading-8 text-[#012F42]">
+                  <span className="font-[family-name:var(--font-outfit)] text-[22px] font-semibold leading-8 text-[#012F42]">
                     <span className="text-[#FE8F02]">Step {index + 1}:</span>{" "}
                     {step.title}
                   </span>
@@ -320,7 +320,7 @@ export default function LoadBookingPage() {
                   <PlusIcon />
                 </summary>
 
-                <p className="mt-4 max-w-[520px] font-['DM_Sans'] text-[18px] leading-6 text-[#111827]/70">
+                <p className="mt-4 max-w-[520px] font-[family-name:var(--font-dm-sans)] text-[18px] leading-6 text-[#111827]/70">
                   {step.body}
                 </p>
               </details>
@@ -331,7 +331,7 @@ export default function LoadBookingPage() {
 
       <section className="relative mt-20 min-h-[610px] overflow-hidden">
         <Image
-          src="/loadBooking/Rectangle 1078.png"
+          src="/loadBooking/Rectangle 1078.webp"
           alt=""
           fill
           sizes="100vw"
@@ -341,7 +341,7 @@ export default function LoadBookingPage() {
         <div className="absolute inset-0 bg-[#012F42]/60" />
 
         <div className="relative z-10 mx-auto flex min-h-[610px] w-[calc(100%_-_40px)] max-w-[1520px] flex-col items-center justify-center py-16">
-          <h2 className="font-['Outfit'] text-[42px] font-bold text-[#F8FAFC] lg:text-[48px]">
+          <h2 className="font-[family-name:var(--font-outfit)] text-[42px] font-bold text-[#F8FAFC] lg:text-[48px]">
             Industries We Serve
           </h2>
 
@@ -349,7 +349,7 @@ export default function LoadBookingPage() {
             {industries.map((industry) => (
               <span
                 key={industry}
-                className="rounded-[5px] bg-white/10 px-12 py-6 font-['Outfit'] text-[26px] font-semibold capitalize text-white backdrop-blur-lg transition-all duration-300 hover:-translate-y-1 hover:bg-[#FE8F02] hover:shadow-[0_10px_26px_rgba(254,143,2,0.28)] lg:text-[30px]"
+                className="rounded-[5px] bg-white/10 px-12 py-6 font-[family-name:var(--font-outfit)] text-[26px] font-semibold capitalize text-white backdrop-blur-lg transition-all duration-300 hover:-translate-y-1 hover:bg-[#FE8F02] hover:shadow-[0_10px_26px_rgba(254,143,2,0.28)] lg:text-[30px]"
               >
                 {industry}
               </span>
@@ -360,11 +360,11 @@ export default function LoadBookingPage() {
 
       <section className="mx-auto mt-20 grid w-[calc(100%_-_40px)] max-w-[1520px] overflow-hidden rounded-[10px] bg-[#012F42] lg:grid-cols-2">
         <div className="flex flex-col justify-center p-8 sm:p-12 lg:p-[50px]">
-          <h2 className="max-w-[641px] font-['Outfit'] text-[40px] font-bold capitalize leading-[50px] text-[#FE8F02] lg:text-[48px] lg:leading-[60px]">
+          <h2 className="max-w-[641px] font-[family-name:var(--font-outfit)] text-[40px] font-bold capitalize leading-[50px] text-[#FE8F02] lg:text-[48px] lg:leading-[60px]">
             Ready to Keep Your Truck Loaded?
           </h2>
 
-          <p className="mt-10 max-w-[636px] font-['DM_Sans'] text-[18px] leading-7 text-white">
+          <p className="mt-10 max-w-[636px] font-[family-name:var(--font-dm-sans)] text-[18px] leading-7 text-white">
             Stop spending hours searching load boards and negotiating with
             brokers. Let our experienced dispatch team handle the load booking
             process while you focus on driving and growing your business.
@@ -373,14 +373,14 @@ export default function LoadBookingPage() {
           <div className="mt-10 flex flex-col gap-4 sm:flex-row">
             <Link
               href="/contact"
-              className="inline-flex h-12 items-center justify-center rounded-[5px] bg-[#FE8F02] px-5 font-['Outfit'] text-[18px] font-medium capitalize text-white no-underline transition-all duration-300 hover:scale-[1.03] hover:bg-[#E07D02] active:scale-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#FE8F02]"
+              className="inline-flex h-12 items-center justify-center rounded-[5px] bg-[#FE8F02] px-5 font-[family-name:var(--font-outfit)] text-[18px] font-medium capitalize text-white no-underline transition-all duration-300 hover:scale-[1.03] hover:bg-[#E07D02] active:scale-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#FE8F02]"
             >
               Start Dispatching Today
             </Link>
 
             <Link
               href="/contact"
-              className="inline-flex h-12 items-center justify-center rounded-[5px] border border-[#FE8F02] px-5 font-['Outfit'] text-[18px] font-medium capitalize text-[#FE8F02] no-underline transition-all duration-300 hover:scale-[1.03] hover:bg-[#FE8F02] hover:text-white active:scale-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#FE8F02]"
+              className="inline-flex h-12 items-center justify-center rounded-[5px] border border-[#FE8F02] px-5 font-[family-name:var(--font-outfit)] text-[18px] font-medium capitalize text-[#FE8F02] no-underline transition-all duration-300 hover:scale-[1.03] hover:bg-[#FE8F02] hover:text-white active:scale-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#FE8F02]"
             >
               Get a Free Consultation
             </Link>
@@ -388,7 +388,7 @@ export default function LoadBookingPage() {
         </div>
 
         <Image
-          src="/loadBooking/Rectangle 1117.png"
+          src="/loadBooking/Rectangle 1117.webp"
           alt="Loaded box truck"
           width={760}
           height={585}
@@ -397,7 +397,7 @@ export default function LoadBookingPage() {
       </section>
 
       <section className="mx-auto mt-20 w-[calc(100%_-_40px)] max-w-[1520px]">
-        <h2 className="text-center font-['Outfit'] text-[42px] font-bold leading-[52px] text-[#012F42] lg:text-[48px] lg:leading-[58px]">
+        <h2 className="text-center font-[family-name:var(--font-outfit)] text-[42px] font-bold leading-[52px] text-[#012F42] lg:text-[48px] lg:leading-[58px]">
           Frequently Asked Questions
         </h2>
 
@@ -407,12 +407,12 @@ export default function LoadBookingPage() {
               key={`${question}-${index}`}
               className="group min-h-[80px] rounded-[10px] border border-[#111827]/50 bg-white px-5 py-4 transition-[border-color,box-shadow] duration-200 [&[open]]:border-[#FE8F02] [&[open]]:shadow-[0_8px_22px_rgba(254,143,2,0.14)]"
             >
-              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 rounded-[5px] font-['DM_Sans'] text-[18px] leading-8 text-[#012F42] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#FE8F02]">
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 rounded-[5px] font-[family-name:var(--font-dm-sans)] text-[18px] leading-8 text-[#012F42] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#FE8F02]">
                 {question}
                 <PlusIcon />
               </summary>
 
-              <p className="mt-3 font-['DM_Sans'] text-[16px] leading-6 text-[#111827]/70">
+              <p className="mt-3 font-[family-name:var(--font-dm-sans)] text-[16px] leading-6 text-[#111827]/70">
                 Our dispatch team reviews your truck, lanes, schedule, and
                 market conditions to recommend the best available option.
               </p>
@@ -422,18 +422,18 @@ export default function LoadBookingPage() {
       </section>
 
       <section className="mx-auto mt-3 flex min-h-[256px] w-[calc(100%_-_40px)] max-w-[1520px] flex-col items-center justify-center rounded-[10px] bg-[#012F42] px-6 py-[30px] text-center sm:px-10">
-        <h2 className="font-['Outfit'] text-[40px] font-bold capitalize leading-[50px] text-white lg:text-[48px] lg:leading-[55px]">
+        <h2 className="font-[family-name:var(--font-outfit)] text-[40px] font-bold capitalize leading-[50px] text-white lg:text-[48px] lg:leading-[55px]">
           Grow Your Business Faster
         </h2>
 
-        <p className="mx-auto mt-5 max-w-[636px] font-['DM_Sans'] text-[18px] leading-7 text-white">
+        <p className="mx-auto mt-5 max-w-[636px] font-[family-name:var(--font-dm-sans)] text-[18px] leading-7 text-white">
           From load booking to payment follow-up, we handle the hard work behind
           the scenes so you can stay focused on the road ahead.
         </p>
 
         <Link
           href="/contact"
-          className="mt-7 inline-flex h-12 items-center justify-center rounded-[5px] bg-[#FE8F02] px-5 font-['Outfit'] text-[18px] font-medium capitalize text-white no-underline transition-all duration-300 hover:scale-105 hover:bg-[#E07D02] active:scale-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#FE8F02]"
+          className="mt-7 inline-flex h-12 items-center justify-center rounded-[5px] bg-[#FE8F02] px-5 font-[family-name:var(--font-outfit)] text-[18px] font-medium capitalize text-white no-underline transition-all duration-300 hover:scale-105 hover:bg-[#E07D02] active:scale-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#FE8F02]"
         >
           Get Started
         </Link>
@@ -449,11 +449,11 @@ function InfoCard({ title, body }: { title: string; body: string }) {
       <div className="h-2.5 rounded-t-[10px] bg-[#012F42] transition-colors duration-300 group-hover:bg-[#FE8F02]" />
 
       <div className="p-5">
-        <h3 className="font-['Outfit'] text-[22px] font-semibold leading-8 text-[#012F42]">
+        <h3 className="font-[family-name:var(--font-outfit)] text-[22px] font-semibold leading-8 text-[#012F42]">
           {title}
         </h3>
 
-        <p className="mt-8 font-['DM_Sans'] text-[18px] leading-6 text-[#111827]/70">
+        <p className="mt-8 font-[family-name:var(--font-dm-sans)] text-[18px] leading-6 text-[#111827]/70">
           {body}
         </p>
       </div>
@@ -485,11 +485,11 @@ function BenefitCard({
       <div className="absolute inset-0 bg-gradient-to-b from-[#012F42]/90 to-[#012F42]/35" />
 
       <div className="absolute inset-x-[30px] bottom-[54px]">
-        <h3 className="font-['Outfit'] text-[22px] font-semibold leading-8 text-white">
+        <h3 className="font-[family-name:var(--font-outfit)] text-[22px] font-semibold leading-8 text-white">
           {benefit.title}
         </h3>
 
-        <p className="mt-5 max-w-[400px] font-['DM_Sans'] text-[18px] leading-6 text-white/70">
+        <p className="mt-5 max-w-[400px] font-[family-name:var(--font-dm-sans)] text-[18px] leading-6 text-white/70">
           {benefit.body}
         </p>
       </div>

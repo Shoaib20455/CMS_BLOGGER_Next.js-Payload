@@ -26,7 +26,7 @@ export default function PricingSection() {
 
         <div className="bb-pricing-001" />
 
-        <Image className="bb-pricing-002" src="/Images/Rectangle 1120.png" alt="6% Pricing Plan" width={617} height={731} />
+        <Image className="bb-pricing-002" src="/Images/Rectangle 1120.webp" alt="6% Pricing Plan" width={617} height={731} />
         <div className="bb-pricing-003" />
 
         <div className="bb-pricing-004">
@@ -118,7 +118,7 @@ export default function PricingSection() {
           <div className="bb-pricing-024">
             <Image
               className="bb-intro-sections-031"
-              src="/Images/Rectangle 1120.png"
+              src="/Images/Rectangle 1120.webp"
               alt="6% Pricing Plan"
               width={617}
               height={731} />

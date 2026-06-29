@@ -1,5 +1,7 @@
 import type { CollectionConfig } from "payload";
 
+import { revalidateDeletedPost, revalidatePost } from "../lib/payload-revalidation";
+
 export const Posts: CollectionConfig = {
   slug: "posts",
   labels: {
@@ -13,6 +15,10 @@ export const Posts: CollectionConfig = {
   },
   access: {
     read: () => true,
+  },
+  hooks: {
+    afterChange: [revalidatePost],
+    afterDelete: [revalidateDeletedPost],
   },
   fields: [
     {
@@ -54,6 +60,7 @@ export const Posts: CollectionConfig = {
     {
       name: "category",
       type: "relationship",
+      index: true,
       relationTo: "categories",
       admin: {
         position: "sidebar",
@@ -135,6 +142,7 @@ export const Posts: CollectionConfig = {
     {
       name: "publishedDate",
       type: "date",
+      index: true,
       admin: {
         position: "sidebar",
         date: {
@@ -145,6 +153,7 @@ export const Posts: CollectionConfig = {
     {
       name: "status",
       type: "select",
+      index: true,
       defaultValue: "draft",
       options: [
         { label: "Draft", value: "draft" },

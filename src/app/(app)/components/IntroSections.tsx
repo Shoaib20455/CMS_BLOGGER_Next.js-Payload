@@ -32,7 +32,7 @@ export default function IntroSections() {
 
         <Image
           className="bb-intro-sections-004"
-          src="/Images/Rectangle 1080.png"
+          src="/Images/Rectangle 1080.webp"
           alt="Red Box Truck"
           width={960}
           height={660}
@@ -42,7 +42,7 @@ export default function IntroSections() {
 
         <Image
           className="bb-intro-sections-005"
-          src="/Images/Rectangle 1082.png"
+          src="/Images/Rectangle 1082.webp"
           alt="Owner Operator Driver"
           width={960}
           height={660}
@@ -99,7 +99,7 @@ export default function IntroSections() {
 
         <Image
           className="bb-intro-sections-012"
-          src="/Images/Rectangle 1084.png"
+          src="/Images/Rectangle 1084.webp"
           alt="Warehouse Coordination"
           width={960}
           height={660}
@@ -124,7 +124,7 @@ export default function IntroSections() {
 
             <Image
               className="bb-intro-sections-026"
-              src="/Images/Rectangle 1080.png"
+              src="/Images/Rectangle 1080.webp"
               alt="Red Box Truck"
               width={960}
               height={660}
@@ -136,7 +136,7 @@ export default function IntroSections() {
           <div className="bb-intro-sections-023">
             <Image
               className="bb-intro-sections-028"
-              src="/Images/Rectangle 1082.png"
+              src="/Images/Rectangle 1082.webp"
               alt="Owner Operator Driver"
               width={960}
               height={660}
@@ -172,7 +172,7 @@ export default function IntroSections() {
 
             <Image
               className="bb-intro-sections-026"
-              src="/Images/Rectangle 1084.png"
+              src="/Images/Rectangle 1084.webp"
               alt="Warehouse Coordination"
               width={960}
               height={660}
@@ -185,12 +185,10 @@ export default function IntroSections() {
       <section className="bb-intro-shared-range-001">
         <Image
           className="bb-intro-shared-range-002"
-          src="/Images/Rectangle 1078.png"
+          src="/Images/Rectangle 1078.webp"
           alt="Full Range of Dispatch Services"
           width={1920}
           height={610}
-          loading="eager"
-          fetchPriority="high"
         />
 
         <div className="bb-intro-shared-range-003" />
